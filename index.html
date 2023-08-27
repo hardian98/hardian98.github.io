@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+	<html lang='ID'>
+		<head>
+			<title>Cek, Murnikan dan Pantau Baterai Anda</title>
+			<meta charset='UTF-8'>
+			<meta name='google-site-verification' content='8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg'>
+			<meta name='author' content='Hardiansyah'>
+			<meta name='description' content='Real Time Beterai: Cek Suhu dan Tegangan, Pantau Kinerja Baterai'>
+			<meta name='viewport' content='width-device,width=1, initial-scale=1, maximal-scale=1'>
+			<link rel='stylesheet' href='assets/baterai.style.css'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Chakra+Petch|Ubuntu|Rubik|Sofia+Sans|Mulish|Quicksand|Bebas+Neue|Nanum+Gothic&display=swap'>
+			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+		</head>
+		
+		<body>
+			<main>
+			<!-- Memulai Program... -->
+				dataSystemBatt <- function() {
+					print("script_batt.r")
+				}
+				dataSystemBatt()
+				###
+				dataSyncBatt <- function() {
+					print("script_sync.r")
+				}
+				dataSyncBatt()
+				###
+				DataHashDevice <- function() {
+					print("device.r")
+				}
+				DataHashDevice()
+				###
+				<noscript>
+				fungsi suhu() {
+					jika (suhuberubah) {
+						$suhu(id).update;
+					}
+				}
+				
+				fungsi voltase() {
+					jika (voltaseberubah) {
+						$voltase(id).update;
+					}
+				}
+				</noscript>
+				<!-- Sudah Ok -->
+			</main>
+		
+			<footer>
+				<p>Dibuat oleh: Hardiansyah • ©2021</p>
+				<bdo>
+					<a href="index.html">Indonesia</a>
+					<!--<a href="lang_euy.html">Sunda</a>
+					<a href="lang_uk.html">English</a>
+					<a href="lang_jp.html">Japan</a>
+					<a href="lang_kr.html">Korean</a>
+					<a href="lang_ch.html">Chinesse</a>
+					<a href="lang_th.html">Thailand</a>
+					<a href="lang_za.html">Afrikaans</a>-->
+				</bdo>
+				
+				<hr width="50%" color="#BBB" size="1px">
+				<sup>Bagaimana website ini bekerja?
+				<br>
+				Kami menggunakan teknologi bahasa pemrograman yang efektif untuk program kami.
+				<br>
+				Program yang telah kami buat dapat berjalan dikebanyakan platform, Android, iOS, Desktop etc (Cross Platform).
+				<br>
+				Cara Kerja: Mengambil arus daya lebih besar dari Adaptor untuk mengisi daya dengan cepat, lalu menggunakan arus adaptif untuk pengisian lapisan terakhir.
+				<br>
+				Mengubah tegangan menjadi lebih stabil untuk memurnikan daya amper yang masuk.
+				<br>
+				Aplikasi yang jarang digunakan akan di hibernasikan untuk mendapatkan daya tahan Baterai lebih lama.</sup>
+				<hr width="50%" color="#BBB" size="1px">
+				<a href='https://m.facebook.com/acces.py'><i class='fa fa-facebook'></i></a> <a href='https://wa.me/6289529305947'><i class='fa fa-whatsapp'></i></a>
+				<br>
+				<sub>Terimakasih:<br>W3SCHOOL • STACKOVERFLOW • medium.com • developer.mozilla.org • Google Font • Google Icon • Font Awesome<br><i class='fa fa-html5'></i> <i class='fa fa-css3'></i> <i class='fa fa-javascript3'></i></sub>
+			</footer>
+			
+			<script>
+			/* Audio */
+			function nav() {
+				var audio = document.getElementById("nav");
+				audio.play();
+			}
+			function bateraiadaptif() {
+				var audio = document.getElementById("baterai_adaptif");
+				audio.play();
+			}
+			function pengisiancepat() {
+				var audio = document.getElementById("pengisian_cepat");
+				audio.play();
+			}
+			function stabilkantegangan() {
+				var audio = document.getElementById("stabilkan_tegangan");
+				audio.play();
+			}
+			function ting() {
+				var audio = document.getElementById("ting");
+				audio.play();
+			}
+			</script>
+			<script>
+			function murnikanlah() {
+				var elem = document.getElementById("persentase");
+				var width = 0;
+				var id = setInterval(frame, 100);
+				function frame() {
+					if (width >= 100) {
+						clearInterval(id);
+						document.getElementById("hasil").className = "fade";
+						document.getElementById("hasil").innerHTML = "Mantap, 55% Lebih Efisien!";
+					} else {
+						width++;
+						elem.style.width = width + '%';
+						var num = width + 1 / 100;
+						num = num.toFixed(0)
+						document.getElementById("persentase").style.visibility = "visible";
+						document.getElementById("proses").innerHTML = "<i class='fa fa-magic'></i> Memurnikan: " + num + "%";
+					}
+				}
+			}
+			</script>
+		
+			<script type="text/javascript">
+			let progressBar = document.querySelector("#nprogress");
+			window.onload = function() {
+				progressBar.style.display = "none";
+			};
+			</script>
+			
+			<a href='#tabel' onclick="nav()" class='fa fa-arrow-down bawah'></a>
+			<a href='#top' onclick="nav()" class='fa fa-arrow-up atas'></a>
+			<audio src="suara/nav.wav" id="nav" type="wav/audio">
+			<script src="assets/jquery.3.4.1.js"></script>
+			<script src="assets/detektor.js"></script>
+		</body>
+	</html>
