@@ -8072,14 +8072,14 @@ navigator.getBattery().then(function(battery) {
 	});
 	
 	
-	
+	/*
 	function updateChargingInfo() {
 		alert("Battery charging time: " + battery.chargingTime + " seconds");
 	}
 	function updateDischargingInfo() {
 		alert("Battery discharging time: " + battery.dischargingTime + " seconds");
 	}
-	
+	*/
 	
 	function updateChargeInfo() {
 		var batteryL = battery.level;
@@ -8089,18 +8089,16 @@ navigator.getBattery().then(function(battery) {
 	}
 	
 	function updateChargeInfo() {
-		alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
+		// alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
 		if (battery.charging) {
 			ctx.fillStyle = "#20C997", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#ACD1AF";
 			ctx.stroke();
-			/* document.querySelector("#bolt").style.visibility = "visible"; */
 			document.querySelector("#petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
 			document.querySelector("#status").innerHTML = "<span id='spanvolt'></span> <i class='fa fa-circle-o-notch fa-spin'></i><br>Terisi dalam: <span id='mengisi'></span> ~";
 			document.querySelector("#bertahan").innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i>";
 			document.querySelector("#peringatan").style.visibility = "hidden";
 			document.querySelector("#pengisian").style.visibility = "visible";
-			// alert("Sumber Daya: Terhubung");
 		} else {
 			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
@@ -8117,7 +8115,7 @@ navigator.getBattery().then(function(battery) {
 		var batteryL = battery.level;
 		//alert("Kapasitas Baterai: " + battery.level *100 + "%");
 		batLevel = batteryL *10;
-		document.querySelector("#BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + "♥</p>";
+		document.querySelector("#BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + " ♥</p>";
 	}
 	
 	var batL = Math.floor(batLevel);
