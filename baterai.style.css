@@ -69,7 +69,7 @@ background-color: rgba(0,0,0,0);
 #BatteryLevel {
 display: block;
 position: absolute;
-top: 16%;
+top: 15%;
 left: 50%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
@@ -82,7 +82,7 @@ color: #FFF;
 
 #bolt {
 position: absolute;
-top: 14%;
+top: 15%;
 left: 50%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
@@ -91,7 +91,7 @@ transform: translate(-50%, -50%);
 
 #petir, #status {
 position: absolute;
-top: 14%;
+top: 15%;
 left: 65%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
@@ -104,7 +104,7 @@ color: #FFF;
 #status {
 display: block;
 text-align: center;
-top: 20%;
+top: 19%;
 left: 50%;
 font-size: 16px;
 font-weight: 400;
