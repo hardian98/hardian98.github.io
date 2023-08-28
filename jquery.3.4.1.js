@@ -7948,7 +7948,7 @@ jQuery.extend( {
 } );
 
 /* Text */
-document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><p id='status'></p><marquee behavior='alternate' loop='7' scrolldelay='truespeed' scrollamount='5' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 1 --><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 2 --><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p><!--Bersihkan--><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='baterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='stabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='ting.mp3' id='ting' type='audio/mp3'></audio>";
+document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><p id='status'></p><marquee behavior='alternate' loop='7' scrolldelay='truespeed' scrollamount='5' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 1 --><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 2 --><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p><!--Bersihkan--><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='suarabaterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='suarastabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='suarating.mp3' id='ting' type='audio/mp3'></audio>";
 document.querySelectorAll(".label")[0].innerHTML = "Info Dasar Baterai";
 document.querySelectorAll(".label")[1].innerHTML = "Info Dasar Perangkat";
 document.querySelectorAll(".label")[2].innerHTML = "Fitur";
@@ -7957,21 +7957,21 @@ document.querySelectorAll("#data")[0].innerHTML = "<i class='material-icons'>bat
 document.querySelectorAll("#data")[1].innerHTML = "<i class='material-icons'>settings_ethernet</i> Tegangan: <span id='spantegangan'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>star</i> Teknologi: <span id='teknologi'>Li-poly</span>";
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Suhu: <span id='spansuhu'><i class='fa fa-spinner fa-pulse'></i></span>";
-document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='bertahan'><i class='fa fa-spinner fa-pulse'></i></span>";
+document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='sisa'></span> <span id='bertahan'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>memory</i> Perangkat Keras: <span id='hardware'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>28</span>";
-document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>device_hub</i> Karnel Arsitektur: <span id='karnel'>aarch64</span>";
+document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>device_hub</i> Karnel Arsitektur: <span id='karnel'>AARCH64</span>";
 document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>bolt</i> Pengisian Cepat";
 document.querySelectorAll(".namaFitur")[1].innerHTML = "<i class='material-icons'>battery_saver</i> Baterai Adaptif";
 document.querySelectorAll(".namaFitur")[2].innerHTML = "<i class='material-icons'>power</i> Stabilkan Tegangan";
-document.querySelectorAll(".namaFitur")[3].innerHTML = "<i class='material-icons'>auto_fix_high</i> Murnikan";
-document.querySelectorAll(".tips")[0].innerHTML = "•1 : <bdo class='titletips'>Untuk memperpanjang masa pakai Baterai, gunakan Fitur Baterai Adaptif.</bdo><br>Baterai Adaptif membatasi Baterai untuk aplikasi yang jarang dipakai.<br>Ponsel akan mempelajari cara Kamu menggunakan aplikasi seiring waktu.";
-document.querySelectorAll(".tips")[1].innerHTML = "•2 : <bdo class='titletips'>Suhu yang baik berada antara 28°C - 32°C.</bdo><br>Jika suhu Ponsel kamu berada di titik 33°C - 35°C, berikan Ponselmu untuk beristirahat sejenak.";
-document.querySelectorAll(".tips")[2].innerHTML = "•3 : <bdo class='titletips'>Matikan Ponsel setidaknya sehari sekali selama 10 - 30 menit.</bdo><br>Ini akan merubah Kalibrasi Bateraimu menjadi Normal.";
-document.querySelectorAll(".tips")[3].innerHTML = "•4 : <bdo class='titletips'>Pakai Pengisian Daya Original.</bdo><br>Pengisian Daya Original akan memberikan tegangan murni yang dibutuhkan Ponselmu untuk mengisi daya.<br>Alternatif lainnya, gunakan Adaptor yang setara dengan Adaptor Original Ponselmu.<br>Misalnya: A (Amper), V (Voltase) tidak jauh berbeda dengan Adaptor Original Ponselmu.<br>Perhatian: Jika Adaptor Originalmu memiliki keluaran 1.5A - 2A, maka batas toleransi untuk Adaptor alternatif maximum 3A.";
-document.querySelectorAll(".tips")[4].innerHTML = "•5 : <bdo class='titletips'>Tips yang mungkin berguna untukmu.</bdo><br>*Pada saat sedang mengisi daya, lepas Hardcase atau Softcase Kamu untuk mengurangi panas.<br>*Jika Ponselmu panas pada saat mengisi daya, matikan data selulermu dan aktifkan Mode Pesawat, rehat sejenak sampai suhu Ponselmu sejuk.<br>*Untuk memaksimalkan pengisian gunakan Fitur “Pengisian Cepat”, lalu aktifkan Mode Pesawat dan rehat sejenak sampai kapasitas Bateraimu mencapai 30%.";
+document.querySelectorAll(".namaFitur")[3].innerHTML = "&nbsp;<i class='material-icons'>auto_fix_high</i> Murnikan";
+document.querySelectorAll(".tips")[0].innerHTML = "<bdo class='titletips'>•1. Untuk memperpanjang masa pakai Baterai, gunakan Fitur Baterai Adaptif.</bdo><br>Baterai Adaptif membatasi Baterai untuk aplikasi yang jarang dipakai.<br>Ponsel akan mempelajari cara Kamu menggunakan aplikasi seiring waktu.";
+document.querySelectorAll(".tips")[1].innerHTML = "<bdo class='titletips'>•2. Suhu yang baik berada antara 28°C - 32°C.</bdo><br>Jika suhu Ponsel kamu berada di titik 33°C - 35°C, berikan Ponselmu untuk beristirahat sejenak.";
+document.querySelectorAll(".tips")[2].innerHTML = "<bdo class='titletips'>•3. Matikan Ponsel setidaknya sehari sekali selama 10 - 30 menit.</bdo><br>Ini akan merubah Kalibrasi Bateraimu menjadi Normal.";
+document.querySelectorAll(".tips")[3].innerHTML = "<bdo class='titletips'>•4. Pakai Pengisian Daya Original.</bdo><br>Pengisian Daya Original akan memberikan tegangan murni yang dibutuhkan Ponselmu untuk mengisi daya.<br>Alternatif lainnya, gunakan Adaptor yang setara dengan Adaptor Original Ponselmu.<br>Misalnya: A (Amper), V (Voltase) tidak jauh berbeda dengan Adaptor Original Ponselmu.<br>Perhatian: Jika Adaptor Originalmu memiliki keluaran 1.5A - 2A, maka batas toleransi untuk Adaptor alternatif maximum 3A.";
+document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. Tips yang mungkin berguna untukmu.</bdo><br>*Pada saat sedang mengisi daya, lepas Hardcase atau Softcase Kamu untuk mengurangi panas.<br>*Jika Ponselmu panas pada saat mengisi daya, matikan data selulermu dan aktifkan Mode Pesawat, rehat sejenak sampai suhu Ponselmu sejuk.<br>*Untuk memaksimalkan pengisian gunakan Fitur “Pengisian Cepat”, lalu aktifkan Mode Pesawat dan rehat sejenak sampai kapasitas Bateraimu mencapai 30%.";
 /**/
 /* Volt */
 const volt = [
@@ -8042,7 +8042,7 @@ function teganganmath() {
 /*
 https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
 */
-const canvas = document.getElementById("batCanvas");
+const canvas = document.querySelector("#batCanvas");
 const ctx = canvas.getContext("2d");
 
 var batLevel = 0;
@@ -8091,25 +8091,25 @@ navigator.getBattery().then(function(battery) {
 	function updateChargeInfo() {
 		alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
 		if (battery.charging) {
-			ctx.fillStyle = "#20C997", ctx.fillRect(1510, 350, 40, 300);
-			ctx.strokeStyle = "#20C997";
+			ctx.fillStyle = "#20C997", ctx.fillRect(1680, 500, 40, 300);
+			ctx.strokeStyle = "#ACD1AF";
 			ctx.stroke();
-			/* document.getElementById("bolt").style.visibility = "visible"; */
-			document.getElementById("petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
-			document.getElementById("status").innerHTML = "<span id='spanvolt'></span> <i class='fa fa-circle-o-notch fa-spin'></i>";
-			//document.getElementById("bertahan").innerHTML = "Mengisi <span id='mengisi'></span> <i class='fa fa-circle-o-notch fa-spin'></i>";
-			document.getElementById("peringatan").style.visibility = "hidden";
-			document.getElementById("pengisian").style.visibility = "visible";
+			/* document.querySelector("#bolt").style.visibility = "visible"; */
+			document.querySelector("#petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
+			document.querySelector("#status").innerHTML = "<span id='spanvolt'></span> <i class='fa fa-circle-o-notch fa-spin'></i><br>Terisi dalam: <span id='mengisi'></span> ~";
+			document.querySelector("#bertahan").innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i>";
+			document.querySelector("#peringatan").style.visibility = "hidden";
+			document.querySelector("#pengisian").style.visibility = "visible";
 			// alert("Sumber Daya: Terhubung");
 		} else {
-			ctx.fillStyle = "#DDD", ctx.fillRect(1510, 350, 40, 300);
+			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
 			ctx.stroke();
-			document.getElementById("petir").innerHTML = " ";
-			document.getElementById("status").innerHTML = "Tidak Mengisi <i class='fa fa-circle-o-notch'></i>";
-			//document.getElementById("bertahan").innerHTML = "<span id='sisa'></span>";
-			document.getElementById("peringatan").style.visibility = "visible";
-			document.getElementById("pengisian").style.visibility = "hidden";
+			document.querySelector("#petir").innerHTML = " ";
+			document.querySelector("#status").innerHTML = "Tidak Mengisi <i class='fa fa-circle-o-notch'></i>";
+			document.querySelector("#bertahan").innerHTML = "<span id='sisa'></span>";
+			document.querySelector("#peringatan").style.visibility = "visible";
+			document.querySelector("#pengisian").style.visibility = "hidden";
 		}
 	}
 	
@@ -8117,114 +8117,114 @@ navigator.getBattery().then(function(battery) {
 		var batteryL = battery.level;
 		//alert("Kapasitas Baterai: " + battery.level *100 + "%");
 		batLevel = batteryL *10;
-		document.getElementById("BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + "♥</p>";
+		document.querySelector("#BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + "♥</p>";
 	}
 	
 	var batL = Math.floor(batLevel);
 	switch (batL) {
 		case 0:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#2F4F4F", ctx.roundRect(505, 250, 50, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#504546", ctx.roundRect(280, 300, 100, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#2F4F4F";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("peringatan").innerHTML = "Cukup dia yang mati, Perangkatmu jangan! Ayo hubungkan sumber daya.";
-		document.getElementById("sisa").innerHTML = "« 0 - 30 Menit";
-		document.getElementById("mengisi").innerHTML = "125 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#peringatan").innerHTML = "Cukup dia yang mati, Perangkatmu jangan! Ayo hubungkan sumber daya.";
+		document.querySelector("#sisa").innerHTML = "« 0 - 30 Menit";
+		document.querySelector("#mengisi").innerHTML = "125 Menit";
 		break;
 		case 1:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#DC143C", ctx.roundRect(500, 250, 100, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#A91D36", ctx.roundRect(280, 300, 200, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#DC143C";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("peringatan").innerHTML = "Bateraimu Lapar butuh asupan, hubungkan sumber daya untuk memberi makan.";
-		document.getElementById("sisa").innerHTML = "« 1 jam";
-		document.getElementById("mengisi").innerHTML = "110 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#peringatan").innerHTML = "Bateraimu Lapar butuh asupan, hubungkan sumber daya untuk memberi makan.";
+		document.querySelector("#sisa").innerHTML = "« 1 jam";
+		document.querySelector("#mengisi").innerHTML = "110 Menit";
 		break;
 		case 2:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#FFD700", ctx.roundRect(500, 250, 200, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#C60C30", ctx.roundRect(280, 300, 300, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#FFD700";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("peringatan").innerHTML = "Baterai sudah mulai lelah dengan kehidupannya, hubungkan sumber daya untuk menyemangatinya kembali.";
-		document.getElementById("sisa").innerHTML = "« 1 - 2 jam";
-		document.getElementById("mengisi").innerHTML = "95 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#peringatan").innerHTML = "Baterai sudah mulai lelah dengan kehidupannya, hubungkan sumber daya untuk menyemangatinya kembali.";
+		document.querySelector("#sisa").innerHTML = "« 1 - 2 jam";
+		document.querySelector("#mengisi").innerHTML = "95 Menit";
 		break;
 		case 3:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#FF8C00", ctx.roundRect(500, 250, 300, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#FF7034", ctx.roundRect(280, 300, 450, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#FF8C00";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("peringatan").innerHTML = "Waktu yang bagus untuk mengisi daya.";
-		document.getElementById("sisa").innerHTML = "« 2 - 3 jam";
-		document.getElementById("mengisi").innerHTML = "80 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#peringatan").innerHTML = "Waktu yang bagus untuk mengisi daya.";
+		document.querySelector("#sisa").innerHTML = "« 2 - 3 jam";
+		document.querySelector("#mengisi").innerHTML = "80 Menit";
 		break;
 		case 4:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#20B2AA", ctx.roundRect(500, 250, 400, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#FF9900", ctx.roundRect(280, 300, 600, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#20B2AA";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("peringatan").innerHTML = "Masih baik-baik saja.";
-		document.getElementById("sisa").innerHTML = "« 4 - 5 jam";
-		document.getElementById("mengisi").innerHTML = "65 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#peringatan").innerHTML = "Masih baik-baik saja.";
+		document.querySelector("#sisa").innerHTML = "« 4 - 5 jam";
+		document.querySelector("#mengisi").innerHTML = "65 Menit";
 		break;
 		case 5:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#20B2AA", ctx.roundRect(500, 250, 500, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#FFB109", ctx.roundRect(280, 300, 750, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#20B2AA";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 6 - 7 jam";
-		document.getElementById("mengisi").innerHTML = "50 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 6 - 7 jam";
+		document.querySelector("#mengisi").innerHTML = "50 Menit";
 		break;
 		case 6:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#6495ED", ctx.roundRect(500, 250, 620, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#24855B", ctx.roundRect(280, 300, 900, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#6495ED";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 8 - 9 jam";
-		document.getElementById("mengisi").innerHTML = "40 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 8 - 9 jam";
+		document.querySelector("#mengisi").innerHTML = "40 Menit";
 		break;
 		case 7:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#1E90FF", ctx.roundRect(500, 250, 720, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#25D366", ctx.roundRect(280, 300, 1050, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 10 - 12 jam";
-		document.getElementById("mengisi").innerHTML = "30 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 10 - 12 jam";
+		document.querySelector("#mengisi").innerHTML = "30 Menit";
 		break;
 		case 8:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#1E90FF", ctx.roundRect(500, 250, 820, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#71BCE1", ctx.roundRect(280, 300, 1200, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 12 - 14 jam";
-		document.getElementById("mengisi").innerHTML = "20 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 12 - 14 jam";
+		document.querySelector("#mengisi").innerHTML = "20 Menit";
 		break;
 		case 9:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#00BFFF", ctx.roundRect(500, 250, 920, 500, [60, 0, 0, 60]), ctx.fill();
+		ctx.fillStyle = "#41ADFF", ctx.roundRect(280, 300, 1300, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 15 - 17 jam";
-		document.getElementById("mengisi").innerHTML = "10 Menit";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 15 - 17 jam";
+		document.querySelector("#mengisi").innerHTML = "10 Menit";
 		break;
 		case 10:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#00BFFF", ctx.roundRect(500, 250, 1000, 500, [60, 60, 60, 60]), ctx.fill();
+		ctx.fillStyle = "#1799E7", ctx.roundRect(280, 300, 1400, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
-		ctx.roundRect(500, 250, 1000, 500, [60]), ctx.stroke();
-		document.getElementById("sisa").innerHTML = "« 18 jam";
-		document.getElementById("mengisi").innerHTML = "Terisi";
+		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
+		document.querySelector("#sisa").innerHTML = "« 18 jam";
+		document.querySelector("#mengisi").innerHTML = "Terisi";
 		break;
 		default:
 		alert("Battery Level not found");
@@ -8237,7 +8237,7 @@ navigator.getBattery().then(function(battery) {
 /* Pengisian */
 function isicepat() {
 	var a;
-	a = document.getElementById("pengisiancepat");
+	a = document.querySelector("#pengisiancepat");
 	a.innerHTML = "&#xf244;";
 	setTimeout(function () {
 		a.innerHTML = "&#xf243;";
