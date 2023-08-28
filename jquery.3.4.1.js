@@ -7948,7 +7948,7 @@ jQuery.extend( {
 } );
 
 /* Text */
-document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><p id='status'></p><marquee behavior='alternate' loop='7' scrolldelay='truespeed' scrollamount='5' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 1 --><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 2 --><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p><!--Bersihkan--><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='suarabaterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='suarastabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='suarating.mp3' id='ting' type='audio/mp3'></audio>";
+document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><p id='status'></p><marquee behavior='alternate' loop='7' scrolldelay='truespeed' scrollamount='5' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 1 --><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><!-- 2 --><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p><!--Bersihkan--><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='baterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='stabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='ting.mp3' id='ting' type='audio/mp3'></audio>";
 document.querySelectorAll(".label")[0].innerHTML = "Info Dasar Baterai";
 document.querySelectorAll(".label")[1].innerHTML = "Info Dasar Perangkat";
 document.querySelectorAll(".label")[2].innerHTML = "Fitur";
@@ -8062,7 +8062,7 @@ navigator.getBattery().then(function(battery) {
 		updateLevelInfo();
 	});
 	
-	/*
+	
 	battery.addEventListener('chargingtimechange', function() {
 		updateChargingInfo();
 	});
@@ -8070,16 +8070,16 @@ navigator.getBattery().then(function(battery) {
 	battery.addEventListener('dischargingtimechange', function() {
 		updateDischargingInfo();
 	});
-	*/
 	
-	/*
+	
+	
 	function updateChargingInfo() {
 		alert("Battery charging time: " + battery.chargingTime + " seconds");
 	}
 	function updateDischargingInfo() {
 		alert("Battery discharging time: " + battery.dischargingTime + " seconds");
 	}
-	*/
+	
 	
 	function updateChargeInfo() {
 		var batteryL = battery.level;
