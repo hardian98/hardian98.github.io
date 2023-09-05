@@ -88,6 +88,8 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 	
 	document.getElementById('model').innerHTML = ""+e.os.name+"";
 	document.getElementById('versi').innerHTML = ""+e.os.version+"";
+	document.getElementById('vendor').innerHTML = ""+navigator.vendor+"";
 	document.getElementById('hardware').innerHTML = ""+navigator.platform+"";
-	document.getElementById('vendor').innerHTML = ""+navigator.vendor+""
+	document.getElementById('browser').innerHTML = ""+e.browser.name+"";
+	document.getElementById('ver').innerHTML = ""+e.browser.version+"";
 }());

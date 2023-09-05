@@ -15,6 +15,26 @@ background-position: fixed;
 -webkit-background-size: 100%;
 -webkit-background-repeat: no-repeat;
 -webkit-background-position: fixed;
+animation: color 9s infinite linear;
+-webkit-animation: color 9s infinite linear;
+}
+
+@keyframes color {
+0%   { background: #999; }
+20%  { background: #000; }
+40%  { background: #111; }
+60%  { background: #222; }
+80%  { background: #333; }
+100% { background: #444; }
+}
+
+@-webkit-keyframes color {
+0%   { background: #999; }
+20%  { background: #000; }
+40%  { background: #111; }
+60%  { background: #222; }
+80%  { background: #333; }
+100% { background: #444; }
 }
 
 body, div, span, p, label, button, bdo, canvas, ctx {
@@ -31,7 +51,7 @@ margin: 0px;
 padding: 2px 0px;
 padding-left: 10px;
 padding-right: 10px;
-font-size: 18px;
+font-size: 16px;
 font-weight: 600;
 font-family: "Chakra Petch";
 color: #FFC107;
@@ -43,16 +63,15 @@ z-index: 200;
 top: auto !important;
 bottom: 0px;
 visibility: hidden;
-font-size: 20px;
+font-size: 18px;
 font-weight: 800;
 font-family: "Chakra Petch";
 text-align: center;
 color: #FFF;
-background-color: #20C997;
-box-shadow: 0px 0px 8px 6px #28A745;
--webkit-box-shadow: 0px 0px 8px 6px #28A745;
+background-color: #41ADFF;
+box-shadow: 0px 0px 8px 2px #1799E7;
+-webkit-box-shadow: 0px 0px 8px 2px #1799E7;
 }
-
 
 #batCanvas {
 position: absolute;
@@ -60,6 +79,7 @@ top: 12%;
 left: 50%;
 width: 100%;
 margin: 0px;
+margin-bottom: 0px;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
@@ -131,34 +151,60 @@ border-radius: 4px;
 
 .data {
 display: block;
-width: 93%;
+width: 92%;
 margin: 0px auto;
-margin-top: 55%;
-padding: 0px;
-padding-bottom: 2px;
+margin-top: 15px;
+padding-bottom: 4px;
 background-color: #327BC4 /*rgba(0,0,0,0.7)*/;
-box-shadow: 0px 0px 6px 1px #8BB8F1;
--webkit-box-shadow: 0px 0px 6px 1px #8BB8F1;
+border-radius: 25px 8px 25px 8px;
+border: 2px solid #FFF;
+/*animation: myanim 8s infinite;
+-webkit-animation: myanim 8s infinite;*/
 }
+
+@-webkit-keyframes myanim {
+20% {
+	border-color: #373737;
+}
+30% {
+	border-color: #6C757D;
+}
+40% {
+	border-color: #DC3545;
+}
+50% {
+	border-color: #FFC107;
+}
+60% {
+	border-color: #20C997;
+}
+70% {
+	border-color: #17A2B8;
+}
+80% {
+	border-color: #007BFF;
+}}
 
 .data .label {
 display: block;
-position: relative;
-width: 100%;
-margin-top: 6px;
-margin-bottom: 12px;
+width: 60%;
+margin: 0px auto;
 padding: 2px 0px;
 text-align: center;
-font-size: 20px;
-font-weight: 800;
+font-size: 18px;
+font-weight: 600;
 font-family: "Raleway";
 color: #FFF;
 background-color: #1799E7;
+border-left: 2px solid #FFF;
+border-right: 2px solid #FFF;
+border-bottom: 2px solid #FFF;
+border-radius: 0px 0px 18px 18px;
 }
 
 .data p {
 margin: 4px 4px;
-font-size: 18px;
+font-size: 16px;
 font-weight: 400;
 font-family: "Ubuntu";
 color: #FFF;
@@ -176,7 +222,7 @@ font-family: "Rubik";
 
 /**/
 
-.namaFitur .material-icons, #murni .material-icons {
+.namaFitur .material-icons, #murni .material-icons, .material-symbols-outlined {
 vertical-align: middle;
 margin-top: -3.5px;
 padding: 0px;
@@ -276,11 +322,11 @@ width: 0px;
 margin: 0px;
 padding-top: 2px;
 padding-bottom: 2px;
-background: #57F287;
+background: #FF9900;
 border-radius: 0px;
 z-index: 900;
--ms-box-shadow: 0px 0px 8px 2px #00BFFF;
--webkit-box-shadow: 0px 0px 8px 2px #00BFFF;
+-ms-box-shadow: 0px 0px 8px 2px #FFB109;
+-webkit-box-shadow: 0px 0px 8px 2px #FFB109;
 }
 
 #proses {
@@ -335,7 +381,7 @@ background: #1E90FF;
 .data .titletips {
 font-size: 18px;
 font-weight: 400;
-font-family: "Mulish";
+font-family: "Quicksand";
 color: #FFF;
 }
 
@@ -343,7 +389,7 @@ color: #FFF;
 margin: 8px 8px;
 font-size: 16px;
 font-weight: 400;
-font-family: "Quicksand";
+font-family: "Mulish";
 color: #EEE;
 }
 

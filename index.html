@@ -2,22 +2,36 @@
 <!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
 	<html lang='ID'>
 		<head>
-			<title>Cek, Murnikan dan Pantau Baterai Anda</title>
+			<title>Web App Baterai Tercanggih Pertama di Indonesia</title>
 			<meta charset='UTF-8'>
-			<meta name='google-site-verification' content='8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg'>
+			<meta name='language' content='ID'>
+			<meta name='description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'>
+			<meta name='keywords' content='Batre, Batrei, Baterai, App, App Baterai, Cek Baterai, Cek Batre'>
 			<meta name='author' content='Hardiansyah'>
-			<meta name='description' content='Real Time Beterai: Cek Suhu dan Tegangan, Pantau Kinerja Baterai'>
+			<meta name='url' content='http://hardian98.github.io'>
+			<meta name='identifier-URL' content='http://hardian98.github.io'>
+			<meta name='google-site-verification' content='8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg'>
+			<meta name='robots' content='noindex,nofollow'>
+			<meta name='rating' content='General'>
+			<meta name='revised' content='Sunday, September 5th, 2023'>
 			<meta name='viewport' content='width-device,width=1, initial-scale=1, maximal-scale=1'>
+			<!---->
+			<meta property="og:title" content="Cek, Murnikan dan Pantau Baterai Anda" />
+			<meta property="og:description" content="Real Time Beterai: Cek Suhu dan Tegangan, Pantau Kinerja Baterai." />
+			<meta property="og:image" content="https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/IMG-20230904-WA0035.jpg" />
+			<meta property="og:type" content="article" />
+			<!---->
 			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 			<link rel='stylesheet' href='baterai.style.css'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Chakra+Petch|Ubuntu|Rubik|Sofia+Sans|Mulish|Quicksand|Bebas+Neue|Nanum+Gothic&display=swap'>
 			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0'>
 		</head>
 		
 		<body>
 			<main>
-				<code style="margin: 0; padding: 0;">
+				<pre style="margin: 0; padding: 0;">
 				<!-- Memulai Program... -->
 				dataSystemBatt <- function() {
 					print("script_batt.r")
@@ -34,7 +48,7 @@
 				}
 				DataHashDevice()
 				###
-				</code>
+				</pre>
 				<noscript>
 				fungsi suhu() {
 					jika (suhuberubah) {
@@ -121,7 +135,7 @@
 						var num = width + 1 / 100;
 						num = num.toFixed(0)
 						document.getElementById("persentase").style.visibility = "visible";
-						document.getElementById("proses").innerHTML = "<i class='fa fa-magic'></i> Memurnikan: " + num + "%";
+						document.getElementById("proses").innerHTML = "<i class='material-icons'>auto_awesome</i> Memurnikan: " + num + "%";
 					}
 				}
 			}
