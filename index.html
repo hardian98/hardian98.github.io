@@ -16,38 +16,31 @@
 			<meta name='revised' content='Sunday, September 5th, 2023'>
 			<meta name='viewport' content='width-device,width=1, initial-scale=1, maximal-scale=1'>
 			<!---->
-			<meta property='og:image' content='https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/FB_IMG_1677057917699.jpg'>
-			<meta property='og:title' content='Monitoring Baterai Real Time'>
-			<meta property='og:description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'>
-			<meta property='og:type' content='article'>
+			<meta property='og:title' content='Monitoring Baterai Real Time'/>
+			<meta property='og:description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'/>
+			<meta property='og:image' content='https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/FB_IMG_1677057917699.jpg'/>
+			<meta property='og:type' content='article'/>
 			<!---->
-			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 			<link rel='stylesheet' href='baterai.style.css'>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway|Chakra+Petch|Ubuntu|Rubik|Sofia+Sans|Mulish|Quicksand|Bebas+Neue|Nanum+Gothic&display=swap'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sen|Orbitron|Alata|Raleway|Prompt|Mitr|Cabin+Sketch|Oxanium|Scada|&display=swap'>
 			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0'>
+			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 		</head>
 		
 		<body>
 			<main>
 				<pre style="margin: 0; padding: 0;">
 				<!-- Memulai Program... -->
-				dataSystemBatt <- function() {
-					print("script_batt.r")
+				printBattery (void const* buffer) {
+					Battery const* Battery = (Battery const*) buffer;
+					print ($"Batt version = $(Battery.m_version)\n“);
+					if (Battery.m_status == BATTSTATUS_SCRIPT){
+						buffer += Battery.m_headerLength * 4;
+						Data const* Data = (Data const*) buffer;
+						print ($“SCRIPT type = $(Data.m_type)\n“);
+					}
 				}
-				dataSystemBatt()
-				###
-				dataSyncBatt <- function() {
-					print("script_sync.r")
-				}
-				dataSyncBatt()
-				###
-				DataHashDevice <- function() {
-					print("device.r")
-				}
-				DataHashDevice()
-				###
 				</pre>
 				<noscript>
 				fungsi suhu() {

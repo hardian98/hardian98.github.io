@@ -7993,7 +7993,7 @@ function voltmath() {
 	let random = volt[Math.floor(Math.random() * volt.length)];
 	spanvolt.innerHTML = `${random.volt}`;
 	source.innerHTML = random.source;
-} setInterval(voltmath, 4000);
+} setInterval(voltmath, 3000);
 /**/
 /* Suhu */
 const suhu = [
@@ -8010,7 +8010,7 @@ function suhumath() {
 	let random = suhu[Math.floor(Math.random() * suhu.length)];
 	spansuhu.innerHTML = `${random.suhu}`;
 	source.innerHTML = random.source;
-} setInterval(suhumath, 8000);
+} setInterval(suhumath, 5000);
 /**/
 /* Tegangan */
 const tegangan = [
@@ -8037,7 +8037,7 @@ function teganganmath() {
 	let random = tegangan[Math.floor(Math.random() * tegangan.length)];
 	spantegangan.innerHTML = `${random.tegangan}`;
 	source.innerHTML = random.source;
-} setInterval(teganganmath, 5000);
+} setInterval(teganganmath, 2000);
 /**/
 /* Mesin */
 /*
