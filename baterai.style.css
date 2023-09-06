@@ -7,34 +7,30 @@ scroll-behavior: smooth;
 body {
 margin: 0px;
 padding: 0px;
-/*background: url("../gambar/wall1.") center center fixed;*/
+/*background: url("../gambar/wall1.") center center fixed;
 background-color: #202020;
 background-size: 100%;
 background-repeat: no-repeat;
 background-position: fixed;
 -webkit-background-size: 100%;
 -webkit-background-repeat: no-repeat;
--webkit-background-position: fixed;
-animation: color 9s infinite linear;
--webkit-animation: color 9s infinite linear;
+-webkit-background-position: fixed;*/
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background-size: 400% 400%;
+animation: gradient 15s ease infinite;
+height: 100vh;
 }
 
-@keyframes color {
-0%   { background: #999; }
-20%  { background: #000; }
-40%  { background: #111; }
-60%  { background: #222; }
-80%  { background: #333; }
-100% { background: #444; }
-}
-
-@-webkit-keyframes color {
-0%   { background: #999; }
-20%  { background: #000; }
-40%  { background: #111; }
-60%  { background: #222; }
-80%  { background: #333; }
-100% { background: #444; }
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 body, div, span, p, label, button, bdo, canvas, ctx {
@@ -155,7 +151,8 @@ width: 92%;
 margin: 0px auto;
 margin-top: 15px;
 padding-bottom: 4px;
-background-color: #327BC4 /*rgba(0,0,0,0.7)*/;
+background-color: #327BC4;
+background-color: rgba(0,0,0,0.4);
 border-radius: 25px 8px 25px 8px;
 border: 2px solid #FFF;
 /*animation: myanim 8s infinite;
@@ -163,27 +160,28 @@ border: 2px solid #FFF;
 }
 
 @-webkit-keyframes myanim {
-20% {
-	border-color: #373737;
+	20% {
+		border-color: #373737;
+	}
+	30% {
+		border-color: #6C757D;
+	}
+	40% {
+		border-color: #DC3545;
+	}
+	50% {
+		border-color: #FFC107;
+	}
+	60% {
+		border-color: #20C997;
+	}
+	70% {
+		border-color: #17A2B8;
+	}
+	80% {
+		border-color: #007BFF;
+	}
 }
-30% {
-	border-color: #6C757D;
-}
-40% {
-	border-color: #DC3545;
-}
-50% {
-	border-color: #FFC107;
-}
-60% {
-	border-color: #20C997;
-}
-70% {
-	border-color: #17A2B8;
-}
-80% {
-	border-color: #007BFF;
-}}
 
 .data .label {
 display: block;
@@ -233,11 +231,12 @@ color: #FFF;
 .namaFitur {
 margin: 0px;
 padding: 4px 10px 4px 2px;
-font-size: 18px;
+font-size: 16px;
 font-weight: 400;
 font-family: "Ubuntu";
 color: #FFF;
 background-color: #1799E7;
+/*background-color: rgba(0,0,0,0.8);*/
 border-radius: 0px 4px 16px 0px;
 }
 
@@ -312,7 +311,7 @@ transform: translateX(30px);
 
 /**/
 
-#persentase {
+#persentase { /* Garis */
 visibility: hidden;
 position: fixed;
 bottom: 0px;
@@ -325,8 +324,8 @@ padding-bottom: 2px;
 background: #FF9900;
 border-radius: 0px;
 z-index: 900;
--ms-box-shadow: 0px 0px 8px 2px #FFB109;
--webkit-box-shadow: 0px 0px 8px 2px #FFB109;
+-ms-box-shadow: 0px 0px 6px 1px #FFB109;
+-webkit-box-shadow: 0px 0px 6px 1px #FFB109;
 }
 
 #proses {
