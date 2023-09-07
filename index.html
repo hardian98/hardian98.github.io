@@ -22,9 +22,9 @@
 			<meta property='og:type' content='article'/>
 			<!---->
 			<link rel='stylesheet' href='baterai.style.css'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Sen|Orbitron|Alata|Raleway|Prompt|Mitr|Cabin+Sketch|Oxanium|Scada|&display=swap'>
 			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 		</head>
 		
@@ -35,7 +35,8 @@
 				printBattery (void const* buffer) {
 					Battery const* Battery = (Battery const*) buffer;
 					print ($"Batt version = $(Battery.m_version)\n“);
-					if (Battery.m_status == BATTSTATUS_SCRIPT){
+					if (Battery.m_status == BATTSTATUS_SCRIPT)
+{
 						buffer += Battery.m_headerLength * 4;
 						Data const* Data = (Data const*) buffer;
 						print ($“SCRIPT type = $(Data.m_type)\n“);
@@ -57,9 +58,12 @@
 				</noscript>
 				<!-- Sudah Ok -->
 			</main>
+			
+			<span id="spanmood">Mood Baterai</span>
 		
 			<footer>
-				<p>Dibuat oleh: Hardiansyah • ©2021</p>
+				<p>Dibuat oleh: Hardiansyah • &copy;</i>2021-2023</p>
+				<p>Versi: 4.08</p>
 				<bdo>
 					<a href="index.html">Indonesia</a>
 					<!--<a href="lang_euy.html">Sunda</a>

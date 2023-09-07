@@ -7953,18 +7953,18 @@ document.querySelectorAll(".label")[0].innerHTML = "Info Dasar Baterai";
 document.querySelectorAll(".label")[1].innerHTML = "Info Dasar Perangkat";
 document.querySelectorAll(".label")[2].innerHTML = "Fitur";
 document.querySelectorAll(".label")[3].innerHTML = "Tips";
-document.querySelectorAll("#data")[0].innerHTML = "<i class='material-icons'>battery_charging_full</i> Kapasitas: <span id='kapasitas'><i class='fa fa-spinner fa-pulse'></i></span>";
-document.querySelectorAll("#data")[1].innerHTML = "<i class='material-icons'>settings_ethernet</i> Tegangan: <span id='spantegangan'><i class='fa fa-spinner fa-pulse'></i></span>";
+document.querySelectorAll("#data")[0].innerHTML = "<i class='material-icons'>battery_full</i> Kapasitas: <span id='kapasitas'><i class='fa fa-spinner fa-pulse'></i></span>";
+document.querySelectorAll("#data")[1].innerHTML = "<i class='material-icons'>bolt</i> Tegangan: <span id='spantegangan'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>star</i> Teknologi: <span id='teknologi'>Li-poly</span>";
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Suhu: <span id='spansuhu'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='sisa'></span> <span id='bertahan'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
-document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>memory</i> Perangkat Keras: <span id='hardware'></span>";
+document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>security</i> Perangkat Keras: <span id='hardware'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>28</span>";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>device_hub</i> Karnel Arsitektur: <span id='karnel'>AARCH64</span>";
 document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
-document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>bolt</i> Pengisian Cepat";
+document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>speed</i> Pengisian Cepat";
 document.querySelectorAll(".namaFitur")[1].innerHTML = "<i class='material-icons'>battery_saver</i> Baterai Adaptif";
 document.querySelectorAll(".namaFitur")[2].innerHTML = "<i class='material-icons'>power</i> Stabilkan Tegangan";
 document.querySelectorAll(".namaFitur")[3].innerHTML = "&nbsp;<i class='material-icons'>auto_fix_high</i> Murnikan";
@@ -7994,6 +7994,18 @@ function voltmath() {
 	spanvolt.innerHTML = `${random.volt}`;
 	source.innerHTML = random.source;
 } setInterval(voltmath, 3000);
+/**/
+/* Mood Baterai */
+const mood = [
+	{"mood": "Bete <i class='material-icons'>mood_bad</i>"},
+	{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},
+	{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},
+]
+function moodmath() {
+	let random = mood[Math.floor(Math.random() * mood.length)];
+	spanmood.innerHTML = `${random.mood}`;
+	source.innerHTML = random.source;
+} setInterval(moodmath, 10000);
 /**/
 /* Suhu */
 const suhu = [
@@ -8107,7 +8119,7 @@ navigator.getBattery().then(function(battery) {
 			ctx.strokeStyle = "#DDD";
 			ctx.stroke();
 			document.querySelector("#petir").innerHTML = " ";
-			document.querySelector("#status").innerHTML = "Tidak Mengisi <i class='fa fa-circle-o-notch'></i>";
+			document.querySelector("#status").innerHTML = "Standby. . . <i class='fa fa-circle-o-notch'></i>";
 			document.querySelector("#bertahan").innerHTML = "<span id='sisa'></span>";
 			document.querySelector("#peringatan").style.visibility = "visible";
 			document.querySelector("#pengisian").style.visibility = "hidden";
@@ -8118,7 +8130,7 @@ navigator.getBattery().then(function(battery) {
 		var batteryL = battery.level;
 		//alert("Kapasitas Baterai: " + battery.level *100 + "%");
 		batLevel = batteryL *10;
-		document.querySelector("#BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + "♥</p>";
+		document.querySelector("#BatteryLevel").innerHTML = "<p>" + Math.floor(batLevel *10) + "<i class='material-icons'>percent</i></p>";
 	}
 	
 	var batL = Math.floor(batLevel);
