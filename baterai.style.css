@@ -43,8 +43,8 @@ height: 100vh;
 #spanmood {
 dispaly: block;
 position: fixed;
-left: 3%;
-top: 8%;
+left: 3.5%;
+top: 4%;
 z-index: 1000;
 width: auto;
 padding: 4px 4px 0px 4px;
@@ -124,7 +124,7 @@ transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
 }*/
 
-#petir, #status {
+#petir {
 position: absolute;
 top: 15.5%;
 left: 65%;
@@ -136,10 +136,20 @@ font-weight: 400;
 color: #FFF;
 }
 
-#status, #mengisi {
-text-align: center;
-top: 18%;
+/* #status, #mengisi */
+.stat {
+position: absolute;
+top: 21%;
 left: 50%;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
+}
+
+.stat p {
+margin: 0px;
+padding: 0px;
+text-align: center;
 font-size: 16px;
 font-weight: 400;
 font-family: "Alata";
@@ -211,7 +221,7 @@ color: #FFF;
 .data p .material-icons, .material-icons {
 vertical-align: middle;
 width: 20px;
-margin-top: -3.5px;
+margin-top: -3.0px;
 padding: 4px 10px 4px 6px;
 font-size: 24px;
 color: #FFF;

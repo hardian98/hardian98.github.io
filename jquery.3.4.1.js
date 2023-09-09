@@ -7948,7 +7948,7 @@ jQuery.extend( {
 } );
 
 /* Text */
-document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><p id='status'></p><marquee behavior='alternate' loop='5' scrolldelay='truespeed' scrollamount='6' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel' style='margin-top: 65%'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p></div><!-- 1 --><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>---</p></div><!-- 2 --><div class='data' id='tabel'><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p></div><!--Bersihkan--><div class='data' id='tabel'><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='baterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='stabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='ting.mp3' id='ting' type='audio/mp3'></audio>";
+document.querySelectorAll("main")[0].innerHTML = "<canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><div class='stat'><p id='status'></p><p id='mengisi'></p></div><marquee behavior='alternate' loop='5' scrolldelay='truespeed' scrollamount='6' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel' style='margin-top: 65%'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p></div><!-- 1 --><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>---</p></div><!-- 2 --><div class='data' id='tabel'><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p></div><!--Bersihkan--><div class='data' id='tabel'><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='baterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='stabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='ting.mp3' id='ting' type='audio/mp3'></audio>";
 document.querySelectorAll(".label")[0].innerHTML = "Info Dasar Baterai";
 document.querySelectorAll(".label")[1].innerHTML = "Info Dasar Perangkat";
 document.querySelectorAll(".label")[2].innerHTML = "Fitur";
@@ -7957,7 +7957,7 @@ document.querySelectorAll("#data")[0].innerHTML = "<i class='material-icons'>bat
 document.querySelectorAll("#data")[1].innerHTML = "<i class='material-icons'>bolt</i> Tegangan: <span id='spantegangan'><i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>star</i> Teknologi: <span id='teknologi'>Li-poly</span>";
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Suhu: <span id='spansuhu'><i class='fa fa-spinner fa-pulse'></i></span>";
-document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='sisa'></span> <span id='bertahan'><i class='fa fa-spinner fa-pulse'></i></span>";
+document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='sisa'></span><i id='spin'></i>";
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>security</i> Perangkat Keras: <span id='hardware'></span>";
@@ -7976,7 +7976,7 @@ document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. 
 /**/
 /* Volt */
 const volt = [
-	{"volt": "6.0V <i class='fa fa-rocket'></i>"},{"volt": "6.1V <i class='fa fa-rocket'></i>"},{"volt": "6.2V <i class='fa fa-rocket'></i>"},
+	{"volt": "6.0V <i class='fa fa-rocket'></i>"},{"volt": "6.1V <i class='fa fa-rocket'></i>"},{"volt": "6.2V <i class='fa fa-rocket'></i>"},{"volt": "6.3V <i class='fa fa-rocket'></i>"},{"volt": "6.4V <i class='fa fa-rocket'></i>"},
 	{"volt": "5.6V"},{"volt": "5.6V"},{"volt": "5.6V"},
 	{"volt": "5.5V"},{"volt": "5.5V"},{"volt": "5.5V"},
 	{"volt": "5.4V"},{"volt": "5.4V"},{"volt": "5.4V"},
@@ -8022,7 +8022,7 @@ function suhumath() {
 	let random = suhu[Math.floor(Math.random() * suhu.length)];
 	spansuhu.innerHTML = `${random.suhu}`;
 	source.innerHTML = random.source;
-} setInterval(suhumath, 5000);
+} setInterval(suhumath, 6000);
 /**/
 /* Tegangan */
 const tegangan = [
@@ -8049,7 +8049,7 @@ function teganganmath() {
 	let random = tegangan[Math.floor(Math.random() * tegangan.length)];
 	spantegangan.innerHTML = `${random.tegangan}`;
 	source.innerHTML = random.source;
-} setInterval(teganganmath, 2000);
+} setInterval(teganganmath, 3000);
 /**/
 /* Mesin */
 /*
@@ -8109,8 +8109,9 @@ navigator.getBattery().then(function(battery) {
 			ctx.stroke();
 			/* document.querySelector("#bolt").style.visibility = "visible"; */
 			document.querySelector("#petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
-			document.querySelector("#status").innerHTML = "<span id='spanvolt'></span> <i class='fa fa-circle-o-notch fa-spin'></i><br>Terisi dalam: <span id='mengisi'></span> ~";
-			document.querySelector("#bertahan").innerHTML = "<i class='fa fa-circle-o-notch fa-spin'></i>";
+			document.querySelector("#status").innerHTML = "<span id='spanvolt'></span> <i class='fa fa-circle-o-notch fa-spin'></i>";
+			document.querySelector("#mengisi").style.visibility = "visible";
+			document.querySelector("#spin").innerHTML = "<i class='material-icons'>switch_access_shortcut_add</i>";
 			document.querySelector("#peringatan").style.visibility = "hidden";
 			document.querySelector("#pengisian").style.visibility = "visible";
 			// alert("Sumber Daya: Terhubung");
@@ -8118,9 +8119,10 @@ navigator.getBattery().then(function(battery) {
 			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
 			ctx.stroke();
-			document.querySelector("#petir").innerHTML = " ";
+			document.querySelector("#petir").innerHTML = "";
 			document.querySelector("#status").innerHTML = "Standby. . . <i class='fa fa-circle-o-notch'></i>";
-			document.querySelector("#bertahan").innerHTML = "<span id='sisa'></span>";
+			document.querySelector("#mengisi").style.visibility = "hidden";
+			document.querySelector("#spin").innerHTML = "";
 			document.querySelector("#peringatan").style.visibility = "visible";
 			document.querySelector("#pengisian").style.visibility = "hidden";
 		}
@@ -8142,7 +8144,7 @@ navigator.getBattery().then(function(battery) {
 		//ctx.strokeStyle = "#2F4F4F";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
 		document.querySelector("#peringatan").innerHTML = "Cukup dia yang mati, Perangkatmu jangan! Ayo hubungkan sumber daya.";
-		document.querySelector("#sisa").innerHTML = "« 0 - 30 Menit";
+		document.querySelector("#sisa").innerHTML = "± 0 - 30 Menit";
 		document.querySelector("#mengisi").innerHTML = "125 Menit";
 		break;
 		case 1:
@@ -8152,7 +8154,7 @@ navigator.getBattery().then(function(battery) {
 		//ctx.strokeStyle = "#DC143C";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
 		document.querySelector("#peringatan").innerHTML = "Bateraimu Lapar butuh asupan, hubungkan sumber daya untuk memberi makan.";
-		document.querySelector("#sisa").innerHTML = "« 1 jam";
+		document.querySelector("#sisa").innerHTML = "± 1 jam";
 		document.querySelector("#mengisi").innerHTML = "110 Menit";
 		break;
 		case 2:
@@ -8162,7 +8164,7 @@ navigator.getBattery().then(function(battery) {
 		//ctx.strokeStyle = "#FFD700";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
 		document.querySelector("#peringatan").innerHTML = "Baterai sudah mulai lelah dengan kehidupannya, hubungkan sumber daya untuk menyemangatinya kembali.";
-		document.querySelector("#sisa").innerHTML = "« 1 - 2 jam";
+		document.querySelector("#sisa").innerHTML = "± 1 - 2 jam";
 		document.querySelector("#mengisi").innerHTML = "95 Menit";
 		break;
 		case 3:
@@ -8172,7 +8174,7 @@ navigator.getBattery().then(function(battery) {
 		//ctx.strokeStyle = "#FF8C00";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
 		document.querySelector("#peringatan").innerHTML = "Waktu yang bagus untuk mengisi daya.";
-		document.querySelector("#sisa").innerHTML = "« 2 - 3 jam";
+		document.querySelector("#sisa").innerHTML = "± 2 - 3 jam";
 		document.querySelector("#mengisi").innerHTML = "80 Menit";
 		break;
 		case 4:
@@ -8182,7 +8184,7 @@ navigator.getBattery().then(function(battery) {
 		//ctx.strokeStyle = "#20B2AA";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
 		document.querySelector("#peringatan").innerHTML = "Masih baik-baik saja.";
-		document.querySelector("#sisa").innerHTML = "« 4 - 5 jam";
+		document.querySelector("#sisa").innerHTML = "± 4 - 5 jam";
 		document.querySelector("#mengisi").innerHTML = "65 Menit";
 		break;
 		case 5:
@@ -8191,7 +8193,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#20B2AA";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 6 - 7 jam";
+		document.querySelector("#sisa").innerHTML = "± 6 - 7 jam";
 		document.querySelector("#mengisi").innerHTML = "50 Menit";
 		break;
 		case 6:
@@ -8200,7 +8202,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#6495ED";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 8 - 9 jam";
+		document.querySelector("#sisa").innerHTML = "± 8 - 9 jam";
 		document.querySelector("#mengisi").innerHTML = "40 Menit";
 		break;
 		case 7:
@@ -8209,7 +8211,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 10 - 12 jam";
+		document.querySelector("#sisa").innerHTML = "± 10 - 12 jam";
 		document.querySelector("#mengisi").innerHTML = "30 Menit";
 		break;
 		case 8:
@@ -8218,7 +8220,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 12 - 14 jam";
+		document.querySelector("#sisa").innerHTML = "± 12 - 14 jam";
 		document.querySelector("#mengisi").innerHTML = "20 Menit";
 		break;
 		case 9:
@@ -8227,7 +8229,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 15 - 17 jam";
+		document.querySelector("#sisa").innerHTML = "± 15 - 17 jam";
 		document.querySelector("#mengisi").innerHTML = "10 Menit";
 		break;
 		case 10:
@@ -8236,7 +8238,7 @@ navigator.getBattery().then(function(battery) {
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
-		document.querySelector("#sisa").innerHTML = "« 18 jam";
+		document.querySelector("#sisa").innerHTML = "± 18 jam";
 		document.querySelector("#mengisi").innerHTML = "Terisi";
 		break;
 		default:
