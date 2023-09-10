@@ -104,7 +104,7 @@ background-color: rgba(0,0,0,0.0);
 #BatteryLevel {
 display: block;
 position: absolute;
-top: 15%;
+top: 16%;
 left: 50%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
@@ -126,7 +126,7 @@ transform: translate(-50%, -50%);
 
 #petir {
 position: absolute;
-top: 15.5%;
+top: 16.5%;
 left: 65%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
@@ -152,7 +152,7 @@ padding: 0px;
 text-align: center;
 font-size: 16px;
 font-weight: 400;
-font-family: "Alata";
+font-family: "Exo 2";
 color: #FFF;
 }
 

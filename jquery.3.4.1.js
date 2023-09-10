@@ -7974,6 +7974,18 @@ document.querySelectorAll(".tips")[2].innerHTML = "<bdo class='titletips'>•3. 
 document.querySelectorAll(".tips")[3].innerHTML = "<bdo class='titletips'>•4. Pakai Pengisian Daya Original.</bdo><br>Pengisian Daya Original akan memberikan tegangan murni yang dibutuhkan Ponselmu untuk mengisi daya.<br>Alternatif lainnya, gunakan Adaptor yang setara dengan Adaptor Original Ponselmu.<br>Misalnya: A (Amper), V (Voltase) tidak jauh berbeda dengan Adaptor Original Ponselmu.<br>Perhatian: Jika Adaptor Originalmu memiliki keluaran 1.5A - 2A, maka batas toleransi untuk Adaptor alternatif maximum 3A.";
 document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. Tips yang mungkin berguna untukmu.</bdo><br>*Pada saat sedang mengisi daya, lepas Hardcase atau Softcase Kamu untuk mengurangi panas.<br>*Jika Ponselmu panas pada saat mengisi daya, matikan data selulermu dan aktifkan Mode Pesawat, rehat sejenak sampai suhu Ponselmu sejuk.<br>*Untuk memaksimalkan pengisian gunakan Fitur “Pengisian Cepat”, lalu aktifkan Mode Pesawat dan rehat sejenak sampai kapasitas Bateraimu mencapai 30%.";
 /**/
+/* Mood Baterai */
+const mood = [
+	{"mood": "Bete <i class='material-icons'>mood_bad</i>"},
+	{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},
+	{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},
+]
+function moodmath() {
+	let random = mood[Math.floor(Math.random() * mood.length)];
+	spanmood.innerHTML = `${random.mood}`;
+	source.innerHTML = random.source;
+} setInterval(moodmath, 12000);
+/**/
 /* Volt */
 const volt = [
 	{"volt": "6.0V <i class='fa fa-rocket'></i>"},{"volt": "6.1V <i class='fa fa-rocket'></i>"},{"volt": "6.2V <i class='fa fa-rocket'></i>"},{"volt": "6.3V <i class='fa fa-rocket'></i>"},{"volt": "6.4V <i class='fa fa-rocket'></i>"},
@@ -7995,18 +8007,6 @@ function voltmath() {
 	source.innerHTML = random.source;
 } setInterval(voltmath, 3000);
 /**/
-/* Mood Baterai */
-const mood = [
-	{"mood": "Bete <i class='material-icons'>mood_bad</i>"},
-	{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},{"mood": "Biasa <i class='material-icons'>sentiment_dissatisfied</i>"},
-	{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},{"mood": "Baik <i class='material-icons'>mood</i>"},
-]
-function moodmath() {
-	let random = mood[Math.floor(Math.random() * mood.length)];
-	spanmood.innerHTML = `${random.mood}`;
-	source.innerHTML = random.source;
-} setInterval(moodmath, 10000);
-/**/
 /* Suhu */
 const suhu = [
 	{"suhu": "28°C (Sejuk) <i class='fa fa-thermometer-0'></i>"},{"suhu": "28°C (Sejuk) <i class='fa fa-thermometer-0'></i>"},
@@ -8022,7 +8022,7 @@ function suhumath() {
 	let random = suhu[Math.floor(Math.random() * suhu.length)];
 	spansuhu.innerHTML = `${random.suhu}`;
 	source.innerHTML = random.source;
-} setInterval(suhumath, 6000);
+} setInterval(suhumath, 10000);
 /**/
 /* Tegangan */
 const tegangan = [
