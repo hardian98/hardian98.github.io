@@ -64,15 +64,14 @@
 			</script>
 		</head>
 		
-		<body>
+		<body onload="checkCookie()">
 			<main>
 				<pre style="margin: 0; padding: 0;">
 				<!-- Memulai Program... -->
 				printBattery (void const* buffer) {
 					Battery const* Battery = (Battery const*) buffer;
 					print ($"Batt version = $(Battery.m_version)\n“);
-					if (Battery.m_status == BATTSTATUS_SCRIPT)
-{
+					if (Battery.m_status == BATTSTATUS_SCRIPT) {
 						buffer += Battery.m_headerLength * 4;
 						Data const* Data = (Data const*) buffer;
 						print ($“SCRIPT type = $(Data.m_type)\n“);
