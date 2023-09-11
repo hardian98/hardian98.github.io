@@ -66,7 +66,7 @@
 			</script>
 		</head>
 		
-		<body onload="checkCookie()">
+		<body onload="checkCookie();loadDoc()">
 			<main>
 				<dl> <!-- LLVM -->
 				<!-- Memulai Program... -->
@@ -80,8 +80,7 @@
 					}
 				}
 				</dl>
-				<!-- Vue JS -->
-				<script>
+				<script> <!-- Vue JS -->
 				export default {
 					data() {
 						return {
@@ -95,6 +94,19 @@
 						},
 					}
 				};
+				</script>
+				
+				<script> <!-- AJAX - Server Response -->
+				function loadDoc() {
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementByTagName("body").innerHTML = this.responseText;
+						}
+					};
+					xhttp.open("GET", "data.txt", true);
+					xhttp.send();
+				}
 				</script>
 
 				<!-- Sudah Ok -->
