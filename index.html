@@ -3,6 +3,13 @@
 	<html lang='ID'>
 		<head>
 			<title>Web App Baterai Tercanggih Pertama di Indonesia</title>
+			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
+			<link rel='stylesheet' href='baterai.style.css'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap'>
+			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+			<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+			<!---->
 			<meta charset='UTF-8'>
 			<meta name='language' content='ID'>
 			<meta name='description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'>
@@ -11,9 +18,9 @@
 			<meta name='url' content='http://hardian98.github.io'>
 			<meta name='identifier-URL' content='http://hardian98.github.io'>
 			<meta name='google-site-verification' content='8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg'>
-			<meta name='robots' content='noindex,nofollow'>
+			<meta name='robots' content='noindex, nofollow'>
 			<meta name='rating' content='General'>
-			<meta name='revised' content='Sunday, September 11, 2023'>
+			<meta name='revised' content='Senin, September 11, 2023'>
 			<meta name='viewport' content='width-device,width=1, initial-scale=1, maximal-scale=1'>
 			<!---->
 			<meta property='og:image' content='https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg'/>
@@ -21,12 +28,7 @@
 			<meta property='og:description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'/>
 			<meta property='og:type' content='article'/>
 			<!---->
-			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
-			<link rel='stylesheet' href='baterai.style.css'>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
-			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap'>
-			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-			<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+			
 			<script>
 			function setCookie(cname,cvalue,exdays) {
 				const d = new Date();
@@ -66,7 +68,7 @@
 		
 		<body onload="checkCookie()">
 			<main>
-				<pre style="margin: 0; padding: 0;">
+				<dl> <!-- LLVM -->
 				<!-- Memulai Program... -->
 				printBattery (void const* buffer) {
 					Battery const* Battery = (Battery const*) buffer;
@@ -77,20 +79,24 @@
 						print ($“SCRIPT type = $(Data.m_type)\n“);
 					}
 				}
-				</pre>
-				<noscript>
-				fungsi suhu() {
-					jika (suhuberubah) {
-						$suhu(id).update;
+				</dl>
+				<!-- Vue JS -->
+				<script>
+				export default {
+					data() {
+						return {
+							data: null,
+						};
+					},
+					methods: {
+						async fetchData() {
+							const response = await fetch("Server/Data");
+							this.data = await response.json();
+						},
 					}
-				}
-				
-				fungsi voltase() {
-					jika (voltaseberubah) {
-						$voltase(id).update;
-					}
-				}
-				</noscript>
+				};
+				</script>
+
 				<!-- Sudah Ok -->
 			</main>
 			
