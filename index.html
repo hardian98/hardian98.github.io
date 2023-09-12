@@ -80,20 +80,30 @@
 					}
 				}
 				</script>
-				<script> <!-- Vue JS -->
-				export default {
-					data() {
-						return {
-							data: null,
-						};
+				<script> <!-- Mithril JS -->
+				import m from "mithril";
+				import Layout from "./Layout/Layout";
+				const App = {
+					view(vnode) {
+						return m(Layout, vnode.children);
 					},
-					methods: {
-						async fetchData() {
-							const response = await fetch("Server/Data");
-							this.data = await response.json();
-						},
-					}
 				};
+				export default App;
+				
+				import m from "mithril";
+				import id from "./services/id";
+				import { setLocaleFromRoute } from "./services/idRouting";
+				import Layout from "./Layout/Layout";
+				const App = {
+					oncreate: setLocaleFromRoute,
+					onupdate: setLocaleFromRoute,
+					view(vnode) {
+						return id.status === "Menghitung. . ."
+						? m("p", "Menghitung. . .")
+						: m(Layout, vnode.children);
+					},
+				};
+				export default App;
 				</script>
 				<script> <!-- AJAX Server Response -->
 				function loadDoc() {
@@ -107,35 +117,8 @@
 					xhttp.send();
 				}
 				</script>
-
 				<!-- Sudah Ok -->
 			</main>
-			
-			<span id="spanmood">Mood Baterai</span>
-			
-			<div id="loader-wrapper">
-				<div id="loader"></div>
-				<div class="loader-section section-left">
-					<small>console.log</small>
-					<p>Membaca Perangkat. . .</p>
-					<div class="progress bg-secondary" style="height: 4px">
-						<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-					</div>
-					<p>Instalasi LLVM. . .</p>
-					<div class="progress bg-secondary" style="height: 4px">
-						<div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-					</div>
-					<p>Instalasi Vue.js & AJAX. . .</p>
-					<div class="progress bg-secondary" style="height: 4px">
-						<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-					</div>
-					<p>Menerapkan. . .</p>
-					<div class="progress bg-secondary" style="height: 4px">
-						<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-					</div>
-				</div>
-				<div class="loader-section section-right"></div>
-			</div>
 		
 			<footer>
 				<p>Dibuat oleh: Hardiansyah • &copy;</i>2021-2023</p>
@@ -194,46 +177,17 @@
 			}
 			</script>
 			
-			<script>
-			function murnikanlah() {
-				var elem = document.getElementById("persentase");
-				var width = 0;
-				var id = setInterval(frame, 90);
-				function frame() {
-					if (width >= 100) {
-						clearInterval(id);
-						document.getElementById("hasil").className = "fade";
-						document.getElementById("hasil").innerHTML = "Mantap, 27% Lebih Efisien!";
-					} else {
-						width++;
-						elem.style.width = width + '%';
-						var num = width + 1 / 100;
-						num = num.toFixed(0)
-						document.getElementById("persentase").style.visibility = "visible";
-						document.getElementById("proses").innerHTML = "<i class='material-icons'>auto_awesome</i>Memurnikan: " + num + "%";
-					}
-				}
-			}
-			</script>
-		
-			<script type="text/javascript">
-			let progressBar = document.querySelector("#nprogress");
-			window.onload = function() {
-				progressBar.style.display = "none";
-			};
-			</script>
-			
 			<a href='#tabel' onclick="nav()" class='fa fa-arrow-down bawah'></a>
 			<a href='#top' onclick="nav()" class='fa fa-arrow-up atas'></a>
 			<audio src="nav.wav" id="nav" type="wav/audio">
 			<script src="jquery.js"></script>
-			<script src="backbone.js"></script>
+			<script src="mithril.js"></script>
 			<script src="detektor.js"></script>
 			<script>
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
-				}, 2000);
+				}, 1000);
 			});
 			</script>
 		</body>

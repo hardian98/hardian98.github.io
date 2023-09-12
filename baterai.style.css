@@ -7,8 +7,8 @@ scroll-behavior: smooth;
 body {
 margin: 0px;
 padding: 0px;
-/*background: url("../gambar/wall1.") center center fixed;*/
 background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 background-size: 400% 400%;
 animation: gradient 15s ease infinite;
 -ms-animation: gradient 15s ease infinite;
@@ -38,6 +38,13 @@ height: 100vh;
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+#loader-wrapper p {
+font-size: 18px;
+font-weight: 600;
+font-family: "Raleway";
+color: #FFF;
 }
 
 #spanmood {
