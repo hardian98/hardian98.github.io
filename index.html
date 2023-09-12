@@ -4,11 +4,11 @@
 		<head>
 			<title>Web App Baterai Tercanggih Pertama di Indonesia</title>
 			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
-			<link rel='stylesheet' href='baterai.style.css'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
 			<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap'>
 			<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-			<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> -->
+			<link rel='stylesheet' href='baterai.style.css'>
+			<link rel='stylesheet' href='loader.css'>
 			<!---->
 			<meta charset='UTF-8'>
 			<meta name='language' content='ID'>
@@ -24,12 +24,12 @@
 			<meta name='viewport' content='width-device,width=1, initial-scale=1, maximal-scale=1'>
 			<!---->
 			<meta property='og:image' content='https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg'/>
-			<meta property='og:title' content='Monitoring Baterai Real Time'/>
-			<meta property='og:description' content='Web App Baterai Tercanggih No. 1 Indonesia: cek suhu & tegangan serta fitur canggih lainnya!'/>
+			<meta property='og:title' content='Pantau Batre Anda, Yuk!'/>
+			<meta property='og:description' content='Cek Suhu & Tegangan serta fitur canggih didalamnya!'/>
 			<meta property='og:type' content='article'/>
 			<!---->
 			
-			<script>
+			<script type="text/javascript">
 			function setCookie(cname,cvalue,exdays) {
 				const d = new Date();
 				d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -66,10 +66,10 @@
 			</script>
 		</head>
 		
-		<body onload="checkCookie();loadDoc()">
+		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+			<!-- Memulai Program... -->
 			<main>
-				<dl> <!-- LLVM -->
-				<!-- Memulai Program... -->
+				<script> <!-- LLVM -->
 				printBattery (void const* buffer) {
 					Battery const* Battery = (Battery const*) buffer;
 					print ($"Batt version = $(Battery.m_version)\n“);
@@ -79,7 +79,7 @@
 						print ($“SCRIPT type = $(Data.m_type)\n“);
 					}
 				}
-				</dl>
+				</script>
 				<script> <!-- Vue JS -->
 				export default {
 					data() {
@@ -95,8 +95,7 @@
 					}
 				};
 				</script>
-				
-				<script> <!-- AJAX - Server Response -->
+				<script> <!-- AJAX Server Response -->
 				function loadDoc() {
 					var xhttp = new XMLHttpRequest();
 					xhttp.onreadystatechange = function() {
@@ -104,7 +103,7 @@
 							document.getElementByTagName("body").innerHTML = this.responseText;
 						}
 					};
-					xhttp.open("GET", "data.txt", true);
+					xhttp.open("GET", "data.json", true);
 					xhttp.send();
 				}
 				</script>
@@ -113,6 +112,30 @@
 			</main>
 			
 			<span id="spanmood">Mood Baterai</span>
+			
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+				<div class="loader-section section-left">
+					<small>console.log</small>
+					<p>Membaca Perangkat. . .</p>
+					<div class="progress bg-secondary" style="height: 4px">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+					</div>
+					<p>Instalasi LLVM. . .</p>
+					<div class="progress bg-secondary" style="height: 4px">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+					</div>
+					<p>Instalasi Vue.js & AJAX. . .</p>
+					<div class="progress bg-secondary" style="height: 4px">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+					</div>
+					<p>Menerapkan. . .</p>
+					<div class="progress bg-secondary" style="height: 4px">
+						<div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+					</div>
+				</div>
+				<div class="loader-section section-right"></div>
+			</div>
 		
 			<footer>
 				<p>Dibuat oleh: Hardiansyah • &copy;</i>2021-2023</p>
@@ -170,6 +193,7 @@
 				audio.play();
 			}
 			</script>
+			
 			<script>
 			function murnikanlah() {
 				var elem = document.getElementById("persentase");
@@ -202,7 +226,15 @@
 			<a href='#tabel' onclick="nav()" class='fa fa-arrow-down bawah'></a>
 			<a href='#top' onclick="nav()" class='fa fa-arrow-up atas'></a>
 			<audio src="nav.wav" id="nav" type="wav/audio">
-			<script src="jquery.3.4.1.js"></script>
+			<script src="jquery.js"></script>
+			<script src="backbone.js"></script>
 			<script src="detektor.js"></script>
+			<script>
+			$(document).ready(function() {
+				setTimeout(function(){
+					$('body').addClass('loaded');
+				}, 2000);
+			});
+			</script>
 		</body>
 	</html>
