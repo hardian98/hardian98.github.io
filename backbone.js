@@ -131,7 +131,7 @@
 
     return this;
   };
-
+  
   // Inversion-of-control versions of `on`. Tell *this* object to listen to
   // an event in another object... keeping track of what it's listening to
   // for easier unbinding later.
