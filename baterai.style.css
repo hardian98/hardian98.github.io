@@ -83,7 +83,7 @@ z-index: 200;
 }
 
 #pengisian {
-top: auto ;
+top: auto !important;
 bottom: 0px;
 visibility: hidden;
 font-size: 18px;
