@@ -7952,7 +7952,7 @@ document.querySelectorAll("#data")[1].innerHTML = "<i class='material-icons'>bol
 document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>star</i> Teknologi: <span id='teknologi'>Li-poly</span>";
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Suhu: <span id='spansuhu'>Menghitung... <i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Bertahan: <span id='sisa'>Menghitung... </span><i id='spin'></i>";
-document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>settings_power</i> Sumber Daya: <span id='battery-status'>Menghitung... </span><i id='spin'></i>";
+document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>electrical_services</i> Sumber Daya: <span id='battery-status'>Menghitung... </span><i id='spin'></i>";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>security</i> Perangkat Keras: <span id='hardware'></span>";
