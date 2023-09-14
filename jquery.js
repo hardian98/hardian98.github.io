@@ -7943,6 +7943,7 @@ jQuery.fx.speeds = {
 ///////////////
 /* Text */
 document.querySelectorAll("main")[0].innerHTML = "<div id='loader-wrapper'></div><span id='spanmood'>Mood Baterai</span><canvas id='batCanvas' width='2000' height='1000'></canvas><div id='bolt'></div><span id='BatteryLevel'></span><span id='petir'></span><div class='stat'><p id='status'>Menghitung...</p><p id='mengisi'></p></div><marquee behavior='alternate' loop='5' scrolldelay='truespeed' scrollamount='6' id='peringatan'></marquee><span id='pengisian'>Mengisi &nbsp;<i id='pengisiancepat' class='fa'></i></span><!----><div class='data' id='tabel' style='margin-top: 65%'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>---</p></div><!-- 1 --><div class='data' id='tabel'><label class='label'>--</label><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>--</p><p id='data'>---</p></div><!-- 2 --><div class='data' id='tabel'><label class='label'>--</label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='pengisiancepat();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='bateraiadaptif();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='stabilkantegangan();this.disabled=true'><span class='slider round'></span></label><br><b class='namaFitur'>--</b><br><label class='switch'><input type='checkbox' onclick='murnikanlah();ting();this.disabled=true'><span class='slider round'></span></label><br><!--Memurnikan--><p id='proses'></p><p id='persentase'></p><p id='hasil'></p></div><!--Bersihkan--><div class='data' id='tabel'><label class='label'>--</label><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p><p class='tips'>--</p></div><audio src='baterai_adaptif.wav' id='baterai_adaptif' type='audio/wav'></audio><audio src='pengisian_cepat.wav' id='pengisian_cepat' type='audio/wav'></audio><audio src='stabilkan_tegangan.wav' id='stabilkan_tegangan' type='audio/wav'></audio><audio src='ting.mp3' id='ting' type='audio/mp3'></audio>";
+document.getElementById("loader-wrapper").innerHTML = "<div id=loader></div><div class='loader-section section-left'><p>Membaca Perangkat. . .<div class='progress bg-danger'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-danger'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Instalasi LLVM. . .<div class='progress bg-info'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-info'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Instalasi Mithril.js, JQuery.js & AJAX. . .<div class='progress bg-success'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-success'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Menerapkan. . .<div class='progress bg-primary'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-primary'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div></div><div class='loader-section section-right'></div>";
 document.querySelectorAll(".label")[0].innerHTML = "Info Dasar Baterai";
 document.querySelectorAll(".label")[1].innerHTML = "Info Dasar Perangkat";
 document.querySelectorAll(".label")[2].innerHTML = "Fitur";
@@ -8044,7 +8045,7 @@ function teganganmath() {
 	let random = tegangan[Math.floor(Math.random() * tegangan.length)];
 	spantegangan.innerHTML = `${random.tegangan}`;
 	source.innerHTML = random.source;
-} setInterval(teganganmath, 3000);
+} setInterval(teganganmath, 5000);
 /**/
 /* Mesin */
 /*
@@ -8089,8 +8090,6 @@ navigator.getBattery().then(function(battery) {
 	}
 	*/
 	
-	document.querySelector('#battery-status').innerHTML = battery.charging ? 'Adaptor' : 'Baterai';
-	
 	function updateChargeInfo() {
 		var batteryL = battery.level;
 		if (battery.level *10) {
@@ -8100,6 +8099,7 @@ navigator.getBattery().then(function(battery) {
 	
 	function updateChargeInfo() {
 		alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
+		//alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
 		if (battery.charging) {
 			ctx.fillStyle = "#FF9900", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#FF9900";
@@ -8109,9 +8109,9 @@ navigator.getBattery().then(function(battery) {
 			document.querySelector("#status").innerHTML = "<span id='spanvolt'>Menghitung...</span> <i class='fa fa-circle-o-notch fa-spin'></i>";
 			document.querySelector("#mengisi").style.visibility = "visible";
 			document.querySelector("#spin").innerHTML = "<i class='material-icons'>switch_access_shortcut_add</i>";
+			document.querySelector('#battery-status').innerHTML = battery.charging ? 'Adaptor' : 'Adaptor';
 			document.querySelector("#peringatan").style.visibility = "hidden";
 			document.querySelector("#pengisian").style.visibility = "visible";
-			// alert("Sumber Daya: Terhubung");
 		} else {
 			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
@@ -8120,6 +8120,7 @@ navigator.getBattery().then(function(battery) {
 			document.querySelector("#status").innerHTML = "Standby. . . <i class='fa fa-circle-o-notch'></i>";
 			document.querySelector("#mengisi").style.visibility = "hidden";
 			document.querySelector("#spin").innerHTML = "";
+			document.querySelector('#battery-status').innerHTML = battery.charging ? 'Baterai' : 'Baterai';
 			document.querySelector("#peringatan").style.visibility = "visible";
 			document.querySelector("#pengisian").style.visibility = "hidden";
 		}
@@ -8269,6 +8270,8 @@ setInterval(isicepat, 5000);
 
 ///////////////////
 
+
+//////////
 
 // Based off of the plugin by Clint Helfers, with permission.
 // https://web.archive.org/web/20100324014747/http://blindsignals.com/index.php/2009/07/jquery-delay/

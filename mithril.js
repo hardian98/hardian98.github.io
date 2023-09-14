@@ -1251,7 +1251,6 @@
 	}
 	
 	// Wrapper
-	document.getElementById("loader-wrapper").innerHTML = "<div id=loader></div><div class='loader-section section-left'><p>Membaca Perangkat. . .<div class='progress bg-danger'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-danger'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Instalasi LLVM. . .<div class='progress bg-info'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-info'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Instalasi Mithril.js, JQuery.js & AJAX. . .<div class='progress bg-success'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-success'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div><p>Menerapkan. . .<div class='progress bg-primary'style=height:4px><div class='progress-bar progress-bar-animated progress-bar-striped bg-primary'style=width:100% aria-valuemax=100 aria-valuemin=0 aria-valuenow=35 role=progressbar></div></div></div><div class='loader-section section-right'></div>";
 	
 	var html
 	var documentNode = {
