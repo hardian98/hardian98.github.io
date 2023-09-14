@@ -7956,14 +7956,14 @@ document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>set
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>electrical_services</i> Sumber Daya: <span id='battery-status'>Menghitung... </span><i id='spin'></i>";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
-document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>security</i> Perangkat Keras: <span id='hardware'></span>";
+document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Perangkat Keras: <span id='hardware'></span>";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>28</span>";
 document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Karnel Arsitektur: <span id='karnel'>AARCH64</span>";
 document.querySelectorAll("#data")[11].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
 document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>speed</i> Pengisian Cepat";
 document.querySelectorAll(".namaFitur")[1].innerHTML = "<i class='material-icons'>battery_saver</i> Baterai Adaptif";
-document.querySelectorAll(".namaFitur")[2].innerHTML = "<i class='material-icons'>power</i> Stabilkan Tegangan";
-document.querySelectorAll(".namaFitur")[3].innerHTML = "&nbsp;<i class='material-icons'>auto_fix_high</i> Murnikan";
+document.querySelectorAll(".namaFitur")[2].innerHTML = "<i class='material-icons'>insights</i> Stabilkan Tegangan";
+document.querySelectorAll(".namaFitur")[3].innerHTML = "<i class='material-icons'>auto_fix_high</i> Murnikan";
 document.querySelectorAll(".tips")[0].innerHTML = "<bdo class='titletips'>•1. Untuk memperpanjang masa pakai Baterai, gunakan Fitur Baterai Adaptif.</bdo><br>Baterai Adaptif membatasi Baterai untuk aplikasi yang jarang dipakai.<br>Ponsel akan mempelajari cara Kamu menggunakan aplikasi seiring waktu.";
 document.querySelectorAll(".tips")[1].innerHTML = "<bdo class='titletips'>•2. Suhu yang baik berada antara 28°C - 32°C.</bdo><br>Jika suhu Ponsel kamu berada di titik 33°C - 35°C, berikan Ponselmu untuk beristirahat sejenak.";
 document.querySelectorAll(".tips")[2].innerHTML = "<bdo class='titletips'>•3. Matikan Ponsel setidaknya sehari sekali selama 10 - 30 menit.</bdo><br>Ini akan merubah Kalibrasi Bateraimu menjadi Normal.";
