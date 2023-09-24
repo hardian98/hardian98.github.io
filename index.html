@@ -20,13 +20,13 @@
 			<meta name="google-site-verification" content="8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg">
 			<meta name="robots" content="noindex, nofollow">
 			<meta name="rating" content="General">
-			<meta name="revised" content="Senin, September 11, 2023">
+			<meta name="revised" content="Minggu, September 24, 2023">
 			<meta name="viewport" content="width-device,width=1, initial-scale=1, maximal-scale=1">
 			<!---->
-			<meta property="og:image" content="https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg"/>
-			<meta property="og:title" content="Pantau Batre Anda, Yuk!"/>
-			<meta property="og:description" content="Cek Suhu & Tegangan serta fitur canggih didalamnya!"/>
-			<meta property="og:type" content="article"/>
+			<meta property="og:image" content="https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg">
+			<meta property="og:title" content="Pantau Batre Anda, Yuk!">
+			<meta property="og:description" content="Cek Suhu & Tegangan serta fitur canggih didalamnya!">
+			<meta property="og:type" content="article">
 			<!---->
 			
 			<script type="text/javascript">
@@ -42,7 +42,7 @@
 				let ca = decodedCookie.split(';');
 				for(let i = 0; i < ca.length; i++) {
 					let c = ca[i];
-					while (c.charAt(0) == " ') {
+					while (c.charAt(0) == "") {
 						c = c.substring(1);
 					}
 					if (c.indexOf(name) == 0) {
@@ -82,15 +82,6 @@
 				</script>
 				<script> <!-- Mithril JS -->
 				import m from "mithril";
-				import Layout from "./Layout/Layout";
-				const App = {
-					view(vnode) {
-						return m(Layout, vnode.children);
-					},
-				};
-				export default App;
-				
-				import m from "mithril";
 				import id from "./services/id";
 				import { setLocaleFromRoute } from "./services/idRouting";
 				import Layout from "./Layout/Layout";
@@ -121,8 +112,6 @@
 			</main>
 		
 			<footer>
-				<p>Dibuat oleh: Hardiansyah • &copy;</i>2021-2023</p>
-				<p>Versi: 4.08</p>
 				<p id="cookie"></p>
 				<bdo>
 					<a href="index.html">Indonesia</a>
@@ -150,6 +139,8 @@
 				<hr width="50%" color="#BBB" size="1px">
 				<a href="https://m.facebook.com/acces.py"><i class="fa fa-facebook"></i></a> <a href="https://wa.me/6289529305947"><i class="fa fa-whatsapp"></i></a>
 				<br>
+				<p>Dibuat oleh: Hardiansyah • &copy;</i>2021-2023</p>
+				<p>Versi: 4.08</p>
 				<sub>Terimakasih:<br>W3SCHOOL • STACKOVERFLOW • medium.com • developer.mozilla.org • Google Font • Google Icon • Font Awesome<br><i class="fa fa-html5"></i> <i class="fa fa-css3"></i> <i class="fa fa-javascript3"></i></sub>
 			</footer>
 			
