@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8'?>
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN" 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+	<html lang="EN">
+		<head>
+			<title>The First Most Advanced Battery Web App in Indonesia</title>
+			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
+			<link rel="stylesheet" href="loader.css">
+			<link rel="stylesheet" href="baterai.style.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap">
+			<!---->
+			<meta charset="UTF-32">
+			<meta name="language" content="ID">
+			<meta name="description" content="The No. Most Advanced Battery Web App. 1 Indonesia: check temperature and voltage and other advanced features!">
+			<meta name="keywords" content="Battery Javascript, Baterai Javascript, Battery js, App, App Baterai, Cek Baterai, Cek Battery">
+			<meta name="author" content="Hardiansyah">
+			<meta name="url" content="http://hardian98.github.io">
+			<meta name="identifier-URL" content="http://hardian98.github.io">
+			<meta name="google-site-verification" content="8rqg0Y6xJwqbouIX71Bif6BjvFE65ZSk6wUg4S-EJwg">
+			<meta name="robots" content="noindex, nofollow">
+			<meta name="rating" content="General">
+			<meta name="revised" content="Minggu, September 24, 2023">
+			<meta name="viewport" content="width-device,width=1, initial-scale=1, maximal-scale=1">
+			<!---->
+			<meta property="og:image" content="https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg">
+			<meta property="og:title" content="Monitor your battery, come on!">
+			<meta property="og:description" content="Check Temperature & Voltage and advanced features in it!">
+			<meta property="og:type" content="article">
+			<!---->
+			
+			<script type="text/javascript">
+			function setCookie(cname,cvalue,exdays) {
+				const d = new Date();
+				d.setTime(d.getTime() + (exdays*24*60*60*1000));
+				let expires = "expires=" + d.toUTCString();
+				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+			}
+			function getCookie(cname) {
+				let name = cname + "=";
+				let decodedCookie = decodeURIComponent(document.cookie);
+				let ca = decodedCookie.split(';');
+				for(let i = 0; i < ca.length; i++) {
+					let c = ca[i];
+					while (c.charAt(0) == "") {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			function checkCookie() {
+				let user = getCookie("username");
+				if (user != "") {
+					alert("Come again," + user);
+					// document.getElementById("cookie").innerHTML = "Hallo, " + user;
+				} else {
+					user = prompt("Enter Name (used for Cookies only)","");
+					if (user != "" && user != null) {
+						setCookie("username", user, 30);
+					}
+				}
+			}
+			</script>
+		</head>
+		
+		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+			<!-- Memulai Program... -->
+			<main>
+				<script> <!-- LLVM -->
+				printBattery (void const* buffer) {
+					Battery const* Battery = (Battery const*) buffer;
+					print ($"Batt version = $(Battery.m_version)\n“);
+					if (Battery.m_status == BATTSTATUS_SCRIPT) {
+						buffer += Battery.m_headerLength * 4;
+						Data const* Data = (Data const*) buffer;
+						print ($“SCRIPT type = $(Data.m_type)\n“);
+					}
+				}
+				</script>
+				<script> <!-- Mithril JS -->
+				import m from "mithril";
+				import id from "./services/id";
+				import { setLocaleFromRoute } from "./services/idRouting";
+				import Layout from "./Layout/Layout";
+				const App = {
+					oncreate: setLocaleFromRoute,
+					onupdate: setLocaleFromRoute,
+					view(vnode) {
+						return id.status === "Menghitung. . ."
+						? m("p", "Menghitung. . .")
+						: m(Layout, vnode.children);
+					},
+				};
+				export default App;
+				</script>
+				<script> <!-- AJAX Server Response -->
+				function loadDoc() {
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							document.getElementByTagName("body").innerHTML = this.responseText;
+						}
+					};
+					xhttp.open("GET", "data.json", true);
+					xhttp.send();
+				}
+				</script>
+				<!-- Sudah Ok -->
+			</main>
+		
+			<footer>
+				<p id="cookie"></p>
+				<bdo>
+					<a href="lang_en.html">English</a>
+					<a href="index.html">Indonesia</a>
+					<!--<a href="lang_euy.html">Sunda</a>
+					<a href="lang_jp.html">Japan</a>
+					<a href="lang_kr.html">Korean</a>
+					<a href="lang_ch.html">Chinesse</a>
+					<a href="lang_th.html">Thailand</a>
+					<a href="lang_za.html">Afrikaans</a>-->
+				</bdo>
+				
+				<hr width="50%" color="#BBB" size="1px">
+				<sup>How does this website work?
+				<br>
+				-We use effective programming language technology for our programs.
+				<br>
+				-The program that we have created can run on most platforms, Android, iOS, Desktop etc (Cross Platform).
+				<hr width="50%" color="#BBB" size="1px">
+				How it Works:
+				<br>
+				-Takes a larger power current from the Adapter for fast charging, then uses the adaptive current for the final layer of charging.
+				<br>
+				-Changing the voltage to be more stable to purify the incoming amperage.
+				<br>
+				-Apps that are rarely used will be hibernated to get longer battery life.</sup>
+				<hr width="50%" color="#BBB" size="1px">
+				<a href="https://m.facebook.com/acces.py"><i class="fa fa-facebook"></i></a> <a href="https://wa.me/6289529305947"><i class="fa fa-whatsapp"></i></a>
+				<br>
+				<p>Made by: Hardiansyah • &copy;</i>2021-2023</p>
+				<p>Version: 4.08</p>
+				<sub>Thanks:<br>W3SCHOOL • STACKOVERFLOW • medium.com • developer.mozilla.org • Google Font • Google Icon • Font Awesome<br><i class="fa fa-html5"></i> <i class="fa fa-css3"></i> <i class="fa fa-javascript3"></i></sub>
+			</footer>
+			
+			<script>
+			/* Audio */
+			function nav() {
+				var audio = document.getElementById("nav");
+				audio.play();
+			}
+			function bateraiadaptif() {
+				var audio = document.getElementById("baterai_adaptif");
+				audio.play();
+			}
+			function pengisiancepat() {
+				var audio = document.getElementById("pengisian_cepat");
+				audio.play();
+			}
+			function stabilkantegangan() {
+				var audio = document.getElementById("stabilkan_tegangan");
+				audio.play();
+			}
+			function ting() {
+				var audio = document.getElementById("ting");
+				audio.play();
+			}
+			</script>
+			
+			<a href="#tabel" onclick="nav()" class="fa fa-arrow-down bawah"></a>
+			<a href="#top" onclick="nav()" class="fa fa-arrow-up atas"></a>
+			<audio src="nav.wav" id="nav" type="wav/audio">
+			<script src="jquery_en.js"></script>
+			<script src="mithril.js"></script>
+			<script src="detektor.js"></script>
+			<script>
+			$(document).ready(function() {
+				setTimeout(function(){
+					$('body').addClass('loaded');
+				}, 2000);
+			});
+			</script>
+		</body>
+	</html>
