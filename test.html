@@ -1,30 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Model dan Merk Perangkat</title>
+  <title>Kirim Notifikasi</title>
 </head>
 <body>
-  <h1>Notifikasi</h1>
+  <h1>Kirim Notifikasi</h1>
+
   <script>
-  
-if (!("Notification" in window)) {
-  // Browser tidak mendukung notifikasi.
-} else {
-  Notification.requestPermission().then((permission) => {
-    if (permission === 'granted') {
-      // Pengguna memberikan izin.
-      const notification = new Notification('Web App Baterai Sedang Berjalan', {
-        body: 'Berjalan dilatar belakang',
-        icon: 'https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg',
-      });
-      notification.show();
+    // Periksa apakah browser mendukung notifikasi.
+    if (!("Notification" in window)) {
+      // Browser tidak mendukung notifikasi.
+      alert("Browser Anda tidak mendukung notifikasi.");
     } else {
-      // Pengguna menolak izin.
+      // Minta izin pengguna untuk mengirim notifikasi.
+      Notification.requestPermission().then((permission) => {
+        // Handle the permission result.
+        if (permission === 'granted') {
+          // Pengguna memberikan izin.
+          // Buat notifikasi.
+          const notification = new Notification('Judul notifikasi', {
+            body: 'Isi notifikasi',
+            icon: 'https://example.com/icon.png',
+          });
+          // Tampilkan notifikasi.
+          notification.show();
+        } else {
+          // Pengguna menolak izin.
+          alert("Pengguna menolak izin untuk mengirim notifikasi.");
+        }
+      });
     }
-  });
-}
-</script>
+  </script>
 </body>
 </html>
-
 
