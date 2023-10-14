@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kapasitas mAh</title>
+  <title>Kenali Nama Perangkat</title>
 </head>
 <body>
-  <h1>Kapasitas mAh</h1>
-  <p id="kapasitas-mAh"></p>
+  <h1>Kenali Nama Perangkat</h1>
+  <p id="nama-perangkat"></p>
 
   <script>
-    // Get the device brand using the navigator.userAgent property.
-    const deviceBrand = navigator.userAgent.match(/Android\s(.+)/)[1];
+    // Create a list of known device names.
+    const deviceNames = [
+      'Pixel 6 Pro',
+      'Pixel 6',
+      'iPhone 14 Pro Max',
+      'iPhone 14 Pro',
+      'iPhone 14',
+      'iPhone 14 Plus',
+      'Mac Studio',
+      'Mac Pro',
+      'MacBook Pro 16-inch',
+      'MacBook Pro 13-inch',
+      'MacBook Air',
+      'Windows 11 PC',
+      'Windows 10 PC',
+    ];
 
-    // Get the device model using the navigator.userAgent property.
-    const deviceModel = navigator.userAgent.match(/Android\s([\w\d]+)/)[1];
+    // Get the user agent using the navigator.userAgent property.
+    const userAgent = navigator.userAgent;
 
-    // Get the battery capacity using the cordova-plugin-battery plugin.
-    document.addEventListener('deviceready', function() {
-      const battery = require('cordova-plugin-battery');
+    // Check if the user agent contains the name of a known device.
+    let deviceName = '';
+    deviceNames.forEach((name) => {
+      if (userAgent.includes(name)) {
+        deviceName = name;
+      }
+    });
 
-      const capacity = battery.getBatteryCapacity();
-
-      // Display the battery capacity.
-      document.getElementById('kapasitas-mAh').innerHTML = `Kapasitas mAh: ${capacity}`;
-    }, false);
+    // Display the device name.
+    document.getElementById('nama-perangkat').innerHTML = deviceName;
   </script>
 </body>
 </html>
