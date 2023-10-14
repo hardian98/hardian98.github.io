@@ -1,43 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kenali Nama Perangkat</title>
+  <title>Model dan Merk Perangkat</title>
 </head>
 <body>
-  <h1>Kenali Nama Perangkat</h1>
-  <p id="nama-perangkat"></p>
-
+  <h1>Notifikasi</h1>
   <script>
-    // Create a list of known device names.
-    const deviceNames = [
-      'Pixel 6 Pro',
-      'Pixel 6',
-      'iPhone 14 Pro Max',
-      'iPhone 14 Pro',
-      'iPhone 14',
-      'iPhone 14 Plus',
-      'Mac Studio',
-      'Mac Pro',
-      'MacBook Pro 16-inch',
-      'MacBook Pro 13-inch',
-      'MacBook Air',
-      'Windows 11 PC',
-      'Windows 10 PC',
-    ];
-
-    // Get the user agent using the navigator.userAgent property.
-    const userAgent = navigator.userAgent;
-
-    // Check if the user agent contains the name of a known device.
-    let deviceName = '';
-    deviceNames.forEach((name) => {
-      if (userAgent.includes(name)) {
-        deviceName = name;
-      }
-    });
-
-    // Display the device name.
-    document.getElementById('nama-perangkat').innerHTML = deviceName;
-  </script>
+  
+if (!("Notification" in window)) {
+  // Browser tidak mendukung notifikasi.
+} else {
+  Notification.requestPermission().then((permission) => {
+    if (permission === 'granted') {
+      // Pengguna memberikan izin.
+      const notification = new Notification('Web App Baterai Sedang Berjalan', {
+        body: 'Berjalan dilatar belakang',
+        icon: 'https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg',
+      });
+      notification.show();
+    } else {
+      // Pengguna menolak izin.
+    }
+  });
+}
+</script>
 </body>
 </html>
+
+
