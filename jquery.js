@@ -7957,7 +7957,7 @@ document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>ele
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendor: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Perangkat Keras: <span id='hardware'></span>";
-document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>28</span>";
+document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>?</span>";
 document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Karnel Arsitektur: <span id='karnel'>AARCH64</span>";
 document.querySelectorAll("#data")[11].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
 document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>speed</i> Pengisian Cepat";
@@ -7970,6 +7970,10 @@ document.querySelectorAll(".tips")[2].innerHTML = "<bdo class='titletips'>•3. 
 document.querySelectorAll(".tips")[3].innerHTML = "<bdo class='titletips'>•4. Pakai Pengisian Daya Original.</bdo><br>Pengisian Daya Original akan memberikan tegangan murni yang dibutuhkan Ponselmu untuk mengisi daya.<br>Alternatif lainnya, gunakan Adaptor yang setara dengan Adaptor Original Ponselmu.<br>Misalnya: A (Amper), V (Voltase) tidak jauh berbeda dengan Adaptor Original Ponselmu.<br>Perhatian: Jika Adaptor Originalmu memiliki keluaran 1.5A - 2A, maka batas toleransi untuk Adaptor alternatif maximum 3A.";
 document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. Tips yang mungkin berguna untukmu.</bdo><br>*Pada saat sedang mengisi daya, lepas Hardcase atau Softcase Kamu untuk mengurangi panas.<br>*Jika Ponselmu panas pada saat mengisi daya, matikan data selulermu dan aktifkan Mode Pesawat, rehat sejenak sampai suhu Ponselmu sejuk.<br>*Untuk memaksimalkan pengisian gunakan Fitur “Pengisian Cepat”, lalu aktifkan Mode Pesawat dan rehat sejenak sampai kapasitas Bateraimu mencapai 30%.";
 /**/
+
+const apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
+document.getElementById('api').innerHTML = apiLevel;
+
 /* Mood Baterai */
 const mood = [
 	{"mood": "Bete <i class='material-icons'>mood_bad</i>"},

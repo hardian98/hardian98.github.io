@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kapasitas mAh</title>
+</head>
+<body>
+  <h1>Kapasitas mAh</h1>
+  <p id="kapasitas-mAh"></p>
+
+  <script>
+    // Get the device brand using the navigator.userAgent property.
+    const deviceBrand = navigator.userAgent.match(/Android\s(.+)/)[1];
+
+    // Get the device model using the navigator.userAgent property.
+    const deviceModel = navigator.userAgent.match(/Android\s([\w\d]+)/)[1];
+
+    // Get the battery capacity using the cordova-plugin-battery plugin.
+    document.addEventListener('deviceready', function() {
+      const battery = require('cordova-plugin-battery');
+
+      const capacity = battery.getBatteryCapacity();
+
+      // Display the battery capacity.
+      document.getElementById('kapasitas-mAh').innerHTML = `Kapasitas mAh: ${capacity}`;
+    }, false);
+  </script>
+</body>
+</html>
