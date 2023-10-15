@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Kirim Notifikasi</title>
+  <meta charset="UTF-8">
+  <title>Java VM Perangkat</title>
 </head>
 <body>
-  <h1>Kirim Notifikasi kakak</h1>
+  <h1>Java VM Perangkat</h1>
+  <div id="jvm">
+    </div>
+    <script>
+    	// Mendapatkan informasi Java VM
+const jvmInfo = navigator.userAgent.match(/Java(.*?)\/(.*?)\/(.*?)/);
 
-  <script>
-    // Buat notifikasi dengan judul dan isi yang berbeda.
-const notification = new Notification('Judul notifikasi baru', {
-  body: 'Isi notifikasi baru',
-});
+// Menampilkan informasi Java VM
+const showJvmInfo = () => {
+  const jvmInfoElement = document.getElementById("jvm");
+  jvmInfoElement.innerHTML = "";
 
-// Buat notifikasi dengan ikon yang berbeda.
-const notification = new Notification('Judul notifikasi', {
-  body: 'Isi notifikasi',
-  icon: 'https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg',
-});
+  if (jvmInfo) {
+    const jvmName = jvmInfo[1];
+    const jvmVersion = jvmInfo[2];
+    const jvmVendor = jvmInfo[3];
 
-// Buat notifikasi dengan bahasa yang berbeda.
-const notification = new Notification('Judul notifikasi', {
-  body: 'Isi notifikasi',
-  lang: 'id',
-});
+    const jvmNameElement = document.createElement("h2");
+    jvmNameElement.textContent = "Java VM: " + jvmName;
 
-// Buat notifikasi dengan badge.
-const notification = new Notification('Judul notifikasi', {
-  body: 'Isi notifikasi',
-  badge: 10,
-});
+    const jvmVersionElement = document.createElement("h3");
+    jvmVersionElement.textContent = "Versi: " + jvmVersion;
 
-// Buat notifikasi dengan getaran.
-const notification = new Notification('Judul notifikasi', {
-  body: 'Isi notifikasi',
-  vibrate: [100, 200, 300],
-});
+    const jvmVendorElement = document.createElement("h3");
+    jvmVendorElement.textContent = "Vendor: " + jvmVendor;
 
-// Buat notifikasi dengan suara.
-const notification = new Notification('Judul notifikasi', {
-  body: 'Isi notifikasi',
-  sound: 'https://github.com/hardian98/hardian98.github.io/raw/main/ting.mp3',
-});
-  </script>
+    jvmInfoElement.appendChild(jvmNameElement);
+    jvmInfoElement.appendChild(jvmVersionElement);
+    jvmInfoElement.appendChild(jvmVendorElement);
+  } else {
+    jvmInfoElement.textContent = "Java VM tidak ditemukan";
+  }
+};
+
+// Menjalankan fungsi showJvmInfo() saat halaman dimuat
+document.addEventListener("DOMContentLoaded", showJvmInfo);
+
+    </script>
+    
 </body>
 </html>
-
-
