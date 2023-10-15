@@ -4,35 +4,45 @@
   <title>Kirim Notifikasi</title>
 </head>
 <body>
-  <h1>Kirim Notifikas90i</h1>
+  <h1>Kirim Notifikasi kakak</h1>
 
   <script>
-    // Periksa apakah browser mendukung notifikasi.
-    if (!("Notification" in window)) {
-      // Browser tidak mendukung notifikasi.
-      alert("Browser Anda tidak mendukung notifikasi.");
-    } else {
-      // Minta izin pengguna untuk mengirim notifikasi.
-      Notification.requestPermission().then((permission) => {
-        // Handle the permission result.
-        if (permission === 'granted') {
-          // Pengguna memberikan izin.
-          // Buat notifikasi.
-          const notification = new Notification('Judul notifikasi', {
-          	title: 'Hardiansyah',
-            body: 'Isi notifikasi',
-            lang: 'ID',
-            icon: 'https://example.com/icon.png',
-          });
-          // Tampilkan notifikasi.
-          notification.show();
-        } else {
-          // Pengguna menolak izin.
-          alert("Pengguna menolak izin untuk mengirim notifikasi.");
-        }
-      });
-    }
+    // Buat notifikasi dengan judul dan isi yang berbeda.
+const notification = new Notification('Judul notifikasi baru', {
+  body: 'Isi notifikasi baru',
+});
+
+// Buat notifikasi dengan ikon yang berbeda.
+const notification = new Notification('Judul notifikasi', {
+  body: 'Isi notifikasi',
+  icon: 'https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg',
+});
+
+// Buat notifikasi dengan bahasa yang berbeda.
+const notification = new Notification('Judul notifikasi', {
+  body: 'Isi notifikasi',
+  lang: 'id',
+});
+
+// Buat notifikasi dengan badge.
+const notification = new Notification('Judul notifikasi', {
+  body: 'Isi notifikasi',
+  badge: 10,
+});
+
+// Buat notifikasi dengan getaran.
+const notification = new Notification('Judul notifikasi', {
+  body: 'Isi notifikasi',
+  vibrate: [100, 200, 300],
+});
+
+// Buat notifikasi dengan suara.
+const notification = new Notification('Judul notifikasi', {
+  body: 'Isi notifikasi',
+  sound: 'https://github.com/hardian98/hardian98.github.io/raw/main/ting.mp3',
+});
   </script>
 </body>
 </html>
+
 
