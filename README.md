@@ -1,3 +1,5 @@
 # hardian98.github.io
 
-Bismillah. 
+Dengan kemampuan dan skill yang diperoleh secara otodidak, izikan hamba membagian sebuah Project kecil yang hamba beri nama "Web App Batter".
+
+Sekian dulu. 
