@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build ID</title>
+</head>
+<body>
+  <h1>Build ID</h1>
+  <div id="brand">
+    </div>
+    <script>
+    	// Mendapatkan informasi perangkat
+const deviceInfo = navigator.userAgent;
+
+// Mendeteksi brand perangkat
+const brand = deviceInfo.match(/(Xiaomi|Samsung|Apple|Oppo|Vivo)/i);
+
+// Menampilkan brand perangkat
+const showBrand = () => {
+  const brandElement = document.getElementById("brand");
+  brandElement.innerHTML = brand ? brand[0] : "Tidak diketahui";
+};
+
+// Menjalankan fungsi showBrand() saat halaman dimuat
+document.addEventListener("DOMContentLoaded", showBrand);
+
+    </script>
+</body>
+</html>
