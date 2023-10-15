@@ -93,3 +93,6 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 	document.getElementById('browser').innerHTML = ""+e.browser.name+"";
 	document.getElementById('ver').innerHTML = ""+e.browser.version+"";
 }());
+
+const apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
+document.getElementById('api').innerHTML = apiLevel;

@@ -1,3 +1,4 @@
+
 ;(function (global, factory) { // eslint-disable-line
 	"use strict"
 	/* eslint-disable no-undef */
@@ -2233,6 +2234,28 @@
 
 	return m
 }); // eslint-disable-line
+
+function nav() {
+	var audio = document.getElementById("nav");
+	audio.play();
+}
+function bateraiadaptif() {
+	var audio = document.getElementById("baterai_adaptif");
+	audio.play();
+}
+function pengisiancepat() {
+	var audio = document.getElementById("pengisian_cepat");
+	audio.play();
+}
+function stabilkantegangan() {
+	var audio = document.getElementById("stabilkan_tegangan");
+	audio.play();
+}
+function ting() {
+	var audio = document.getElementById("ting");
+	audio.play();
+}
+
 function murnikanlah() {
 	var elem = document.getElementById("persentase");
 	var width = 0;
