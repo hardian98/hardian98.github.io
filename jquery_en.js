@@ -7957,7 +7957,7 @@ document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>ele
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendors: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span>";
-document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'>28</span>";
+document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'></span>";
 document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Architectural Kernel: <span id='karnel'>AARCH64</span>";
 document.querySelectorAll("#data")[11].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
 document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>speed</i> Fast Charging";
@@ -7970,6 +7970,10 @@ document.querySelectorAll(".tips")[2].innerHTML = "<bdo class='titletips'>•3. 
 document.querySelectorAll(".tips")[3].innerHTML = "<bdo class='titletips'>•4. Use Original Charging.</bdo><br>Original Charging will provide the pure voltage your cellphone needs to charge.<br>Alternatively, use an adapter that is equivalent to your cellphone's original adapter.<br>For example: A (Ampere) , V (Voltage) is not much different from your cellphone's original adapter.<br>Attention: If your original adapter has an output of 1.5A - 2A, then the tolerance limit for the alternative adapter is a maximum of 3A.";
 document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. Tips that might be useful for you.</bdo><br>*When charging, remove your Hardcase or Softcase to reduce heat.<br>*If your cellphone gets hot while charging, turn off your cellular data and activate Airplane Mode, take a break for a moment until the temperature of your cellphone cools down.<br>*To maximize charging, use the ”Fast Charging“ feature, then activate Airplane Mode and rest for a moment until your battery capacity reaches 30%.";
 /**/
+
+const apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
+document.getElementById('api').innerHTML = apiLevel;
+
 /* Mood Battery */
 const mood = [
 	{"mood": "Fed up <i class='material-icons'>mood_bad</i>"},
