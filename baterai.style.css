@@ -161,7 +161,7 @@ color: #FFF;
 /* #status, #mengisi */
 .stat {
 position: absolute;
-top: 21%;
+top: 22%;
 left: 50%;
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
