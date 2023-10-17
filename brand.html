@@ -1,29 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Build ID</title>
+    <title>Notifikasi Persentase Baterai</title>
 </head>
 <body>
-  <h1>Build ID</h1>
-  <div id="brand">
-    </div>
-    <script>
-    	// Mendapatkan informasi perangkat
-const deviceInfo = navigator.userAgent;
 
-// Mendeteksi brand perangkat
-const brand = deviceInfo.match(/(Xiaomi|Samsung|Apple|Oppo|Vivo)/i);
+<p>Status Baterai: <span id="battery-status">Sedang mendeteksi...</span></p>
 
-// Menampilkan brand perangkat
-const showBrand = () => {
-  const brandElement = document.getElementById("brand");
-  brandElement.innerHTML = brand ? brand[0] : "Tidak diketahui";
-};
+<script>
+// Fungsi untuk mendeteksi status baterai
+function detectBatteryStatus() {
+    navigator.getBattery().then(function(battery) {
+        updateBatteryStatus(battery);
 
-// Menjalankan fungsi showBrand() saat halaman dimuat
-document.addEventListener("DOMContentLoaded", showBrand);
+        battery.addEventListener('chargingchange', function() {
+            updateBatteryStatus(battery);
+        });
 
-    </script>
+        battery.addEventListener('levelchange', function() {
+            updateBatteryStatus(battery);
+        });
+    });
+}
+
+// Fungsi untuk memperbarui tampilan status baterai
+function updateBatteryStatus(battery) {
+    var status = "Tidak Terdeteksi";
+    if (battery.charging) {
+        status = "Sedang Terisi";
+    } else {
+        status = "Tidak Terisi";
+    }
+
+    var level = (battery.level * 100).toFixed(2);
+    document.getElementById('battery-status').textContent = "Status: " + status + ", Level: " + level + "%";
+
+    // Jika level baterai mencapai 20%, kirim notifikasi
+    if (level <= 20 && Notification.permission === "granted") {
+        var notification = new Notification("Peringatan Baterai Rendah", {
+            body: "Level baterai saat ini: " + level + "%"
+        });
+    }
+}
+
+// Meminta izin notifikasi
+if ("Notification" in window) {
+    Notification.requestPermission();
+}
+
+// Panggil fungsi deteksi saat halaman dimuat
+detectBatteryStatus();
+</script>
+
 </body>
 </html>
