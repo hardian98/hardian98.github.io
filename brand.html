@@ -1,56 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Notifikasi Persentase Baterai</title>
+  <meta charset="UTF-8">
+  <title>Persentase Baterai</title>
 </head>
 <body>
-
-<p>Status Baterai: <span id="battery-status">Sedang mendeteksi...</span></p>
-
-<script>
-// Fungsi untuk mendeteksi status baterai
-function detectBatteryStatus() {
-    navigator.getBattery().then(function(battery) {
-        updateBatteryStatus(battery);
-
-        battery.addEventListener('chargingchange', function() {
-            updateBatteryStatus(battery);
-        });
-
-        battery.addEventListener('levelchange', function() {
-            updateBatteryStatus(battery);
-        });
-    });
-}
-
-// Fungsi untuk memperbarui tampilan status baterai
-function updateBatteryStatus(battery) {
-    var status = "Tidak Terdeteksi";
-    if (battery.charging) {
-        status = "Sedang Terisi";
-    } else {
-        status = "Tidak Terisi";
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    // Fungsi untuk mendapatkan persentase baterai
+    function getBatteryPercentage() {
+      // Mengambil nilai dari objek navigator.battery
+      var battery = navigator.battery;
+      // Mengembalikan nilai persentase baterai
+      return battery.level * 100;
     }
 
-    var level = (battery.level * 100).toFixed(2);
-    document.getElementById('battery-status').textContent = "Status: " + status + ", Level: " + level + "%";
-
-    // Jika level baterai mencapai 20%, kirim notifikasi
-    if (level <= 58 && Notification.permission === "granted") {
-        var notification = new Notification("Peringatan Baterai Rendah", {
-            body: "Level baterai saat ini: " + level + "%"
-        });
+    // Fungsi untuk menampilkan notifikasi
+    function showNotification(message) {
+      // Membuat objek Notification
+      var notification = new Notification(message);
+      // Menampilkan notifikasi
+      notification.show();
     }
-}
 
-// Meminta izin notifikasi
-if ("Notification" in window) {
-    Notification.requestPermission();
-}
-
-// Panggil fungsi deteksi saat halaman dimuat
-detectBatteryStatus();
-</script>
-
+    // Menjalankan fungsi getBatteryPercentage() setiap 5 detik
+    setInterval(function() {
+      // Mendapatkan persentase baterai
+      var percentage = getBatteryPercentage();
+      // Menampilkan notifikasi
+      showNotification("Persentase baterai: " + percentage + "%");
+    }, 5000);
+  </script>
 </body>
 </html>
