@@ -36,7 +36,7 @@ function updateBatteryStatus(battery) {
     document.getElementById('battery-status').textContent = "Status: " + status + ", Level: " + level + "%";
 
     // Jika level baterai mencapai 20%, kirim notifikasi
-    if (level <= 70 && Notification.permission === "granted") {
+    if (level <= 50 && Notification.permission === "granted") {
         var notification = new Notification("Peringatan Baterai Rendah", {
             body: "Level baterai saat ini: " + level + "%"
         });
