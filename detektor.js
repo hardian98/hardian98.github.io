@@ -21,13 +21,13 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 		{ name: "<i class='material-icons'>computer</i>Palm", value: 'Palm', version: 'PalmOS' }
 		],
 		databrowser: [
-		{ name: 'Chrome', value: 'Chrome', version: 'Chrome' },
-		{ name: 'Firefox', value: 'Firefox', version: 'Firefox' },
-		{ name: 'Safari', value: 'Safari', version: 'Version' },
-		{ name: 'Internet Explorer', value: 'MSIE', version: 'MSIE' },
-		{ name: 'Opera', value: 'Opera', version: 'Opera' },
-		{ name: 'BlackBerry', value: 'CLDC', version: 'CLDC' },
-		{ name: 'Mozilla', value: 'Mozilla', version: 'Mozilla' }
+		{ name: "<i class='fa fa-firefox'></i> Firefox", value: 'Firefox', version: 'Firefox' },
+		{ name: "<i class='fa fa-safari'></i> Safari", value: 'Safari', version: 'Version' },
+		{ name: "<i class='fa fa-edge'></i> Internet Explorer", value: 'MSIE', version: 'MSIE' },
+		{ name: "<i class='fa fa-chrome'></i> Chrome", value: 'Chrome', version: 'Chrome' },
+		{ name: "<i class='fa fa-opera'></i> Opera", value: 'Opera', version: 'Opera' },
+		{ name: "<i class='fa fa-delicious'></i> BlackBerry", value: 'CLDC', version: 'CLDC' },
+		{ name: "<i class='fa fa-firefox'></i> Mozilla", value: 'Mozilla', version: 'Mozilla' }
 		],
 		init: function () {
 			var agent = this.header.join(' '),

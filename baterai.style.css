@@ -335,19 +335,20 @@ color: #DDD;
 }
 
 .data p .material-icons, .material-icons {
-vertical-align: middle ;
-width: 20px ;
-margin-top: -3.0px ;
-padding: 4px 10px 4px 6px ;
-font-size: 24px ;
+vertical-align: middle;
+width: 20px;
+margin-top: -3.0px;
+padding: 4px 10px 4px 6px;
+font-size: 24px;
 color: #FFF;
 }
 
-.data p .fa-spinner, i.fa, #suhu i, #tegangan i {
-width: auto ;
-margin-top: -1.5px ;
-padding: 0px ;
-font-size: 16px ;
+.data p .fa-spinner, .data p .fa, i.fa, #suhu i, #tegangan i {
+width: auto;
+vertical-align: middle;
+margin-top: 0px;
+padding: 0px;
+font-size: 18px;
 }
 
 .data .titletips {
@@ -384,11 +385,11 @@ color: #FF033E;
 /**/
 
 .namaFitur .material-icons, #murni .material-icons, .material-symbols-outlined {
-vertical-align: middle ;
-margin-top: -3.5px ;
-padding: 0px ;
-font-size: 24px ;
-color: #FFF ;
+vertical-align: middle;
+margin-top: -3.5px !important;
+padding: 0px !important;
+font-size: 24px !important;
+color: #FFF;
 }
 
 .namaFitur {
@@ -581,24 +582,32 @@ background-color: #181818;
 
 footer p {
 margin: 10px 10px;
-font-size: 18px ;
+font-size: 18px;
 font-weight: 400;
 font-family: "Cabin Sketch";
 color: #EEE;
 }
 
 footer bdo a {
-font-size: 16px ;
+font-size: 16px;
 font-weight: 400;
 font-family: "Oxanium";
 color: #EEE;
 text-decoration: none;
 }
 
-footer sup, footer sub {
-color: #DDD;
-font-weight: 400;
+footer sup {
+color: #FFF;
+font-size: 14px;
+font-weight: 500;
 font-family: "Scada";
+}
+
+footer sub, footer .textwr {
+color: #EEE;
+font-size: 14px;
+font-weight: 400;
+font-family: "Tilt Neon";
 }
 
 footer span {
@@ -609,9 +618,9 @@ color: #FAFAFA;
 }
 
 .fa-facebook, .fa-whatsapp {
-margin: 8px 8px ;
-font-size: 26px ;
-color: #F9FAF8;
+margin: 8px 8px !important;
+font-size: 30px !important;
+color: #F9FAF8 !important;
 }
 
 /**/
@@ -680,50 +689,50 @@ to {background-position: 125% 0;}
 
 /*
 .fa-battery-3 {
-margin-left: -3px ;
-margin-right: 3.1px ;
+margin-left: -3px;
+margin-right: 3.1px;
 }
 .fa-tachometer {
-margin-left: -1.2px ;
-margin-right: 2.6px ;
+margin-left: -1.2px;
+margin-right: 2.6px;
 }
 .fa-star {
-margin-left: -0.4px ;
-margin-right: 1.8px ;
+margin-left: -0.4px;
+margin-right: 1.8px;
 }
 .fa-thermometer-2 {
-margin-left: 3.8px ;
-margin-right: -3.1px ;
+margin-left: 3.8px;
+margin-right: -3.1px;
 }
 .fa-leaf {
-margin-left: -1.4px ;
-margin-right: 2.8px ;
+margin-left: -1.4px;
+margin-right: 2.8px;
 }
 */
 /*
 .fa-mobile-phone {
-font-size: 30px ;
-margin-left: 2.5px ;
-margin-right: -2.3px ;
+font-size: 30px;
+margin-left: 2.5px;
+margin-right: -2.3px;
 }
 .fa-heart {
-margin-left: -0.8px ;
-margin-right: 1px ;
+margin-left: -0.8px;
+margin-right: 1px;
 }
 .fa-microchip {
-margin-left: 0.2px ;
-margin-right: -0.1px ;
+margin-left: 0.2px;
+margin-right: -0.1px;
 }
 .fa-android {
-margin-left: 1px ;
-margin-right: 0.3px ;
+margin-left: 1px;
+margin-right: 0.3px;
 }
 .fa-terminal {
-margin-left: -0.8px ;
-margin-right: 2.3px ;
+margin-left: -0.8px;
+margin-right: 2.3px;
 }
 .fa-sitemap {
-margin-left: -1px ;
-margin-right: 1.2px ;
+margin-left: -1px;
+margin-right: 1.2px;
 }
 */

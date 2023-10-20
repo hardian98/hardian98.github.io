@@ -6,7 +6,7 @@
 			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|Tilt+Neon|&display=swap">
 			<link rel="stylesheet" href="loader.css">
 			<link rel="stylesheet" href="baterai.style.css">
 			<!---->
@@ -89,8 +89,8 @@
 					oncreate: setLocaleFromRoute,
 					onupdate: setLocaleFromRoute,
 					view(vnode) {
-						return id.status === "Count. . ."
-						? m("p", "Count. . .")
+						return id.status === "Menghitung. . ."
+						? m("p", "Menghitung. . .")
 						: m(Layout, vnode.children);
 					},
 				};
@@ -114,8 +114,8 @@
 			<footer>
 				<p id="cookie"></p>
 				<bdo>
-					<a href="index.html">Indonesia</a>
-					<a href="lang_en.html">English</a>
+					<a href="index.html"><i class="fa fa-check"></i> Indonesia</a>
+					<a href="lang_en.html">| English</a>
 					<!--<a href="lang_euy.html">Sunda</a>
 					<a href="lang_uk.html">English</a>
 					<a href="lang_jp.html">Japan</a>
@@ -126,19 +126,35 @@
 				</bdo>
 				
 				<hr width="50%" color="#BBB" size="1px">
-				<sup>Bagaimana website ini bekerja?
-				<br>
-				-Kami menggunakan teknologi bahasa pemrograman yang efektif untuk program kami.
-				<br>
-				-Program yang telah kami buat dapat berjalan dikebanyakan platform, Android, iOS, Desktop etc (Cross Platform).
-				<hr width="50%" color="#BBB" size="1px">
-				Cara Kerja:
-				<br>
-				-Mengambil arus daya lebih besar dari Adaptor untuk mengisi daya dengan cepat, lalu menggunakan arus adaptif untuk pengisian lapisan terakhir.
-				<br>
-				-Mengubah tegangan menjadi lebih stabil untuk memurnikan daya amper yang masuk.
-				<br>
-				-Aplikasi yang jarang digunakan akan di hibernasikan untuk mendapatkan daya tahan Baterai lebih lama.</sup>
+				<sup onclick="writer_01()">Bagaimana website ini bekerja? <i class="fa fa-terminal"></i></sup>
+				<p id="typing_01" class="textwr"></p>
+				<script>
+					var satu = 0;
+					var txt01 = "-Kami menggunakan teknologi bahasa pemrograman yang efektif untuk program kami.\n-Program yang telah kami buat dapat berjalan dikebanyakan platform, Android, iOS, Desktop etc (Cross Platform)."; /* The text */
+					var speed = 50;
+					function writer_01() {
+						if (satu < txt01.length) {
+							document.getElementById("typing_01").innerHTML += txt01.charAt(satu);
+							satu++;
+							setTimeout(writer_01, speed);
+						}
+					}
+				</script>
+				<hr width='50%' color='#BBB' size='1px'>
+				<sup onclick="writer_02()">Cara Kerja? <i class="fa fa-terminal"></i></sup>
+				<p id="typing_02" class="textwr"></p>
+				<script>
+					var dua = 0;
+					var txt02 = "-Mengambil arus daya lebih besar dari Adaptor untuk mengisi daya dengan cepat, lalu menggunakan arus adaptif untuk pengisian lapisan terakhir.\n-Mengubah tegangan menjadi lebih stabil untuk memurnikan daya amper yang masuk.\n-Aplikasi yang jarang digunakan akan di hibernasikan untuk mendapatkan daya tahan Baterai lebih lama."; /* The text */
+					var speed = 50;
+					function writer_02() {
+						if (satu < txt02.length) {
+							document.getElementById("typing_02").innerHTML += txt02.charAt(dua);
+							dua++;
+							setTimeout(writer_02, speed);
+						}
+					}
+				</script>
 				<hr width="100%" color="#BBB" size="1px">
 				<sub>Web ini sudah dikembangkan 2 tahun lalu.</sub>
 				<br>
@@ -156,9 +172,9 @@
 				<form>
 					<input type="button" name="view" class="view" value="Lihat Sumber Kode" onclick='window.location="view-source:" +window.location.href'>
 				</form> 
-				<sub>Terimakasih:<br>W3SCHOOL • STACKOVERFLOW • medium.com • developer.mozilla.org • Google Font • Google Icon • Font Awesome
+				<sub>Terimakasih:<br>W3SCHOOL | STACKOVERFLOW | medium.com | developer.mozilla.org | Google Font | Google Icon | Font Awesome</sub>
 				<br>
-				<i class="fa fa-html5"></i> <i class="fa fa-css3"></i> <i class="fa fa-javascript3"></i></sub>
+				<p><i class="fa fa-android"></i> • <i class="fa fa-apple"></i> • <i class="fa fa-windows"></i><br><i class="fa fa-chrome"></i> • <i class="fa fa-edge"></i> • <i class="fa fa-opera"></i> • <i class="fa fa-firefox"></i> • <i class="fa fa-github"></i><br><i class="fa fa-html5"></i> • <i class="fa fa-css3"></i></p>
 			</footer>
 			
 			<a href="#tabel" onclick="nav()" class="fa fa-arrow-down bawah"></a>
@@ -169,7 +185,7 @@
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
-				}, 2000);
+				}, 2500);
 			});
 			</script>
 			<script src="detektor.js"></script>

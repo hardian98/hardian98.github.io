@@ -6,7 +6,7 @@
 			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|&display=swap">
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|Tilt+Neon|&display=swap">
 			<link rel="stylesheet" href="loader.css">
 			<link rel="stylesheet" href="baterai.style.css">
 			<!---->
@@ -82,7 +82,7 @@
 				</script>
 				<script> <!-- Mithril JS -->
 				import m from "mithril";
-				import id from "./services/id";
+				import id from "./services/en";
 				import { setLocaleFromRoute } from "./services/idRouting";
 				import Layout from "./Layout/Layout";
 				const App = {
@@ -114,8 +114,8 @@
 			<footer>
 				<p id="cookie"></p>
 				<bdo>
-					<a href="lang_en.html">English</a>
-					<a href="index.html">Indonesia</a>
+					<a href="lang_en.html"><i class="fa fa-check"></i> English</a>
+					<a href="index.html">| Indonesia</a>
 					<!--<a href="lang_euy.html">Sunda</a>
 					<a href="lang_jp.html">Japan</a>
 					<a href="lang_kr.html">Korean</a>
@@ -125,19 +125,35 @@
 				</bdo>
 				
 				<hr width="50%" color="#BBB" size="1px">
-				<sup>How does this website work?
-				<br>
-				-We use effective programming language technology for our programs.
-				<br>
-				-The program that we have created can run on most platforms, Android, iOS, Desktop etc (Cross Platform).
-				<hr width="50%" color="#BBB" size="1px">
-				How it Works:
-				<br>
-				-Takes a larger power current from the Adapter for fast charging, then uses the adaptive current for the final layer of charging.
-				<br>
-				-Changing the voltage to be more stable to purify the incoming amperage.
-				<br>
-				-Apps that are rarely used will be hibernated to get longer battery life.</sup>
+				<sup onclick="writer_01()">How does this website work? <i class="fa fa-terminal"></i></sup>
+				<p id="typing_01" class="textwr"></p>
+				<script>
+					var satu = 0;
+					var txt01 = "-We use effective programming language technology for our programs.\n-The program that we have created can run on most platforms, Android, iOS, Desktop etc (Cross Platform)."; /* The text */
+					var speed = 50;
+					function writer_01() {
+						if (satu < txt01.length) {
+							document.getElementById("typing_01").innerHTML += txt01.charAt(satu);
+							satu++;
+							setTimeout(writer_01, speed);
+						}
+					}
+				</script>
+				<hr width='50%' color='#BBB' size='1px'>
+				<sup onclick="writer_02()">How it Works? <i class="fa fa-terminal"></i></sup>
+				<p id="typing_02" class="textwr"></p>
+				<script>
+					var dua = 0;
+					var txt02 = "-Takes a larger power current from the Adapter for fast charging, then uses the adaptive current for the final layer of charging.\n-Changing the voltage to be more stable to purify the incoming amperage.\n-Apps that are rarely used will be hibernated to get longer battery life."; /* The text */
+					var speed = 50;
+					function writer_02() {
+						if (satu < txt02.length) {
+							document.getElementById("typing_02").innerHTML += txt02.charAt(dua);
+							dua++;
+							setTimeout(writer_02, speed);
+						}
+					}
+				</script>
 				<hr width="100%" color="#BBB" size="1px">
 				<sub>This website was developed 2 years ago.</sub>
 				<br>
@@ -155,9 +171,9 @@
 				<form>
 					<input type="button" name="view" class="view" value="View Source Code" onclick='window.location="view-source:" +window.location.href'>
 				</form> 
-				<sub>Thanks:<br>W3SCHOOL • STACKOVERFLOW • medium.com • developer.mozilla.org • Google Font • Google Icon • Font Awesome
+				<sub>Thanks:<br>W3SCHOOL | STACKOVERFLOW | medium.com | developer.mozilla.org | Google Font | Google Icon | Font Awesome</sub>
 				<br>
-				<i class="fa fa-html5"></i> <i class="fa fa-css3"></i> <i class="fa fa-javascript3"></i></sub>
+				<p><i class="fa fa-android"></i> • <i class="fa fa-apple"></i> • <i class="fa fa-windows"></i><br><i class="fa fa-chrome"></i> • <i class="fa fa-edge"></i> • <i class="fa fa-opera"></i> • <i class="fa fa-firefox"></i> • <i class="fa fa-github"></i><br><i class="fa fa-html5"></i> • <i class="fa fa-css3"></i></p>
 			</footer>
 			
 			<a href="#tabel" onclick="nav()" class="fa fa-arrow-down bawah"></a>
@@ -168,7 +184,7 @@
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
-				}, 2000);
+				}, 2500);
 			});
 			</script>
 			<script src="detektor.js"></script>
