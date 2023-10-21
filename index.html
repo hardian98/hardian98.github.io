@@ -64,6 +64,7 @@
 				}
 			}
 			</script>
+			<script type="text/javascript" src="cookie.js"></script>
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
@@ -112,7 +113,11 @@
 			</main>
 		
 			<footer>
-				<p id="cookie"></p>
+				<script type="text/javascript">
+				<!-- Begin
+				document.write("<p>Kamu sudah berkunjung <b>" + amt() + "</b> kali.</p>")
+				// End -->
+				</script>
 				<bdo>
 					<a href="index.html"><i class="fa fa-check"></i> Indonesia</a>
 					<a href="lang_en.html">| English</a>
