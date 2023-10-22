@@ -342,12 +342,16 @@ font-size: 24px;
 color: #FFF;
 }
 
-.data p .fa-spinner, .data p .fa, i.fa, #suhu i, #tegangan i {
+.data p .fa-spinner, .fa-spin, .data p .fa, i.fa, #suhu i, #tegangan i {
+position: relative;
 width: auto;
 vertical-align: middle;
-margin-top: 0px;
 padding: 0px;
 font-size: 18px;
+}
+
+.fa-spinner, .fa-spin {
+margin-bottom: 2px;
 }
 
 .data .titletips {
@@ -675,6 +679,7 @@ to {background-position: 125% 0;}
 @-webkit-keyframes barprogress {
 0% {background-position: 0% 0;}
 to {background-position: 125% 0;}
+}
 }
 
 /*
