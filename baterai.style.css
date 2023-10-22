@@ -125,7 +125,6 @@ body {
 margin: 0px;
 padding: 0px;
 height: 100vh;
-/*background-image: url("wal.gif");*/
 background-color: rgb(0,0,0);
 background-color: #303030;
 background-size: cover;
@@ -355,7 +354,7 @@ font-size: 18px;
 font-size: 16px;
 font-weight: 600;
 font-family: "Sen";
-color: #DDD;
+color: #FFF;
 }
 
 .data .tips {
@@ -363,7 +362,7 @@ margin: 8px 8px;
 font-size: 14px;
 font-weight: 400;
 font-family: "Prompt";
-color: #EEE;
+color: #DDD;
 }
 
 .fa-thermometer-0 {
@@ -580,12 +579,24 @@ text-align: center;
 background-color: #181818;
 }
 
-footer p {
-margin: 10px 10px;
-font-size: 18px;
+footer p, footer .textwr, footer p span, footer .programmer, footer .thanks {
+font-size: 14px;
 font-weight: 400;
+font-family: "Sen";
+color: #FFF;
+}
+
+footer .textwr, footer .thanks {
+font-family: "Tilt Neon";
+}
+
+footer p span {
+font-size: 14px;
+font-family: "Orbitron";
+}
+
+footer .programmer {
 font-family: "Cabin Sketch";
-color: #EEE;
 }
 
 footer bdo a {
@@ -594,27 +605,6 @@ font-weight: 400;
 font-family: "Oxanium";
 color: #EEE;
 text-decoration: none;
-}
-
-footer sup {
-color: #FFF;
-font-size: 14px;
-font-weight: 500;
-font-family: "Scada";
-}
-
-footer sub, footer .textwr {
-color: #EEE;
-font-size: 14px;
-font-weight: 400;
-font-family: "Tilt Neon";
-}
-
-footer span {
-font-size: 12px;
-font-weight: 500;
-font-family: "Orbitron";
-color: #FAFAFA;
 }
 
 .fa-facebook, .fa-whatsapp {

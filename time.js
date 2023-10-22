@@ -35,11 +35,11 @@
 		menitUmur=Math.floor(a%864e5%36e5/6e4*1),
 		detikUmur=Math.floor(a%864e5%36e5%6e4/1e3*1);
 		var n=document.getElementById(t);
-		n.getElementsByClassName("bulan")[0].innerHTML=months+" Bulan",
-		n.getElementsByClassName("hari")[0].innerHTML=hariUmur+"hari, ",
-		n.getElementsByClassName("jam")[0].innerHTML=jamUmur+"jam, ",
-		n.getElementsByClassName("mnt")[0].innerHTML=menitUmur+"menit, ",
-		n.getElementsByClassName("dtk")[0].innerHTML=detikUmur+"detik",
+		n.getElementsByClassName("bulan")[0].innerHTML=months,
+		n.getElementsByClassName("hari")[0].innerHTML=hariUmur,
+		n.getElementsByClassName("jam")[0].innerHTML=jamUmur,
+		n.getElementsByClassName("mnt")[0].innerHTML=menitUmur,
+		n.getElementsByClassName("dtk")[0].innerHTML=detikUmur,
 		clearTimeout(countUpFromTime.interval),countUpFromTime.interval=setTimeout(function() {
 			countUpFromTime(e,t)
 		},1e3)

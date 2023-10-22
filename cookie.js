@@ -1,4 +1,4 @@
-function GetCookie (name) {  
+function GetCookie (name) {
 	var arg = name + "=";  
 	var alen = arg.length;  
 	var clen = document.cookie.length;  
@@ -13,7 +13,7 @@ function GetCookie (name) {
 	return null;
 }
 
-function SetCookie (name, value) {  
+function SetCookie (name, value) {
 	var argv = SetCookie.arguments;  
 	var argc = SetCookie.arguments.length;  
 	var expires = (argc > 2) ? argv[2] : null;  
@@ -27,7 +27,7 @@ function SetCookie (name, value) {
 	((secure == true) ? "; secure" : "");
 }
 
-function DeleteCookie (name) {  
+function DeleteCookie (name) {
 	var exp = new Date();  
 	exp.setTime (exp.getTime() - 1);   
 	var cval = GetCookie (name);  

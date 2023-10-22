@@ -1,6 +1,7 @@
 /* Dibuat Oleh: Kim T
 https://medium.com/creative-technology-concepts-code/detect-device-browser-and-version-using-javascript-8b511906745
 */
+
 (function () {
 	'use strict';
 	
@@ -22,9 +23,9 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 		],
 		databrowser: [
 		{ name: "<i class='fa fa-firefox'></i> Firefox", value: 'Firefox', version: 'Firefox' },
+		{ name: "<i class='fa fa-chrome'></i> Chrome", value: 'Chrome', version: 'Chrome' },
 		{ name: "<i class='fa fa-safari'></i> Safari", value: 'Safari', version: 'Version' },
 		{ name: "<i class='fa fa-edge'></i> Internet Explorer", value: 'MSIE', version: 'MSIE' },
-		{ name: "<i class='fa fa-chrome'></i> Chrome", value: 'Chrome', version: 'Chrome' },
 		{ name: "<i class='fa fa-opera'></i> Opera", value: 'Opera', version: 'Opera' },
 		{ name: "<i class='fa fa-delicious'></i> BlackBerry", value: 'CLDC', version: 'CLDC' },
 		{ name: "<i class='fa fa-firefox'></i> Mozilla", value: 'Mozilla', version: 'Mozilla' }

@@ -4,11 +4,11 @@
 		<head>
 			<title>The First Most Advanced Battery Web App in Indonesia</title>
 			<link rel="icon" href="icon.jpg" type="image/jpg" sizes="16x16">
+			<link rel="stylesheet" href="loader.css">
+			<link rel="stylesheet" href="baterai.style.css">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|Tilt+Neon|&display=swap">
-			<link rel="stylesheet" href="loader.css">
-			<link rel="stylesheet" href="baterai.style.css">
 			<!---->
 			<meta charset="UTF-16">
 			<meta name="language" content="EN">
@@ -28,7 +28,7 @@
 			<meta property="og:description" content="Check Temperature & Voltage and advanced features in it!">
 			<meta property="og:type" content="article">
 			<!---->
-			
+			<!--
 			<script type="text/javascript">
 			function setCookie(cname,cvalue,exdays) {
 				const d = new Date();
@@ -64,6 +64,8 @@
 				}
 			}
 			</script>
+			-->
+			<script type="text/javascript" src="cookie.js"></script>
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
@@ -110,22 +112,9 @@
 				</script>
 				<!-- Sudah Ok -->
 			</main>
-		
+			
 			<footer>
-				<p id="cookie"></p>
-				<bdo>
-					<a href="lang_en.html"><i class="fa fa-check"></i> English</a>
-					<a href="index.html">| Indonesia</a>
-					<!--<a href="lang_euy.html">Sunda</a>
-					<a href="lang_jp.html">Japan</a>
-					<a href="lang_kr.html">Korean</a>
-					<a href="lang_ch.html">Chinesse</a>
-					<a href="lang_th.html">Thailand</a>
-					<a href="lang_za.html">Afrikaans</a>-->
-				</bdo>
-				
-				<hr width="50%" color="#BBB" size="1px">
-				<sup onclick="writer_01()">How does this website work? <i class="fa fa-terminal"></i></sup>
+				<p onclick="writer_01()">How does this website work? <i class="fa fa-terminal"></i></p>
 				<p id="typing_01" class="textwr"></p>
 				<script>
 					var satu = 0;
@@ -139,8 +128,10 @@
 						}
 					}
 				</script>
-				<hr width='50%' color='#BBB' size='1px'>
-				<sup onclick="writer_02()">How it Works? <i class="fa fa-terminal"></i></sup>
+				
+				<hr width='6%' color='#DDD' size='1px'/>
+					
+				<p onclick="writer_02()">How it Works? <i class="fa fa-terminal"></i></p>
 				<p id="typing_02" class="textwr"></p>
 				<script>
 					var dua = 0;
@@ -154,25 +145,45 @@
 						}
 					}
 				</script>
-				<hr width="100%" color="#BBB" size="1px">
-				<sub>This website was developed 2 years ago.</sub>
-				<br>
-				<sub>Released on September 15, 2023, and running time:</sub>
-				<br>
+				
+				<hr width='50%' color='#DDD' size='1px'/>
+				
+				<p>This website was developed 2 years ago.<br/>
+				Released on September 15, 2023, and running time:<br/>
 				<span id="umur">
-					<span class="bulan">-</span>
+					<span class="bulan"></span> Month
 					<br>
-					{<span class="hari">-</span><span class="jam">-</span><span class="mnt">-</span><span class="dtk">-</span>}
-				</span>
-				<p>Made by: Hardiansyah • &copy;</i>2021-2023</p>
-				<p>Version: 4.08</p>
+					(<span class="hari"></span> days, <span class="jam"></span> hours, <span class="mnt"></span> min, <span class="dtk"></span> sec)
+				</span></p>
+				
+				<p class="programmer">Made by: Hardiansyah<br/>
+				&copy;2021-2023<br/>
+				Version: 4.08</p>
+				
 				<a href="https://m.facebook.com/acces.py"><i class="fa fa-facebook"></i></a> <a href="https://wa.me/6289529305947"><i class="fa fa-whatsapp"></i></a>
-				<br>
-				<form>
-					<input type="button" name="view" class="view" value="View Source Code" onclick='window.location="view-source:" +window.location.href'>
-				</form> 
-				<sub>Thanks:<br>W3SCHOOL | STACKOVERFLOW | medium.com | developer.mozilla.org | Google Font | Google Icon | Font Awesome</sub>
-				<br>
+				
+				<hr width='50%' color='#DDD' size='1px'/>
+				
+				<script type="text/javascript">
+				<!-- Begin
+				document.write("<p>You have been visit <b>" + amt() + "</b> times.</p>")
+				// End -->
+				</script>
+				
+				<bdo>
+					<a href="lang_en.html"><i class="fa fa-check"></i> English</a>
+					<a href="index.html">| Indonesia</a>
+					<!--<a href="lang_euy.html">Sunda</a>
+					<a href="lang_jp.html">Japan</a>
+					<a href="lang_kr.html">Korean</a>
+					<a href="lang_ch.html">Chinesse</a>
+					<a href="lang_th.html">Thailand</a>
+					<a href="lang_za.html">Afrikaans</a>-->
+				</bdo>
+				
+				<hr width="100%" color="#BBB" size="1px"/>
+				
+				<p class="thanks">Thanks:<br>W3SCHOOL | STACKOVERFLOW | medium.com | developer.mozilla.org | Google Font | Google Icon | Font Awesome</p>
 				<p><i class="fa fa-android"></i> • <i class="fa fa-apple"></i> • <i class="fa fa-windows"></i><br><i class="fa fa-chrome"></i> • <i class="fa fa-edge"></i> • <i class="fa fa-opera"></i> • <i class="fa fa-firefox"></i> • <i class="fa fa-github"></i><br><i class="fa fa-html5"></i> • <i class="fa fa-css3"></i></p>
 			</footer>
 			
