@@ -7954,7 +7954,7 @@ document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>sta
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Temperature: <span id='spansuhu'>Count... <i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Endure: <span id='sisa'>Count... </span><i id='spin'></i>";
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>electrical_services</i> Resource: <span id='battery-status'>Count... </span><i id='spin'></i>";
-document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model: <span id='model'></span> (<span id='versi'></span>)";
+document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model:<span id='model'></span>(<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendors: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span>";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'></span>";
@@ -7971,9 +7971,6 @@ document.querySelectorAll(".tips")[3].innerHTML = "<bdo class='titletips'>•4. 
 document.querySelectorAll(".tips")[4].innerHTML = "<bdo class='titletips'>•5. Tips that might be useful for you.</bdo><br>*When charging, remove your Hardcase or Softcase to reduce heat.<br>*If your cellphone gets hot while charging, turn off your cellular data and activate Airplane Mode, take a break for a moment until the temperature of your cellphone cools down.<br>*To maximize charging, use the ”Fast Charging“ feature, then activate Airplane Mode and rest for a moment until your battery capacity reaches 30%.";
 /**/
 
-const apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
-document.getElementById('api').innerHTML = apiLevel;
-
 /* Mood Battery */
 const mood = [
 	{"mood": "Fed up <i class='material-icons'>mood_bad</i>"},
@@ -7984,45 +7981,28 @@ function moodmath() {
 	let random = mood[Math.floor(Math.random() * mood.length)];
 	spanmood.innerHTML = `${random.mood}`;
 	source.innerHTML = random.source;
-} setInterval(moodmath, 12000);
+} setInterval(moodmath, 12500);
 /**/
 /* Volt */
 const volt = [
 	{"volt": "6.0V <i class='fa fa-rocket'></i>"},{"volt": "6.1V <i class='fa fa-rocket'></i>"},{"volt": "6.2V <i class='fa fa-rocket'></i>"},{"volt": "6.3V <i class='fa fa-rocket'></i>"},{"volt": "6.4V <i class='fa fa-rocket'></i>"},
-	{"volt": "5.6V"},{"volt": "5.6V"},{"volt": "5.6V"},
-	{"volt": "5.5V"},{"volt": "5.5V"},{"volt": "5.5V"},
-	{"volt": "5.4V"},{"volt": "5.4V"},{"volt": "5.4V"},
+	{"volt": "5.6V"},{"volt": "5.6V"},{"volt": "5.6V"},{"volt": "5.6V"},
+	{"volt": "5.5V"},{"volt": "5.5V"},{"volt": "5.5V"},{"volt": "5.5V"},
+	{"volt": "5.4V"},{"volt": "5.4V"},{"volt": "5.4V"},{"volt": "5.4V"},
 	{"volt": "5.3V"},{"volt": "5.3V"},{"volt": "5.3V"},{"volt": "5.3V"},{"volt": "5.3V"},
 	{"volt": "5.2V"},{"volt": "5.2V"},{"volt": "5.2V"},{"volt": "5.2V"},{"volt": "5.2V"},
 	{"volt": "5.1V"},{"volt": "5.1V"},{"volt": " 5.1V"},{"volt": "5.1V"},{"volt": "5.1V"},
 	{"volt": "5.0V"},{"volt": "5.0V"},{"volt": "5.0V"},{"volt": "5.0V"},
 	{"volt": "4.9V"},{"volt": "4.9V"},{"volt": "4.9V"},
-	{"volt": "4.8V"},{"volt": "4.8V"},{"volt": "4.8V"},
-	{"volt": "4.5V"},
-	{"volt": "4.0V <i class='fa fa-frown-o'></i>"},{"volt": "4.0V <i class='fa fa-frown-o'></i>"},
+	{"volt": "4.8V"},{"volt": "4.8V"},
+	{"volt": "4.7V"},
+	{"volt": "4.6V <i class='fa fa-frown-o'></i>"},
 ]
 function voltmath() {
 	let random = volt[Math.floor(Math.random() * volt.length)];
 	spanvolt.innerHTML = `${random.volt}`;
 	source.innerHTML = random.source;
-} setInterval(voltmath, 3000);
-/**/
-/* Suhu */
-const suhu = [
-	{"suhu": "28°C (Cool) <i class='fa fa-thermometer-0'></i>"},{"suhu": "28°C (Cool) <i class='fa fa-thermometer-0'></i>"},
-	{"suhu": "29°C (Cool) <i class='fa fa-thermometer-0'></i>"},{"suhu": "29°C (Cool) <i class='fa fa-thermometer-0'></i>"},
-	{"suhu": "30°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "30°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "30°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "30°C (Warm) <i class='fa fa-thermometer-2'></i>"},
-	{"suhu": "31°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "31°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "31°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "31°C (Warm) <i class='fa fa-thermometer-2'></i>"},
-	{"suhu": "32°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "32°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "32°C (Hot) <i class='fa fa-thermometer-3'></i>"},
-	{"suhu": "33°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "33°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "33°C (Hot) <i class='fa fa-thermometer-3'></i>"},
-	{"suhu": "34°C (Warm) <i class='fa fa-thermometer-3'></i>"},{"suhu": "34°C (Hot) <i class='fa fa-thermometer-4'></i>"},
-	{"suhu": "35°C (Warm) <i class='fa fa-thermometer-3'></i>"},{"suhu": "35°C (Hot) <i class='fa fa-thermometer-4'></i>"},{"suhu": "35°C (Hot) <i class='fa fa-thermometer-4'></i>"},
-]
-function suhumath() {
-	let random = suhu[Math.floor(Math.random() * suhu.length)];
-	spansuhu.innerHTML = `${random.suhu}`;
-	source.innerHTML = random.source;
-} setInterval(suhumath, 10000);
+} setInterval(voltmath, 4500);
 /**/
 /* Tegangan */
 const tegangan = [
@@ -8049,7 +8029,24 @@ function teganganmath() {
 	let random = tegangan[Math.floor(Math.random() * tegangan.length)];
 	spantegangan.innerHTML = `${random.tegangan}`;
 	source.innerHTML = random.source;
-} setInterval(teganganmath, 5000);
+} setInterval(teganganmath, 6500);
+/**/
+/* Suhu */
+const suhu = [
+	{"suhu": "28°C (Cool) <i class='fa fa-thermometer-0'></i>"},{"suhu": "28°C (Cool) <i class='fa fa-thermometer-0'></i>"},
+	{"suhu": "29°C (Cool) <i class='fa fa-thermometer-0'></i>"},{"suhu": "29°C (Cool) <i class='fa fa-thermometer-0'></i>"},
+	{"suhu": "30°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "30°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "30°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "30°C (Warm) <i class='fa fa-thermometer-2'></i>"},
+	{"suhu": "31°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "31°C (Cool) <i class='fa fa-thermometer-1'></i>"},{"suhu": "31°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "31°C (Warm) <i class='fa fa-thermometer-2'></i>"},
+	{"suhu": "32°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "32°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "32°C (Hot) <i class='fa fa-thermometer-3'></i>"},
+	{"suhu": "33°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "33°C (Warm) <i class='fa fa-thermometer-2'></i>"},{"suhu": "33°C (Hot) <i class='fa fa-thermometer-3'></i>"},
+	{"suhu": "34°C (Warm) <i class='fa fa-thermometer-3'></i>"},{"suhu": "34°C (Hot) <i class='fa fa-thermometer-4'></i>"},
+	{"suhu": "35°C (Warm) <i class='fa fa-thermometer-3'></i>"},{"suhu": "35°C (Hot) <i class='fa fa-thermometer-4'></i>"},{"suhu": "35°C (Hot) <i class='fa fa-thermometer-4'></i>"},
+]
+function suhumath() {
+	let random = suhu[Math.floor(Math.random() * suhu.length)];
+	spansuhu.innerHTML = `${random.suhu}`;
+	source.innerHTML = random.source;
+} setInterval(suhumath, 9500);
 /**/
 /* Mesin */
 /*
