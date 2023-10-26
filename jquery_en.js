@@ -7954,7 +7954,7 @@ document.querySelectorAll("#data")[2].innerHTML = "<i class='material-icons'>sta
 document.querySelectorAll("#data")[3].innerHTML = "<i class='material-icons'>thermostat</i> Temperature: <span id='spansuhu'>Count... <i class='fa fa-spinner fa-pulse'></i></span>";
 document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>settings_power</i> Endure: <span id='sisa'>Count... </span><i id='spin'></i>";
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>electrical_services</i> Resource: <span id='battery-status'>Count... </span><i id='spin'></i>";
-document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model:<span id='model'></span>(<span id='versi'></span>)";
+document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model:<span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendors: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span>";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'></span>";
@@ -8048,6 +8048,28 @@ function suhumath() {
 	source.innerHTML = random.source;
 } setInterval(suhumath, 9500);
 /**/
+/* Alert */
+function customAlert(message) {
+	var div = document.createElement('div');
+	div.style.zIndex = '9999';
+	div.style.display = 'block';
+	div.style.position = 'fixed';
+	div.style.top = '22px';
+	div.style.right = '2px';
+	div.style.padding = '4px 4px';
+	div.style.fontSize = '14px';
+	div.style.fontFamily = 'Sen';
+	div.style.backgroundColor = '#1799E7';
+	div.style.color = '#FFF';
+	div.style.borderRadius = '8px 2px 2px 8px';
+	div.innerHTML = message;
+	document.body.appendChild(div);
+    // Hilangkan alert setelah beberapa detik
+	setTimeout(function() {
+		document.body.removeChild(div);
+	}, 3500); // Hapus setelah 5 detik
+}
+/**/
 /* Mesin */
 /*
 https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API
@@ -8099,13 +8121,13 @@ navigator.getBattery().then(function(battery) {
 	}
 	
 	function updateChargeInfo() {
-		alert("Resource: " + (battery.charging ? "Connect" : "Not connected"));
-		//alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
+		//alert("Resource: " + (battery.charging ? "Connect" : "Not connected"));
 		if (battery.charging) {
 			ctx.fillStyle = "#FF9900", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#FF9900";
 			ctx.stroke();
 			/* document.querySelector("#bolt").style.visibility = "visible"; */
+			customAlert("Charging Begins");
 			document.querySelector("#petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
 			document.querySelector("#status").innerHTML = "<span id='spanvolt'>Count...</span> <i class='fa fa-circle-o-notch fa-spin'></i>";
 			document.querySelector("#mengisi").style.visibility = "visible";
@@ -8117,10 +8139,11 @@ navigator.getBattery().then(function(battery) {
 			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
 			ctx.stroke();
-			document.querySelector("#petir").innerHTML = "";
+			customAlert("Charging Detachable");
+			document.querySelector("#petir").innerHTML = " ";
 			document.querySelector("#status").innerHTML = "Standby. . . <i class='fa fa-circle-o-notch'></i>";
 			document.querySelector("#mengisi").style.visibility = "hidden";
-			document.querySelector("#spin").innerHTML = "";
+			document.querySelector("#spin").innerHTML = " ";
 			document.querySelector('#battery-status').innerHTML = battery.charging ? 'Battery' : 'Battery';
 			document.querySelector("#peringatan").style.visibility = "visible";
 			document.querySelector("#pengisian").style.visibility = "hidden";
