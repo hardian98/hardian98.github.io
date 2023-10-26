@@ -18,21 +18,23 @@ body {
 margin: 0px;
 padding: 0px;
 height: 100vh;
-background-color: rgb(0,0,0);
+background-color: rgb(0,0,0.0);
 background-color: #303030;
+/*
+background-size: 400% 400%;
 background-size: cover;
 background-attachment: fixed;
 background-position: center;
 background-repeat: no-repeat;
-/*background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-background-size: 400% 400%;
 animation: gradient 15s ease infinite;
--ms-animation: gradient 15s ease infinite;
--webkit-animation: gradient 15s ease infinite;*/
+-webkit-animation: gradient 15s ease infinite;
+*/
 }
 
-/*@-ms-keyframes gradient {
+/*
+@keyframes gradient {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -54,7 +56,8 @@ animation: gradient 15s ease infinite;
 	100% {
 		background-position: 0% 50%;
 	}
-}*/
+}
+*/
 
 #loader-wrapper p {
 font-size: 12px;
@@ -66,8 +69,8 @@ color: #FFF;
 #spanmood {
 dispaly: block;
 position: fixed;
-left: 3.5%;
 top: 4%;
+left: 3.5%;
 z-index: 1000;
 width: auto;
 padding: 4px 4px 0px 4px;
@@ -118,10 +121,10 @@ top: 12%;
 left: 50%;
 width: 100%;
 margin: 0px;
+background-color: rgba(0,0,0,0.0);
 transform: translate(-50%, -50%);
 -ms-transform: translate(-50%, -50%);
 -webkit-transform: translate(-50%, -50%);
-background-color: rgba(0,0,0,0.0);
 }
 
 #BatteryLevel {
@@ -129,13 +132,13 @@ display: block;
 position: absolute;
 top: 16%;
 left: 50%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
--webkit-transform: translate(-50%, -50%);
 font-size: 28px;
 font-weight: 400;
 font-family: "Orbitron";
 color: #FFF;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
 }
 
 /*#bolt {
@@ -151,12 +154,12 @@ transform: translate(-50%, -50%);
 position: absolute;
 top: 16.5%;
 left: 65%;
-transform: translate(-50%, -50%);
--ms-transform: translate(-50%, -50%);
--webkit-transform: translate(-50%, -50%);
 font-size: 30px;
 font-weight: 400;
 color: #FFF;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+-webkit-transform: translate(-50%, -50%);
 }
 
 /* #status, #mengisi */
@@ -187,10 +190,18 @@ width: 92%;
 margin: 0px auto;
 margin-top: 15px;
 padding-bottom: 4px;
-background-color: rgba(0,0,0,0.6);
 background-color: #181818;
-border-radius: 25px 8px 25px 8px;
+backdrop-filter: blur(10px);
+backdrop-webkit-filter: blur(10px);
 border: 1.5px solid #FFF;
+border-radius: 25px 8px 25px 8px;
+/*
+background-color: rgba(255, 255, 255, 0.13);
+box-shadow: 0px px 40px rgba(8, 7, 16, 0.6);
+-ms-box-shadow: 0px 0px 40px rgba(8, 7, 16, 0.6);
+-webkit-box-shadow: 0px 0px 40px rgba(8, 7, 16, 0.6);
+border: 2px solid rgba(255, 255, 255, 0.1);
+*/
 }
 
 .data .label {
@@ -203,8 +214,8 @@ text-align: center;
 font-size: 16px;
 font-weight: 600;
 font-family: "Raleway";
-color: #EEE;
-background-color: #1799E7; /*1799E7*/
+color: #FFF;
+background-color: #1799E7;
 border-left: 2px solid #FFF;
 border-right: 2px solid #FFF;
 border-bottom: 2px solid #FFF;
@@ -216,14 +227,14 @@ margin: 4px 4px;
 font-size: 14px;
 font-weight: 400;
 font-family: "Prompt";
-color: #DDD;
+color: #FFF;
 }
 
 .data p span {
 font-size: 14px;
-font-weight: 500;
+font-weight: 600;
 font-family: "Prompt";
-color: #DDD;
+color: #FFF;
 }
 
 .data p .material-icons, .material-icons {
@@ -237,8 +248,8 @@ color: #FFF;
 
 .data p .fa-spinner, .fa-spin, .data p .fa, i.fa, #suhu i, #tegangan i {
 position: relative;
-width: auto;
 vertical-align: middle;
+width: auto;
 padding: 0px;
 font-size: 18px;
 }
@@ -259,7 +270,7 @@ margin: 8px 8px;
 font-size: 14px;
 font-weight: 400;
 font-family: "Prompt";
-color: #DDD;
+color: #EEE;
 }
 
 .fa-thermometer-0 {
@@ -280,7 +291,7 @@ color: #FF033E;
 
 /**/
 
-.namaFitur .material-icons, #murni .material-icons, .material-symbols-outlined {
+.namaFitur .material-icons, #murni .material-icons {
 vertical-align: middle;
 margin-top: -3.5px !important;
 padding: 0px !important;
@@ -294,7 +305,7 @@ padding: 2px 10px 2px 2px;
 font-size: 14px;
 font-weight: 400;
 font-family: "Mitr";
-color: #EEE;
+color: #FFF;
 background-color: #1799E7;
 border-radius: 0px 4px 16px 0px;
 }
@@ -337,12 +348,12 @@ transition: 1s;
 
 .slider:before {
 content: "";
-left: 3px;
-bottom: 2px;
+left: 3.6px;
+bottom: 2.4px;
 position: absolute;
 width: 22px;
 height: 22px;
-background-color: #DDD;
+background-color: #FFF;
 transition: 1s;
 -ms-transition: 1s;
 -webkit-transition: 1s;
@@ -373,11 +384,11 @@ transform: translateX(30px);
 /**/
 
 #persentase { /* Garis */
-visibility: hidden;
 position: fixed;
-bottom: 0px;
+visibility: hidden;
 left: 0px;
 right: 0px;
+bottom: 0px;
 width: 0px;
 margin: 0px;
 padding-top: 2px;
@@ -396,10 +407,19 @@ text-align: center;
 font-size: 16px;
 font-weight: 400;
 font-family: "Alata";
-color: #DDD;
+color: #FFF;
 animation: fadein 8s;
 -ms-animation: fadein 8s;
 -webkit-animation: fadein 8s;
+}
+
+@Keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 @-ms-keyframes fadein {
@@ -434,6 +454,21 @@ animation-timing-function: linear;
 animation-iteration-count: infinite;
 -ms-animation-iteration-count: infinite;
 -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes blinker {
+    20% {
+        color: #57F287;
+    }
+    40% {
+        color: #FF9900;
+    }
+    60% {
+        color: #FFE417;
+    }
+    80% {
+    	color: #E31937;
+    }
 }
 
 @-ms-keyframes blinker {
