@@ -222,7 +222,7 @@ border-bottom: 2px solid #FFF;
 border-radius: 0px 0px 18px 16px;
 }
 
-.data p {
+.data #data {
 margin: 4px 4px;
 font-size: 14px;
 font-weight: 400;
@@ -230,9 +230,9 @@ font-family: "Prompt";
 color: #FFF;
 }
 
-.data p span {
+.data #data span {
 font-size: 14px;
-font-weight: 600;
+font-weight: 500;
 font-family: "Prompt";
 color: #FFF;
 }
