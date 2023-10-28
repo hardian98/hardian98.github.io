@@ -1,32 +1,30 @@
+
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contoh Notifikasi</title>
+  <meta charset="UTF-8">
+  <title>Notifikasi dengan Suara</title>
 </head>
 <body>
-    <button onclick="showNotification()">Tampilkan Notifikasi</button>
-
-    <script>
-        function showNotification() {
-            if ('Notification' in window) {
-                // Periksa apakah Notifikasi didukung oleh browser
-                Notification.requestPermission()
-                    .then(function(permission) {
-                        if (permission === 'granted') {
-                            // Jika izin diberikan, tampilkan notifikasi
-                            var notification = new Notification('Judul Notifikasi', {
-                                body: 'Ini adalah konten notifikasi.',
-                                icon: 'icon.png' // Ganti dengan URL gambar ikon sesuai kebutuhan
-                            });
-
-                            notification.onclick = function() {
-                                // Tindakan yang diambil ketika notifikasi diklik
-                                window.location.href = 'https://www.example.com'; // Ganti dengan URL yang sesuai
-                            };
-                        }
-                    });
-            }
+  <h1>Notifikasi dengan Suara</h1>
+  <script>
+    function kirimNotifikasi() {
+      var notification = new Notification("Notifikasi berhasil dikirim!", {
+        title: "Notifikasi dari [nama situs]",
+        icon: "https://example.com/icon.png",
+        body: "Ini adalah pesan notifikasi dari [nama situs].",
+        onclick: function() {
+          alert("Anda mengklik notifikasi!");
+        },
+        sound: {
+          url: "https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg",
+          volume: 0.5
         }
-    </script>
+      });
+      notification.show();
+    }
+  </script>
+  <button onclick="kirimNotifikasi()">Kirim Notifikasi</button>
 </body>
 </html>
