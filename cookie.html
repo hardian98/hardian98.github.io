@@ -1,24 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Notifikasi ke Bilah Notifikasi</title>
+    <title>Contoh Notifikasi</title>
 </head>
 <body>
-  <h1>Notifikasi ke Bilah Notifikasi</h1>
-  <script>
-    function kirimNotifikasi() {
-      var notification = new Notification("Notifikasi berhasil dikirim!", {
-        title: "Notifikasi dari [nama situs]",
-        icon: "https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/image.jpg",
-        body: "Ini adalah pesan notifikasi dari [nama situs].",
-        onclick: function() {
-          alert("Anda mengklik notifikasi!");
+    <button onclick="showNotification()">Tampilkan Notifikasi</button>
+
+    <script>
+        function showNotification() {
+            if ('Notification' in window) {
+                // Periksa apakah Notifikasi didukung oleh browser
+                Notification.requestPermission()
+                    .then(function(permission) {
+                        if (permission === 'granted') {
+                            // Jika izin diberikan, tampilkan notifikasi
+                            var notification = new Notification('Judul Notifikasi', {
+                                body: 'Ini adalah konten notifikasi.',
+                                icon: 'icon.png' // Ganti dengan URL gambar ikon sesuai kebutuhan
+                            });
+
+                            notification.onclick = function() {
+                                // Tindakan yang diambil ketika notifikasi diklik
+                                window.location.href = 'https://www.example.com'; // Ganti dengan URL yang sesuai
+                            };
+                        }
+                    });
+            }
         }
-      });
-      notification.show();
-    }
-  </script>
-  <button onclick="kirimNotifikasi()">Kirim Notifikasi</button>
+    </script>
 </body>
 </html>
