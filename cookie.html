@@ -1,68 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Contoh Navigator JavaScript</title>
+  <meta charset="UTF-8">
+  <title>Navigator Example</title>
 </head>
 <body>
-    <h1>Informasi Navigator</h1>
-    <ul>
-        <li><strong>User Agent:</strong> <span id="userAgentInfo"></span></li>
-        <li><strong>Nama Peramban:</strong> <span id="appNameInfo"></span></li>
-        <li><strong>Versi Peramban:</strong> <span id="appVersionInfo"></span></li>
-        <li><strong>Platform:</strong> <span id="platformInfo"></span></li>
-        <li><strong>Bahasa Pengguna:</strong> <span id="languageInfo"></span></li>
-        <li><strong>Cookies Aktif:</strong> <span id="cookieInfo"></span></li>
-        <li><strong>Status Online:</strong> <span id="onlineStatus"></span></li>
-    </ul>
+  <h1>Navigator Example</h1>
 
-    <script>
-        // Mendapatkan referensi ke elemen HTML
-        var userAgentInfo = document.getElementById("userAgentInfo");
-        var appNameInfo = document.getElementById("appNameInfo");
-        var appVersionInfo = document.getElementById("appVersionInfo");
-        var platformInfo = document.getElementById("platformInfo");
-        var languageInfo = document.getElementById("languageInfo");
-        var cookieInfo = document.getElementById("cookieInfo");
-        var onlineStatus = document.getElementById("onlineStatus");
+  <script>
+    // Dapatkan informasi tentang browser pengguna
+    var browserType = navigator.userAgent;
+    var browserVersion = navigator.appVersion;
+    var operatingSystem = navigator.platform;
+    var userLanguage = navigator.language;
 
-        // Mengisi informasi menggunakan objek navigator
-        userAgentInfo.textContent = navigator.userAgent;
-        appNameInfo.textContent = navigator.appName;
-        appVersionInfo.textContent = navigator.appVersion;
-        platformInfo.textContent = navigator.platform;
-        languageInfo.textContent = navigator.language || navigator.userLanguage;
-        cookieInfo.textContent = navigator.cookieEnabled ? "Ya" : "Tidak";
-        onlineStatus.textContent = navigator.onLine ? "Terhubung ke Internet" : "Tidak Terhubung ke Internet";
-    </script>
-    <h1>Informasi Navigator</h1>
-    <ul>
-        <li><strong>User Agent:</strong> <span id="userAgentInfo"></span></li>
-        <li><strong>Nama Peramban:</strong> <span id="appNameInfo"></span></li>
-        <li><strong>Versi Peramban:</strong> <span id="appVersionInfo"></span></li>
-        <li><strong>Platform:</strong> <span id="platformInfo"></span></li>
-        <li><strong>Bahasa Pengguna:</strong> <span id="languageInfo"></span></li>
-        <li><strong>Cookies Aktif:</strong> <span id="cookieInfo"></span></li>
-        <li><strong>Status Online:</strong> <span id="onlineStatus"></span></li>
-    </ul>
+    // Tampilkan informasi di halaman web
+    document.getElementById("browser-type").innerHTML = browserType;
+    document.getElementById("browser-version").innerHTML = browserVersion;
+    document.getElementById("operating-system").innerHTML = operatingSystem;
+    document.getElementById("user-language").innerHTML = userLanguage;
+  </script>
 
-    <script>
-        // Mendapatkan referensi ke elemen HTML
-        var userAgentInfo = document.getElementById("userAgentInfo");
-        var appNameInfo = document.getElementById("appNameInfo");
-        var appVersionInfo = document.getElementById("appVersionInfo");
-        var platformInfo = document.getElementById("platformInfo");
-        var languageInfo = document.getElementById("languageInfo");
-        var cookieInfo = document.getElementById("cookieInfo");
-        var onlineStatus = document.getElementById("onlineStatus");
-
-        // Mengisi informasi menggunakan objek navigator
-        userAgentInfo.textContent = navigator.userAgent;
-        appNameInfo.textContent = navigator.appName;
-        appVersionInfo.textContent = navigator.appVersion;
-        platformInfo.textContent = navigator.platform;
-        languageInfo.textContent = navigator.language || navigator.userLanguage;
-        cookieInfo.textContent = navigator.cookieEnabled ? "Ya" : "Tidak";
-        onlineStatus.textContent = navigator.onLine ? "Terhubung ke Internet" : "Tidak Terhubung ke Internet";
-    </script>
+  <p>Jenis browser: <span id="browser-type"></span></p>
+  <p>Versi browser: <span id="browser-version"></span></p>
+  <p>Sistem operasi: <span id="operating-system"></span></p>
+  <p>Bahasa pengguna: <span id="user-language"></span></p>
 </body>
 </html>
