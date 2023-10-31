@@ -1,24 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Deteksi Lokasi Pengguna</title>
+    <title>Contoh Navigator JavaScript</title>
 </head>
 <body>
-    <h1>Lokasi Pengguna</h1>
-    <p id="lokasi"></p>
+    <h1>Informasi Navigator</h1>
+    <ul>
+        <li><strong>User Agent:</strong> <span id="userAgentInfo"></span></li>
+        <li><strong>Nama Peramban:</strong> <span id="appNameInfo"></span></li>
+        <li><strong>Versi Peramban:</strong> <span id="appVersionInfo"></span></li>
+        <li><strong>Platform:</strong> <span id="platformInfo"></span></li>
+        <li><strong>Bahasa Pengguna:</strong> <span id="languageInfo"></span></li>
+        <li><strong>Cookies Aktif:</strong> <span id="cookieInfo"></span></li>
+        <li><strong>Status Online:</strong> <span id="onlineStatus"></span></li>
+    </ul>
 
     <script>
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
-                var accuracy = position.coords.accuracy;
+        // Mendapatkan referensi ke elemen HTML
+        var userAgentInfo = document.getElementById("userAgentInfo");
+        var appNameInfo = document.getElementById("appNameInfo");
+        var appVersionInfo = document.getElementById("appVersionInfo");
+        var platformInfo = document.getElementById("platformInfo");
+        var languageInfo = document.getElementById("languageInfo");
+        var cookieInfo = document.getElementById("cookieInfo");
+        var onlineStatus = document.getElementById("onlineStatus");
 
-                document.getElementById("lokasi").textContent = "Lokasi Anda:\nLatitude: " + latitude + "\nLongitude: " + longitude + "\nAkurasi: " + accuracy + " meter";
-            });
-        } else {
-            document.getElementById("lokasi").textContent = "Geolokasi tidak didukung oleh peramban Anda.";
-        }
+        // Mengisi informasi menggunakan objek navigator
+        userAgentInfo.textContent = navigator.userAgent;
+        appNameInfo.textContent = navigator.appName;
+        appVersionInfo.textContent = navigator.appVersion;
+        platformInfo.textContent = navigator.platform;
+        languageInfo.textContent = navigator.language || navigator.userLanguage;
+        cookieInfo.textContent = navigator.cookieEnabled ? "Ya" : "Tidak";
+        onlineStatus.textContent = navigator.onLine ? "Terhubung ke Internet" : "Tidak Terhubung ke Internet";
     </script>
 </body>
 </html>
