@@ -4,28 +4,38 @@
     <title>Pesan Notifikasi</title>
 </head>
 <body>
-    <button onclick="showNotification()">Tampilkan Notifikasi</button>
+    <button onclick="showNotification()">Tampilkan p Notifikasi</button>
 
     <script>
-        function showNotification() {
-            if ('Notification' in window) {
-                Notification.requestPermission()
-                    .then(function(permission) {
-                        if (permission === 'granted') {
-                            // Jika izin diberikan, tampilkan notifikasi
-                            var notification = new Notification('Judul Notifikasi', {
-                                body: 'Ini adalah pesan notifikasi.',
-                                icon: 'kucing.jpg' // Ganti dengan URL gambar ikon sesuai kebutuhan
-                            });
+    // Deklarasi variabel
+var message = "Ini adalah pesan notifikasi";
+var icon = "kucing.jpg";
+var tag = "my-tag";
+var data = {
+  title: "Judul pesan",
+  description: "Deskripsi pesan",
+};
+var actions = [{
+  label: "Tindakan 1",
+  callback: function() {
+    // Kode yang akan dijalankan saat tombol tindakan diklik
+  },
+}];
 
-                            notification.onclick = function() {
-                                // Tindakan yang diambil ketika notifikasi diklik
-                                alert('Notifikasi diklik!');
-                            };
-                        }
-                    });
-            }
-        }
+// Fungsi untuk menampilkan pesan notifikasi
+function showNotification() {
+  // Buat objek notifikasi
+  var notification = new Notification(message, {
+    icon: icon,
+    tag: tag,
+    data: data,
+    actions: actions,
+  });
+
+  // Tampilkan notifikasi
+  notification.show();
+}
+
+// Jalankan fungsi showNotification() saat halaman dimuat
+window.onload = showNotification;
     </script>
-</body>
-</html>
