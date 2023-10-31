@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Pesan Notifikasi</title>
+    <title>Pesan Notifikasi</title>
 </head>
 <body>
-  <h1>Pesan Notifikasi</h1>
-  <p>
-    Pesan notifikasi ini akan menampilkan pesan di bilah notifikasi.
-  </p>
-  <script>
-    // Deklarasi variabel
-    var message = "Ini adalah pesan notifikasi";
+    <button onclick="showNotification()">Tampilkan Notifikasi</button>
 
-    // Fungsi untuk menampilkan pesan notifikasi
-    function showNotification() {
-      // Buat objek notifikasi
-      var notification = new Notification(message, {
-        body: "Ini adalah isi pesan notifikasi",
-      });
+    <script>
+        function showNotification() {
+            if ('Notification' in window) {
+                Notification.requestPermission()
+                    .then(function(permission) {
+                        if (permission === 'granted') {
+                            // Jika izin diberikan, tampilkan notifikasi
+                            var notification = new Notification('Judul Notifikasi', {
+                                body: 'Ini adalah pesan notifikasi.',
+                                icon: 'kucing.jpg' // Ganti dengan URL gambar ikon sesuai kebutuhan
+                            });
 
-      // Tampilkan notifikasi
-      notification.show();
-    }
-
-    // Jalankan fungsi showNotification() saat halaman dimuat
-    window.onload = showNotification;
-  </script>
+                            notification.onclick = function() {
+                                // Tindakan yang diambil ketika notifikasi diklik
+                                alert('Notifikasi diklik!');
+                            };
+                        }
+                    });
+            }
+        }
+    </script>
 </body>
 </html>
