@@ -8161,7 +8161,7 @@ navigator.getBattery().then(function(battery) {
 	switch (batL) {
 		case 0:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#504546", ctx.roundRect(280, 300, 100, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#001f3f", ctx.roundRect(280, 300, 100, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#2F4F4F";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8171,7 +8171,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 1:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#A91D36", ctx.roundRect(280, 300, 200, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#FF4136", ctx.roundRect(280, 300, 200, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#DC143C";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8181,7 +8181,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 2:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#C60C30", ctx.roundRect(280, 300, 300, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#FFDC00", ctx.roundRect(280, 300, 300, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#FFD700";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8191,7 +8191,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 3:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#FF7034", ctx.roundRect(280, 300, 450, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#FF851B", ctx.roundRect(280, 300, 450, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#FF8C00";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8201,7 +8201,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 4:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#FF9900", ctx.roundRect(280, 300, 600, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#FF851B", ctx.roundRect(280, 300, 600, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#20B2AA";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8211,7 +8211,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 5:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#FFB109", ctx.roundRect(280, 300, 750, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#3D9970", ctx.roundRect(280, 300, 750, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#20B2AA";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8220,7 +8220,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 6:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#24855B", ctx.roundRect(280, 300, 900, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#3D9970", ctx.roundRect(280, 300, 900, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#6495ED";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8229,7 +8229,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 7:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#25D366", ctx.roundRect(280, 300, 1050, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#39CCCC", ctx.roundRect(280, 300, 1050, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8238,7 +8238,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 8:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#71BCE1", ctx.roundRect(280, 300, 1200, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#39CCCC", ctx.roundRect(280, 300, 1200, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#1E90FF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8247,7 +8247,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 9:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#41ADFF", ctx.roundRect(280, 300, 1300, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#0074D9", ctx.roundRect(280, 300, 1300, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();
@@ -8256,7 +8256,7 @@ navigator.getBattery().then(function(battery) {
 		break;
 		case 10:
 		ctx.lineWidth = 10;
-		ctx.fillStyle = "#1799E7", ctx.roundRect(280, 300, 1400, 700, [40, 0, 0, 40]), ctx.fill();
+		ctx.fillStyle = "#0074D9", ctx.roundRect(280, 300, 1400, 700, [40, 0, 0, 40]), ctx.fill();
 		ctx.beginPath();
 		//ctx.strokeStyle = "#00BFFF";
 		ctx.roundRect(280, 300, 1400, 700, [40]), ctx.stroke();

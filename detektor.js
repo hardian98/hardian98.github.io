@@ -9,26 +9,26 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 		options: [],
 		header: [navigator.platform, navigator.userAgent, navigator.appVersion, navigator.vendor, window.opera],
 		dataos: [
-		{ name: "<i class='material-icons'>phone_android</i>Windows Phone", value: 'Windows Phone', version: 'OS' },
-		{ name: "<i class='material-icons'>desktop_windows</i>Windows", value: 'Win', version: 'NT' },
+		{ name: "<i class='material-icons'>android</i>Android", value: 'Android', version: 'Android' },
 		{ name: "<i class='material-icons'>phone_iphone</i>iPhone", value: 'iPhone', version: 'OS' },
 		{ name: "<i class='material-icons'>tablet_mac</i>iPad", value: 'iPad', version: 'OS' },
+		{ name: "<i class='material-icons'>laptop_mac</i>Macintosh", value: 'Mac', version: 'OS X' },
+		{ name: "<i class='material-icons'>desktop_windows</i>Windows", value: 'Win', version: 'NT' },
+		{ name: "<i class='material-icons'>phone_android</i>Windows Phone", value: 'Windows Phone', version: 'OS' },
+		{ name: "<i class='material-icons'>computer</i>Linux", value: 'Linux', version: 'rv' },
 		{ name: "<i class='material-icons'>tablet_android</i>Kindle", value: 'Silk', version: 'Silk' },
-		{ name: "<i class='material-icons'>android</i>Android", value: 'Android', version: 'Android' },
 		{ name: "<i class='material-icons'>tablet_android</i>PlayBook", value: 'PlayBook', version: 'OS' },
 		{ name: "<i class='material-icons'>phone_android</i>BlackBerry", value: 'BlackBerry', version: '/' },
-		{ name: "<i class='material-icons'>laptop_mac</i>Macintosh", value: 'Mac', version: 'OS X' },
-		{ name: "<i class='material-icons'>computer</i>Linux", value: 'Linux', version: 'rv' },
 		{ name: "<i class='material-icons'>computer</i>Palm", value: 'Palm', version: 'PalmOS' }
 		],
 		databrowser: [
-		{ name: "<i class='fa fa-firefox'></i> Firefox", value: 'Firefox', version: 'Firefox' },
-		{ name: "<i class='fa fa-chrome'></i> Chrome", value: 'Chrome', version: 'Chrome' },
-		{ name: "<i class='fa fa-safari'></i> Safari", value: 'Safari', version: 'Version' },
 		{ name: "<i class='fa fa-edge'></i> Internet Explorer", value: 'MSIE', version: 'MSIE' },
 		{ name: "<i class='fa fa-opera'></i> Opera", value: 'Opera', version: 'Opera' },
+		{ name: "<i class='fa fa-chrome'></i> Chrome", value: 'Chrome', version: 'Chrome' },
 		{ name: "<i class='fa fa-delicious'></i> BlackBerry", value: 'CLDC', version: 'CLDC' },
-		{ name: "<i class='fa fa-firefox'></i> Mozilla", value: 'Mozilla', version: 'Mozilla' }
+		{ name: "<i class='fa fa-firefox'></i> Firefox", value: 'Firefox', version: 'Firefox' },
+		{ name: "<i class='fa fa-firefox'></i> Mozilla", value: 'Mozilla', version: 'Mozilla' },
+		{ name: "<i class='fa fa-safari'></i> Safari", value: 'Safari', version: 'Version' }
 		],
 		init: function () {
 			var agent = this.header.join(' '),
