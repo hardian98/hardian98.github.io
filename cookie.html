@@ -1,41 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pesan Notifikasi</title>
+    <title>Deteksi Lokasi Pengguna</title>
 </head>
 <body>
-    <button onclick="showNotification()">Tampilkan p Notifikasi</button>
+    <h1>Lokasi Pengguna</h1>
+    <p id="lokasi"></p>
 
     <script>
-    // Deklarasi variabel
-var message = "Ini adalah pesan notifikasi";
-var icon = "kucing.jpg";
-var tag = "my-tag";
-var data = {
-  title: "Judul pesan",
-  description: "Deskripsi pesan",
-};
-var actions = [{
-  label: "Tindakan 1",
-  callback: function() {
-    // Kode yang akan dijalankan saat tombol tindakan diklik
-  },
-}];
+        if ("geolocation" in navigator) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var accuracy = position.coords.accuracy;
 
-// Fungsi untuk menampilkan pesan notifikasi
-function showNotification() {
-  // Buat objek notifikasi
-  var notification = new Notification(message, {
-    icon: icon,
-    tag: tag,
-    data: data,
-    actions: actions,
-  });
-
-  // Tampilkan notifikasi
-  notification.show();
-}
-
-// Jalankan fungsi showNotification() saat halaman dimuat
-window.onload = showNotification;
+                document.getElementById("lokasi").textContent = "Lokasi Anda:\nLatitude: " + latitude + "\nLongitude: " + longitude + "\nAkurasi: " + accuracy + " meter";
+            });
+        } else {
+            document.getElementById("lokasi").textContent = "Geolokasi tidak didukung oleh peramban Anda.";
+        }
     </script>
+</body>
+</html>
