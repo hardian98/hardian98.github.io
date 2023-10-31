@@ -1,30 +1,31 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Notifikasi dengan Suara</title>
+  <title>Pesan Notifikasi</title>
 </head>
 <body>
-  <h1>Notifikasi dengan Suara</h1>
+  <h1>Pesan Notifikasi</h1>
+  <p>
+    Pesan notifikasi ini akan menampilkan pesan di bilah notifikasi.
+  </p>
   <script>
-    function kirimNotifikasi() {
-      var notification = new Notification("Notifikasi berhasil dikirim!", {
-        title: "Notifikasi dari [nama situs]",
-        icon: "https://example.com/icon.png",
-        body: "Ini adalah pesan notifikasi dari [nama situs].",
-        onclick: function() {
-          alert("Anda mengklik notifikasi!");
-        },
-        sound: {
-          url: "https://raw.githubusercontent.com/hardian98/hardian98.github.io/main/Ungu - Cinta Dalam Hati.mp3",
-          volume: 0.5
-        }
+    // Deklarasi variabel
+    var message = "Ini adalah pesan notifikasi";
+
+    // Fungsi untuk menampilkan pesan notifikasi
+    function showNotification() {
+      // Buat objek notifikasi
+      var notification = new Notification(message, {
+        body: "Ini adalah isi pesan notifikasi",
       });
+
+      // Tampilkan notifikasi
       notification.show();
     }
+
+    // Jalankan fungsi showNotification() saat halaman dimuat
+    window.onload = showNotification;
   </script>
-  <button onclick="kirimNotifikasi()">Kirim Notifikasiiii</button>
 </body>
 </html>
