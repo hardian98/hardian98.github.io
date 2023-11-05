@@ -1,28 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function customAlert(message) {
-	var div = document.createElement('div');
-	div.style.zIndex = '9999';
-	div.style.display = 'block';
-	div.style.position = 'fixed';
-	div.style.top = '22px';
-	div.style.right = '2px';
-	div.style.padding = '4px 4px';
-	div.style.fontSize = '14px';
-	div.style.fontFamily = 'Sen';
-	div.style.backgroundColor = '#1799E7';
-	div.style.color = '#FFF';
-	div.style.borderRadius = '8px 2px 2px 8px';
-	div.innerHTML = message;
-	document.body.appendChild(div);
-    // Hilangkan alert setelah beberapa detik
-	setTimeout(function() {
-		document.body.removeChild(div);
-	}, 3500); // Hapus setelah 5 detik
-}
-</script>
+
 <script>
 function setCookie(cname,cvalue,exdays) {
   const d = new Date();
@@ -59,5 +38,27 @@ function checkCookie() {
 </script>
 </head>
 
-<body onload="checkCookie()">TEST</body>
+<body onload="checkCookie()">TEST00
+<script>
+function customAlert(message) {
+	var div = document.createElement('div');
+	div.style.zIndex = '9999';
+	div.style.display = 'block';
+	div.style.position = 'fixed';
+	div.style.top = '22px';
+	div.style.right = '2px';
+	div.style.padding = '4px 4px';
+	div.style.fontSize = '14px';
+	div.style.fontFamily = 'Sen';
+	div.style.backgroundColor = '#1799E7';
+	div.style.color = '#FFF';
+	div.style.borderRadius = '8px 2px 2px 8px';
+	div.innerHTML = message;
+	document.body.appendChild(div);
+    // Hilangkan alert setelah beberapa detik
+	setTimeout(function() {
+		document.body.removeChild(div);
+	}, 3500); // Hapus setelah 5 detik
+}
+</script></body>
 </html>
