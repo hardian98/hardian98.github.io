@@ -27,7 +27,7 @@ function getCookie(cname) {
 function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
-    customAlert("Selamat kembali " + user);
+    alert("Selamat kembali " + user);
   } else {
      user = prompt("Masukan nama:","");
      if (user != "" && user != null) {
