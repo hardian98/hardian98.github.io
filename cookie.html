@@ -1,30 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Navigator Example</title>
+    <title>Deteksi Nama Peramban</title>
 </head>
 <body>
-  <h1>Navigator Example</h1>
-  
-  <p>Jenis browser: <span id="browser-type"></span></p>
-  <p>Versi browser: <span id="browser-version"></span></p>
-  <p>Sistem operasi: <span id="operating-system"></span></p>
-  <p>Bahasa pengguna: <span id="user-language"></span></p>
+    <h1>Deteksi Nama Peramban</h1>
+    <p id="browserInfo">Mendeteksi nama peramban...</p>
 
-  <script>
-    // Dapatkan informasi tentang browser pengguna
-    var browserType = navigator.userAgent;
-    var browserVersion = navigator.appVersion;
-    var operatingSystem = navigator.platform;
-    var userLanguage = navigator.language;
+    <script>
+        // Mendeteksi nama peramban
+        var browserInfo = getBrowserInfo();
+        document.getElementById("browserInfo").textContent = "Peramban Anda: " + browserInfo;
 
-    // Tampilkan informasi di halaman web
-    document.getElementById("browser-type").innerHTML = browserType;
-    document.getElementById("browser-version").innerHTML = browserVersion;
-    document.getElementById("operating-system").innerHTML = operatingSystem;
-    document.getElementById("user-language").innerHTML = userLanguage;
-  </script>
+        function getBrowserInfo() {
+            var userAgent = navigator.userAgent;
+            var browserName;
+            
+            if (userAgent.indexOf("Chrome") != -1) {
+                browserName = "Google Chrome";
+            } else if (userAgent.indexOf("Firefox") != -1) {
+                browserName = "Mozilla Firefox";
+            } else if (userAgent.indexOf("Edge") != -1) {
+                browserName = "Microsoft Edge";
+            } else if (userAgent.indexOf("Safari") != -1 && userAgent.indexOf("Chrome") == -1) {
+                browserName = "Apple Safari";
+            } else if (userAgent.indexOf("Opera") != -1 || userAgent.indexOf("OPR") != -1) {
+                browserName = "Opera";
+            } else if (userAgent.indexOf("Trident") != -1) {
+                browserName = "Microsoft Internet Explorer";
+            } else {
+                browserName = "Tidak Diketahui";
+            }
 
+            return browserName;
+        }
+    </script>
 </body>
 </html>
