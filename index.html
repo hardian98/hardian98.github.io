@@ -71,6 +71,19 @@
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+			<script type="text/javascript">
+			function redirectByLanguage() {
+				var userLanguage = navigator.language || navigator.userLanguage;
+				if (userLanguage.startsWith('id')) {
+					window.location.href = 'index.html';
+				} else if (userLanguage.startsWith('en')) {
+					window.location.href = 'lang_en.html';
+				} else {
+					window.location.href = 'index.html';
+				}
+			}
+			redirectByLanguage();
+			</script>
 			<!-- Memulai Program... -->
 			<main>
 				<script> <!-- LLVM -->
@@ -158,7 +171,7 @@
 					(<span class="hari"></span> hari, <span class="jam"></span> jam, <span class="mnt"></span> mnt, <span class="dtk"></span> dtk)
 				</span></p>
 				
-				<img src="IMG-20231201-WA0005.jpg" style="display: block; margin: 0 auto; object-fit: cover; width: 7rem; height: 7rem; border: 1px solid #FFF; border-radius: 50%">
+				<img src="kucing.jpg" style="display: block; margin: 0 auto; object-fit: cover; width: 7rem; height: 7rem; border: 1px solid #FFF; border-radius: 50%">
 				
 				<p class="programmer">Dibuat oleh: Hardiansyah<br/>
 				&copy;2021-2023<br/>

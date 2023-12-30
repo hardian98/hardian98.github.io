@@ -71,6 +71,19 @@
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+			<script type="text/javascript">
+			function redirectByLanguage() {
+				var userLanguage = navigator.language || navigator.userLanguage;
+				if (userLanguage.startsWith('id')) {
+					window.location.href = 'index.html';
+				} else if (userLanguage.startsWith('en')) {
+					window.location.href = 'lang_en.html';
+				} else {
+					window.location.href = 'index.html';
+				}
+			}
+			redirectByLanguage();
+			</script>
 			<!-- Memulai Program... -->
 			<main>
 				<script> <!-- LLVM -->
