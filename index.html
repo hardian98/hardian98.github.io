@@ -30,60 +30,10 @@
 			<meta property="og:image" content="thumb.jpeg">
 			<meta property="og:type" content="article">
 			<!---->
-			<!--
-			<script type="text/javascript">
-			function setCookie(cname,cvalue,exdays) {
-				const d = new Date();
-				d.setTime(d.getTime() + (exdays*24*60*60*1000));
-				let expires = "expires=" + d.toUTCString();
-				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-			}
-			function getCookie(cname) {
-				let name = cname + "=";
-				let decodedCookie = decodeURIComponent(document.cookie);
-				let ca = decodedCookie.split(';');
-				for(let i = 0; i < ca.length; i++) {
-					let c = ca[i];
-					while (c.charAt(0) == "") {
-						c = c.substring(1);
-					}
-					if (c.indexOf(name) == 0) {
-						return c.substring(name.length, c.length);
-					}
-				}
-				return "";
-			}
-			function checkCookie() {
-				let user = getCookie("username");
-				if (user != "") {
-					alert("Dateng lagi nih, " + user);
-					// document.getElementById("cookie").innerHTML = "Hallo, " + user;
-				} else {
-					user = prompt("Masukin Nama (digunakan untuk Cookie doang)","");
-					if (user != "" && user != null) {
-						setCookie("username", user, 30);
-					}
-				}
-			}
-			</script>
-			-->
 			<script type="text/javascript" src="cookie.js"></script>
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
-			<!--<script type="text/javascript">
-			function redirectByLanguage() {
-				var userLanguage = navigator.language || navigator.userLanguage;
-				if (userLanguage.startsWith('id')) {
-					window.location.href = 'index.html';
-				} else if (userLanguage.startsWith('en')) {
-					window.location.href = 'lang_en.html';
-				} else {
-					window.location.href = 'index.html';
-				}
-			}
-			redirectByLanguage();
-			</script>-->
 			<!-- Memulai Program... -->
 			<main>
 				<script> <!-- LLVM -->
@@ -150,7 +100,7 @@
 				<p id="typing_02" class="textwr"></p>
 				<script>
 					var dua = 0;
-					var txt02 = "Saat sumber daya tersambung, program akan membaca tegangan masuk dan memperkirakan berapa lama waktu yang dibutuhkan hingga baterai terisi penuh.\nFitur: “Pengisian Cepat” akan mengambil arus daya lebih tinggi dari Adaptor namun dengan batas toleransi aman.\nFitur: “Baterai Adaptif” akan membatasi Aplikasi yang berjalan di latar belakang agar tidak mengonsumsi lebih banyak daya.\nFitur: “Stabilkan Tegangan” akan mengubah arus masuk menjadi lebih stabil untuk mendapatkan arus amper yang tinggi.\n"; /* The text */
+					var txt02 = "Saat sumber daya tersambung, program akan membaca tegangan masuk dan memperkirakan berapa lama waktu yang dibutuhkan hingga baterai terisi penuh.\nFitur: “Pengisian Cepat” akan mengambil arus daya lebih tinggi dari Adaptor namun dengan batas toleransi aman.\nFitur: “Baterai Adaptif” akan membatasi Aplikasi yang berjalan di latar belakang agar tidak mengonsumsi lebih banyak daya.\nFitur: “Stabilkan Tegangan” akan mengubah arus masuk menjadi lebih stabil untuk mendapatkan arus amper yang tinggi."; /* The text */
 					var speed2 = 50;
 					function writer_02() {
 						if (satu < txt02.length) {

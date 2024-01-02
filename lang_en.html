@@ -30,61 +30,11 @@
 			<meta property="og:image" content="thumb.jpeg">
 			<meta property="og:type" content="article">
 			<!---->
-			<!--
-			<script type="text/javascript">
-			function setCookie(cname,cvalue,exdays) {
-				const d = new Date();
-				d.setTime(d.getTime() + (exdays*24*60*60*1000));
-				let expires = "expires=" + d.toUTCString();
-				document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-			}
-			function getCookie(cname) {
-				let name = cname + "=";
-				let decodedCookie = decodeURIComponent(document.cookie);
-				let ca = decodedCookie.split(';');
-				for(let i = 0; i < ca.length; i++) {
-					let c = ca[i];
-					while (c.charAt(0) == "") {
-						c = c.substring(1);
-					}
-					if (c.indexOf(name) == 0) {
-						return c.substring(name.length, c.length);
-					}
-				}
-				return "";
-			}
-			function checkCookie() {
-				let user = getCookie("username");
-				if (user != "") {
-					alert("Come again," + user);
-					// document.getElementById("cookie").innerHTML = "Hallo, " + user;
-				} else {
-					user = prompt("Enter Name (used for Cookies only)","");
-					if (user != "" && user != null) {
-						setCookie("username", user, 30);
-					}
-				}
-			}
-			</script>
-			-->
 			<script type="text/javascript" src="cookie.js"></script>
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
-			<!--<script type="text/javascript">
-			function redirectByLanguage() {
-				var userLanguage = navigator.language || navigator.userLanguage;
-				if (userLanguage.startsWith('id')) {
-					window.location.href = 'index.html';
-				} else if (userLanguage.startsWith('en')) {
-					window.location.href = 'lang_en.html';
-				} else {
-					window.location.href = 'index.html';
-				}
-			}
-			redirectByLanguage();
-			</script>-->
-			<!-- Memulai Program... -->
+			<!-- Program Begins... -->
 			<main>
 				<script> <!-- LLVM -->
 				printBattery (void const* buffer) {
@@ -125,7 +75,7 @@
 					xhttp.send();
 				}
 				</script>
-				<!-- Sudah Ok -->
+				<!-- Ok -->
 			</main>
 			
 			<footer>
@@ -133,7 +83,7 @@
 				<p id="typing_01" class="textwr"></p>
 				<script>
 					var satu = 0;
-					var txt01 = "I use the Javascript API program to find out the relevant information needed to run this program.\nEverything displayed on this Website is safe and no data is stolen.\nReading battery and device information is a feature of the Application Programming Interface (API) which is powered by Javascript.\nI can guarantee that no data will be stolen and I am ready to report it to local authorities."; /* The text */
+					var txt01 = "I use the Javascript API program to find out the relevant information needed to run this program.\nEverything displayed on this Website is safe and no data is stolen.\nReading battery and device information is a feature of the Application Programming Interface (API) which is powered by Javascript.\nI guarantee that no data will be stolen and I am ready to report it to the authorities if it is proven that data theft has occurred."; /* The text */
 					var speed1 = 50;
 					function writer_01() {
 						if (satu < txt01.length) {
@@ -150,7 +100,7 @@
 				<p id="typing_02" class="textwr"></p>
 				<script>
 					var dua = 0;
-					var txt02 = "When a power source is connected, the program will read the incoming voltage and estimate how long it will take the battery to be fully charged.\nFeature: “Fast Charging” will take a higher power current from the Adapter but with a safe tolerance limit.\nFeature: “Adaptive Battery” will limits applications running in the background from consuming more power.\nFeature: “Stabilize Voltage” will change the incoming current to be more stable to get high amperage."; /* The text */
+					var txt02 = "When a power source is connected, the program will read the incoming voltage and estimate how long it will take for the battery to be fully charged.\nFeature: “Fast Charging” will take a higher power current from the Adapter but with a safe tolerance limit.\nFeature: “Adaptive Battery” will limit applications running in the background from consuming more power.\nFeature: “Stabilize Voltage” will change the incoming current to be more stable to get a high amperage current."; /* The text */
 					var speed2 = 50;
 					function writer_02() {
 						if (satu < txt02.length) {
