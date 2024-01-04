@@ -166,6 +166,15 @@
 				}, 2500);
 			});
 			</script>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+				<script>
+const alertSound = document.getElementById("alert-sound");
+window.alert.addEventListener("show", () => {
+  alertSound.play();
+});
+
+</script>
+<audio id="alert-sound" src="notif.mp3" preload="auto" controls></audio>
 			<script src="detektor.js"></script>
 			<script src="mithril.js"></script>
 			<script src="time.js"></script>
