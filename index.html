@@ -34,6 +34,11 @@
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+			<script>
+				document.addEventListener('contextmenu', function(event) {
+					event.preventDefault();
+				});
+			</script>
 			<!-- Memulai Program... -->
 			<main>
 				<script> <!-- LLVM -->
@@ -137,7 +142,7 @@
 				// End -->
 				</script>
 				
-				<!--<bdo>
+				<bdo>
 					<a href="index.html"><i class="fa fa-check"></i> Indonesia</a>
 					<a href="lang_en.html">| English</a>
 					<!--<a href="lang_euy.html">Sunda</a>
@@ -147,7 +152,7 @@
 					<a href="lang_ch.html">Chinesse</a>
 					<a href="lang_th.html">Thailand</a>
 					<a href="lang_za.html">Afrikaans</a>-->
-				</bdo>-->
+				</bdo>
 				
 				<hr width="100%" color="#BBB" size="1px"/>
 				
