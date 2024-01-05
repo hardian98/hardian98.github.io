@@ -191,8 +191,10 @@ margin: 0px auto;
 margin-top: 15px;
 padding-bottom: 4px;
 background-color: #181818;
-border: 1.5px solid #FFF;
+border: 2px solid #FFF;
 border-radius: 25px 8px 25px 8px;
+animation: border-color 9s infinite linear;
+-webkit-animation: border-color 9s infinite linear;
 /*
 backdrop-filter: blur(10px);
 backdrop-webkit-filter: blur(10px);
@@ -202,6 +204,27 @@ box-shadow: 0px px 40px rgba(8, 7, 16, 0.6);
 -webkit-box-shadow: 0px 0px 40px rgba(8, 7, 16, 0.6);
 border: 2px solid rgba(255, 255, 255, 0.1);
 */
+}
+
+@-webkit-keyframes border-color {
+	0% {
+		border-color: #FF4136;
+	}
+	20% {
+		border-color: #0074D9;
+	}
+	40% {
+		border-color: #0074D9;
+	}
+	60% {
+		border-color: #3D9970;
+	}
+	80% {
+		border-color: #3D9970;
+	}
+	100% {
+		border-color: #FF4136;
+	}
 }
 
 .data .label {
