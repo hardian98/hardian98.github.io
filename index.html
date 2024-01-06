@@ -1,3 +1,14 @@
+<?php
+header('X-Frame-Options: DENY');
+header("Content-Security-Policy: default-src 'self'");
+header("Referrer-Policy: no-referrer");
+header("X-XSS-Protection: 1; mode=block");
+session_start();
+$token = bin2hex(random_bytes(32));
+$_SESSION['csrf_token'] = $token;
+header("X-CSRF-Token: $token");
+?>
+
 <?xml version="1.0" encoding="UTF-16"?>
 <!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN" 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
 	<html lang="id">
@@ -148,7 +159,7 @@
 					alert("Jejak direset!");
 				}
 				</script>
-				
+				<br/>
 				<bdo>
 					<a href="index.html"><i class="fa fa-check"></i> Indonesia</a>
 					<a href="lang_en.html">| English</a>
