@@ -141,6 +141,13 @@
 				document.write("<p>Kamu sudah berkunjung <b>" + amt() + "</b> kali.</p>")
 				// End -->
 				</script>
+				<button onclick="deleteCookie()">Reset Jejak</button>
+				<script>
+				function deleteCookie() {
+					document.cookie = "name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+					alert("Jejak direset!");
+				}
+				</script>
 				
 				<bdo>
 					<a href="index.html"><i class="fa fa-check"></i> Indonesia</a>

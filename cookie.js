@@ -1,3 +1,4 @@
+// 6-01-2024
 function GetCookie (name) {
 	var arg = name + "=";  
 	var alen = arg.length;  
@@ -34,9 +35,9 @@ function DeleteCookie (name) {
 	document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
 }
 
-var expDays = 30;
+var expDays = 1; //30
 var exp = new Date(); 
-exp.setTime(exp.getTime() + (expDays*24*60*60*1000));
+exp.setTime(exp.getTime() + (expDays*1000*60*60*24)); //1000 60 60 24
 function amt() {
 	var count = GetCookie('count')
 	if(count == null) {
