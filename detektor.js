@@ -97,3 +97,26 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 
 var apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
 document.getElementById('api').innerHTML = apiLevel;
+
+function detectOSArchitecture() {
+	var userAgent = navigator.userAgent.toLowerCase();
+	if (userAgent.indexOf("win64") >= 0 || userAgent.indexOf("wow64") >= 0) {
+		return "64-bit Windows";
+	} else if (userAgent.indexOf("win32") >= 0) {
+		return "32-bit Windows";
+	} else if (userAgent.indexOf("mac") >= 0) {
+		return "Macintosh";
+	} else if (userAgent.indexOf("linux") >= 0) {
+		if (userAgent.indexOf("x86_64") >= 0) {
+			return "64-bit Linux";
+		} else {
+			return "32-bit Linux";
+		}
+	} else {
+		return "Unknown";
+	}
+}
+// Display the OS architecture information on the webpage
+var osArchitectureInfoElement = document.getElementById("kernel");
+osArchitectureInfoElement.textContent = detectOSArchitecture();
+
