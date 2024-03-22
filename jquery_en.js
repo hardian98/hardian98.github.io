@@ -7958,7 +7958,7 @@ document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>dev
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendors: <span id='vendor'></span>";
 document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span>";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'></span>";
-document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Architectural Kernel: <span id='karnel'>AARCH64</span>";
+document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Architectural OS: <span id='kernel'></span>";
 document.querySelectorAll("#data")[11].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
 document.querySelectorAll(".namaFitur")[0].innerHTML = "<i class='material-icons'>speed</i> Fast Charging";
 document.querySelectorAll(".namaFitur")[1].innerHTML = "<i class='material-icons'>battery_saver</i> Adaptive Battery";
