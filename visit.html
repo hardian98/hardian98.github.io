@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Internal Storage Information</title>
+  <title>Sistem Notifikasi</title>
 </head>
 <body>
-  <h1>Internal Storage Information</h1>
-  <p id="storageInfo">Loading...</p>
+  <h1>Sistem Notifikasi</h1>
+  <button onclick="showNotification()">Tampilkan Notifikasi</button>
 
   <script>
-    // Check if the browser supports navigator.getStorageInfo()
-    if (navigator.getStorageInfo) {
-      navigator.getStorageInfo().then(function(storageInfo) {
-        var storageInfoText = "Total: " + storageInfo.quota + " bytes<br>";
-        storageInfoText += "Used: " + storageInfo.usage + " bytes<br>";
-        storageInfoText += "Available: " + (storageInfo.quota - storageInfo.usage) + " bytes";
-
-        document.getElementById("storageInfo").innerHTML = storageInfoText;
-      }).catch(function(err) {
-        console.error('Error getting storage information:', err);
-        document.getElementById("storageInfo").textContent = "Error getting storage information";
-      });
-    } else {
-      document.getElementById("storageInfo").textContent = "Storage information not supported in this browser";
+    function showNotification() {
+      if (Notification.permission === 'granted') {
+        new Notification('Judul Notifikasi', {
+          body: 'Isi notifikasi disini.',
+          icon: 'icon.png' // Ganti dengan URL atau path ke gambar ikon notifikasi Anda
+        });
+      } else if (Notification.permission !== 'denied') {
+        Notification.requestPermission().then(permission => {
+          if (permission === 'granted') {
+            new Notification('Notifikasi Diizinkan!', {
+              body: 'Isi notifikasi disini.',
+              icon: 'kucing.jpg' // Ganti dengan URL atau path ke gambar ikon notifikasi Anda
+            });
+          }
+        });
+      }
     }
   </script>
 </body>
