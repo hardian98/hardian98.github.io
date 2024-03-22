@@ -2,35 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Baca Suhu Perangkat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internal Storage Information</title>
 </head>
 <body>
-  <h1>Informasi Lokasi</h1>
-  <p id="locationInfo"></p>
+  <h1>Internal Storage Information</h1>
+  <p id="storageInfo">Loading...</p>
 
   <script>
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        function(position) {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          const temperature = position.coords.temperature; // Suhu tidak selalu didukung
+    // Check if the browser supports navigator.getStorageInfo()
+    if (navigator.getStorageInfo) {
+      navigator.getStorageInfo().then(function(storageInfo) {
+        var storageInfoText = "Total: " + storageInfo.quota + " bytes<br>";
+        storageInfoText += "Used: " + storageInfo.usage + " bytes<br>";
+        storageInfoText += "Available: " + (storageInfo.quota - storageInfo.usage) + " bytes";
 
-          const locationInfo = `Latitude: ${latitude}<br>Longitude: ${longitude}`;
-          
-          if (temperature) {
-            document.getElementById('locationInfo').innerHTML = `${locationInfo}<br>Temperature: ${temperature}°C`;
-          } else {
-            document.getElementById('locationInfo').innerHTML = locationInfo;
-          }
-        },
-        function(error) {
-          console.error(`Error getting location: ${error.message}`);
-          document.getElementById('locationInfo').innerHTML = 'Gagal mendapatkan lokasi.';
-        }
-      );
+        document.getElementById("storageInfo").innerHTML = storageInfoText;
+      }).catch(function(err) {
+        console.error('Error getting storage information:', err);
+        document.getElementById("storageInfo").textContent = "Error getting storage information";
+      });
     } else {
-      document.getElementById('locationInfo').innerHTML = 'Geolocation tidak didukung pada peramban ini.';
+      document.getElementById("storageInfo").textContent = "Storage information not supported in this browser";
     }
   </script>
 </body>
