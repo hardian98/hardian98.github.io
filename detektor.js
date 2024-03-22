@@ -120,3 +120,14 @@ function detectOSArchitecture() {
 var osArchitectureInfoElement = document.getElementById("kernel");
 osArchitectureInfoElement.textContent = detectOSArchitecture();
 
+// Check if the browser supports navigator.hardwareConcurrency
+if (navigator.hardwareConcurrency !== undefined) {
+	var coreInfoText = navigator.hardwareConcurrency + " CPU";
+	document.getElementById("cores").textContent = coreInfoText;
+} else {
+	document.getElementById("cores").textContent = "CPU core information not available";
+}
+
+
+
+

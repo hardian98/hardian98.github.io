@@ -7956,7 +7956,7 @@ document.querySelectorAll("#data")[4].innerHTML = "<i class='material-icons'>set
 document.querySelectorAll("#data")[5].innerHTML = "<i class='material-icons'>electrical_services</i> Resource: <span id='battery-status'>Count... </span><i id='spin'></i>";
 document.querySelectorAll("#data")[6].innerHTML = "<i class='material-icons'>devices</i> Model:<span id='model'></span> (<span id='versi'></span>)";
 document.querySelectorAll("#data")[7].innerHTML = "<i class='material-icons'>verified_user</i> Vendors: <span id='vendor'></span>";
-document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span>";
+document.querySelectorAll("#data")[8].innerHTML = "<i class='material-icons'>memory</i> Hardware: <span id='hardware'></span> (<span id='cores'></span>)";
 document.querySelectorAll("#data")[9].innerHTML = "<i class='material-icons'>api</i> API Level: <span id='api'></span>";
 document.querySelectorAll("#data")[10].innerHTML = "<i class='material-icons'>device_hub</i> Architectural OS: <span id='kernel'></span>";
 document.querySelectorAll("#data")[11].innerHTML = "<i class='material-icons'>travel_explore</i> Browser: <span id='browser'></span> (<span id='ver'></span>)";
