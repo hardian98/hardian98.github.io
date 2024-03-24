@@ -7,13 +7,13 @@
 <body>
   <script>
     if (!('Notification' in window)) {
-      console.log('Browser ini tidak mendukung notifikasi web.');
+      alert('Browser ini tidak mendukung notifikasi web.');
     } else {
       Notification.requestPermission().then(function (permission) {
         if (permission === 'granted') {
-          console.log('Izin notifikasi diberikan.');
+          alert('Izin notifikasi diberikan.');
         } else {
-          console.log('Izin notifikasi ditolak.');
+          alert('Izin notifikasi ditolak.');
         }
       });
     }
@@ -34,5 +34,6 @@
     // Tampilkan notifikasi setelah 5 detik
     setTimeout(showNotification, 5000);
   </script>
+  Hardi
 </body>
 </html>
