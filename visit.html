@@ -2,31 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistem Notifikasi</title>
 </head>
 <body>
-  <h1>Sistem Notifikasi</h1>
-  <button onclick="showNotification()">Tampilkan Notifikasi</button>
-
   <script>
-    function showNotification() {
-      if (Notification.permission === 'granted') {
-        new Notification('Judul Notifikasi', {
-          body: 'Isi notifikasi disini.',
-          icon: 'icon.png' // Ganti dengan URL atau path ke gambar ikon notifikasi Anda
-        });
-      } else if (Notification.permission !== 'denied') {
-        Notification.requestPermission().then(permission => {
-          if (permission === 'granted') {
-            new Notification('Notifikasi Diizinkan!', {
-              body: 'Isi notifikasi disini.',
-              icon: 'kucing.jpg' // Ganti dengan URL atau path ke gambar ikon notifikasi Anda
-            });
-          }
-        });
-      }
+    if (!('Notification' in window)) {
+      console.log('Browser ini tidak mendukung notifikasi web.');
+    } else {
+      Notification.requestPermission().then(function (permission) {
+        if (permission === 'granted') {
+          console.log('Izin notifikasi diberikan.');
+        } else {
+          console.log('Izin notifikasi ditolak.');
+        }
+      });
     }
+
+    function showNotification() {
+      var notification = new Notification('Judul Notifikasi', {
+        body: 'Ini adalah isi notifikasi.',
+        icon: 'kucing.jpg',
+      });
+
+      notification.onclick = function () {
+        window.open('https://hardian98.github.io');
+      };
+
+      notification.show();
+    }
+
+    // Tampilkan notifikasi setelah 5 detik
+    setTimeout(showNotification, 5000);
   </script>
 </body>
 </html>
