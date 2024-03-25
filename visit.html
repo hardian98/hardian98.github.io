@@ -1,39 +1,49 @@
+<?php
+
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+// Mendapatkan jenis perangkat
+$device_type = 'Unknown';
+if (preg_match('/(Android|iPhone|iPad|iPod)/i', $user_agent)) {
+  $device_type = 'Mobile';
+} elseif (preg_match('/(Windows|Macintosh|Linux)/i', $user_agent)) {
+  $device_type = 'Desktop';
+}
+
+// Mendapatkan sistem operasi
+$os = 'Unknown';
+if (preg_match('/Windows/i', $user_agent)) {
+  $os = 'Windows';
+} elseif (preg_match('/Macintosh/i', $user_agent)) {
+  $os = 'Mac OS X';
+} elseif (preg_match('/Linux/i', $user_agent)) {
+  $os = 'Linux';
+}
+
+// Mendapatkan browser
+$browser = 'Unknown';
+if (preg_match('/Chrome/i', $user_agent)) {
+  $browser = 'Chrome';
+} elseif (preg_match('/Firefox/i', $user_agent)) {
+  $browser = 'Firefox';
+} elseif (preg_match('/Safari/i', $user_agent)) {
+  $browser = 'Safari';
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sistem Notifikasi</title>
+  <title>Informasi Perangkat</title>
 </head>
 <body>
-  <script>
-    if (!('Notification' in window)) {
-      alert('Browser ini tidak mendukung notifikasi web.');
-    } else {
-      Notification.requestPermission().then(function (permission) {
-        if (permission === 'granted') {
-          alert('Izin notifikasi diberikan.');
-        } else {
-          alert('Izin notifikasi ditolak.');
-        }
-      });
-    }
-
-    function showNotification() {
-      var notification = new Notification('Judul Notifikasi', {
-        body: 'Ini adalah isi notifikasi.',
-        icon: 'kucing.jpg',
-      });
-
-      notification.onclick = function () {
-        window.open('https://hardian98.github.io');
-      };
-
-      notification.show();
-    }
-
-    // Tampilkan notifikasi setelah 5 detik
-    setTimeout(showNotification, 5000);
-  </script>
-  Hardi
+  <h1>Informasi Perangkat</h1>
+  <ul>
+    <li>Jenis Perangkat: <?php echo $device_type; ?></li>
+    <li>Sistem Operasi: <?php echo $os; ?></li>
+    <li>Browser: <?php echo $browser; ?></li>
+  </ul>
 </body>
 </html>
