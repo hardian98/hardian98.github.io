@@ -1,49 +1,54 @@
-<?php
-
-$user_agent = $_SERVER['HTTP_USER_AGENT'];
-
-// Mendapatkan jenis perangkat
-$device_type = 'Unknown';
-if (preg_match('/(Android|iPhone|iPad|iPod)/i', $user_agent)) {
-  $device_type = 'Mobile';
-} elseif (preg_match('/(Windows|Macintosh|Linux)/i', $user_agent)) {
-  $device_type = 'Desktop';
-}
-
-// Mendapatkan sistem operasi
-$os = 'Unknown';
-if (preg_match('/Windows/i', $user_agent)) {
-  $os = 'Windows';
-} elseif (preg_match('/Macintosh/i', $user_agent)) {
-  $os = 'Mac OS X';
-} elseif (preg_match('/Linux/i', $user_agent)) {
-  $os = 'Linux';
-}
-
-// Mendapatkan browser
-$browser = 'Unknown';
-if (preg_match('/Chrome/i', $user_agent)) {
-  $browser = 'Chrome';
-} elseif (preg_match('/Firefox/i', $user_agent)) {
-  $browser = 'Firefox';
-} elseif (preg_match('/Safari/i', $user_agent)) {
-  $browser = 'Safari';
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Informasi Perangkat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Cookie</title>
+  <style>
+    /* Tambahkan gaya CSS sesuai kebutuhan Anda */
+  </style>
 </head>
 <body>
-  <h1>Informasi Perangkat</h1>
-  <ul>
-    <li>Jenis Perangkat: <?php echo $device_type; ?></li>
-    <li>Sistem Operasi: <?php echo $os; ?></li>
-    <li>Browser: <?php echo $browser; ?></li>
-  </ul>
+  <h1>Sistem Cookie</h1>
+  <form id="myForm">
+    <input type="checkbox" id="option1" name="option1" value="value1">
+    <label for="option1">Option 1</label><br>
+    <input type="checkbox" id="option2" name="option2" value="value2">
+    <label for="option2">Option 2</label><br>
+    
+    <input type="radio" id="radio1" name="radio" value="radio1">
+    <label for="radio1">Radio 1</label><br>
+    <input type="radio" id="radio2" name="radio" value="radio2">
+    <label for="radio2">Radio 2</label><br>
+
+    <select id="dropdown" name="dropdown">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+    </select>
+  </form>
+  <button onclick="saveSettings()">Simpan</button>
+  <button onclick="clearSettings()">Hapus</button>
+
+  <script>
+function saveSettings() {
+  var form = document.getElementById("myForm");
+  var formData = new FormData(form);
+
+  for (const entry of formData.entries()) {
+    document.cookie = `${entry[0]}=${entry[1]}; expires=Fri, 31 Dec 9999 23:59:59 GMT`; // Simpan nilai ke dalam cookie
+  }
+}
+
+function clearSettings() {
+  var cookies = document.cookie.split(";");
+
+  for (var i = 0; i < cookies.length; i++) {
+    var cookie = cookies[i];
+    var eqPos = cookie.indexOf("=");
+    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT`; // Hapus cookie
+  }
+}
+</script>
 </body>
 </html>
