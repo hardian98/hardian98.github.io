@@ -224,7 +224,7 @@ header("X-CSRF-Token: $token");
 				function getCookie(name) {
 					const cookies = document.cookie.split(';');
 					for (let cookie of cookies) {
-					1const [key, value] = cookie.split('=');
+					const [key, value] = cookie.split('=');
 						if (key.trim() === name) {
 							return decodeURIComponent(value);
 						}
