@@ -18,61 +18,58 @@
     <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
     <br>
     <label for="checkbox2">Checkbox 2</label>
-    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox24">
     <br>
     <button type="submit">Simpan</button>
   </form>
-  <script>
-(function () {
-  const formElement = document.getElementById('form-data');
+		<script>
+		(function () {
+			const formElement = document.getElementById('form-data');
+			// Mendapatkan nilai dari form
+			formElement.addEventListener('submit', function (event) {
+				event.preventDefault();
+				const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
+				const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+				
+				// Menyimpan nilai ke cookie
+				setCookie('opsi', opsiValue);
+				setCookie('checkbox', checkboxValues.join(','));
+				// Menampilkan pesan konfirmasi
+				customAlert('Data disimpan!');
+			});
 
-  // Mendapatkan nilai dari form
-  formElement.addEventListener('submit', function (event) {
-    event.preventDefault();
+			// Membaca nilai dari cookie dan set ke form
+			const opsiCookie = getCookie('opsi');
+			if (opsiCookie) {
+				document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
+			}
 
-    const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
-    const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+			const checkboxCookie = getCookie('checkbox');
+			if (checkboxCookie) {
+				const checkboxValues = checkboxCookie.split(',');
+				checkboxValues.forEach(value => {
+					document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
+				});
+			}
 
-    // Menyimpan nilai ke cookie
-    setCookie('opsi', opsiValue);
-    setCookie('checkbox', checkboxValues.join(','));
+			// Fungsi untuk set cookie
+			function setCookie(name, value, days) {
+				const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
+				document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
+			}
 
-    // Menampilkan pesan konfirmasi
-    alert('Data disimpan!');
-  });
-
-  // Membaca nilai dari cookie dan set ke form
-  const opsiCookie = getCookie('opsi');
-  if (opsiCookie) {
-    document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
-  }
-
-  const checkboxCookie = getCookie('checkbox');
-  if (checkboxCookie) {
-    const checkboxValues = checkboxCookie.split(',');
-    checkboxValues.forEach(value => {
-      document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
-    });
-  }
-
-  // Fungsi untuk set cookie
-  function setCookie(name, value, days) {
-    const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
-    document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
-  }
-
-  // Fungsi untuk get cookie
-  function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let cookie of cookies) {
-      const [key, value] = cookie.split('=');
-      if (key.trim() === name) {
-        return decodeURIComponent(value);
-      }
-    }
-    return null;
-  }
-})();
+			// Fungsi untuk get cookie
+			function getCookie(name) {
+				const cookies = document.cookie.split(';');
+				for (let cookie of cookies) {
+					const [key, value] = cookie.split('=');
+					if (key.trim() === name) {
+						return decodeURIComponent(value);
+					}
+				}
+				return null;
+			}
+		})();
 </script>
 </body>
 </html>
