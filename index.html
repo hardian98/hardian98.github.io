@@ -29,7 +29,7 @@ header("X-CSRF-Token: $token");
 			<meta name="theme-color" content="#FFFFFF">
 			<meta http-equiv="refresh" content="500; url=index.html">
 			<!---->
-			<link rel="icon" href="icon.gif" type="image/gif" sizes="20x20">
+			<link rel="icon" href="icon.gif" type="image/gif" sizes="50x50">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|Tilt+Neon|&display=swap">
@@ -197,7 +197,7 @@ header("X-CSRF-Token: $token");
 					setCookie('opsi', opsiValue);
 					setCookie('checkbox', checkboxValues.join(','));
 					// Menampilkan pesan konfirmasi
-					alert('Data disimpan!');
+					customAlert('Data disimpan!');
 				});
 
 				// Membaca nilai dari cookie dan set ke form
