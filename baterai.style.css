@@ -226,6 +226,7 @@ border: 2px solid rgba(255, 255, 255, 0.1);
 		border-color: #FF4136;
 	}
 }
+
 .button {
 display: block;
 position: relative;
@@ -237,7 +238,7 @@ font-weight: 600;
 font-family: "Raleway";
 color: #efefef;
 background-color: #1799E7;
-border: none;
+border: 2px solid #ddd;
 border-radius: 6px 10px;
 transition: 0.8s;
 -webkit-transition: 0.8s;
