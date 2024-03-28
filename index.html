@@ -175,7 +175,7 @@ header("X-CSRF-Token: $token");
 			<a href="#tabel" onclick="nav()" class="fa fa-arrow-down bawah"></a>
 			<a href="#top" onclick="nav()" class="fa fa-arrow-up atas"></a>
 			
-			<script src="jquery.js"></script>
+			<script src="jquery.js" type="text/javascript"></script>
 			<script>
 			$(document).ready(function() {
 				setTimeout(function(){
@@ -183,8 +183,57 @@ header("X-CSRF-Token: $token");
 				}, 2500);
 			});
 			</script>
-			<script src="detektor.js"></script>
-			<script src="mithril.js"></script>
-			<script src="time.js"></script>
+			<script type="text/javascript">
+			(function () {
+				const formElement = document.getElementById('form-data');
+				// Mendapatkan nilai dari form
+				formElement.addEventListener('submit', function (event) {
+					event.preventDefault();
+					const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
+					const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+				
+					// Menyimpan nilai ke cookie
+					setCookie('opsi', opsiValue);
+					setCookie('checkbox', checkboxValues.join(','));
+					// Menampilkan pesan konfirmasi
+					customAlert('Data disimpan!');
+				});
+
+				// Membaca nilai dari cookie dan set ke form
+				const opsiCookie = getCookie('opsi');
+				if (opsiCookie) {
+					document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
+				}
+
+				const checkboxCookie = getCookie('checkbox');
+				if (checkboxCookie) {
+					const checkboxValues = checkboxCookie.split(',');
+					checkboxValues.forEach(value => {
+						document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
+					});
+				}
+
+				// Fungsi untuk set cookie
+				function setCookie(name, value, days) {
+					const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
+					document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
+				}
+
+				// Fungsi untuk get cookie
+				function getCookie(name) {
+					const cookies = document.cookie.split(';');
+					for (let cookie of cookies) {
+					1const [key, value] = cookie.split('=');
+						if (key.trim() === name) {
+							return decodeURIComponent(value);
+						}
+					}
+					return null;
+				}
+			})();
+			</script>
+			<script src="detektor.js" type="text/javascript"></script>
+			<script src="mithril.js" type="text/javascript"></script>
+			<script src="time.js" type="text/javascript"></script>
 		</body>
 	</html>
