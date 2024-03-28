@@ -2,53 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sistem Cookie</title>
-  <style>
-    /* Tambahkan gaya CSS sesuai kebutuhan Anda */
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>Sistem Cookie</h1>
-  <form id="myForm">
-    <input type="checkbox" id="option1" name="option1" value="value1">
-    <label for="option1">Option 1</label><br>
-    <input type="checkbox" id="option2" name="option2" value="value2">
-    <label for="option2">Option 2</label><br>
-    
-    <input type="radio" id="radio1" name="radio" value="radio1">
-    <label for="radio1">Radio 1</label><br>
-    <input type="radio" id="radio2" name="radio" value="radio2">
-    <label for="radio2">Radio 2</label><br>
-
-    <select id="dropdown" name="dropdown">
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-    </select>
+  <form id="form-data">
+    <label for="opsi1">Opsi 1</label>
+    <input type="radio" id="opsi1" name="opsi" value="opsi1">
+    <br>
+    <label for="opsi2">Opsi 2</label>
+    <input type="radio" id="opsi2" name="opsi" value="opsi2">
+    <br>
+    <label for="checkbox1">Checkbox 1</label>
+    <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
+    <br>
+    <label for="checkbox2">Checkbox 2</label>
+    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox2">
+    <br>
+    <button type="submit">Simpan</button>
   </form>
-  <button onclick="saveSettings()">Simpan</button>
-  <button onclick="clearSettings()">Hapus</button>
-
   <script>
-function saveSettings() {
-  var form = document.getElementById("myForm");
-  var formData = new FormData(form);
+(function () {
+  const formElement = document.getElementById('form-data');
 
-  for (const entry of formData.entries()) {
-    document.cookie = `${entry[0]}=${entry[1]}; expires=Fri, 31 Dec 9999 23:59:59 GMT`; // Simpan nilai ke dalam cookie
+  // Mendapatkan nilai dari form
+  formElement.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
+    const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+
+    // Menyimpan nilai ke cookie
+    setCookie('opsi', opsiValue);
+    setCookie('checkbox', checkboxValues.join(','));
+
+    // Menampilkan pesan konfirmasi
+    alert('Data disimpan!');
+  });
+
+  // Membaca nilai dari cookie dan set ke form
+  const opsiCookie = getCookie('opsi');
+  if (opsiCookie) {
+    document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
   }
-}
 
-function clearSettings() {
-  var cookies = document.cookie.split(";");
-
-  for (var i = 0; i < cookies.length; i++) {
-    var cookie = cookies[i];
-    var eqPos = cookie.indexOf("=");
-    var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-    document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT`; // Hapus cookie
+  const checkboxCookie = getCookie('checkbox');
+  if (checkboxCookie) {
+    const checkboxValues = checkboxCookie.split(',');
+    checkboxValues.forEach(value => {
+      document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
+    });
   }
-}
+
+  // Fungsi untuk set cookie
+  function setCookie(name, value, days) {
+    const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
+    document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
+  }
+
+  // Fungsi untuk get cookie
+  function getCookie(name) {
+    const cookies = document.cookie.split(';');
+    for (let cookie of cookies) {
+      const [key, value] = cookie.split('=');
+      if (key.trim() === name) {
+        return decodeURIComponent(value);
+      }
+    }
+    return null;
+  }
+})();
 </script>
 </body>
 </html>
