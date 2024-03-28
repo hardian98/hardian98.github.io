@@ -240,8 +240,8 @@ color: #efefef;
 background-color: #1799E7;
 border: 2px solid #ddd;
 border-radius: 6px 10px;
-transition: 0.8s;
--webkit-transition: 0.8s;
+transition: 0.4s;
+-webkit-transition: 0.4s;
 }
 
 .button:hover {

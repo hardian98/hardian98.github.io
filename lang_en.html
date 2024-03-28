@@ -25,11 +25,11 @@ header("X-CSRF-Token: $token");
 			<meta name="rating" content="General">
 			<meta name="language" content="en">
 			<meta name="author" content="Hardiansyah">
-			<meta name="revised" content="Friday, October 29, 2023">
+			<meta name="revised" content="Friday, March 29, 2024">
 			<meta name="theme-color" content="#FFFFFF">
 			<meta http-equiv="refresh" content="500; url=lang_en.html">
 			<!---->
-			<link rel="icon" href="icon.gif" type="image/gif" sizes="20x20">
+			<link rel="icon" href="icon.gif" type="image/gif" sizes="50x50">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mitr|Sen|Orbitron|Exo+2|Raleway|Prompt|Alata|Cabin+Sketch|Oxanium|Scada|Tilt+Neon|&display=swap">
@@ -40,8 +40,9 @@ header("X-CSRF-Token: $token");
 			<meta property="og:description" content="Check Temperature & Voltage and advanced features in it!">
 			<meta property="og:image" content="thumb.jpeg">
 			<meta property="og:type" content="article">
-			<!---->
+			<!--
 			<script type="text/javascript" src="cookie.js"></script>
+			-->
 		</head>
 		
 		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
@@ -181,6 +182,44 @@ header("X-CSRF-Token: $token");
 					$('body').addClass('loaded');
 				}, 2500);
 			});
+			</script>
+			<script>
+			(function () {
+				const formElement = document.getElementById('form-data');
+				formElement.addEventListener('submit', function (event) {
+					event.preventDefault();
+					const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
+					const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+					setCookie('opsi', opsiValue);
+					setCookie('checkbox', checkboxValues.join(','));
+					alert('Data disimpan!');
+				});
+				const opsiCookie = getCookie('opsi');
+				if (opsiCookie) {
+					document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
+				}
+				const checkboxCookie = getCookie('checkbox');
+				if (checkboxCookie) {
+					const checkboxValues = checkboxCookie.split(',');
+					checkboxValues.forEach(value => {
+						document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
+					});
+				}
+				function setCookie(name, value, days) {
+					const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
+					document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
+				}
+				function getCookie(name) {
+					const cookies = document.cookie.split(';');
+					for (let cookie of cookies) {
+						const [key, value] = cookie.split('=');
+						if (key.trim() === name) {
+							return decodeURIComponent(value);
+						}
+					}
+					return null;
+				}
+			})();
 			</script>
 			<script src="detektor.js"></script>
 			<script src="mithril.js"></script>
