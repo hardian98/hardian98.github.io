@@ -1,75 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sistem Cookie</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Estimation during Charging</title>
+    <style>
+    body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#battery-level, #charging-status, #current-estimate {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.charging {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.not-charging {
+    background-color: #dc3545;
+    color: #fff;
+}
+</style>
 </head>
 <body>
-  <h1>Sistem Cookie</h1>
-  <form id="form-data">
-    <label for="opsi1">Opsi 1</label>
-    <input type="radio" id="opsi1" name="opsi" value="opsi1">
-    <br>
-    <label for="opsi2">Opsi 2</label>
-    <input type="radio" id="opsi2" name="opsi" value="opsi2">
-    <br>
-    <label for="checkbox1">Checkbox 1</label>
-    <input type="checkbox" id="checkbox1" name="checkbox" value="checkbox1">
-    <br>
-    <label for="checkbox2">Checkbox 2</label>
-    <input type="checkbox" id="checkbox2" name="checkbox" value="checkbox24">
-    <br>
-    <button type="submit">Simpan</button>
-  </form>
-		<script>
-		(function () {
-			const formElement = document.getElementById('form-data');
-			// Mendapatkan nilai dari form
-			formElement.addEventListener('submit', function (event) {
-				event.preventDefault();
-				const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
-				const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
-				
-				// Menyimpan nilai ke cookie
-				setCookie('opsi', opsiValue);
-				setCookie('checkbox', checkboxValues.join(','));
-				// Menampilkan pesan konfirmasi
-				customAlert('Data disimpan!');
-			});
+    <div class="container">
+        <div id="battery-level">Battery Level: 0%</div>
+        <div id="charging-status">Charging Status: Not Charging</div>
+        <div id="current-estimate">Estimated Current: 0 A</div>
+        <button onclick="startCharging()">Start Charging</button>
+        <button onclick="stopCharging()">Stop Charging</button>
+    </div>
 
-			// Membaca nilai dari cookie dan set ke form
-			const opsiCookie = getCookie('opsi');
-			if (opsiCookie) {
-				document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
-			}
+    <script>
+let batteryLevel = 0;
+let chargingStatus = false;
+let startTime = null;
+let currentEstimate = 0;
 
-			const checkboxCookie = getCookie('checkbox');
-			if (checkboxCookie) {
-				const checkboxValues = checkboxCookie.split(',');
-				checkboxValues.forEach(value => {
-					document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
-				});
-			}
+const batteryLevelElement = document.getElementById('battery-level');
+const chargingStatusElement = document.getElementById('charging-status');
+const currentEstimateElement = document.getElementById('current-estimate');
 
-			// Fungsi untuk set cookie
-			function setCookie(name, value, days) {
-				const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
-				document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
-			}
+function getBatteryLevel() {
+    // Simulate battery level reading (replace with actual battery API call)
+    batteryLevel = Math.random() * 100; // Generate random battery level between 0 and 100%
+    batteryLevelElement.textContent = `Battery Level: ${batteryLevel.toFixed(1)}%`;
+}
 
-			// Fungsi untuk get cookie
-			function getCookie(name) {
-				const cookies = document.cookie.split(';');
-				for (let cookie of cookies) {
-					const [key, value] = cookie.split('=');
-					if (key.trim() === name) {
-						return decodeURIComponent(value);
-					}
-				}
-				return null;
-			}
-		})();
+function updateChargingStatus(status) {
+    chargingStatus = status;
+    if (chargingStatus) {
+        startTime = Date.now();
+        chargingStatusElement.classList.add('charging');
+        chargingStatusElement.textContent = 'Charging Status: Charging';
+        currentEstimateElement.textContent = 'Estimated Current: Calculating...';
+    } else {
+        startTime = null;
+        chargingStatusElement.classList.remove('charging');
+        chargingStatusElement.textContent = 'Charging Status: Not Charging';
+        currentEstimateElement.textContent = 'Estimated Current: 0 A';
+    }
+}
+
+function startCharging() {
+    updateChargingStatus(true);
+}
+
+function stopCharging() {
+    updateChargingStatus(false);
+}
+
+function calculateCurrentEstimate() {
+    if (chargingStatus && startTime) {
+        const elapsedTime = (Date.now() - startTime) / 1000; // Convert milliseconds to seconds
+        const batteryChange = batteryLevel - (getBatteryLevel()); // Get current battery level and calculate change
+        const estimatedCurrent = batteryChange / elapsedTime; // Estimate current (A)
+
+        currentEstimate = estimatedCurrent.toFixed(2);
+        currentEstimateElement.textContent = `Estimated Current: ${currentEstimate} A`;
+    }
+}
+
+setInterval(getBatteryLevel, 1000); // Update battery level every second
+setInterval(calculateCurrentEstimate, 5000); // Calculate current estimate every 5 seconds
 </script>
 </body>
 </html>
