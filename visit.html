@@ -1,107 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Current Estimation during Charging</title>
-    <style>
-    body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-.container {
-    width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-#battery-level, #charging-status, #current-estimate {
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.charging {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.not-charging {
-    background-color: #dc3545;
-    color: #fff;
-}
-</style>
+    <title>Battery Status</title>
 </head>
 <body>
-    <div class="container">
-        <div id="battery-level">Battery Level: 0%</div>
-        <div id="charging-status">Charging Status: Not Charging</div>
-        <div id="current-estimate">Estimated Current: 0 A</div>
-        <button onclick="startCharging()">Start Charging</button>
-        <button onclick="stopCharging()">Stop Charging</button>
-    </div>
+    <h1>Battery Status</h1>
+    <p id="battery-level">Loading...</p>
+    <p id="charging-status">Loading...</p>
+    <p id="charging-current">Loading...</p>
 
     <script>
-let batteryLevel = 0;
-let chargingStatus = false;
-let startTime = null;
-let currentEstimate = 0;
+        // Fungsi untuk memperbarui informasi baterai
+        function updateBatteryStatus(battery) {
+            document.getElementById('battery-level').textContent = `Battery Level: ${battery.level * 100}%`;
+            document.getElementById('charging-status').textContent = `Charging: ${battery.charging ? 'Yes' : 'No'}`;
+            
+            if (battery.charging) {
+                // Asumsikan nilai ampere yang masuk saat charging (contoh nilai)
+                // Biasanya, ini tidak dapat langsung diperoleh dari API Battery Status
+                const chargingPower = 5; // dalam Watt, misalnya charger 5 Watt
+                const voltage = 5; // dalam Volt, umumnya charger USB standar adalah 5 Volt
+                const chargingCurrent = chargingPower / voltage; // dalam Ampere
 
-const batteryLevelElement = document.getElementById('battery-level');
-const chargingStatusElement = document.getElementById('charging-status');
-const currentEstimateElement = document.getElementById('current-estimate');
+                document.getElementById('charging-current').textContent = `Charging Current: ${chargingCurrent} A`;
+            } else {
+                document.getElementById('charging-current').textContent = `Charging Current: N/A`;
+            }
+        }
 
-function getBatteryLevel() {
-    // Simulate battery level reading (replace with actual battery API call)
-    batteryLevel = Math.random() * 100; // Generate random battery level between 0 and 100%
-    batteryLevelElement.textContent = `Battery Level: ${batteryLevel.toFixed(1)}%`;
-}
+        // Memeriksa apakah browser mendukung Battery Status API
+        if ('getBattery' in navigator) {
+            navigator.getBattery().then(function(battery) {
+                // Memperbarui status baterai saat ini
+                updateBatteryStatus(battery);
 
-function updateChargingStatus(status) {
-    chargingStatus = status;
-    if (chargingStatus) {
-        startTime = Date.now();
-        chargingStatusElement.classList.add('charging');
-        chargingStatusElement.textContent = 'Charging Status: Charging';
-        currentEstimateElement.textContent = 'Estimated Current: Calculating...';
-    } else {
-        startTime = null;
-        chargingStatusElement.classList.remove('charging');
-        chargingStatusElement.textContent = 'Charging Status: Not Charging';
-        currentEstimateElement.textContent = 'Estimated Current: 0 A';
-    }
-}
-
-function startCharging() {
-    updateChargingStatus(true);
-}
-
-function stopCharging() {
-    updateChargingStatus(false);
-}
-
-function calculateCurrentEstimate() {
-    if (chargingStatus && startTime) {
-        const elapsedTime = (Date.now() - startTime) / 1000; // Convert milliseconds to seconds
-        const batteryChange = batteryLevel - (getBatteryLevel()); // Get current battery level and calculate change
-        const estimatedCurrent = batteryChange / elapsedTime; // Estimate current (A)
-
-        currentEstimate = estimatedCurrent.toFixed(2);
-        currentEstimateElement.textContent = `Estimated Current: ${currentEstimate} A`;
-    }
-}
-
-setInterval(getBatteryLevel, 1000); // Update battery level every second
-setInterval(calculateCurrentEstimate, 5000); // Calculate current estimate every 5 seconds
-</script>
+                // Menambahkan event listener untuk memperbarui status baterai ketika berubah
+                battery.addEventListener('chargingchange', function() {
+                    updateBatteryStatus(battery);
+                });
+                battery.addEventListener('levelchange', function() {
+                    updateBatteryStatus(battery);
+                });
+            });
+        } else {
+            document.getElementById('battery-level').textContent = 'Battery Status API not supported.';
+            document.getElementById('charging-status').textContent = 'Battery Status API not supported.';
+            document.getElementById('charging-current').textContent = 'Battery Status API not supported.';
+        }
+    </script>
 </body>
 </html>
