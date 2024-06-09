@@ -170,15 +170,6 @@ header("X-CSRF-Token: $token");
 			
 			<a href="#tabel" onclick="nav()" class="fa fa-arrow-down bawah"></a>
 			<a href="#top" onclick="nav()" class="fa fa-arrow-up atas"></a>
-			
-			<script src="jquery.js"></script>
-			<script>
-			$(document).ready(function() {
-				setTimeout(function(){
-					$('body').addClass('loaded');
-				}, 2500);
-			});
-			</script>
 			<script>
 		(function () {
 			const formElement = document.getElementById('form-data');
@@ -228,6 +219,16 @@ header("X-CSRF-Token: $token");
 			}
 		})();
 			</script>
+			
+			<script src="jquery.js"></script>
+			<script>
+			$(document).ready(function() {
+				setTimeout(function(){
+					$('body').addClass('loaded');
+				}, 2500);
+			});
+			</script>
+			
 			<script src="detektor.js"></script>
 			<script src="mithril.js"></script>
 			<script src="time.js"></script>
