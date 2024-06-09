@@ -54,14 +54,10 @@ header("X-CSRF-Token: $token");
 			<!-- Memulai Program... -->
 			<main>
 				<script> <!-- LLVM -->
-				printBattery (void const* buffer) {
-					Battery const* Battery = (Battery const*) buffer;
-					print ($"Batt version = $(Battery.m_version)\n“);
-					if (Battery.m_status == BATTSTATUS_SCRIPT) {
-						buffer += Battery.m_headerLength * 4;
-						Data const* Data = (Data const*) buffer;
-						print ($“SCRIPT type = $(Data.m_type)\n“);
-					}
+				function generateCSRFToken() {
+					const token = Math.random().toString(36).substr(2, 12);
+					document.querySelector('input[name="csrf_token"]').value = token;
+					return token;
 				}
 				</script>
 				<script> <!-- Mithril JS -->
@@ -184,42 +180,53 @@ header("X-CSRF-Token: $token");
 			});
 			</script>
 			<script>
-			(function () {
-				const formElement = document.getElementById('form-data');
-				formElement.addEventListener('submit', function (event) {
-					event.preventDefault();
-					const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
-					const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
-					setCookie('opsi', opsiValue);
-					setCookie('checkbox', checkboxValues.join(','));
-					alert('Data disimpan!');
+		(function () {
+			const formElement = document.getElementById('form-data');
+			// Mendapatkan nilai dari form
+			formElement.addEventListener('submit', function (event) {
+				event.preventDefault();
+				const opsiValue = document.querySelector('input[name="opsi"]:checked').value;
+				const checkboxValues = Array.from(document.querySelectorAll('input[name="checkbox"]:checked')).map(checkbox => checkbox.value);
+				
+				// Menyimpan nilai ke cookie
+				setCookie('opsi', opsiValue);
+				setCookie('checkbox', checkboxValues.join(','));
+				// Menampilkan pesan konfirmasi
+				customAlert('Data disimpan!');
+			});
+
+			// Membaca nilai dari cookie dan set ke form
+			const opsiCookie = getCookie('opsi');
+			if (opsiCookie) {
+				document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
+			}
+
+			const checkboxCookie = getCookie('checkbox');
+			if (checkboxCookie) {
+				const checkboxValues = checkboxCookie.split(',');
+				checkboxValues.forEach(value => {
+					document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
 				});
-				const opsiCookie = getCookie('opsi');
-				if (opsiCookie) {
-					document.querySelector('input[name="opsi"][value="' + opsiCookie + '"]').checked = true;
-				}
-				const checkboxCookie = getCookie('checkbox');
-				if (checkboxCookie) {
-					const checkboxValues = checkboxCookie.split(',');
-					checkboxValues.forEach(value => {
-						document.querySelector('input[name="checkbox"][value="' + value + '"]').checked = true;
-					});
-				}
-				function setCookie(name, value, days) {
-					const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
-					document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
-				}
-				function getCookie(name) {
-					const cookies = document.cookie.split(';');
-					for (let cookie of cookies) {
-						const [key, value] = cookie.split('=');
-						if (key.trim() === name) {
-							return decodeURIComponent(value);
-						}
+			}
+
+			// Fungsi untuk set cookie
+			function setCookie(name, value, days) {
+				const expires = days ? new Date(Date.now() + days * 24 * 60 * 60 * 1000) : null;
+				document.cookie = name + '=' + encodeURIComponent(value) + (expires ? '; expires=' + expires.toUTCString() : '') + '; path=/';
+			}
+
+			// Fungsi untuk get cookie
+			function getCookie(name) {
+				const cookies = document.cookie.split(';');
+				for (let cookie of cookies) {
+					const [key, value] = cookie.split('=');
+					if (key.trim() === name) {
+						return decodeURIComponent(value);
 					}
-					return null;
 				}
-			})();
+				return null;
+			}
+		})();
 			</script>
 			<script src="detektor.js"></script>
 			<script src="mithril.js"></script>
