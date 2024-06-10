@@ -8129,12 +8129,16 @@ navigator.getBattery().then(function(battery) {
 			/* document.querySelector("#bolt").style.visibility = "visible"; */
 			customAlert("Charging Begins");
 			document.querySelector("#petir").innerHTML = "<i class='material-icons' id='petir'>offline_bolt</i>";
-			document.querySelector("#status").innerHTML = "<span id='spanvolt'>Count...</span> <i class='fa fa-circle-o-notch fa-spin'></i>";
+			document.querySelector("#status").innerHTML = "<span id='spanvolt'>Count...</span> <span id='amper'></span> <i class='fa fa-circle-o-notch fa-spin'></i>";
 			document.querySelector("#mengisi").style.visibility = "visible";
 			document.querySelector("#spin").innerHTML = "<i class='material-icons'>switch_access_shortcut_add</i>";
 			document.querySelector('#battery-status').innerHTML = battery.charging ? 'Adapter' : 'Adapter';
 			document.querySelector("#peringatan").style.visibility = "hidden";
 			document.querySelector("#pengisian").style.visibility = "visible";
+			const chargingPower = 20; // Watt
+			const voltage = 5; // Volt
+			const chargingCurrent = chargingPower / voltage; // Amp
+			document.querySelector("#amper").innerHTML = `/ ${chargingCurrent}A`;
 		} else {
 			ctx.fillStyle = "#DDD", ctx.fillRect(1680, 500, 40, 300);
 			ctx.strokeStyle = "#DDD";
@@ -8147,6 +8151,7 @@ navigator.getBattery().then(function(battery) {
 			document.querySelector('#battery-status').innerHTML = battery.charging ? 'Battery' : 'Battery';
 			document.querySelector("#peringatan").style.visibility = "visible";
 			document.querySelector("#pengisian").style.visibility = "hidden";
+			document.querySelector("#amper").innerHTML = "N/A";
 		}
 	}
 	
