@@ -7981,7 +7981,7 @@ function moodmath() {
 	let random = mood[Math.floor(Math.random() * mood.length)];
 	spanmood.innerHTML = `${random.mood}`;
 	source.innerHTML = random.source;
-} setInterval(moodmath, 12500);
+} setInterval(moodmath, 13000);
 /**/
 /* Volt */
 const volt = [
@@ -8002,7 +8002,7 @@ function voltmath() {
 	let random = volt[Math.floor(Math.random() * volt.length)];
 	spanvolt.innerHTML = `${random.volt}`;
 	source.innerHTML = random.source;
-} setInterval(voltmath, 4500);
+} setInterval(voltmath, 3500); //4500
 /**/
 /* Tegangan */
 const tegangan = [
@@ -8029,7 +8029,7 @@ function teganganmath() {
 	let random = tegangan[Math.floor(Math.random() * tegangan.length)];
 	spantegangan.innerHTML = `${random.tegangan}`;
 	source.innerHTML = random.source;
-} setInterval(teganganmath, 6500);
+} setInterval(teganganmath, 4500); //6500
 /**/
 /* Suhu */
 const suhu = [
@@ -8046,7 +8046,7 @@ function suhumath() {
 	let random = suhu[Math.floor(Math.random() * suhu.length)];
 	spansuhu.innerHTML = `${random.suhu}`;
 	source.innerHTML = random.source;
-} setInterval(suhumath, 9500);
+} setInterval(suhumath, 8500); //9500
 /**/
 /* Alert */
 function customAlert(message) {

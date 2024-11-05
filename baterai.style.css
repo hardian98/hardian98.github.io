@@ -18,8 +18,8 @@ body {
 margin: 0px;
 padding: 0px;
 height: 100% auto;
-background-color: rgb(0,0,0.0);
-background: linear-gradient(to top left, #FF6347, #4169e1);
+background-color: #292929; /*rgb(0,0,0.0);*/
+/*background: linear-gradient(to top left, #FF6347, #4169e1);*/
 /*
 background-size: 400% 400%;
 background-size: cover;
