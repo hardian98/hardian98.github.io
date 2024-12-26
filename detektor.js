@@ -5,7 +5,7 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 (function () {
 	'use strict';
 	
-	var module = {
+	let module = {
 		options: [],
 		header: [navigator.platform, navigator.userAgent, navigator.appVersion, navigator.vendor, window.opera],
 		dataos: [
@@ -31,7 +31,7 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 		{ name: "<i class='fa fa-safari'></i> Safari", value: 'Safari', version: 'Version' }
 		],
 		init: function () {
-			var agent = this.header.join(' '),
+			let agent = this.header.join(' '),
 			os = this.matchItem(agent, this.dataos),
 			browser = this.matchItem(agent, this.databrowser);
 			return {
@@ -39,7 +39,7 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 			};
 		},
 		matchItem: function (string, data) {
-			var i = 0,
+			let i = 0,
 			j = 0,
 			html = '', regex, regexv, match, matches, version;
 			for (i = 0; i < data.length; i += 1) {
@@ -75,7 +75,7 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 			};
 		}
 	};
-	var e = module.init(),
+	let e = module.init(),
 	debug = '';
 	debug += 'os.name = ' + e.os.name + '<br/>';
 	debug += 'os.version = ' + e.os.version + '<br/>';
@@ -95,37 +95,50 @@ https://medium.com/creative-technology-concepts-code/detect-device-browser-and-v
 	document.getElementById('ver').innerHTML = ""+e.browser.version+"";
 }());
 
-var apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
+//
+let apiLevel = parseInt(navigator.userAgent.match(/Android\s(\d+)/)[1], 10);
 document.getElementById('api').innerHTML = apiLevel;
 
+//
 function detectOSArchitecture() {
-	var userAgent = navigator.userAgent.toLowerCase();
-	if (userAgent.indexOf("win64") >= 0 || userAgent.indexOf("wow64") >= 0) {
+	let userAgent = navigator.userAgent.toLowerCase();
+	if (userAgent.indexOf("win64") >= 0 || userAgent.indexOf("win64") >= 0) {
 		return "64-bit Windows";
-	} else if (userAgent.indexOf("win32") >= 0) {
+	}
+	else if (userAgent.indexOf("win32") >= 0) {
 		return "32-bit Windows";
-	} else if (userAgent.indexOf("mac") >= 0) {
+	}
+	else if (userAgent.indexOf("Android") >= 0) {
+		return "32-bit Android";
+	}
+	else if (userAgent.indexOf("iPhone") >= 0) {
+		return "32-bit iPhone";
+	}
+	else if (userAgent.indexOf("mac") >= 0) {
 		return "Macintosh";
-	} else if (userAgent.indexOf("linux") >= 0) {
+	}
+	else if (userAgent.indexOf("linux") >= 0) {
 		if (userAgent.indexOf("x86_64") >= 0) {
 			return "64-bit Linux";
-		} else {
+		}
+		else {
 			return "32-bit Linux";
 		}
-	} else {
+	}
+	else {
 		return "Unknown";
 	}
 }
-// Display the OS architecture information on the webpage
-var osArchitectureInfoElement = document.getElementById("kernel");
-osArchitectureInfoElement.textContent = detectOSArchitecture();
 
-// Check if the browser supports navigator.hardwareConcurrency
+let osArchitectureInfoElement = document.getElementById("kernel");
+osArchitectureInfoElement.innerHTML = detectOSArchitecture();
+
+//
 if (navigator.hardwareConcurrency !== undefined) {
-	var coreInfoText = navigator.hardwareConcurrency + " CPU";
-	document.getElementById("cores").textContent = coreInfoText;
+	let coreInfoText = navigator.hardwareConcurrency + " CPU";
+	document.getElementById("cores").innerHTML = coreInfoText;
 } else {
-	document.getElementById("cores").textContent = "CPU core information not available";
+	document.getElementById("cores").innerHTML = "CPU core information not available";
 }
 
 
