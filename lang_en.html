@@ -92,7 +92,7 @@ header("X-CSRF-Token: $token");
 			</main>
 			
 			<footer>
-				<p onclick="writer_01()">How does this website work? <i class="fa fa-terminal"></i></p>
+				<p onclick="writer_01();suara_1()">How does this website work? <i class="fa fa-terminal"></i></p>
 				<p id="typing_01" class="textwr"></p>
 				<script>
 					var satu = 0;
@@ -109,7 +109,7 @@ header("X-CSRF-Token: $token");
 				
 				<hr width='6%' color='#DDD' size='1px'/>
 					
-				<p onclick="writer_02()">How it Works? <i class="fa fa-terminal"></i></p>
+				<p onclick="writer_02();suara_2()">How it Works? <i class="fa fa-terminal"></i></p>
 				<p id="typing_02" class="textwr"></p>
 				<script>
 					var dua = 0;
@@ -177,8 +177,21 @@ header("X-CSRF-Token: $token");
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
-				}, 2500);
+				}, 0);
 			});
+			</script>
+			
+			<script>
+			var prevScrollpos = window.pageYOffset;
+			window.onscroll = function() {
+				var currentScrollPos = window.pageYOffset;
+				if (prevScrollpos > currentScrollPos) {
+					document.getElementById("ucapan").style.top = "25px";
+				} else {
+					document.getElementById("ucapan").style.top = "3px";
+				}
+			prevScrollpos = currentScrollPos;
+			}
 			</script>
 			
 			<script src="detektor.js"></script>

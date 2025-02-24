@@ -45,7 +45,7 @@ header("X-CSRF-Token: $token");
 			-->
 		</head>
 		
-		<body onload="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
+		<body ="window.setTimeout('getSecs()',1);checkCookie();loadDoc()">
 			<script>
 				document.addEventListener('contextmenu', function(event) {
 					event.preventDefault();
@@ -92,7 +92,7 @@ header("X-CSRF-Token: $token");
 			</main>
 			
 			<footer>
-				<p onclick="writer_01()">Bagaimana website ini bekerja? <i class="fa fa-terminal"></i></p>
+				<p onclick="writer_01();suara_1()">Bagaimana website ini bekerja? <i class="fa fa-terminal"></i></p>
 				<p id="typing_01" class="textwr" style="position: relative"></p>
 				<script>
 					var satu = 0;
@@ -109,7 +109,7 @@ header("X-CSRF-Token: $token");
 				
 				<hr width='6%' color='#DDD' size='1px'/>
 				
-				<p onclick="writer_02()">Cara Kerja? <i class="fa fa-terminal"></i></p>
+				<p onclick="writer_02();suara_2()">Cara Kerja? <i class="fa fa-terminal"></i></p>
 				<p id="typing_02" class="textwr"></p>
 				<script>
 					var dua = 0;
@@ -177,8 +177,21 @@ header("X-CSRF-Token: $token");
 			$(document).ready(function() {
 				setTimeout(function(){
 					$('body').addClass('loaded');
-				}, 2500);
+				}, 0);
 			});
+			</script>
+			
+			<script>
+			var prevScrollpos = window.pageYOffset;
+			window.onscroll = function() {
+				var currentScrollPos = window.pageYOffset;
+				if (prevScrollpos > currentScrollPos) {
+					document.getElementById("ucapan").style.top = "25px";
+				} else {
+					document.getElementById("ucapan").style.top = "3px";
+				}
+			prevScrollpos = currentScrollPos;
+			}
 			</script>
 			
 			<script src="detektor.js"></script>
