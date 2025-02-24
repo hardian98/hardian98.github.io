@@ -2250,6 +2250,14 @@ function stabilkantegangan() {
 	var audio = document.getElementById("stabilkan_tegangan");
 	audio.play();
 }
+function suara_1() {
+	var audio = document.getElementById("suara_1");
+	audio.play();
+}
+function suara_2() {
+	var audio = document.getElementById("suara_2");
+	audio.play();
+}
 function ting() {
 	var audio = document.getElementById("ting");
 	audio.play();
