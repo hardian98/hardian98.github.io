@@ -8123,8 +8123,8 @@ navigator.getBattery().then(function(battery) {
 	function updateChargeInfo() {
 		//alert("Sumber Daya: " + (battery.charging ? "Terhubung" : "Tidak Terhubung"));
 		if (battery.charging) {
-			ctx.fillStyle = "#FF9900", ctx.fillRect(1680, 500, 40, 300);
-			ctx.strokeStyle = "#FF9900";
+			ctx.fillStyle = "dodgerblue", ctx.fillRect(1680, 500, 40, 300);
+			ctx.strokeStyle = "dodgerblue"; //FF9900
 			ctx.stroke();
 			/* document.querySelector("#bolt").style.visibility = "visible"; */
 			customAlert("Pengisian Dimulai");

@@ -113,19 +113,18 @@ box-shadow: 0px 0px 8px 2px #222;
 #peringatan, #pengisian {
 top: 0px;
 left: 0px;
+right: 0px;
 visibility: visible;
 position: fixed;
 width: 100%;
 margin: 0px;
-padding: 2px 0px;
-padding-left: 10px;
-padding-right: 10px;
+padding: 3px 3px;
 font-size: 14px;
 font-weight: 400;
 font-family: "Sen";
 color: #FFC107;
 background-color: rgba(0,0,0,0.6);
-z-index: 200;
+z-index: 300;
 }
 
 #pengisian {
