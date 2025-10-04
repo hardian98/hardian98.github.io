@@ -92,6 +92,13 @@
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="panjiwaktu"></span> <span id="panjibulan"></span></p>
 			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Alive</p>
+				<p class="member">Nomor: 081514719617</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="alivewaktu"></span> <span id="alivebulan"></span></p>
+			</div>
 		
 		<script type="text/javascript">
 		var targettito = new Date("22 Dec, 2025 00:00:00").getTime();
@@ -224,6 +231,33 @@
 				clearInterval(targetpanji);
 				document.getElementById("panjiwaktu").innerHTML = "Expired";
 				document.getElementById("panjibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var alivetarget = new Date("4 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetalive = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = alivetarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("alivewaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("alivebulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetalive);
+				document.getElementById("alivewaktu").innerHTML = "Expired";
+				document.getElementById("alivebulan").innerHTML = "";
 			}
 		}, 1000);
 		</script>
