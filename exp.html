@@ -66,12 +66,19 @@
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
 		<hr style="color: darkcyan">
-		<p>Total Member: 26 Jiwa</p>
-		<p>Member 3 Bulan: 4 Jiwa</p>
+		<p>Total Member: 27 Jiwa</p>
+		<p>Member 3 Bulan: 5 Jiwa</p>
 		<p>Member 2 Bulan: 2 Jiwa</p>
 		<p>Member 1 Bulan: 20 Jiwa</p>
 		<p>Member Expired: 0 Jiwa</p>
 		
+			<div class="member">
+				<p class="member">Nama: Mas. yoga</p>
+				<p class="member" style="display: none">Nomor: 082382795953</p>
+				<p class="member">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="yogawaktu"></span> <span id="yogabulan"></span></p>
+			</div>
+
 			<div class="member">
 				<p class="member">Nama: Mas. Ardika</p>
 				<p class="member" style="display: none">Nomor: 082170239819</p>
@@ -255,7 +262,7 @@
 			</div>
 		
 		<script type="text/javascript">
-		var targettito = new Date("22 Dec, 2025 00:00:00").getTime();
+		var targettito = new Date("30 Dec, 2025 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var titotarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
@@ -277,6 +284,33 @@
 				clearInterval(titotarget);
 				document.getElementById("titowaktu").innerHTML = "Expired";
 				document.getElementById("titobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targeyoga = new Date("22 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var yogatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targeyoga - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("yogawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("yogabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(yogatarget);
+				document.getElementById("yogawaktu").innerHTML = "Expired";
+				document.getElementById("yogabulan").innerHTML = "";
 			}
 		}, 1000);
 		</script>
