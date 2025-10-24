@@ -147,6 +147,15 @@
 	</head>
 	
 	<body>
+		<audio src="1bulanvoice.aac" type="" id="1bulanvoices"></audio>
+		<audio src="2bulanvoice.aac" type="" id="2bulanvoices"></audio>
+		<audio src="3bulanvoice.aac" type="" id="3bulanvoices"></audio>
+		<audio src="1bulanbayar.aac" type="" id="1bulanbayars"></audio>
+		<audio src="2bulanbayar.aac" type="" id="2bulanbayars"></audio>
+		<audio src="3bulanbayar.aac" type="" id="3bulanbayars"></audio>
+		<audio src="yapping1.aac" type="" id="yappingsatu"></audio>
+		<audio src="yapping2.aac" type="" id="yappingdua"></audio>
+		
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
 				<a class="navbar-brand font-weight-bold" href="#"><img src="header.jpg" style="width: 38px; height: 38px; margin-right: 6px; object-fit: cover; vertical-align: middle; border-radius: 50%"> Stock's ID <i id="emoji" class="fa"></i></a>
@@ -223,7 +232,7 @@
 					<script>
 						var satu = 0;
 						var txt01 = "Dengan dibuatnya kelas berbayar ini ditujukan untuk membantu teman-teman belajar saham termasuk menganalisa saham, membaca market, membaca pergerakan bandar / asing, memilih saham yang bagus dan memberikan sinyal atau watchlist saham yang berpontensi naik"; /* The text */
-						var speed = 70; /* The speed/duration of the effect in milliseconds */
+						var speed = 80; /* The speed/duration of the effect in milliseconds */
 						function writer_01() {
 							if (satu < txt01.length) {
 								document.getElementById("typing_01").innerHTML += txt01.charAt(satu);
@@ -264,7 +273,7 @@
 							<h4 class="card-title text-biru">Paket 1 Bulan</h4>
 							<p class="card-text hitam">Harga Awal: Rp. <del>166.000</del></p>
 							<p class="card-text hitam">Harga Disc: <bdo>Rp. 99.000</bdo></p>
-							<a class="btn btn-primary" style="width: 100%" data-toggle="modal" data-target="#kelas1-modal" onclick="satubulanvoice()"><i class="bi bi-bag-fill"></i> Beli</a>
+							<button class="btn btn-primary" style="width: 100%" data-toggle="modal" data-target="#kelas1-modal" onclick="satubulanvoice()"><i class="bi bi-bag-fill"></i> Beli</button>
 						</div>
 					</div>
 					
@@ -274,7 +283,7 @@
 							<h4 class="card-title text-biru">Paket 2 Bulan</h4>
 							<p class="card-text hitam">Harga Awal: Rp. <del>332.000</del></p>
 							<p class="card-text hitam">Harga Disc: <bdo>Rp. 185.000</bdo></p>
-							<a class="btn btn-success" style="width: 100%" data-toggle="modal" data-target="#kelas2-modal" onclick="duabulanvoice()"><i class="bi bi-bag-fill"></i> Beli</a>
+							<button class="btn btn-success" style="width: 100%" data-toggle="modal" data-target="#kelas2-modal" onclick="duabulanvoice()"><i class="bi bi-bag-fill"></i> Beli</button>
 						</div>
 					</div>
 					
@@ -284,7 +293,7 @@
 							<h4 class="card-title text-biru">Paket 3 Bulan</h4>
 							<p class="card-text hitam">Harga Awal: Rp. <del>498.000</del></p>
 							<p class="card-text hitam">Harga Disc: <bdo>Rp. 278.000</bdo></p>
-							<a class="btn btn-info" style="width: 100%" data-toggle="modal" data-target="#kelas3-modal" onclick="tigabulanvoice()"><i class="bi bi-bag-fill"></i> Beli</a>
+							<button class="btn btn-info" style="width: 100%" data-toggle="modal" data-target="#kelas3-modal" onclick="tigabulanvoice()"><i class="bi bi-bag-fill"></i> Beli</button>
 						</div>
 					</div>
 					
@@ -312,7 +321,7 @@
 			</div>
 
 			<!-- Modal -->
-			
+				
 			<div id="kelas1-modal" class="modal fade" role="dialog">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content box-shadow">
@@ -323,7 +332,7 @@
 							<p class="info hitam"><i class="bi bi-calendar-date-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 30 hari.</p>
 							<p class="info hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="info hitam text-center font-weight-bold"><i class="bi bi-person-plus-fill" style="font-size: 1rem"></i> Harga Kelas Rp. 99.000</p>
-							<a onclick="satubulanbayar();delayUrlLoad('https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 99.000, mohon kirimkan alamat pembayaran.', 60000); return false;" href="#" class="btn btn-primary btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
+							<a onclick="satubulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 99.000, mohon kirimkan alamat pembayaran." class="btn btn-primary btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
 						</div>
 						<div class="modal-footer latar hitam-bg">
 							<button type="button" class="btn btn-sm btn-primary hitam-btn" data-dismiss="modal">Tutup</button>
@@ -342,7 +351,7 @@
 							<p class="info hitam"><i class="bi bi-calendar-date-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 60 hari.</p>
 							<p class="info hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="info hitam text-center font-weight-bold"><i class="bi bi-person-plus-fill" style="font-size: 1rem"></i> Harga Kelas Rp. 185.000</p>
-							<a onclick="duabulanbayar();delayUrlLoad('https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga 185.000, mohon kirimkan alamat pembayaran.', 60000); return false;" href="#" class="btn btn-success btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
+							<a onclick="duabulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga 185.000, mohon kirimkan alamat pembayaran." class="btn btn-success btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
 						</div>
 						<div class="modal-footer latar hitam-bg">
 							<button type="button" class="btn btn-sm btn-success hitam-btn" data-dismiss="modal">Tutup</button>
@@ -361,7 +370,7 @@
 							<p class="info hitam"><i class="bi bi-calendar-date-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 90 hari.</p>
 							<p class="info hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="info hitam text-center font-weight-bold"><i class="bi bi-person-plus-fill" style="font-size: 1rem"></i> Harga Kelas Rp. 278.000</p>
-							<a onclick="tigabulanbayar();delayUrlLoad('https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 278.000, mohon kirimkan alamat pembayaran.', 60000); return false;" href="#" class="btn btn-info btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
+							<a onclick="tigabulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 278.000, mohon kirimkan alamat pembayaran." class="btn btn-info btn-md btn-block font-weight-bold active" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</a>
 						</div>
 						<div class="modal-footer latar hitam-bg">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal">Tutup</button>
@@ -369,24 +378,6 @@
 					</div>
 				</div>
 			</div>
-			
-			<script>
-				function delayUrlLoad(url, mils) {
-					setTimeout(function() {
-						window.location.href = url;
-					}, mils)
-				}
-				function bayarsatu() {
-					window.location.href = "https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 99.000, mohon kirimkan alamat pembayaran.";
-				}
-				function bayardua() {
-					window.location.href = "https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 185.000, mohon kirimkan alamat pembayaran.";
-				}
-				function bayartiga() {
-					window.location.href = "https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 278.000, mohon kirimkan alamat pembayaran.";
-				}
-			</script>
-					
 			
 			<!---->
 			<hr class="featurette-divider">
@@ -445,14 +436,6 @@
 			</div>
 		
 		<script type="text/javascript">
-		function klik() {
-			var audio = document.getElementById("klik");
-			audio.play();
-		}
-		function sklik() {
-			var audio = document.getElementById("sklik");
-			audio.play();
-		}
 		function yappingsatu() {
 			var audio = document.getElementById("yappingsatu");
 			audio.play();
@@ -486,7 +469,6 @@
 			audio.play();
 		}
 		</script>
-		
 		<script type="text/javascript">
 		function emoji() {
 			var a;
@@ -508,19 +490,15 @@
 		emoji();
 		setInterval(emoji, 10000);
 		</script>
-		
-		<audio src="1bulanvoice.mp3" type="" id="1bulanvoices"></audio>
-		<audio src="2bulanvoice.mp3" type="" id="2bulanvoices"></audio>
-		<audio src="3bulanvoice.mp3" type="" id="3bulanvoices"></audio>
-		<audio src="1bulanbayar.mp3" type="" id="1bulanbayars"></audio>
-		<audio src="2bulanbayar.mp3" type="" id="2bulanbayars"></audio>
-		<audio src="3bulanbayar.mp3" type="" id="3bulanbayars"></audio>
-		<audio src="yapping1.mp3" type="" id="yappingsatu"></audio>
-		<audio src="yapping2.mp3" type="" id="yappingdua"></audio>
-		<audio src="01.m4a" type="audio/m4a" id="klik"></audio>
-		<audio src="02.mp3" type="audio/mp3" id="sklik"></audio>
-		
 		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script>
+			$('a').click(function (e) {
+				e.preventDefault();
+				setTimeout(function () {
+					window.location.href = "$a";
+				}, 4000);
+			});
+		</script>
 		<script>window.jQuery || document.write('<script src="assets/jquery.slim.min.js"><\/script>')</script>
 		<script src="bootstrap.bundle.min.js"></script>
 		<br><rb><br><br><rb><br>
