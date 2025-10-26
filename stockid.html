@@ -19,14 +19,15 @@
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik|Barlow|Nunito&display=swap">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Exo+2|Michroma|Nunito&display=swap">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 		<!---->
 		<style type="text/css">
-		body, div, span, div p, span p, p, b, div a, span a, a, h3, h4, h5, button, input, label {
-			font-family: "Rubik", "Nunito", Helvetica;
+		body, div, span, p, a, h1, h4, bdo, del, button, input {
+			font-family: "Exo 2", sans-serif;
 		}
-		.dark-theme .hitam-bg {
+		.dark-theme .hitam-bg,
+		.dark-theme body {
 			background-color: #CACACA;
 		}
 		.dark-theme .div-hitam {
@@ -54,12 +55,12 @@
 			border: 1px solid #202020;
 		}
 		/**/
-		.latar-utama {
+		body, .latar-utama {
 			background: #181818;
 		}
 		.carousel-caption h1,
 		.col-lg-4 h1 {
-			font-size: 26px;
+			font-size: 24px;
 			font-weight: 500;
 			color: #FAFAFA;
 		}
@@ -84,7 +85,7 @@
 		}
 		.card-title,
 		.modal-title {
-			font-size: 22px;
+			font-size: 24px;
 			font-weight: 600;
 			color: #EEE;
 		}
@@ -112,11 +113,32 @@
 			position: absolute;
 			right: 6px;
 			margin-top: -6px;
-			padding: 0px 10px;
+			padding: 0px 6px;
+			font-size: 16px;
 			font-weight: 500;
 			background-color: brown;
 			color: #EAEAEA;
 			border-radius: 8px 8px;
+		}
+		.gabung {
+			position: fixed;
+			z-index: 999;
+			left: 2%;
+			top: 50%;
+			padding: 2px 8px;
+			font-size: 14px;
+			font-weight: 400;
+			color: #FFF;
+			background-color: dodgerblue;
+			border: 0.8px solid #FFF;
+			border-radius: 12px;
+			opacity: 0.8;
+			transition: ease 1s;
+			-webkit-transition: ease 1s;
+		}
+		button, a {
+			font-size: 18px !important;
+			font-weight: 500 !important;
 		}
 		/**/
 		.bd-placeholder-img {
@@ -152,7 +174,7 @@
 		</style>
 	</head>
 	
-	<body>
+	<body class="latar-utama hitam-bg">
 		<audio src="1bulanvoice.mp3" type="" id="1bulanvoices"></audio>
 		<audio src="2bulanvoice.mp3" type="" id="2bulanvoices"></audio>
 		<audio src="3bulanvoice.mp3" type="" id="3bulanvoices"></audio>
@@ -232,11 +254,11 @@
 						<h1 class="hitam">Tentang</h1>
 						<p id="typing_01" class="hitam"><i class="bi bi-chat-dots" style="font-size: 1rem"></i> </p>
 						<p><button class="btn btn-md btn-primary rounded-pill box-shadow hitam-btn" onclick="writer_01();yappingsatu()">Selengkapnya <i class="bi bi-terminal" style="font-size: 1rem"></i></button></p>
-					</div><!-- /.col-lg-4 -->
+					</div>
 					<script>
 						var satu = 0;
 						var txt01 = "Dengan dibuatnya kelas berbayar ini ditujukan untuk membantu teman-teman belajar saham termasuk menganalisa saham, membaca market, membaca pergerakan bandar atau asing, memilih saham yang bagus dan memberikan sinyal atau watchlist saham yang berpontensi naik, kadang ada juga info A1"; /* The text */
-						var speed1 = 55; /* The speed/duration of the effect in milliseconds */
+						var speed1 = 55;
 						function writer_01() {
 							if (satu < txt01.length) {
 								document.getElementById("typing_01").innerHTML += txt01.charAt(satu);
@@ -246,16 +268,18 @@
 						}
 					</script>
 					
+					<hr class="featurette-divider">
+					
 					<div class="col-lg-4">
 						<img class="box-shadow" src="top2.jpg" style="width: 120px; height: 120px; margin-bottom: 10px; object-fit: cover; border: 1px solid #BBB; border-radius: 50%">
 						<h1 class="hitam">Harga Terbaik</h1>
 						<p id="typing_02" class="hitam"><i class="bi bi-chat-dots" style="font-size: 1rem"></i> </p>
 						<p><button class="btn btn-md btn-primary rounded-pill box-shadow hitam-btn" onclick="writer_02();yappingdua()">Selengkapnya <i class="bi bi-terminal" style="font-size: 1rem"></i></button></p>
-					</div><!-- /.col-lg-4 -->
+					</div>
 					<script>
 						var dua = 0;
 						var txt02 = 'Harga kelas yang kami tawarkan sangat worth it untuk dibeli, terjangkau dan dapat bersaing, jaminan balik modal dalam 7 hari kerja (tergantung modalnya)'; /* The text */
-						var speed2 = 60; /* The speed/duration of the effect in milliseconds */
+						var speed2 = 60;
 						function writer_02() {
 							if (dua < txt02.length) {
 								document.getElementById("typing_02").innerHTML += txt02.charAt(dua);
@@ -267,7 +291,14 @@
 				</div><!-- /.row -->
 			</div>
 			
-			<!---->
+			<hr class="featurette-divider">
+			
+			<div class="container">
+				<div class="row">
+				
+				
+				</div>
+			</div>
 			
 			<div class="container">
 				<div class="row">
@@ -281,6 +312,8 @@
 						</div>
 					</div>
 					
+					<hr class="featurette-divider">
+					
 					<div class="card mb-3 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="2month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-circle"></i> 44%</bdo>
@@ -290,6 +323,8 @@
 							<button type="button" class="btn btn-success btn-block hitam-btn" data-toggle="modal" data-target="#kelas2-modal" onclick="duabulanvoice()"><i class="bi bi-credit-card-fill"></i> Beli</button>
 						</div>
 					</div>
+					
+					<hr class="featurette-divider">
 					
 					<div class="card mb-3 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="3month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0">
@@ -362,7 +397,6 @@
 				</div>
 			</div>
 			
-			<!---->
 			<hr class="featurette-divider">
 			
 			<div class="card" style="left: 3%; position: absolute; border: 1px solid #ddd; border-radius: 10px">
@@ -385,96 +419,83 @@
 				</div>
 			</div>
 			
-			
 			<br><rb><br><br><rb><br><br><rb><br><rb><br><br><rb><br><br><rb><br><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br>
-			
-			<!-- /END THE FEATURETTES -->
-			
-			<!-- FOOTER -->
 			
 			<footer class="container">
 				<p class="float-right"><a href="#top">Kembali Ke Atas</a></p>
 				<p class="card-text hitam">&copy; 2025 Stock's ID, Inc. &middot; Har &middot; Bootstrap Package (Theme, Icon, Features) &middot; W3School &middot; TypeCast.ai (Voice) &middot; Google Font &middot; Free Pik (Images) &middot;</p>
 			</footer>
 			
-			<button class="btn-toggle btn btn-md rounded-pill btn-primary hitam-btn" style="bottom: 80px; right: 10px; position: fixed; z-index: 99999">Tema</button>
+			<p class="gabung" id="quotation">Stock ID</p>
+			
+			<button class="btn-toggle btn btn-md rounded-pill btn-primary hitam-btn" style="bottom: 80px; left: 10px; position: fixed; z-index: 99999">Tema</button>
 			<script type="text/javascript">
 				const btn = document.querySelector(".btn-toggle");
 				btn.addEventListener("click", function () {
 					document.body.classList.toggle("dark-theme");
 				});
 			</script>
-			
-			<div class="btn-group dropup box-shadow" style="bottom: 15px; left: 15px; position: fixed; z-index: 99">
-				<button type="button" class="btn btn-md btn-primary hitam-btn">Mobile</button>
-				<button type="button" class="btn btn-secondary btn-md dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					<span class="sr-only">Tampilan Resolusi</span>
-				</button>
-				<div class="dropdown-menu latar box-shadow">
-					<a class="dropdown-item text-light" href="#">Mobile <i class="bi bi-check" style="font-size: 1rem"></i></a>
-					<a class="dropdown-item text-light" href="index-pc.html">Desktop (PC)</a>
-					<a class="dropdown-item text-light" href="index-tablet.html">Tablet / iPad</a>
-					<div class="dropdown-divider"></div>
-				</div>
-			</div>
 		
-		<script type="text/javascript">
-		function yappingsatu() {
-			var audio = document.getElementById("yappingsatu");
-			audio.play();
-		}
-		function yappingdua() {
-			var audio = document.getElementById("yappingdua");
-			audio.play();
-		}
-		function satubulanvoice() {
-			var audio = document.getElementById("1bulanvoices");
-			audio.play();
-		}
-		function duabulanvoice() {
-			var audio = document.getElementById("2bulanvoices");
-			audio.play();
-		}
-		function tigabulanvoice() {
-			var audio = document.getElementById("3bulanvoices");
-			audio.play();
-		}
-		function satubulanbayar() {
-			var audio = document.getElementById("1bulanbayars");
-			audio.play();
-		}
-		function duabulanbayar() {
-			var audio = document.getElementById("2bulanbayars");
-			audio.play();
-		}
-		function tigabulanbayar() {
-			var audio = document.getElementById("3bulanbayars");
-			audio.play();
-		}
-		</script>
-		<script type="text/javascript">
-		function emoji() {
-			var a;
-			a = document.getElementById("emoji");
-			a.innerHTML = "&#xf08a;";
-			setTimeout(function () {
-				a.innerHTML = "&#xf006;"
-			}, 2000);
-			setTimeout(function () {
-				a.innerHTML = "&#xf118;";
-			}, 4000);
-			setTimeout(function () {
-				a.innerHTML = "&#xf224;";
-			}, 6000);
-			setTimeout(function () {
-				a.innerHTML = "&#xf087;";
-			}, 8000);
-		}
-		emoji();
-		setInterval(emoji, 10000);
-		</script>
-		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-		<script>
+			<script type="text/javascript">
+			function yappingsatu() {
+				var audio = document.getElementById("yappingsatu");
+				audio.play();
+			}
+			function yappingdua() {
+				var audio = document.getElementById("yappingdua");
+				audio.play();
+			}
+			function satubulanvoice() {
+				var audio = document.getElementById("1bulanvoices");
+				audio.play();
+			}
+			function duabulanvoice() {
+				var audio = document.getElementById("2bulanvoices");
+				audio.play();
+			}
+			function tigabulanvoice() {
+				var audio = document.getElementById("3bulanvoices");
+				audio.play();
+			}
+			function satubulanbayar() {
+				var audio = document.getElementById("1bulanbayars");
+				audio.play();
+			}
+			function duabulanbayar() {
+				var audio = document.getElementById("2bulanbayars");
+				audio.play();
+			}
+			function tigabulanbayar() {
+				var audio = document.getElementById("3bulanbayars");
+				audio.play();
+			}
+			</script>
+			
+			<script type="text/javascript">
+			function emoji() {
+				var a;
+				a = document.getElementById("emoji");
+				a.innerHTML = "&#xf08a;";
+				setTimeout(function () {
+					a.innerHTML = "&#xf006;"
+				}, 2000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf118;";
+				}, 4000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf224;";
+				}, 6000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf087;";
+				}, 8000);
+			}
+			emoji();
+			setInterval(emoji, 10000);
+			</script>
+			
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			
+			<script>
 			function satubulan() {
 				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 99.000, mohon kirimkan alamat pembayaran.");
 			}
@@ -484,10 +505,52 @@
 			function tigabulan() {
 				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 278.000, mohon kirimkan alamat pembayaran.");
 			}
-		</script>
-		<script>window.jQuery || document.write('<script src="assets/jquery.slim.min.js"><\/script>')</script>
-		<script src="bootstrap.bundle.min.js"></script>
-		<br><rb><br><br><rb><br>
+			</script>
+			
+			<script type="text/javascript">
+			var quotes = [
+				{"quote": "Ikhwan Bergabung"},
+				{"quote": "Yoga Bergabung"},
+				{"quote": "Ardika Bergabung"},
+				{"quote": "Yanto Bergabung"},
+				{"quote": "Ardha Bergabung"},
+				{"quote": "Tito Bergabung"},
+				{"quote": "Ahlis Bergabung"},
+				{"quote": "Niko Bergabung"},
+				{"quote": "Miko Bergabung"},
+				{"quote": "Fajar Bergabung"},
+				{"quote": "Dani Bergabung"},
+				{"quote": "Putri Bergabung"},
+				{"quote": "Winsen Bergabung"},
+				{"quote": "Panji Bergabung"},
+				{"quote": "Ando Bergabung"},
+				{"quote": "Nofal Bergabung"},
+				{"quote": "Adi Bergabung"},
+				{"quote": "Lisbeth Bergabung"},
+				{"quote": "Dandy Bergabung"},
+				{"quote": "Yudha Bergabung"},
+				{"quote": "Neko Bergabung"},
+				{"quote": "Tomy Bergabung"},
+				{"quote": "Fathan Bergabung"},
+				{"quote": "Nijar Bergabung"},
+				{"quote": "Nanang Bergabung"},
+				{"quote": "Radit Bergabung"},
+				{"quote": "Azka Bergabung"},
+				{"quote": "Dwiky Bergabung"},
+				{"quote": "Gilang Bergabung"},
+				{"quote": "Hendra Bergabung"},
+				{"quote": "Alive Bergabung"},
+			]
+			function randomQuote() {
+				let random = quotes[Math.floor(Math.random() * quotes.length)];
+				quotation.innerText = `${random.quote}`;
+				source.innerText = random.source;
+			}
+			setInterval(randomQuote, 3000);
+			</script>
+			
+			<script>window.jQuery || document.write('<script src="assets/jquery.slim.min.js"><\/script>')</script>
+			<script src="bootstrap.bundle.min.js"></script>
 		</main>
 	</body>
 </html>
