@@ -136,9 +136,10 @@
 			transition: ease 1s;
 			-webkit-transition: ease 1s;
 		}
-		button, a {
+		.btn, button, a {
 			font-size: 16px !important;
 			font-weight: 500 !important;
+			border: 1.5px solid #EEE;
 		}
 		/**/
 		div.tentang {
@@ -265,12 +266,12 @@
 					</div>
 				</div>
 				
-				<a onclick="klik()" class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+				<a style="border: none" onclick="klik()" class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
 				
-				<a onclick="klik()" class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+				<a style="border: none" onclick="klik()" class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
@@ -442,8 +443,8 @@
 				<div class="card-body div-hitam" style="border-radius: 0 0 10px 10px">
 					<h4 class="card-title hitam">Har</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
-					<a type="button" href="https://wa.me/6289529305947" class="btn btn-sm btn-block rounded-pill btn-success"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
-					<a type="button" href="#" class="btn btn-sm btn-block rounded-pill btn-primary"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; Email</a>
+					<a type="button" href="https://wa.me/6289529305947" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
+					<a type="button" href="#" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; Email</a>
 				</div>
 			</div>
 			
@@ -452,8 +453,8 @@
 				<div class="card-body div-hitam" style="border-radius: 0 0 10px 10px">
 					<h4 class="card-title hitam">Irfan</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
-					<a type="button" href="https://wa.me/6281216752945" class="btn btn-sm btn-block rounded-pill btn-success"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
-					<a type="button" href="#" class="btn btn-sm btn-block rounded-pill btn-primary"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; Email</a>
+					<a type="button" href="https://wa.me/6281216752945" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
+					<a type="button" href="#" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; Email</a>
 				</div>
 			</div>
 			
@@ -549,6 +550,7 @@
 			var quotes = [
 				{"quote": "Ikhwan Bergabung"},
 				{"quote": "Yoga Bergabung"},
+				{"quote": "Rama Bergabung"},
 				{"quote": "Ardika Bergabung"},
 				{"quote": "Yanto Bergabung"},
 				{"quote": "Ardha Bergabung"},
