@@ -23,7 +23,10 @@
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 		<!---->
 		<style type="text/css">
-		body, div, span, p, a, h1, h4, bdo, del, button, input {
+		html, body { 
+			scroll-behavior: smooth;
+		}
+		div, span, p, a, h1, h4, bdo, del, button, input {
 			font-family: "Exo 2", sans-serif;
 		}
 		.dark-theme .hitam-bg,
@@ -52,7 +55,7 @@
 		}
 		.dark-theme .hitam-btn,
 		.dark-theme button {
-			border: 1px solid #202020;
+			border: 1.5px solid #444;
 		}
 		/**/
 		body, .latar-utama {
@@ -133,13 +136,15 @@
 			border: 0.8px solid #FFF;
 			border-radius: 12px;
 			opacity: 0.8;
-			transition: ease 1s;
-			-webkit-transition: ease 1s;
+			transition: ease 2s;
+			-webkit-transition: ease 2s;
 		}
 		.btn, button, a {
 			font-size: 16px !important;
 			font-weight: 500 !important;
 			border: 1.5px solid #EEE;
+			transition: ease 0.8s;
+			-webkit-transition: ease 0.8s;
 		}
 		/**/
 		div.tentang {
@@ -164,12 +169,6 @@
 			font-size: 14px;
 			font-weight: 500;
 			text-decoration: none;
-		}
-		.tentang-text-bg {
-			
-		}
-		.tentang .bi {
-			
 		}
 		.bd-placeholder-img {
 			font-size: 1.125rem;
@@ -216,7 +215,7 @@
 		
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
-				<a class="navbar-brand font-weight-bold" href="#"><img src="header.jpg" style="width: 38px; height: 38px; margin-right: 6px; object-fit: cover; vertical-align: middle; border-radius: 50%"> Stock's ID <i class="bi bi-graph-up-arrow"></i></a>
+				<a style="border: none" class="navbar-brand font-weight-bold" href="#"><img src="header.jpg" style="width: 38px; height: 38px; margin-right: 6px; object-fit: cover; vertical-align: middle; border-radius: 50%"> Stock's ID <i class="bi bi-graph-up-arrow"></i></a>
 				<button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
