@@ -1,7 +1,7 @@
 // Generate sample images from local folder 'gain'
 const galleryContainer = document.getElementById('gallery');
 const gallery = [];
-for (let i = 1; i <= 23; i++) {
+for (let i = 1; i <= 24; i++) {
 	gallery.push({
 		thumb: `stockid_gambar/gain/img${i}.jpg`,
 		full: `stockid_gambar/gain/img${i}.jpg`,
