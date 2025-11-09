@@ -26,7 +26,7 @@
 			font-family: 'Michroma', sans-serif;
 			margin: 6px 6px;
 			padding: 0px;
-			background-color: #ddd;
+			background-color: #222;
 			background-size: 100%;
 			background-repeat: no-repeat;
 			background-position: fixed;
@@ -41,11 +41,11 @@
 			display: block;
 			margin: 10px 5px 0 5px;
 			padding: 6px 6px;
-			background-color: #eee;
+			background-color: #111;
 			border: 1px solid dodgerblue;
 			border-radius: 6px 15px;
-			box-shadow: 0px 0px 4px 2px lightskyblue;
-			-webkit-box-shadow: 0px 0px 4px 2px lightskyblue;
+			box-shadow: 0px 0px 4px 1px whitesmoke;
+			-webkit-box-shadow: 0px 0px 4px 1px whitesmoke;
 		}
 		h4 {
 			top: 0;
@@ -55,13 +55,13 @@
 			align-items: center;
 			font-size: 16px;
 			font-weight: 700;
-			color: dodgerblue;
+			color: snow;
 			margin: 0px auto;
 		}
 		p, p.member, p.kelas {
 			font-size: 13px;
 			font-weight: 600;
-			color: darkcyan;
+			color: steelblue;
 			margin: 0px auto;
 		}
 		p.tambah {
@@ -78,11 +78,11 @@
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
 		<br>
-		<p>Total Member: 35 Jiwa</p>
+		<p>Total Member Aktif: 29 Jiwa</p>
 		<p>Member 3 Bulan: 8 Jiwa</p>
-		<p>Member 2 Bulan: 3 Jiwa</p>
-		<p>Member 1 Bulan: 20 Jiwa</p>
-		<p>Member Expired: 6 Jiwa</p>
+		<p>Member 2 Bulan: 4 Jiwa</p>
+		<p>Member 1 Bulan: 17 Jiwa</p>
+		<p>Member Expired: 9 Jiwa</p>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Adit</p>
@@ -164,6 +164,13 @@
 			</div>
 			
 			<div class="member">
+				<p class="member">Nama: Mas. Jordan</p>
+				<p class="member" style="display: none">Nomor: 085361158771</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="jordanwaktu"></span> <span id="jordanbulan"></span></p>
+			</div>
+			
+			<div class="member">
 				<p class="member">Nama: Mas. Purna</p>
 				<p class="member" style="display: none">Nomor: 089627939527</p>
 				<p class="member">Beli Kelas: 1 Bulan</p>
@@ -176,7 +183,6 @@
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="sefianwaktu"></span> <span id="sefianbulan"></span></p>
 			</div>
-			
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Rey</p>
@@ -234,7 +240,6 @@
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="winsenwaktu"></span> <span id="winsenbulan"></span></p>
 			</div>
-			
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Panji</p>
@@ -425,6 +430,33 @@
 				clearInterval(ikhwantarget);
 				document.getElementById("ikhwanwaktu").innerHTML = "<b>Expired</b>";
 				document.getElementById("ikhwanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetjordan = new Date("08 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var jordantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetjordan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("jordanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("jordanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(jordantarget);
+				document.getElementById("jordanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("jordanbulan").innerHTML = "";
 			}
 		}, 1000);
 		</script>
