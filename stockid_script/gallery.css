@@ -1,0 +1,158 @@
+:root {
+	--gap: 12px;
+	--overlay-bg: rgba(0, 0, 0, 0.65);
+	--fade-duration: 0.5s;
+	--scale-duration: 0.5s;
+}
+.container-gain {
+	max-width: 100%;
+	padding: 20px;
+}
+h4.gain {
+	font-size: 22px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 20px;
+	color: #444;
+}
+/* Galeri scroll horizontal */
+.gallery-scroll-gain {
+	gap: var(--gap);
+	display: flex;
+	overflow-x: auto;
+	scroll-behavior: smooth;
+	padding-bottom: 10px;
+}
+.gallery-scroll-gain::-webkit-scrollbar {
+	height: 4px;
+}
+.gallery-scroll-gain::-webkit-scrollbar-thumb {
+	background: steelblue;
+	border-radius: 10px;
+}
+.divgain {
+	flex: 0 0 auto;
+	overflow: hidden;
+	cursor: pointer;
+	width: 200px;
+	padding: 0px;
+	background: inherit;
+	border: 0px;
+	border-radius: 10px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+	-webkit-transition: transform 0.15s ease, box-shadow 0.15s ease;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+.divgain:hover {
+	transform: scale(1.03);
+	-webkit-transform: scale(1.03);
+	box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+.divgain img {
+	display: block;
+	width: 100%;
+	height: 100%; /*150px*/
+	object-fit: cover;
+}
+.caption-gain {
+	padding: 8px 10px;
+	text-align: center;
+	font-size: 14px;
+	color: #333;
+}
+/* Overlay dan Modal */
+.overlay {
+	inset: 0;
+	opacity: 0;
+	display: flex;
+	position: fixed;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+	z-index: 9999;
+	background: var(--overlay-bg);
+	padding: 20px;
+	transition: opacity var(--fade-duration) ease;
+	-webkit-transition: opacity var(--fade-duration) ease;
+}
+.overlay.open {
+	opacity: 1;
+	pointer-events: auto;
+}
+.modal-gain {
+	opacity: 0;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1000px;
+	max-height: 95vh;
+	background: #eee;
+	border-radius: 10px;
+	transform: scale(0.95);
+	-webkit-transform: scale(0.95);
+	transition: transform var(--scale-duration) ease, opacity var(--scale-duration) ease;
+	-webkit-transition: transform var(--scale-duration) ease, opacity var(--scale-duration) ease;
+	box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.overlay.open .modal-gain {
+	opacity: 1;
+	transform: scale(1);
+	-webkit-transform: scale(1);
+}
+.modal-media {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0px;
+	background: #333;
+}
+.modal-media img {
+	max-width: 100%;
+	max-height: 80vh;
+	object-fit: contain;
+}
+.modal-footer-gain {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 12px;
+	border-top: 2px solid darkcyan;
+}
+.modal-footer-gain .meta {
+	font-size: 14px;
+	font-weight: 400;
+	color: #222;
+}
+.modal-footer-gain .controls {
+	gap: 12px;
+	display: flex;
+}
+.btn-tutup {
+	padding: 6px 8px;
+	color: #eee;
+	background: dodgerblue;
+	border: 1px solid #333;
+	border-radius: 2px 10px 2px 10px;
+	cursor: pointer;
+}
+.btn-tutup.ghost {
+	width: 50px;
+	padding: 0px 14px;
+	color: #222;
+	background: transparent;
+	border: 1px solid dodgerblue;
+	border-radius: 14px;
+}
+@media (max-width: 700px) {
+	.divgain {
+		width: 140px;
+	}
+	.divgain img {
+		height: 100px;
+	}
+}
