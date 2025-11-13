@@ -27,7 +27,7 @@
 			font-family: 'Fredoka', sans-serif;
 			margin: 6px 6px;
 			padding: 0px;
-			background-color: snow;
+			background-color: #222;
 			background-size: 100%;
 			background-repeat: no-repeat;
 			background-position: fixed;
@@ -42,11 +42,11 @@
 			display: block;
 			margin: 10px 5px 0 5px;
 			padding: 6px 6px;
-			background-color: whitesmoke;
+			background-color: #111;
 			border: 1px solid dodgerblue;
 			border-radius: 6px 15px;
-			box-shadow: 0px 0px 4px 1px whitesmoke;
-			-webkit-box-shadow: 0px 0px 4px 1px whitesmoke;
+			box-shadow: 0px 0px 3px 1px gray;
+			-webkit-box-shadow: 0px 0px 3px 1px gray;
 		}
 		h4 {
 			top: 0;
@@ -62,7 +62,7 @@
 		p, p.member, p.kelas {
 			font-size: 13px;
 			font-weight: 600;
-			color: steelblue;
+			color: whitesmoke;
 			margin: 0px auto;
 		}
 		p.tambah {
@@ -79,10 +79,10 @@
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
 		<br>
-		<p>Total Member Aktif: 31 Jiwa</p>
+		<p>Total Member Aktif: 33 Jiwa</p>
 		<p>Member 3 Bulan: 8 Jiwa</p>
 		<p>Member 2 Bulan: 4 Jiwa</p>
-		<p>Member 1 Bulan: 19 Jiwa</p>
+		<p>Member 1 Bulan: 21 Jiwa</p>
 		<p>Member Expired: 10 Jiwa</p>
 			
 			<div class="member">
@@ -155,6 +155,20 @@
 				<p class="member" style="display: none">Nomor: 081270370727</p>
 				<p class="member">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="titowaktu"></span> <span id="titobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Dio</p>
+				<p class="member" style="display: none">Nomor: 087872855134</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="diowaktu"></span> <span id="diobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Rosita</p>
+				<p class="member" style="display: none">Nomor: 085746010654</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="rositawaktu"></span> <span id="rositabulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -374,6 +388,60 @@
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="alivewaktu"></span> <span id="alivebulan"></span></p>
 			</div>
+		
+		<script type="text/javascript">
+		var targetdio = new Date("14 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var diotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdio - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("diowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("diobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(diotarget);
+				document.getElementById("diowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("diobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrosita = new Date("14 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var rositatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrosita - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("rositawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("rositabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(rositatarget);
+				document.getElementById("rositawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("rositabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
 		
 		<script type="text/javascript">
 		var targetannisa = new Date("11 Dec, 2025 00:00:00").getTime();
