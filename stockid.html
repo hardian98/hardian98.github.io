@@ -196,6 +196,9 @@
 		i.bi {
 			vertical-align: baseline;
 		}
+		a:focus, a:hover {
+			text-decoration: none;
+		}
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -390,30 +393,30 @@
 				<div class="row">
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/1month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
-						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>25%</bdo>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>200.000</del></p>
-							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 149.000</bdo></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 129.000</bdo></p>
 							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas1-modal" onclick="satubulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/2month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
-						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>30%</bdo>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 2 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>400.000</del></p>
-							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 279.000</bdo></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 259.000</bdo></p>
 							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas2-modal" onclick="duabulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/3month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
-						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>30%</bdo>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 3 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>600.000</del></p>
-							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 419.000</bdo></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 389.000</bdo></p>
 							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas3-modal" onclick="tigabulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
 					</div>
@@ -451,8 +454,8 @@
 						<div class="modal-body div-hitam">
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 30 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
-							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 149.000</p>
-							<button type="button" onclick="setTimeout(satubulan, 4000);satubulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 149.000, mohon kirimkan alamat pembayaran." class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 129.000</p>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 129.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="satubulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -470,8 +473,8 @@
 						<div class="modal-body div-hitam">
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 60 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
-							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 279.000</p>
-							<button type="button" onclick="setTimeout(duabulan, 4000);duabulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga 279.000, mohon kirimkan alamat pembayaran." class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 259.000</p>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga 259.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="duabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -489,8 +492,8 @@
 						<div class="modal-body div-hitam">
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 90 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
-							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 419.000</p>
-							<button type="button" onclick="setTimeout(tigabulan, 4000);tigabulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 419.000, mohon kirimkan alamat pembayaran." class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 389.000</p>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 389.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="tigabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -509,7 +512,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 180 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 779.000</p>
-							<button type="button" onclick="setTimeout(enambulan, 4000);enambulanbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 180 hari seharga 779.000, mohon kirimkan alamat pembayaran." class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 180 hari seharga 779.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="enambulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -528,7 +531,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 365 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 1.559.000</p>
-							<button type="button" onclick="setTimeout(setahun, 4000);setahunbayar()" href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 365 hari seharga 1.559.000, mohon kirimkan alamat pembayaran." class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 365 hari seharga 1.559.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="setahunbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -677,13 +680,13 @@
 			
 			<script>
 			function satubulan() {
-				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga Rp. 149.000, mohon kirimkan alamat pembayaran.");
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga Rp. 129.000, mohon kirimkan alamat pembayaran.");
 			}
 			function duabulan() {
-				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga Rp. 279.000, mohon kirimkan alamat pembayaran.");
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga Rp. 259.000, mohon kirimkan alamat pembayaran.");
 			}
 			function tigabulan() {
-				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga Rp. 419.000, mohon kirimkan alamat pembayaran.");
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga Rp. 389.000, mohon kirimkan alamat pembayaran.");
 			}
 			function enambulan() {
 				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 180 hari seharga Rp. 779.000, mohon kirimkan alamat pembayaran.");
