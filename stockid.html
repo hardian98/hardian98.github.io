@@ -28,6 +28,18 @@
 		html { 
 			scroll-behavior: smooth;
 		}
+		body {
+			background: snow;
+			animation: bgChange 10s infinite alternate;
+			-webkit-animation: bgChange 10s infinite alternate;
+		}
+		@-webkit-keyframes bgChange {
+			0% { background: #fff; }    /* merah muda */
+			25% { background: #eee; }   /* peach */
+			50% { background: #ddd; }   /* ungu soft */
+			75% { background: #ccc; }   /* biru muda */
+			100% { background: #bbb; }  /* biru pastel */
+		}
 		div, span, p, a, b, h1, h4, bdo, del, button, input {
 			font-family: "Fredoka", sans-serif;
 		}
@@ -60,9 +72,6 @@
 			border: 1.2px solid #444;
 		}
 		/**/
-		body, .latar-utama {
-			background: snow;
-		}
 		.carousel-caption h1,
 		.col-md-4 h1 {
 			font-size: 22px;
@@ -102,7 +111,7 @@
 		}
 		.card-title,
 		.modal-title {
-			font-size: 20px;
+			font-size: 22px;
 			font-weight: 600;
 			color: steelblue;
 		}
@@ -145,7 +154,8 @@
 			position: absolute;
 			z-index: 999;
 			left: 2%;
-			top: 50%;
+			top: 48%;
+			min-top: 40%;
 			padding: 2px 8px;
 			font-size: 16px;
 			font-weight: 400;
@@ -179,7 +189,7 @@
 		.tentang-text {
 			margin: 10px 0px;
 			padding: 0px;
-			font-size: 22px;
+			font-size: 20px;
 			font-weight: 600;
 			color: #444;
 		}
@@ -223,11 +233,6 @@
 			z-index: 50000;
 			background: transparent;
 			border: none;
-		}
-		.box-shadow {
-			box-shadow: 0px 0px 2px 0px #007BFF;
-			-moz-box-shadow: 0px 0px 2px 0px #007BFF;
-			-webkit-box-shadow: 0px 0px 2px 0px #007BFF;
 		}
 		</style>
 	</head>
