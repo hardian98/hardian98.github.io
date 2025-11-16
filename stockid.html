@@ -29,9 +29,12 @@
 			scroll-behavior: smooth;
 		}
 		body {
-			background: snow;
-			animation: bgChange 10s infinite alternate;
-			-webkit-animation: bgChange 10s infinite alternate;
+			background:
+			linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+			url("stockid_gambar/wall.jpg") no-repeat center center fixed;
+			background-size: cover;
+			/*animation: bgChange 10s infinite alternate;
+			-webkit-animation: bgChange 10s infinite alternate;*/
 		}
 		@-webkit-keyframes bgChange {
 			0% { background: #fff; }    /* merah muda */
@@ -45,7 +48,7 @@
 		}
 		.dark-theme .hitam-bg,
 		.dark-theme body {
-			background-color: #444;
+			background-color: snow;
 		}
 		.dark-theme .div-hitam {
 			background-color: snow;
@@ -61,7 +64,7 @@
 		.dark-theme .card-text bdo,
 		.dark-theme .card-text del,
 		.dark-theme .disc {
-			color: #444;
+			color: snow;
 			border: 1px solid #444;
 		}
 		.dark-theme .text-biru {
@@ -87,12 +90,13 @@
 		/**/
 		div.card-body,
 		div.modal-body {
-			padding: 15px 15px;
+			padding: 12px 12px;
 			background-color: snow; /*353535*/
-			border-top: 0px;
-			border-left: 1.2px solid #444;
+			border: none;
+			border-top: 4px solid dodgerblue;
+			/*border-left: 1.2px solid #444;
 			border-right: 1.2px solid #444;
-			border-bottom: 1.2px solid #444;
+			border-bottom: 1.2px solid #444;*/
 			border-radius: 0px 0px 10px 10px;
 			transition: ease 0.8s;
 			-webkit-transition: ease 0.8s;
@@ -190,7 +194,7 @@
 			padding: 0px;
 			font-size: 20px;
 			font-weight: 600;
-			color: #444;
+			color: snow;
 		}
 		.tentang-text {
 			font-size: 16px;
@@ -208,6 +212,10 @@
 		a:focus, a:hover {
 			text-decoration: none;
 		}
+		.text-footer {
+			font-size: 16px;
+			color: snow;
+		}
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -220,6 +228,13 @@
 			.bd-placeholder-img-lg {
 				font-size: 3.5rem;
 			}
+		}
+		.card-img-top {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+			border: none;
+			border-radius: 10px 10px 0 0;
 		}
 		.img-slid-custom {
 			background: none;
@@ -236,7 +251,7 @@
 		</style>
 	</head>
 	
-	<body class="latar-utama hitam-bg">
+	<body>
 		<audio src="stockid_suara/1bulanvoice.mp3" type="" id="1bulanvoices"></audio>
 		<audio src="stockid_suara/2bulanvoice.mp3" type="" id="2bulanvoices"></audio>
 		<audio src="stockid_suara/3bulanvoice.mp3" type="" id="3bulanvoices"></audio>
@@ -396,7 +411,17 @@
 			<div class="container">
 				<div class="row">
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
-						<img src="stockid_gambar/1month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
+						<img src="stockid_gambar/screener.jpg" class="card-img-top">
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>30%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket Screener</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>100.000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 70.000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#screener-modal" onclick="screenervoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/1month.jpg" class="card-img-top">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>200.000</del></p>
@@ -406,7 +431,7 @@
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
-						<img src="stockid_gambar/2month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
+						<img src="stockid_gambar/2month.jpg" class="card-img-top">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 2 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>400.000</del></p>
@@ -416,7 +441,7 @@
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
-						<img src="stockid_gambar/3month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
+						<img src="stockid_gambar/3month.jpg" class="card-img-top">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 3 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>600.000</del></p>
@@ -426,7 +451,7 @@
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
-						<img src="stockid_gambar/6month.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
+						<img src="stockid_gambar/6month.jpg" class="card-img-top">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 6 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>1.200.000</del></p>
@@ -436,7 +461,7 @@
 					</div>
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
-						<img src="stockid_gambar/oneyear.jpg" class="card-img-top" style="border-radius: 10px 10px 0 0; border-top: 1.2px solid #444; border-left: 1.2px solid #444; border-right: 1.2px solid #444;">
+						<img src="stockid_gambar/oneyear.jpg" class="card-img-top">
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Tahun</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>2.400.000</del></p>
@@ -448,7 +473,26 @@
 			</div>
 
 			<!-- Modal -->
-				
+			
+			<div id="screener-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Screener Beli Sore Jual Pagi / Swing</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli Screener BSJP / Swing</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Screener Rp. 70.000</p>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Screener BSJP seharga 70.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="screenerbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
 			<div id="kelas1-modal" class="modal fade" role="dialog">
 				<div class="modal-dialog modal-dialog-centered">
 					<div class="modal-content">
@@ -570,20 +614,20 @@
 			
 			<hr class="featurette-divider">
 			
-			<div class="card mb-4" style="left: 3%; position: absolute; border: none">
-				<img src="stockid_gambar/admin1.jpg" class="card-img-top" style="width: 230px; height: 230px; object-fit: cover; border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; border: none">
+			<div class="card mb-4" style="left: 3%; position: absolute; border-radius: 10px 10px">
+				<img src="stockid_gambar/admin1.jpg" class="card-img-top" style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0; border: none">
 				<div class="card-body div-hitam" style="padding: 8px 8px !important; border-radius: 0 0 10px 10px">
 					<h4 class="card-title hitam">Har</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
 					<p class="card-text hitam">Equity: 800K</p>
-					<p class="card-text hitam">Tipe: Swing, Mid-Long Term</p>
+					<p class="card-text hitam">Tipe: Mid-Long Term</p>
 					<a type="button" href="https://wa.me/6289529305947" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
 					<a type="button" href="sms:089529305947" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; SMS</a>
 				</div>
 			</div>
 			
-			<div class="card mb-4" style="right: 3%; position: absolute; border: none">
-				<img src="stockid_gambar/admin2.jpg" class="card-img-top" style="width: 230px; height: 230px; object-fit: cover; border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; border: none">
+			<div class="card mb-4" style="right: 3%; position: absolute; border-radius: 10px 10px">
+				<img src="stockid_gambar/admin2.jpg" class="card-img-top" style="width: 250px; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0; border: none">
 				<div class="card-body div-hitam" style="padding: 8px 8px !important; border-radius: 0 0 10px 10px">
 					<h4 class="card-title hitam">Irfan</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
@@ -597,8 +641,8 @@
 			<br><rb><br><br><rb><br><br><rb><br><rb><br><br><rb><br><br><rb><br><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br>
 			
 			<footer class="container">
-				<p class="float-right"><a href="#top">Kembali Ke Atas</a></p>
-				<p class="card-text hitam">&copy; 2025 Stock's ID, Inc.<br>&middot; Har &middot; Bootstrap Package (Theme, Icon, Features) &middot; W3School &middot; TypeCast.ai (Voice) &middot; Google Font &middot; Free Pik (Images) &middot;</p>
+				<p class="text-footer float-right"><a href="#top">Kembali Ke Atas</a></p>
+				<p class="text-footer hitam">&copy; 2025 Stock's ID, Inc.<br>&middot; Har &middot; Bootstrap Package (Theme, Icon, Features) &middot; W3School &middot; TypeCast.ai (Voice) &middot; Google Font &middot; Free Pik (Images) &middot;</p>
 			</footer>
 			
 			<p class="gabung" id="quotation"><i class="bi bi-box-arrow-in-right"></i> Stock ID</p>
