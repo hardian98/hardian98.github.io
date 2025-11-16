@@ -13,7 +13,7 @@ h4.gain {
 	font-weight: 600;
 	text-align: center;
 	margin-bottom: 20px;
-	color: #444;
+	color: snow;
 }
 /* Galeri scroll horizontal */
 .gallery-scroll-gain {
@@ -27,7 +27,7 @@ h4.gain {
 	height: 4px;
 }
 .gallery-scroll-gain::-webkit-scrollbar-thumb {
-	background: steelblue;
+	background: snow;
 	border-radius: 10px;
 }
 .divgain {
@@ -36,8 +36,8 @@ h4.gain {
 	cursor: pointer;
 	width: 200px;
 	padding: 0px;
-	background: inherit;
-	border: 0px;
+	background: snow;
+	border: none;
 	border-radius: 10px;
 	transition: transform 0.15s ease, box-shadow 0.15s ease;
 	-webkit-transition: transform 0.15s ease, box-shadow 0.15s ease;
