@@ -7,8 +7,8 @@
 		<meta name="HandheldFriendly" content="True">
 		<meta name="viewport" content="width=device-width, initial-scale=0.9, maximal-scale=0.9, shrink-to-fit=no">
 		<meta name="author" content="Hardiansyah, Mark Otto, Jacob Thornton, and Bootstrap contributors">
-		<meta property="og:title" content="Anda Sering Loss? Gabung VIP 🤭">
-		<meta property="og:description" content="Dapatkan Watchlist Siap Pakai, Info A1, Pembelajaran dll 🤗😎">
+		<meta property="og:title" content="Stock ID VIP">
+		<meta property="og:description" content="Dapatkan Watchlist Siap Pakai, Info A1, Pembelajaran dll 😎">
 		<meta property="og:image" content="stockid_gambar/stockicon.jpg">
 		<meta property="og:url" content="https://hardian98.github.io/stockid">
 		<meta property="og:type" content="website">
@@ -173,7 +173,7 @@
 		.btn, button {
 			font-size: 16px !important;
 			font-weight: 500 !important;
-			border: 1.2px solid #444;
+			border: 1.2px solid #333;
 			transition: ease 0.8s;
 			-webkit-transition: ease 0.8s;
 		}
@@ -251,12 +251,14 @@
 		</style>
 	</head>
 	
-	<body>
-		<audio src="stockid_suara/1bulanvoice.mp3" type="" id="1bulanvoices"></audio>
-		<audio src="stockid_suara/2bulanvoice.mp3" type="" id="2bulanvoices"></audio>
-		<audio src="stockid_suara/3bulanvoice.mp3" type="" id="3bulanvoices"></audio>
-		<audio src="stockid_suara/6bulanvoice.mp3" type="" id="6bulanvoices"></audio>
-		<audio src="stockid_suara/setahunvoice.mp3" type="" id="setahunvoices"></audio>
+	<body onclick="musik()">
+		<audio src="stockid_suara/1bulanvoice.mp3" type="audio/mp3" id="1bulanvoices"></audio>
+		<audio src="stockid_suara/2bulanvoice.mp3" type="audio/mp3" id="2bulanvoices"></audio>
+		<audio src="stockid_suara/3bulanvoice.mp3" type="audio/mp3" id="3bulanvoices"></audio>
+		<audio src="stockid_suara/6bulanvoice.mp3" type="audio/mp3" id="6bulanvoices"></audio>
+		<audio src="stockid_suara/setahunvoice.mp3" type="audio/mp3" id="setahunvoices"></audio>
+		<audio src="stockid_suara/screenervoice.mp3" type="audio/mp3" id="screenervoices"></audio>
+		<audio src="stockid_suara/musik.mp3" type="audio/mp3" id="musik"></audio>
 		
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
@@ -393,7 +395,7 @@
 					<p class="tentang-text text-center text-hitam">43 Jiwa</p>
 					<br>
 					<p class="tentang-title text-center text-hitam">Total Member Aktif</p>
-					<p class="tentang-text text-center text-hitam">33 Jiwa</p>
+					<p class="tentang-text text-center text-hitam">35 Jiwa</p>
 					<br>
 					<p class="tentang-title text-center text-hitam">Grup Berjalan Lamanya</p>
 					<p class="tentang-text text-center text-hitam">
@@ -619,8 +621,8 @@
 				<div class="card-body div-hitam" style="padding: 8px 8px !important; border-radius: 0 0 10px 10px">
 					<h4 class="card-title hitam">Har</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
-					<p class="card-text hitam">Equity: 800K</p>
-					<p class="card-text hitam">Tipe: Mid-Long Term</p>
+					<p class="card-text hitam">Equity: 30M+</p>
+					<p class="card-text hitam">Type: Mid-Long Term</p>
 					<a type="button" href="https://wa.me/6289529305947" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
 					<a type="button" href="sms:089529305947" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; SMS</a>
 				</div>
@@ -632,7 +634,7 @@
 					<h4 class="card-title hitam">Irfan</h4>
 					<p class="card-text hitam">Mentor of Stock's ID</p>
 					<p class="card-text hitam">Equity: 150M+</p>
-					<p class="card-text hitam">Tipe: Mid-Long Term</p>
+					<p class="card-text hitam">Type: Swing, Long Term</p>
 					<a type="button" href="https://wa.me/6281216752945" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
 					<a type="button" href="sms:6281216752945" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; SMS</a>
 				</div>
@@ -642,7 +644,7 @@
 			
 			<footer class="container">
 				<p class="text-footer float-right"><a href="#top">Kembali Ke Atas</a></p>
-				<p class="text-footer hitam">&copy; 2025 Stock's ID, Inc.<br>&middot; Har &middot; Bootstrap Package (Theme, Icon, Features) &middot; W3School &middot; TypeCast.ai (Voice) &middot; Google Font &middot; Free Pik (Images) &middot;</p>
+				<p class="text-footer hitam">&copy; 2025 Stock's ID, Inc.<br>&middot; Har &middot; GitHub (Servers, Domain) &middot; Bootstrap Package (Theme, Icon, Features) &middot; Free Pik (Images) &middot; ChatGPT (For Helping) &middot; TypeCast.ai (Voice) &middot; W3School &middot; Google Font &middot;</p>
 			</footer>
 			
 			<p class="gabung" id="quotation"><i class="bi bi-box-arrow-in-right"></i> Stock ID</p>
@@ -658,12 +660,8 @@
 			-->
 		
 			<script type="text/javascript">
-			function yappingsatu() {
-				var audio = document.getElementById("yappingsatu");
-				audio.play();
-			}
-			function yappingdua() {
-				var audio = document.getElementById("yappingdua");
+			function musik() {
+				var audio = document.getElementById("musik");
 				audio.play();
 			}
 			function satubulanvoice() {
