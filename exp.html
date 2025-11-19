@@ -11,8 +11,8 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-		<meta property="og:title" content="Cek Masa Aktifmu Disini 🦆">
-		<meta property="og:description" content="Lihat sebelum ajal menjemput 👻">
+		<meta property="og:title" content="Masa Aktif Member">
+		<meta property="og:description" content="Cek Masa Aktifmu Disini <?php echo ’$stockid’;">
 		<meta property="og:image" content="stockid_gambar/thumb.jpg">
 		<meta property="og:url" content="https://hardian98.github.io/exp">
 		<meta property="og:type" content="website">
@@ -27,7 +27,7 @@
 			font-family: 'Fredoka', sans-serif;
 			margin: 6px 6px;
 			padding: 0px;
-			background-color: #222;
+			background-color: smoke;
 			background-size: 100%;
 			background-repeat: no-repeat;
 			background-position: fixed;
@@ -42,11 +42,10 @@
 			display: block;
 			margin: 10px 5px 0 5px;
 			padding: 6px 6px;
-			background-color: #111;
-			border: 1px solid dodgerblue;
+			background-color: whitesmoke;
 			border-radius: 6px 15px;
-			box-shadow: 0px 0px 3px 1px gray;
-			-webkit-box-shadow: 0px 0px 3px 1px gray;
+			box-shadow: 0px 0px 4px 1px #333;
+			-webkit-box-shadow: 0px 0px 4px 1px #333;
 		}
 		h4 {
 			top: 0;
@@ -62,7 +61,7 @@
 		p, p.member, p.kelas {
 			font-size: 13px;
 			font-weight: 600;
-			color: whitesmoke;
+			color: #333;
 			margin: 0px auto;
 		}
 		p.tambah {
@@ -79,11 +78,11 @@
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
 		<br>
-		<p>Total Member Aktif: 35 Jiwa</p>
+		<p>Total Member Aktif: 37 Jiwa</p>
 		<p>Member 3 Bulan: 8 Jiwa</p>
 		<p>Member 2 Bulan: 5 Jiwa</p>
-		<p>Member 1 Bulan: 21 Jiwa</p>
-		<p>Member Expired: 11 Jiwa</p>
+		<p>Member 1 Bulan: 24 Jiwa</p>
+		<p>Member Expired: 10 Jiwa</p>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Adit</p>
@@ -172,8 +171,22 @@
 			</div>
 			
 			<div class="member">
-				<p class="member">Nama: Mas. Panji</p>
+				<p class="member">Nama: Mas. Dimas</p>
+				<p class="member" style="display: none">Nomor: 082288133212</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dimaswaktu"></span> <span id="dimasbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Afif</p>
+				<p class="member" style="display: none">Nomor: 085265337779</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="afifwaktu"></span> <span id="afifbulan"></span></p>
+			</div>
+			
+			<div class="member">
 				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Panji</p>
 				<p class="member" style="display: none">Nomor: 081383928774</p>
 				<p class="member">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="panjiwaktu"></span> <span id="panjibulan"></span></p>
@@ -272,6 +285,13 @@
 			</div>
 			
 			<div class="member">
+				<p class="member">Nama: Mas. Dandy</p>
+				<p class="member" style="display: none">Nomor: 081257215624</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dandywaktu"></span> <span id="dandybulan"></span></p>
+			</div>
+			
+			<div class="member">
 				<p class="member">Nama: Mba. Putri</p>
 				<p class="member" style="display: none">Nomor: 081554559971</p>
 				<p class="member">Beli Kelas: 2 Bulan</p>
@@ -300,17 +320,17 @@
 			</div>
 			
 			<div class="member">
-				<p class="member">Nama: Mas. Ando</p>
-				<p class="member" style="display: none">Nomor: 082353546274</p>
-				<p class="member">Beli Kelas: 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="andowaktu"></span> <span id="andobulan"></span></p>
-			</div>
-			
-			<div class="member">
 				<p class="member">Nama: Mas. Nofal</p>
 				<p class="member" style="display: none">Nomor: 0895340339030</p>
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nofalwaktu"></span> <span id="nofalbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ando</p>
+				<p class="member" style="display: none">Nomor: 082353546274</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="andowaktu"></span> <span id="andobulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -325,13 +345,6 @@
 				<p class="member" style="display: none">Nomor: 085211556086</p>
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="lisbethwaktu"></span> <span id="lisbethbulan"></span></p>
-			</div>
-			
-			<div class="member">
-				<p class="member">Nama: Mas. Dandy</p>
-				<p class="member" style="display: none">Nomor: 081257215624</p>
-				<p class="member">Beli Kelas: 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="dandywaktu"></span> <span id="dandybulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -403,6 +416,60 @@
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="alivewaktu"></span> <span id="alivebulan"></span></p>
 			</div>
+		
+		<script type="text/javascript">
+		var targetafif = new Date("20 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var afiftarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetafif - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("afifwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("afifbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(afiftarget);
+				document.getElementById("afifwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("afifbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdimas = new Date("20 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dimastarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdimas - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dimaswaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dimasbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(dimastarget);
+				document.getElementById("dimaswaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dimasbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
 		
 		<script type="text/javascript">
 		var targetdio = new Date("14 Dec, 2025 00:00:00").getTime();
@@ -486,7 +553,7 @@
 		</script>
 		
 		<script type="text/javascript">
-		var targetfaisal = new Date("17 Dec, 2025 00:00:00").getTime();
+		var targetfaisal = new Date("22 Dec, 2025 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var faisaltarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
