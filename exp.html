@@ -78,10 +78,10 @@
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
 		<br>
-		<p>Total Member Aktif: 31 Jiwa</p>
+		<p>Total Member Aktif: 32 Jiwa</p>
 		<p>Member 3 Bulan: 8 Jiwa</p>
 		<p>Member 2 Bulan: 5 Jiwa</p>
-		<p>Member 1 Bulan: 18 Jiwa</p>
+		<p>Member 1 Bulan: 19 Jiwa</p>
 		<p>Member Expired: 16 Jiwa</p>
 			
 			<div class="member">
@@ -176,6 +176,13 @@
 				<p class="member" style="display: none">Nomor: 085727473240</p>
 				<p class="member">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="faisalwaktu"></span> <span id="faisalbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Dedi</p>
+				<p class="member" style="display: none">Nomor: 085951568082</p>
+				<p class="member">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dediwaktu"></span> <span id="dedibulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -441,6 +448,33 @@
 				clearInterval(afiftarget);
 				document.getElementById("afifwaktu").innerHTML = "<b>Expired</b>";
 				document.getElementById("afifbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdedi = new Date("24 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dediarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdedi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dediwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dedibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(deditarget);
+				document.getElementById("dediwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dedibulan").innerHTML = "";
 			}
 		}, 1000);
 		</script>
