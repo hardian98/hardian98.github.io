@@ -1,0 +1,98 @@
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style>
+/* Box slide transition */
+		a.bayar {
+			font-size: 16px;
+			font-weight: 500;
+			color: #444;
+			text-decoration: underline;
+		}
+		.bayar-box {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.7s ease;
+			-webkit-transition: max-height 0.7s ease;
+		}
+		.bayar-box.show {
+			max-height: 500px;
+		}
+		#arrowIcon {
+			display: inline-block;
+			transition: transform 0.7s ease;
+			-webkit-transition: transform 0.7s ease;
+		}
+		#arrowIcon.rotate {
+			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+		}
+		.bayar-text {
+			font-size: 16px;
+			font-weight: 400;
+			color: #333;
+		}
+		input {
+			width: 180px;
+			outline: none;
+			margin: 4px 0px;
+			padding: 0px 10px;
+			font-size: 16px;
+			font-weight: 500;
+			color: snow;
+			background-color: steelblue;
+			border: 0.8px solid gray;
+			border-radius: 8px 2px;
+		}
+</style>
+</head>
+
+<body>
+<a class="bayar" id="toggleBayar">Lihat Cara Bayar 
+	<i id="arrowIcon" class="bi bi-chevron-bar-down"></i>
+</a>
+
+<div id="bayar" class="bayar-box">
+	<p class="bayar-text">Siapkan Dana sebesar Rp. <bdo>129.000</bdo><br>
+	Transfer ke Nomor Rekening atau E-Wallet berikut:<br>
+	Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a><br>
+	Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a><br>
+	Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a><br>
+</div>
+
+<script>
+function aksi(type) {
+		if (type === 'gopaycopy') {
+			var copyText = document.getElementById("gopay");
+		}
+		if (type === 'danacopy') {
+			var copyText = document.getElementById("danacopy");
+		}
+		if (type === 'jagocopy') {
+			var copyText = document.getElementById("jago");
+		}
+//var copyText = document.getElementById("dana");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(copyText.value);
+
+  // Alert the copied text
+  alert("Copied the text: " + copyText.value);
+}
+</script>
+
+
+
+<script>
+document.getElementById("toggleBayar").addEventListener("click", function () {
+  const box = document.getElementById("bayar");
+  const icon = document.getElementById("arrowIcon");
+  
+  box.classList.toggle("show");
+  icon.classList.toggle("rotate");
+});
+</script>
+
+</body>
+</html>
