@@ -8,7 +8,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=0.9, maximal-scale=0.9, shrink-to-fit=no">
 		<meta name="author" content="Hardiansyah, Mark Otto, Jacob Thornton, and Bootstrap contributors">
 		<meta property="og:title" content="Stock ID VIP">
-		<meta property="og:description" content="Dapatkan Watchlist Siap Pakai, Info A1, Pembelajaran dll 😎">
+		<meta property="og:description" content="Dapatkan Watchlist Siap Pakai, Info Saham MultiBagger, Pembelajaran dll 😎">
 		<meta property="og:image" content="stockid_gambar/stockicon.jpg">
 		<meta property="og:url" content="https://hardian98.github.io/stockid">
 		<meta property="og:type" content="website">
@@ -216,6 +216,73 @@
 			font-size: 16px;
 			color: snow;
 		}
+		/**/
+		a.bayar {
+			text-align: center;
+			font-size: 16px;
+			font-weight: 500;
+			color: #444;
+			text-decoration: none;
+		}
+		.bayar-box {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.7s ease;
+			-webkit-transition: max-height 0.7s ease;
+		}
+		.bayar-box.show {
+			max-height: 500px;
+			margin: 0px;
+			padding: 0px 4px 4px 4px;
+			border: 1px solid gray;
+			border-radius: 4px;
+		}
+		#arrowIcon {
+			display: inline-block;
+			transition: transform 0.7s ease;
+			-webkit-transition: transform 0.7s ease;
+		}
+		#arrowIcon.rotate {
+			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+		}
+		.bayar-text {
+			margin: 0px;
+			padding: 0px;
+			font-size: 16px;
+			font-weight: 400;
+			color: #444;
+		}
+		.label {
+			text-align: center;
+			font-size: 16px;
+			font-weight: 400;
+			color: snow;
+			margin: 0px;
+			padding: 4px 0px;
+			background-color: teal;
+			border: 1px solid steelblue;
+			border-radius: 0px 0px 12px 12px;
+		}
+		.bayar-text bdo {
+			color: snow;
+			padding: 0px 6px;
+			background-color: teal;
+			border-radius: 8px;
+		}
+		input {
+			width: 160px;
+			outline: none;
+			margin: 4px 0px;
+			padding: 0px 8px;
+			font-size: 16px;
+			font-weight: 400;
+			color: snow;
+			background-color: steelblue;
+			border: 0.8px solid gray;
+			border-radius: 12px 2px;
+		}
+		/**/
 		.bd-placeholder-img {
 			font-size: 1.125rem;
 			text-anchor: middle;
@@ -424,10 +491,10 @@
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/1month.jpg" class="card-img-top">
-						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35% + 22%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Bulan</h4>
-							<p class="card-text text-hitam">Harga Awal: Rp. <del>200.000</del></p>
-							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 129.000</bdo></p>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>200.000</del> <!--<del>129.000</del>--></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 100.000</bdo></p>
 							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas1-modal" onclick="satubulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
 					</div>
@@ -486,7 +553,17 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli Screener BSJP / Swing</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Screener Rp. 70.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Screener BSJP seharga 70.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="screenerbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar1')">Lihat Cara Bayar <i id="arrowiconsatu" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxsatu" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 70.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Paket Screener dan sudah membayar sebesar Rp. 70.000, mohon cek pembayaran masuk."><button type="button" onclick="screenerbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -504,8 +581,18 @@
 						<div class="modal-body div-hitam">
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 30 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
-							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 129.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga 129.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="satubulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 100.000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar2')">Lihat Cara Bayar <i id="arrowicondua" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxdua" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 100.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Bulan dan sudah membayar sebesar Rp. 100.000, mohon cek pembayaran masuk."><button type="button" onclick="satubulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -524,7 +611,17 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 60 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 259.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga 259.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="duabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar3')">Lihat Cara Bayar <i id="arrowicontiga" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxtiga" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 259.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 2 Bulan dan sudah membayar sebesar Rp. 259.000, mohon cek pembayaran masuk."><button type="button" onclick="duabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -543,7 +640,17 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 90 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 389.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga 389.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="tigabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar4')">Lihat Cara Bayar <i id="arrowiconempat" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxempat" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 389.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 3 Bulan dan sudah membayar sebesar Rp. 389.000, mohon cek pembayaran masuk."><button type="button" onclick="tigabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -562,7 +669,17 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 180 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 779.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 180 hari seharga 779.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="enambulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar5')">Lihat Cara Bayar <i id="arrowiconlima" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxlima" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 779.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 779.000, mohon cek pembayaran masuk."><button type="button" onclick="enambulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -581,7 +698,17 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 365 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 1.559.000</p>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 365 hari seharga 1.559.000, mohon kirimkan alamat pembayaran."><button type="button" onclick="setahunbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Ya, Beli</button></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar6')">Lihat Cara Bayar <i id="arrowiconenam" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxenam" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 1.559.000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.559.000, mohon cek pembayaran masuk."><button type="button" onclick="setahunbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -660,6 +787,64 @@
 				});
 			</script>
 			-->
+			<script>
+			function aksi(type) {
+				if (type === 'gopaycopy') {
+					var copyText = document.getElementById("gopay");
+				}
+				if (type === 'danacopy') {
+					var copyText = document.getElementById("dana");
+				}
+				if (type === 'jagocopy') {
+					var copyText = document.getElementById("jago");
+				}
+				copyText.select();
+				copyText.setSelectionRange(0, 99999);
+				navigator.clipboard.writeText(copyText.value);
+				alert("Berhasil di salin: " + copyText.value);
+			}
+			</script>
+			
+			<script>
+			function bayartoggle(type) {
+				if (type === 'bayar1') {
+					var box = document.getElementById("bayarboxsatu");
+					var icon = document.getElementById("arrowiconsatu");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar2') {
+					var box = document.getElementById("bayarboxdua");
+					var icon = document.getElementById("arrowicondua");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar3') {
+					var box = document.getElementById("bayarboxtiga");
+					var icon = document.getElementById("arrowicontiga");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar4') {
+					var box = document.getElementById("bayarboxempat");
+					var icon = document.getElementById("arrowiconempat");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar5') {
+					var box = document.getElementById("bayarboxlima");
+					var icon = document.getElementById("arrowiconlima");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar6') {
+					var box = document.getElementById("bayarboxenam");
+					var icon = document.getElementById("arrowiconenam");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+			}
+			</script>
 		
 			<script type="text/javascript">
 			function musik() {
