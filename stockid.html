@@ -247,12 +247,14 @@
 			border: 1px solid gray;
 			border-radius: 4px;
 		}
-		#arrowIcon {
+		#arrowIconsatu, #arrowIcondua, #arrowIcontiga,
+		#arrowIconempat, #arrowIconlima, #arrowIconenam {
 			display: inline-block;
 			transition: transform 0.7s ease;
 			-webkit-transition: transform 0.7s ease;
 		}
-		#arrowIcon.rotate {
+		#arrowIconsatu.rotate, #arrowIcondua.rotate, #arrowIcontiga.rotate,
+		#arrowIconempat.rotate, #arrowIconlima.rotate, #arrowIconenam.rotate {
 			transform: rotate(180deg);
 			-webkit-transform: rotate(180deg);
 		}
@@ -335,7 +337,7 @@
 		<audio src="stockid_suara/6bulanvoice.mp3" type="audio/mp3" id="6bulanvoices"></audio>
 		<audio src="stockid_suara/setahunvoice.mp3" type="audio/mp3" id="setahunvoices"></audio>
 		<audio src="stockid_suara/screenervoice.mp3" type="audio/mp3" id="screenervoices"></audio>
-		<audio src="stockid_suara/musik.mp3" type="audio/mp3" id="musik"></audio>
+		<audio src="stockid_suara/kunti.mp3" type="audio/mp3" id="musik"></audio>
 		
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
@@ -469,10 +471,10 @@
 			<div class="container">
 				<div class="tentang col-md-8">
 					<p class="tentang-title text-center text-hitam">Total Member</p>
-					<p class="tentang-text text-center text-hitam">56 Jiwa</p>
+					<p class="tentang-text text-center text-hitam">61 Jiwa</p>
 					<br>
 					<p class="tentang-title text-center text-hitam">Total Member Aktif</p>
-					<p class="tentang-text text-center text-hitam">37 Jiwa</p>
+					<p class="tentang-text text-center text-hitam">40 Jiwa</p>
 					<br>
 					<p class="tentang-title text-center text-hitam">Grup Berjalan Lamanya</p>
 					<p class="tentang-text text-center text-hitam">
@@ -502,7 +504,7 @@
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/1month.jpg" class="card-img-top">
-						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 44 orang</marquee>
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 43 orang</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35% + 22%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>200.000</del> <!--<del>129.000</del>--></p>
@@ -535,6 +537,7 @@
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/6month.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Jadilah orang pertama yang membeli</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 6 Bulan</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>1.200.000</del></p>
@@ -545,6 +548,7 @@
 					
 					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 18rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/oneyear.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Jadilah orang pertama yang membeli</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>35%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Tahun</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>2.400.000</del></p>
@@ -567,7 +571,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli Screener BSJP / Swing</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Screener Rp. 70.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar1')">Lihat Cara Bayar <i id="arrowiconsatu" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar1')">Lihat Cara Bayar <i id="arrowIconsatu" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxsatu" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 70.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -596,7 +600,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 30 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 100.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar2')">Lihat Cara Bayar <i id="arrowicondua" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar2')">Lihat Cara Bayar <i id="arrowIcondua" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxdua" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 100.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -625,7 +629,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 60 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 259.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar3')">Lihat Cara Bayar <i id="arrowicontiga" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar3')">Lihat Cara Bayar <i id="arrowIcontiga" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxtiga" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 259.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -654,7 +658,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 90 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 389.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar4')">Lihat Cara Bayar <i id="arrowiconempat" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar4')">Lihat Cara Bayar <i id="arrowIconempat" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxempat" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 389.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -683,7 +687,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 180 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 779.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar5')">Lihat Cara Bayar <i id="arrowiconlima" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar5')">Lihat Cara Bayar <i id="arrowIconlima" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxlima" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 779.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -712,7 +716,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 365 hari.</p>
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 1.559.000</p>
-							<a class="bayar text-center" onclick="bayartoggle('bayar6')">Lihat Cara Bayar <i id="arrowiconenam" class="bi bi-chevron-bar-down"></i></a>
+							<a class="bayar text-center" onclick="bayartoggle('bayar6')">Lihat Cara Bayar <i id="arrowIconenam" class="bi bi-chevron-bar-down"></i></a>
 							<div id="bayarboxenam" class="bayar-box">
 								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 1.559.000</p>
 								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
@@ -823,37 +827,37 @@
 			function bayartoggle(type) {
 				if (type === 'bayar1') {
 					var box = document.getElementById("bayarboxsatu");
-					var icon = document.getElementById("arrowiconsatu");
+					var icon = document.getElementById("arrowIconsatu");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
 				if (type === 'bayar2') {
 					var box = document.getElementById("bayarboxdua");
-					var icon = document.getElementById("arrowicondua");
+					var icon = document.getElementById("arrowIcondua");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
 				if (type === 'bayar3') {
 					var box = document.getElementById("bayarboxtiga");
-					var icon = document.getElementById("arrowicontiga");
+					var icon = document.getElementById("arrowIcontiga");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
 				if (type === 'bayar4') {
 					var box = document.getElementById("bayarboxempat");
-					var icon = document.getElementById("arrowiconempat");
+					var icon = document.getElementById("arrowIconempat");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
 				if (type === 'bayar5') {
 					var box = document.getElementById("bayarboxlima");
-					var icon = document.getElementById("arrowiconlima");
+					var icon = document.getElementById("arrowIconlima");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
 				if (type === 'bayar6') {
 					var box = document.getElementById("bayarboxenam");
-					var icon = document.getElementById("arrowiconenam");
+					var icon = document.getElementById("arrowIconenam");
 					box.classList.toggle("show");
 					icon.classList.toggle("rotate");
 				}
@@ -907,7 +911,7 @@
 			}
 			</script>
 			
-			<script type="text/javascript">
+			<!--<script type="text/javascript">
 			function emoji() {
 				var a;
 				a = document.getElementById("emoji");
@@ -927,9 +931,9 @@
 			}
 			emoji();
 			setInterval(emoji, 7000);
-			</script>
+			</script>-->
 			
-			<script>
+			<!-- <script>
 			function satubulan() {
 				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga Rp. 129.000, mohon kirimkan alamat pembayaran.");
 			}
@@ -945,7 +949,7 @@
 			function setahun() {
 				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 365 hari seharga Rp. 1.559.000, mohon kirimkan alamat pembayaran.");
 			}
-			</script>
+			</script>-->
 			
 			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 			
