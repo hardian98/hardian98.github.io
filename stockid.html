@@ -331,12 +331,14 @@
 	</head>
 	
 	<body onclick="musik()">
-		<audio src="stockid_suara/1bulanvoice.mp3" type="audio/mp3" id="1bulanvoices"></audio>
-		<audio src="stockid_suara/2bulanvoice.mp3" type="audio/mp3" id="2bulanvoices"></audio>
-		<audio src="stockid_suara/3bulanvoice.mp3" type="audio/mp3" id="3bulanvoices"></audio>
-		<audio src="stockid_suara/6bulanvoice.mp3" type="audio/mp3" id="6bulanvoices"></audio>
-		<audio src="stockid_suara/setahunvoice.mp3" type="audio/mp3" id="setahunvoices"></audio>
-		<audio src="stockid_suara/screenervoice.mp3" type="audio/mp3" id="screenervoices"></audio>
+		<audio src="stockid_suara/1bulan.mp3" type="audio/mp3" id="1bulanvoices"></audio>
+		<audio src="stockid_suara/2bulan.mp3" type="audio/mp3" id="2bulanvoices"></audio>
+		<audio src="stockid_suara/3bulan.mp3" type="audio/mp3" id="3bulanvoices"></audio>
+		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoices"></audio>
+		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="setahunvoices"></audio>
+		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoices"></audio>
+		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoices"></audio>
+		<audio src="stockid_suara/yapping2.mp3" type="audio/mp3" id="yapping2"></audio>
 		<audio src="stockid_suara/" type="audio/mp3" id="musik"></audio>
 		
 		<header>
@@ -454,6 +456,7 @@
 						<p class="tentang-text text-hitam">Stock ID VIP dibentuk pada September 2025, ditujukan untuk membantu teman-teman Belajar Saham dan memberikan Watchlist terbaik yang sudah kami analisa.</p>
 						<p class="tentang-text text-hitam">Kami memastikan harga kelas kami sangat kompetitif dan dapat bersaing, diharapkan semua teman dapat profit dengan konsisten.</p>
 						<br>
+						<span onclick="yapping2voice()">
 						<p class="tentang-title text-center text-hitam"><i class="bi bi-cup-hot-fill"></i> Benefit apa saja yang didapat?</p>
 						<p class="tentang-text text-hitam">Di Stock ID VIP kami tidak hanya memberikan Watchlist, tapi juga memberikan Pengertian dan Pembelajaran, seperti:</p>
 						<p class="tentang-text text-hitam underline"><i class="bi bi-search"></i> Menganalisa Saham</p>
@@ -463,6 +466,7 @@
 						<p class="tentang-text text-hitam underline"><i class="bi bi-bar-chart-line-fill"></i> Membaca Data Perusahaan (Fundamental)</p>
 						<p class="tentang-text text-hitam underline"><i class="bi bi-broadcast-pin"></i> Saran (Entry Safe, Support, Take Profit)</p>
 						<p class="tentang-text text-hitam underline"><i class="bi bi-graph-up-arrow"></i> Watchlist Gacor Siap Pakai & Info A1</p>
+						</span>
 					</div>
 			</div>
 			
@@ -898,6 +902,18 @@
 			<script type="text/javascript">
 			function musik() {
 				var audio = document.getElementById("musik");
+				audio.play();
+			}
+			function yapping2voice() {
+				var audio = document.getElementById("yapping2");
+				audio.play();
+			}
+			function screenervoice() {
+				var audio = document.getElementById("screenervoices");
+				audio.play();
+			}
+			function freevoice() {
+				var audio = document.getElementById("freevoices");
 				audio.play();
 			}
 			function satubulanvoice() {
