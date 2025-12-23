@@ -28,7 +28,7 @@
 			margin: 6px 6px;
 			padding: 0px;
 			background:
-			linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+			linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)),
 			url("stockid_gambar/wall.jpg") no-repeat center center fixed;
 			background-size: cover;
 		}
@@ -69,7 +69,7 @@
 			right: 0;
 			margin-right: 18px;
 		}
-		p.member span b {
+		span.expired {
 			color: red;
 		}
 		p.satu {
@@ -89,12 +89,14 @@
 	
 	<body>
 		<h4>Masa Aktif Member Stock ID VIP</h4>
-		<br><br><br>
-		<p>Total Member Aktif: 45 Jiwa</p>
+		<br><br>
+		<!--<p>Total Member Aktif: 45 Jiwa</p>
 		<p>Member 3 Bulan: 8 Jiwa</p>
 		<p>Member 2 Bulan: 5 Jiwa</p>
 		<p>Member 1 Bulan: 32 Jiwa</p>
-		<p>Member Expired: 29 Jiwa</p>
+		<p>Member Expired: 29 Jiwa</p>-->
+		
+		<div id="hasil"></div>
 			
 			<div class="member">
 				<p class="member">Nama: Hardi</p>
@@ -114,7 +116,7 @@
 				<p class="tambah">+3 Bulan</p>
 				<p class="member">Nama: Mas. Arif</p>
 				<p class="member" style="display: none">Nomor: 085265337779</p>
-				<p class="member tiga">Beli Kelas: 1 Bulan + 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 1 Bulan + 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="arifwaktu"></span> <span id="arifbulan"></span></p>
 			</div>
 			
@@ -122,49 +124,57 @@
 				<p class="tambah">+2 Bulan</p>
 				<p class="member">Nama: Mas. Faisal</p>
 				<p class="member" style="display: none">Nomor: 085727473240</p>
-				<p class="member dua">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="faisalwaktu"></span> <span id="faisalbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Tito</p>
 				<p class="member" style="display: none">Nomor: 081270370727</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="titowaktu"></span> <span id="titobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Alvi</p>
+				<p class="member" style="display: none">Nomor: 082112373026</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="alviwaktu"></span> <span id="alvibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Adit</p>
 				<p class="member" style="display: none">Nomor: 085773102128</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="aditwaktu"></span> <span id="aditbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Ikhwan</p>
 				<p class="member" style="display: none">Nomor: 08813986613</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ikhwanwaktu"></span> <span id="ikhwanbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Evan</p>
 				<p class="member" style="display: none">Nomor: 085649261450</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="evanwaktu"></span> <span id="evanbulan"></span></p>
 			</div>
 
 			<div class="member">
 				<p class="member">Nama: Mas. Rama</p>
 				<p class="member" style="display: none">Nomor: 082146281427</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ramawaktu"></span> <span id="ramabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Yoga</p>
 				<p class="member" style="display: none">Nomor: 082382795953</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="yogawaktu"></span> <span id="yogabulan"></span></p>
 			</div>
 			
@@ -172,7 +182,7 @@
 				<p class="tambah">+2 Bulan</p>
 				<p class="member">Nama: Mba. Putri</p>
 				<p class="member" style="display: none">Nomor: 081554559971</p>
-				<p class="member dua">Beli Kelas: 2 Bulan + 2 Bulan</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan + 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="putriwaktu"></span> <span id="putribulan"></span></p>
 			</div>
 			
@@ -180,14 +190,14 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mba. Siska</p>
 				<p class="member" style="display: none">Nomor: 087759946405</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="siskawaktu"></span> <span id="siskabulan"></span></p>
 			</div>
 
 			<div class="member">
 				<p class="member">Nama: Mas. Ardika</p>
 				<p class="member" style="display: none">Nomor: 082170239819</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ardikawaktu"></span> <span id="ardikabulan"></span></p>
 			</div>
 			
@@ -195,35 +205,35 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Sefian</p>
 				<p class="member" style="display: none">Nomor: 085876926793</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="sefianwaktu"></span> <span id="sefianbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Widi</p>
 				<p class="member" style="display: none">Nomor: 083191133606</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="widiwaktu"></span> <span id="widibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Tama</p>
 				<p class="member" style="display: none">Nomor: 083823750527</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="tamawaktu"></span> <span id="tamabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Natan</p>
 				<p class="member" style="display: none">Nomor: 085380369595</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="natanwaktu"></span> <span id="natanbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Anggit</p>
 				<p class="member" style="display: none">Nomor: 081542766503</p>
-				<p class="member dua">Beli Kelas: 2 Bulan</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="anggitwaktu"></span> <span id="anggitbulan"></span></p>
 			</div>
 			
@@ -231,42 +241,42 @@
 				<p class="tambah">+2 Bulan</p>
 				<p class="member">Nama: Mas. Tomy</p>
 				<p class="member" style="display: none">Nomor: 089609809039</p>
-				<p class="member dua">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="tomywaktu"></span> <span id="tomybulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Aka</p>
 				<p class="member" style="display: none">Nomor: 085959776370</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="akawaktu"></span> <span id="akabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Devan</p>
 				<p class="member" style="display: none">Nomor: 085800322160</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="devanwaktu"></span> <span id="devanbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Saputra</p>
 				<p class="member" style="display: none">Nomor: 0895320471571</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="saputrawaktu"></span> <span id="saputrabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Atok</p>
 				<p class="member" style="display: none">Nomor: 081222455926</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="atokwaktu"></span> <span id="atokbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Noval</p>
 				<p class="member" style="display: none">Nomor: 085714184573</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="novalwaktu"></span> <span id="novalbulan"></span></p>
 			</div>
 			
@@ -274,77 +284,77 @@
 				<p class="tambah">+2 Bulan</p>
 				<p class="member">Nama: Mas. Neko</p>
 				<p class="member" style="display: none">Nomor: 082286867964</p>
-				<p class="member dua">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nekowaktu"></span> <span id="nekobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Pak. Yanto</p>
 				<p class="member" style="display: none">Nomor: 082374750189</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="yantowaktu"></span> <span id="yantobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Ardha</p>
 				<p class="member" style="display: none">Nomor: 081542779853</p>
-				<p class="member tiga">Beli Kelas: 3 Bulan</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ardhawaktu"></span> <span id="ardhabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Abdul</p>
 				<p class="member" style="display: none">Nomor: 085704755602</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="abdulwaktu"></span> <span id="abdulbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Fauziah</p>
 				<p class="member" style="display: none">Nomor: 085753648079</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="fauziahwaktu"></span> <span id="fauziahbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Ridho</p>
 				<p class="member" style="display: none">Nomor: 085839352252</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ridhowaktu"></span> <span id="ridhobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Riani</p>
 				<p class="member" style="display: none">Nomor: 082288593696</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="rianiwaktu"></span> <span id="rianibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Muazin</p>
 				<p class="member" style="display: none">Nomor: 081391334236</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="muazinwaktu"></span> <span id="muazinbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Bayu</p>
 				<p class="member" style="display: none">Nomor: 082145928235</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="bayuwaktu"></span> <span id="bayubulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Willy</p>
 				<p class="member" style="display: none">Nomor: 088747941100</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="willywaktu"></span> <span id="willybulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Rachmad</p>
 				<p class="member" style="display: none">Nomor: 088989669913</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="rachmadwaktu"></span> <span id="rachmadbulan"></span></p>
 			</div>
 			
@@ -352,70 +362,63 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Dwiky</p>
 				<p class="member" style="display: none">Nomor: 08116383088</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="dwikywaktu"></span> <span id="dwikybulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Farieq</p>
 				<p class="member" style="display: none">Nomor: 083813693914</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="farieqwaktu"></span> <span id="farieqbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Dhila</p>
 				<p class="member" style="display: none">Nomor: 089528936511</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="dhilawaktu"></span> <span id="dhilabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Sodik</p>
 				<p class="member" style="display: none">Nomor: 085156271181</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="sodikwaktu"></span> <span id="sodikbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Made</p>
 				<p class="member" style="display: none">Nomor: 081353043869</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="madewaktu"></span> <span id="madebulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Seii</p>
 				<p class="member" style="display: none">Nomor: 089516172663</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="seiiwaktu"></span> <span id="seiibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Roid</p>
 				<p class="member" style="display: none">Nomor: 087819304040</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="roidwaktu"></span> <span id="roidbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Dedi</p>
 				<p class="member" style="display: none">Nomor: 085951568082</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="dediwaktu"></span> <span id="dedibulan"></span></p>
-			</div>
-			
-			<div class="member">
-				<p class="member">Nama: Mas. Alvi</p>
-				<p class="member" style="display: none">Nomor: 082112373026</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="alviwaktu"></span> <span id="alvibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Tia</p>
 				<p class="member" style="display: none">Nomor: 081360698004</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="tiawaktu"></span> <span id="tiabulan"></span></p>
 			</div>
 			
@@ -423,14 +426,14 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Dani</p>
 				<p class="member" style="display: none">Nomor: 081939198806</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="daniwaktu"></span> <span id="danibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Dimas</p>
 				<p class="member" style="display: none">Nomor: 082288133212</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="dimaswaktu"></span> <span id="dimasbulan"></span></p>
 			</div>
 			
@@ -438,77 +441,77 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Panji</p>
 				<p class="member" style="display: none">Nomor: 081383928774</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="panjiwaktu"></span> <span id="panjibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Annisa</p>
 				<p class="member" style="display: none">Nomor: 083829116408</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="annisawaktu"></span> <span id="annisabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Dio</p>
 				<p class="member" style="display: none">Nomor: 087872855134</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="diowaktu"></span> <span id="diobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mba. Rosita</p>
 				<p class="member" style="display: none">Nomor: 085746010654</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="rositawaktu"></span> <span id="rositabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Fahmi</p>
 				<p class="member" style="display: none">Nomor: 085725250834</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="fahmiwaktu"></span> <span id="fahmibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Ahlis</p>
 				<p class="member" style="display: none">Nomor: 082374750189</p>
-				<p class="member dua">Beli Kelas: 2 Bulan</p>
+				<p class="member dua expired">Beli Kelas: 2 Bulan</p>
 				<p class="member">Masa Aktif: <span id="ahliswaktu"></span> <span id="ahlisbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Purna</p>
 				<p class="member" style="display: none">Nomor: 089627939527</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="purnawaktu"></span> <span id="purnabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Jordan</p>
 				<p class="member" style="display: none">Nomor: 085361158771</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="jordanwaktu"></span> <span id="jordanbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Rey</p>
 				<p class="member" style="display: none">Nomor: 087760777890</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="reywaktu"></span> <span id="reybulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Abraham</p>
 				<p class="member" style="display: none">Nomor: 087725999740</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="abrahamwaktu"></span> <span id="abrahambulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Miko</p>
 				<p class="member" style="display: none">Nomor: 08989735180</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="mikowaktu"></span> <span id="mikobulan"></span></p>
 			</div>
 			
@@ -516,124 +519,124 @@
 				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Niko</p>
 				<p class="member" style="display: none">Nomor: 085659115395</p>
-				<p class="member satu">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nikowaktu"></span> <span id="nikobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Fajar</p>
 				<p class="member" style="display: none">Nomor: 088980615045</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="fajarwaktu"></span> <span id="fajarbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Winsen</p>
 				<p class="member" style="display: none">Nomor: 082374750189</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="winsenwaktu"></span> <span id="winsenbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Nofal</p>
 				<p class="member" style="display: none">Nomor: 0895340339030</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nofalwaktu"></span> <span id="nofalbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Dandy</p>
 				<p class="member" style="display: none">Nomor: 081257215624</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="dandywaktu"></span> <span id="dandybulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Ando</p>
 				<p class="member" style="display: none">Nomor: 082353546274</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="andowaktu"></span> <span id="andobulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Adi</p>
 				<p class="member" style="display: none">Nomor: 081802037746</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="adiwaktu"></span> <span id="adibulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Lisbeth</p>
 				<p class="member" style="display: none">Nomor: 085211556086</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="lisbethwaktu"></span> <span id="lisbethbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Yudha</p>
 				<p class="member" style="display: none">Nomor: 081809326902</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="yudhawaktu"></span> <span id="yudhabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Fathan</p>
 				<p class="member" style="display: none">Nomor: 087763704096</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="fathanwaktu"></span> <span id="fathanbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Nijar</p>
 				<p class="member" style="display: none">Nomor: 082299282454</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nijarwaktu"></span> <span id="nijarbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Nanang</p>
 				<p class="member" style="display: none">Nomor: 0895335867519</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="nanangwaktu"></span> <span id="nanangbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Radit</p>
 				<p class="member" style="display: none">Nomor: 0895324937129</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="raditwaktu"></span> <span id="raditbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Azka</p>
 				<p class="member" style="display: none">Nomor: 085691639152</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="azkawaktu"></span> <span id="azkabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Gilang</p>
 				<p class="member" style="display: none">Nomor: 083131965957</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="gilangwaktu"></span> <span id="gilangbulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Hendra</p>
 				<p class="member" style="display: none">Nomor: 089504229094</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="hendrawaktu"></span> <span id="hendrabulan"></span></p>
 			</div>
 			
 			<div class="member">
 				<p class="member">Nama: Mas. Alive</p>
 				<p class="member" style="display: none">Nomor: 081514719617</p>
-				<p class="member satu">Beli Kelas: 1 Bulan</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="alivewaktu"></span> <span id="alivebulan"></span></p>
 			</div>
 		
 		<script type="text/javascript">
-		var targetalvi = new Date("24 Dec, 2025 00:00:00").getTime();
+		var targetalvi = new Date("13 Feb, 2026 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var alvitarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
@@ -653,7 +656,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(alvitarget);
-				document.getElementById("alviwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("alviwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("alvibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -680,7 +683,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(akatarget);
-				document.getElementById("akawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("akawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("akabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -707,7 +710,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(evantarget);
-				document.getElementById("evanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("evanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("evanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -734,7 +737,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(devantarget);
-				document.getElementById("devanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("devanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("devanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -761,7 +764,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(tamatarget);
-				document.getElementById("tamawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("tamawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("tamabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -788,7 +791,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(widitarget);
-				document.getElementById("widiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("widiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("widibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -815,7 +818,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(saputratarget);
-				document.getElementById("saputrawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("saputrawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("saputrabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -842,7 +845,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(natantarget);
-				document.getElementById("natanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("natanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("natanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -869,7 +872,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(novaltarget);
-				document.getElementById("novalwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("novalwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("novalbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -896,7 +899,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(atoktarget);
-				document.getElementById("atokwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("atokwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("atokbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -923,7 +926,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(fauziahtarget);
-				document.getElementById("fauziahwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("fauziahwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("fauziahbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -950,7 +953,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(abdultarget);
-				document.getElementById("abdulwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("abdulwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("abdulbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -977,7 +980,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(bayutarget);
-				document.getElementById("bayuwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("bayuwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("bayubulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1004,7 +1007,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(muazintarget);
-				document.getElementById("muazinwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("muazinwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("muazinbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1031,7 +1034,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(rachmadtarget);
-				document.getElementById("rachmadwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("rachmadwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("rachmadbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1058,7 +1061,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(rianitarget);
-				document.getElementById("rianiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("rianiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("rianibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1085,7 +1088,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(willytarget);
-				document.getElementById("willywaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("willywaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("willybulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1112,7 +1115,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(dhilatarget);
-				document.getElementById("dhilawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dhilawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("dhilabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1139,7 +1142,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(madetarget);
-				document.getElementById("madewaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("madewaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("madebulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1166,7 +1169,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(ridhotarget);
-				document.getElementById("ridhowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ridhowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ridhobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1193,7 +1196,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(sodiktarget);
-				document.getElementById("sodikwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("sodikwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("sodikbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1220,7 +1223,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(seiiarget);
-				document.getElementById("seiiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("seiiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("seiibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1247,7 +1250,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(roidtarget);
-				document.getElementById("roidwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("roidwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("roidbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1274,7 +1277,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(ariftarget);
-				document.getElementById("arifwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("arifwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("arifbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1301,7 +1304,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(tiatarget);
-				document.getElementById("tiawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("tiawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("tiabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1310,7 +1313,7 @@
 		<script type="text/javascript">
 		var targetdedi = new Date("24 Dec, 2025 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
-		var dediarget = setInterval(function() {
+		var deditarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
 			var nTarget = new Date().getTime();
 			// Temukan jarak antara sekarang dan tanggal hitung mundur
@@ -1328,7 +1331,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(deditarget);
-				document.getElementById("dediwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dediwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("dedibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1355,7 +1358,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(dimastarget);
-				document.getElementById("dimaswaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dimaswaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("dimasbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1382,7 +1385,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(diotarget);
-				document.getElementById("diowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("diowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("diobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1409,7 +1412,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(rositatarget);
-				document.getElementById("rositawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("rositawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("rositabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1436,7 +1439,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(anggittarget);
-				document.getElementById("anggitwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("anggitwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("anggitbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1463,7 +1466,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(faisaltarget);
-				document.getElementById("faisalwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("faisalwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("faisalbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1490,7 +1493,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(annisatarget);
-				document.getElementById("annisawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("annisawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("annisabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1517,7 +1520,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(siskatarget);
-				document.getElementById("siskawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("siskawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("siskabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1544,7 +1547,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(fahmitarget);
-				document.getElementById("fahmiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("fahmiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("fahmibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1571,7 +1574,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(adittarget);
-				document.getElementById("aditwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("aditwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("aditbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1598,7 +1601,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(ramatarget);
-				document.getElementById("ramawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ramawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ramabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1625,7 +1628,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(ikhwantarget);
-				document.getElementById("ikhwanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ikhwanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ikhwanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1652,7 +1655,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(jordantarget);
-				document.getElementById("jordanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("jordanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("jordanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1679,7 +1682,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(sefiantarget);
-				document.getElementById("sefianwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("sefianwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("sefianbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1706,7 +1709,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(mikotarget);
-				document.getElementById("mikowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("mikowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("mikobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1733,7 +1736,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(abrahamtarget);
-				document.getElementById("abrahamwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("abrahamwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("abrahambulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1760,7 +1763,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(reytarget);
-				document.getElementById("reywaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("reywaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("reybulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1787,7 +1790,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(fajartarget);
-				document.getElementById("fajarwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("fajarwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("fajarbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1814,7 +1817,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(purnatarget);
-				document.getElementById("purnawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("purnawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("purnabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1841,7 +1844,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(danitarget);
-				document.getElementById("daniwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("daniwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("danibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1868,7 +1871,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(titotarget);
-				document.getElementById("titowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("titowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("titobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1895,7 +1898,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(yogatarget);
-				document.getElementById("yogawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("yogawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("yogabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1922,7 +1925,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(andotarget);
-				document.getElementById("andowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("andowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("andobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1949,7 +1952,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(nofaltarget);
-				document.getElementById("nofalwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("nofalwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("nofalbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -1976,7 +1979,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(ardikatarget);
-				document.getElementById("ardikawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ardikawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ardikabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2003,7 +2006,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(aditarget);
-				document.getElementById("adiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("adiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("adibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2030,7 +2033,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(lisbethtarget);
-				document.getElementById("lisbethwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("lisbethwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("lisbethbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2057,7 +2060,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(putritarget);
-				document.getElementById("putriwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("putriwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("putribulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2084,7 +2087,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(dwikytarget);
-				document.getElementById("dwikywaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dwikywaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("dwikybulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2111,7 +2114,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(farieqtarget);
-				document.getElementById("farieqwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("farieqwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("farieqbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2138,7 +2141,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetniko);
-				document.getElementById("nikowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("nikowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("nikobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2165,7 +2168,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetpanji);
-				document.getElementById("panjiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("panjiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("panjibulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2192,7 +2195,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetalive);
-				document.getElementById("alivewaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("alivewaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("alivebulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2219,7 +2222,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetardha);
-				document.getElementById("ardhawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ardhawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ardhabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2246,7 +2249,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targethendra);
-				document.getElementById("hendrawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("hendrawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("hendrabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2273,7 +2276,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetazka);
-				document.getElementById("azkawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("azkawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("azkabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2300,7 +2303,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetdandy);
-				document.getElementById("dandywaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("dandywaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("dandybulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2327,7 +2330,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetgilang);
-				document.getElementById("gilangwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("gilangwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("gilangbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2354,7 +2357,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetfathan);
-				document.getElementById("fathanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("fathanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("fathanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2381,7 +2384,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetnanang);
-				document.getElementById("nanangwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("nanangwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("nanangbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2408,7 +2411,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetnijar);
-				document.getElementById("nijarwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("nijarwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("nijarbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2435,7 +2438,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetradit);
-				document.getElementById("raditwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("raditwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("raditbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2462,7 +2465,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetwinsen);
-				document.getElementById("winsenwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("winsenwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("winsenbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2489,7 +2492,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targettomy);
-				document.getElementById("tomywaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("tomywaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("tomybulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2516,7 +2519,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetyanto);
-				document.getElementById("yantowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("yantowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("yantobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2543,7 +2546,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetahlis);
-				document.getElementById("ahliswaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("ahliswaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("ahlisbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2570,7 +2573,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetneko);
-				document.getElementById("nekowaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("nekowaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("nekobulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2597,7 +2600,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(targetyudha);
-				document.getElementById("yudhawaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("yudhawaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("yudhabulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2624,7 +2627,7 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(irfantarget);
-				document.getElementById("irfanwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("irfanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("irfanbulan").innerHTML = "";
 			}
 		}, 1000);
@@ -2651,10 +2654,62 @@
 			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
 			if (distance < 0) {
 				clearInterval(harditarget);
-				document.getElementById("hardiwaktu").innerHTML = "<b>Expired</b>";
+				document.getElementById("hardiwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("hardibulan").innerHTML = "";
 			}
 		}, 1000);
+		</script>
+		
+		<script>
+		const classToMonth = {
+			satu: 1,
+			dua: 2,
+			tiga: 3,
+			empat: 4,
+			lima: 5,
+			enam: 6,
+			tujuh: 7,
+			delapan: 8,
+			sembilan: 9,
+			sepuluh: 10,
+			sebelas: 11,
+			duaBelas: 12
+		};
+		
+		const elements = document.querySelectorAll('[class]');
+		const memberPerBulan = {};
+		let expiredCount = 0;
+		let aktifCount = 0;
+		
+		elements.forEach(el => {
+			const classes = el.classList;
+			const isExpired = classes.contains('expired');
+			const isAktif = classes.contains('aktif');
+			if (isExpired) {
+				expiredCount++;
+			}
+			if (!isExpired) {
+				classes.forEach(cls => {
+					if (classToMonth[cls]) {
+						const bulan = classToMonth[cls];
+						memberPerBulan[bulan] = (memberPerBulan[bulan] || 0) + 1;
+					}
+				});
+			}
+			if (isAktif && !isExpired) {
+				aktifCount++;
+			}
+		});
+		
+		const hasil = document.getElementById('hasil');
+		hasil.innerHTML += `<p>Member Aktif: ${aktifCount} Jiwa</p>`;
+		hasil.innerHTML += `<p>Member Expired: ${expiredCount} Jiwa</p>`;
+
+		Object.keys(memberPerBulan) .sort((a, b) => a - b) .forEach(bulan => {
+			const p = document.createElement('p');
+			p.textContent = `Member ${bulan} Bulan: ${memberPerBulan[bulan]} Jiwa`;
+			hasil.appendChild(p);
+		});
 		</script>
 		
 		
