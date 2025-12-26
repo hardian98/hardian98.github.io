@@ -331,15 +331,18 @@
 	</head>
 	
 	<body onclick="musik()">
-		<audio src="stockid_suara/1bulan.mp3" type="audio/mp3" id="1bulanvoices"></audio>
-		<audio src="stockid_suara/2bulan.mp3" type="audio/mp3" id="2bulanvoices"></audio>
-		<audio src="stockid_suara/3bulan.mp3" type="audio/mp3" id="3bulanvoices"></audio>
-		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoices"></audio>
-		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="setahunvoices"></audio>
-		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoices"></audio>
-		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoices"></audio>
+		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoice"></audio>
+		<audio src="stockid_suara/yeay.mp3" type="audio/mp3" id="yeayvoice"></audio>
+		<audio src="stockid_suara/1bulan.mp3" type="audio/mp3" id="1bulanvoice"></audio>
+		<audio src="stockid_suara/2bulan.mp3" type="audio/mp3" id="2bulanvoice"></audio>
+		<audio src="stockid_suara/3bulan.mp3" type="audio/mp3" id="3bulanvoice"></audio>
+		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoice"></audio>
+		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="setahunvoice"></audio>
+		<audio src="stockid_suara/stockid.mp3" type="audio/mp3" id="stockidvoice"></audio>
+		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoice"></audio>
 		<audio src="stockid_suara/yapping2.mp3" type="audio/mp3" id="yapping2"></audio>
-		<audio src="stockid_suara/" type="audio/mp3" id="musik"></audio>
+		<audio src="stockid_suara/bayar.mp3" type="audio/mp3" id="bayarvoice"></audio>
+		<audio src="stockid_suara/musik.mp3" type="audio/mp3" id="musik"></audio>
 		
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
@@ -596,7 +599,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Paket Screener dan sudah membayar sebesar Rp. 70,000, mohon cek pembayaran masuk."><button type="button" onclick="screenerbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Paket Screener dan sudah membayar sebesar Rp. 70,000, mohon cek pembayaran masuk."><button type="button" onclick="yeayvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -625,7 +628,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Bulan dan sudah membayar sebesar Rp. 99,000, mohon cek pembayaran masuk."><button type="button" onclick="satubulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Bulan dan sudah membayar sebesar Rp. 99,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -654,7 +657,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 2 Bulan dan sudah membayar sebesar Rp. 170,000, mohon cek pembayaran masuk."><button type="button" onclick="duabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 2 Bulan dan sudah membayar sebesar Rp. 170,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -683,7 +686,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 3 Bulan dan sudah membayar sebesar Rp. 260,000, mohon cek pembayaran masuk."><button type="button" onclick="tigabulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 3 Bulan dan sudah membayar sebesar Rp. 260,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -712,7 +715,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 600,000, mohon cek pembayaran masuk."><button type="button" onclick="enambulanbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 600,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -741,7 +744,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.000,000, mohon cek pembayaran masuk."><button type="button" onclick="setahunbayar()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.000,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -761,7 +764,7 @@
 							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin bergabung ke Grup ini?</p>
 							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Grup Rp. 0 (Gratis)</p>
 							<br>
-							<a href="https://chat.whatsapp.com/BpMVt0wI3v78aBYZWMau9p"><button type="button" onclick="free()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Gabung</button></a>
+							<a href="https://chat.whatsapp.com/BpMVt0wI3v78aBYZWMau9p"><button type="button" onclick="stockidvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Gabung</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -909,43 +912,43 @@
 				audio.play();
 			}
 			function screenervoice() {
-				var audio = document.getElementById("screenervoices");
+				var audio = document.getElementById("screenervoice");
 				audio.play();
 			}
 			function freevoice() {
-				var audio = document.getElementById("freevoices");
+				var audio = document.getElementById("freevoice");
 				audio.play();
 			}
 			function satubulanvoice() {
-				var audio = document.getElementById("1bulanvoices");
+				var audio = document.getElementById("1bulanvoice");
 				audio.play();
 			}
 			function duabulanvoice() {
-				var audio = document.getElementById("2bulanvoices");
+				var audio = document.getElementById("2bulanvoice");
 				audio.play();
 			}
 			function tigabulanvoice() {
-				var audio = document.getElementById("3bulanvoices");
+				var audio = document.getElementById("3bulanvoice");
 				audio.play();
 			}
 			function enambulanvoice() {
-				var audio = document.getElementById("6bulanvoices");
+				var audio = document.getElementById("6bulanvoice");
 				audio.play();
 			}
 			function setahunvoice() {
-				var audio = document.getElementById("setahunvoices");
+				var audio = document.getElementById("setahunvoice");
 				audio.play();
 			}
-			function satubulanbayar() {
-				var audio = document.getElementById("1bulanbayars");
+			function bayarvoice() {
+				var audio = document.getElementById("bayarvoice");
 				audio.play();
 			}
-			function duabulanbayar() {
-				var audio = document.getElementById("2bulanbayars");
+			function yeayvoice() {
+				var audio = document.getElementById("yeayvoice");
 				audio.play();
 			}
-			function tigabulanbayar() {
-				var audio = document.getElementById("3bulanbayars");
+			function stockidvoice() {
+				var audio = document.getElementById("stockidvoice");
 				audio.play();
 			}
 			function enambulanbayar() {
