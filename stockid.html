@@ -77,13 +77,13 @@
 		/**/
 		.carousel-caption h1,
 		.col-md-4 h1 {
-			font-size: 22px;
+			font-size: 20px; /*22*/
 			font-weight: 500;
 			color: snow;
 		}
 		.carousel-caption p,
 		.col-md-4 p {
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 400;
 			color: snow;
 		}
@@ -115,7 +115,7 @@
 		}
 		.card-title,
 		.modal-title {
-			font-size: 22px;
+			font-size: 20px; /*22*/
 			font-weight: 600;
 			color: steelblue;
 		}
@@ -123,13 +123,13 @@
 		.modal-text {
 			margin: 8px 0px;
 			padding: 0px;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 500;
 			color: #444;
 		}
 		.card-text bdo,
 		.card-text del {
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			color: snow;
 			background-color: steelblue;
 			padding: 2px;
@@ -147,7 +147,7 @@
 			right: 0;
 			margin: 0;
 			padding: 0px 4px;
-			font-size: 14px;
+			font-size: 12px; /*14*/
 			font-weight: 500;
 			background-color: slateblue;
 			color: snow;
@@ -159,7 +159,7 @@
 			position: absolute;
 			margin-top: -21px;
 			padding: 0px;
-			font-size: 14px;
+			font-size: 12px; /*14*/
 			font-weight: 400;
 			color: snow;
 			background: rgba(0, 0, 0, 0.5);
@@ -170,7 +170,7 @@
 			left: 2%;
 			bottom: 2%;
 			padding: 2px 8px;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 400;
 			color: snow;
 			background-color: rgba(30, 144, 255, 0.8);
@@ -202,12 +202,12 @@
 		.tentang-text {
 			margin: 10px 0px;
 			padding: 0px;
-			font-size: 20px;
+			font-size: 18px; /*20*/
 			font-weight: 600;
 			color: snow;
 		}
 		.tentang-text {
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 500;
 			text-decoration: none;
 		}
@@ -223,13 +223,13 @@
 			text-decoration: none;
 		}
 		.text-footer {
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			color: snow;
 		}
 		/**/
 		a.bayar {
 			text-align: center;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 500;
 			color: #444;
 			text-decoration: none;
@@ -261,13 +261,13 @@
 		.bayar-text {
 			margin: 0px;
 			padding: 0px;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 400;
 			color: #444;
 		}
 		.label {
 			text-align: center;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 400;
 			color: snow;
 			margin: 0px;
@@ -287,7 +287,7 @@
 			outline: none;
 			margin: 4px 0px;
 			padding: 0px 8px;
-			font-size: 16px;
+			font-size: 14px; /*16*/
 			font-weight: 400;
 			color: snow;
 			background-color: steelblue;
@@ -330,20 +330,20 @@
 		</style>
 	</head>
 	
-	<body onclick="musik()">
-		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoice"></audio>
-		<audio src="stockid_suara/yeay.mp3" type="audio/mp3" id="yeayvoice"></audio>
+	<body>
+		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoice"></audio>
 		<audio src="stockid_suara/1bulan.mp3" type="audio/mp3" id="1bulanvoice"></audio>
 		<audio src="stockid_suara/2bulan.mp3" type="audio/mp3" id="2bulanvoice"></audio>
 		<audio src="stockid_suara/3bulan.mp3" type="audio/mp3" id="3bulanvoice"></audio>
 		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoice"></audio>
-		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="setahunvoice"></audio>
-		<audio src="stockid_suara/stockid.mp3" type="audio/mp3" id="stockidvoice"></audio>
-		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoice"></audio>
-		<audio src="stockid_suara/yapping2.mp3" type="audio/mp3" id="yapping2"></audio>
+		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="1tahunvoice"></audio>
+		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoice"></audio>
 		<audio src="stockid_suara/bayar.mp3" type="audio/mp3" id="bayarvoice"></audio>
-		<audio src="stockid_suara/musik.mp3" type="audio/mp3" id="musik"></audio>
-		
+		<audio src="stockid_suara/yeay.mp3" type="audio/mp3" id="yeayvoice"></audio>
+		<audio src="stockid_suara/stockid.mp3" type="audio/mp3" id="stockidvoice"></audio>
+		<audio src="stockid_suara/yapping2.mp3" type="audio/mp3" id="yapping2"></audio>
+		<audio src="stockid_suara/" type="audio/mp3" id="musik"></audio>
+		<audio src="stockid_suara/photo.mp3" type="audio/mp3" id="photovoice"></audio>
 		<header>
 			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
 				<a style="border: none" class="navbar-brand font-weight-bold" href="#"><img src="stockid_gambar/header.jpg" style="width: 38px; height: 38px; margin-right: 6px; object-fit: cover; vertical-align: middle; border-radius: 50%"> Stock's ID <i class="bi bi-graph-up-arrow"></i></a>
@@ -355,7 +355,7 @@
 			</nav>
 		</header>
 		
-		<main role="main" class="latar-utama hitam-bg">
+		<main role="main" class="latar-utama hitam-bg" onclick="musik()">
 			<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
 				<ol class="carousel-indicators">
 					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -468,7 +468,7 @@
 						<p class="tentang-text text-hitam underline"><i class="bi bi-activity"></i> Membaca Pergerakan Bandar atau Asing</p>
 						<p class="tentang-text text-hitam underline"><i class="bi bi-bar-chart-line-fill"></i> Membaca Data Perusahaan (Fundamental)</p>
 						<p class="tentang-text text-hitam underline"><i class="bi bi-broadcast-pin"></i> Saran (Entry Safe, Support, Take Profit)</p>
-						<p class="tentang-text text-hitam underline"><i class="bi bi-graph-up-arrow"></i> Watchlist Gacor Siap Pakai & Info A1</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-graph-up-arrow"></i> Watchlist Gacor Tiap Hari & Info A1</p>
 						</span>
 					</div>
 			</div>
@@ -498,7 +498,7 @@
 			
 			<div class="container">
 				<div class="row">
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/screener.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 2 orang</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>30%</bdo>
@@ -509,7 +509,7 @@
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/1month.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 58 orang</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>51%</bdo>
@@ -520,7 +520,7 @@
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/2month.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 6 orang</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>57%</bdo>
@@ -531,7 +531,7 @@
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/3month.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 9 orang</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>57%</bdo>
@@ -542,7 +542,7 @@
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/6month.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Jadilah orang pertama yang membeli</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>50%</bdo>
@@ -553,23 +553,23 @@
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/oneyear.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">Jadilah orang pertama yang membeli</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>58%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Tahun</h4>
 							<p class="card-text text-hitam">Harga Awal: Rp. <del>2.400,000</del></p>
 							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 1.000,000</bdo></p>
-							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas5-modal" onclick="setahunvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas5-modal" onclick="satutahunvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
 					</div>
 					
-					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 19rem; border-radius: 10px 10px">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
 						<img src="stockid_gambar/free.jpg" class="card-img-top">
 						<marquee direction="left" width="100%" scrollamount="5">428 orang telah bergabung</marquee>
 						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>100%</bdo>
 							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Stock ID Free</h4>
-							<p class="card-text text-hitam">Harga Awal: Rp. <del>10.855.000</del></p>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>10.855,000</del></p>
 							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 0</bdo></p>
 							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#free-modal" onclick="freevoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
 						</div>
@@ -775,14 +775,14 @@
 			
 			<hr class="featurette-divider">
 			
-			<div class="container-gain">
+			<div class="container-gain" onclick="photovoice()">
 				<h4 class="gain">Realized Gain Stock ID's</h4>
 				<div class="gallery-scroll-gain" id="gallery"></div>
 			</div>
 			
 			<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
 				<div class="modal-gain" role="document">
-					<div class="modal-media">
+					<div class="modal-media" onclick="photovoice()">
 						<img id="modalImage" src="" alt="">
 					</div>
 					
@@ -935,8 +935,8 @@
 				var audio = document.getElementById("6bulanvoice");
 				audio.play();
 			}
-			function setahunvoice() {
-				var audio = document.getElementById("setahunvoice");
+			function satutahunvoice() {
+				var audio = document.getElementById("1tahunvoice");
 				audio.play();
 			}
 			function bayarvoice() {
@@ -951,8 +951,8 @@
 				var audio = document.getElementById("stockidvoice");
 				audio.play();
 			}
-			function enambulanbayar() {
-				var audio = document.getElementById("6bulanbayars");
+			function photovoice() {
+				var audio = document.getElementById("photovoice");
 				audio.play();
 			}
 			function setahunbayar() {
