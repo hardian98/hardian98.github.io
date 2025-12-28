@@ -157,7 +157,7 @@
 		marquee {
 			display: block;
 			position: absolute;
-			margin-top: -19px;
+			margin-top: -18px;
 			padding: 0px;
 			font-size: 12px; /*14*/
 			font-weight: 400;
@@ -338,6 +338,7 @@
 		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoice"></audio>
 		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="1tahunvoice"></audio>
 		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoice"></audio>
+		<audio src="stockid_suara/jokowi.mp3" type="audio/mp3" id="jokowivoice"></audio>
 		<audio src="stockid_suara/bayar.mp3" type="audio/mp3" id="bayarvoice"></audio>
 		<audio src="stockid_suara/yeay.mp3" type="audio/mp3" id="yeayvoice"></audio>
 		<audio src="stockid_suara/stockid.mp3" type="audio/mp3" id="stockidvoice"></audio>
@@ -715,7 +716,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 600,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 600,000, mohon cek pembayaran masuk."><button type="button" onclick="jokowivoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -744,7 +745,7 @@
 								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
 							</div>
 							<br>
-							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.000,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.000,000, mohon cek pembayaran masuk."><button type="button" onclick="jokowivoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
 						</div>
 						<div class="modal-footer div-hitam">
 							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
@@ -941,6 +942,10 @@
 			}
 			function bayarvoice() {
 				var audio = document.getElementById("bayarvoice");
+				audio.play();
+			}
+			function jokowivoice() {
+				var audio = document.getElementById("jokowivoice");
 				audio.play();
 			}
 			function yeayvoice() {
