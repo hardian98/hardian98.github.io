@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+	<head>
+		<title>Stock's ID</title>
+		<meta charset="UTF-8">
+		<meta name="keyword" content="stock id, stockid, stock id vip, saham, kelas saham">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="viewport" content="width=device-width, initial-scale=0.9, maximal-scale=0.9, shrink-to-fit=no">
+		<meta name="author" content="Hardiansyah, Mark Otto, Jacob Thornton, and Bootstrap contributors">
+		<meta property="og:title" content="Stock ID VIP">
+		<meta property="og:description" content="Dapatkan Watchlist Siap Pakai, Info Saham MultiBagger, Insight dst">
+		<meta property="og:image" content="stockid_gambar/stockicon.jpg">
+		<meta property="og:url" content="https://hardian98.github.io/stockid">
+		<meta property="og:type" content="website">
+		<!--<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="expires" content="0">-->
+		<link rel="stylesheet" href="stockid_script/carousel.css" type="text/css">
+		<link rel="stylesheet" href="stockid_script/gallery.css" type="text/css">
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+		<link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Onest&display=swap">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+		<!---->
+		<style type="text/css">
+		html { 
+			scroll-behavior: smooth;
+		}
+		body {
+			background:
+			linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+			url("stockid_gambar/wall.jpg") no-repeat center center fixed;
+			background-size: cover;
+			/*animation: bgChange 10s infinite alternate;
+			-webkit-animation: bgChange 10s infinite alternate;*/
+		}
+		/*@-webkit-keyframes bgChange {
+			0% { background: #fff; } merah muda
+			25% { background: #eee; } peach
+			50% { background: #ddd; } ungu soft
+			75% { background: #ccc; } biru muda
+			100% { background: #bbb; } biru pastel
+		}*/
+		div, span, p, a, b, h1, h4, bdo, del, button, input {
+			font-family: "Onest", sans-serif;
+		}
+		.dark-theme .hitam-bg,
+		.dark-theme body {
+			background-color: snow;
+		}
+		.dark-theme .div-hitam {
+			background-color: snow;
+		}
+		.dark-theme h1.header,
+		.dark-theme p.header {
+			color: #555;
+		}
+		.dark-theme .hitam,
+		.dark-theme .text-hitam {
+			color: #555;
+		}
+		.dark-theme .card-text bdo,
+		.dark-theme .card-text del,
+		.dark-theme .disc {
+			color: snow;
+			border: 1px solid #444;
+		}
+		.dark-theme .text-biru {
+			color: steelblue;
+		}
+		.dark-theme .hitam-btn,
+		.dark-theme button {
+			border: 1.2px solid #444;
+		}
+		/**/
+		.carousel-caption h1,
+		.col-md-4 h1 {
+			font-size: 20px; /*22*/
+			font-weight: 500;
+			color: snow;
+		}
+		.carousel-caption p,
+		.col-md-4 p {
+			font-size: 14px; /*16*/
+			font-weight: 400;
+			color: snow;
+		}
+		/**/
+		div.card-body,
+		div.modal-body {
+			padding: 12px 12px;
+			background-color: snow; /*353535*/
+			border: none;
+			border-top: 4px solid dodgerblue;
+			/*border-left: 1.2px solid #444;
+			border-right: 1.2px solid #444;
+			border-bottom: 1.2px solid #444;*/
+			border-radius: 0px 0px 10px 10px;
+			transition: ease 0.8s;
+			-webkit-transition: ease 0.8s;
+			box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+			-webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+		}
+		div.modal-body {
+			border: none;
+			border-radius: 0px;
+			box-shadow: none;
+		}
+		div.modal-content {
+			background-color: snow;
+			transition: ease 0.8s;
+			-webkit-transition: ease 0.8s;
+		}
+		.card-title,
+		.modal-title {
+			font-size: 20px; /*22*/
+			font-weight: 600;
+			color: steelblue;
+		}
+		.card-text,
+		.modal-text {
+			margin: 8px 0px;
+			padding: 0px;
+			font-size: 14px; /*16*/
+			font-weight: 500;
+			color: #444;
+		}
+		.card-text bdo,
+		.card-text del {
+			font-size: 14px; /*16*/
+			color: snow;
+			background-color: steelblue;
+			padding: 2px;
+			border: 0.8px solid #444;
+			border-radius: 2px 10px 2px 10px;
+		}
+		.card-text del {
+			background-color: teal;
+		}
+		.disc {
+			display: initial;
+			position: absolute;
+			z-index: 999;
+			top: 0;
+			right: 0;
+			margin: 0;
+			padding: 0px 4px;
+			font-size: 12px; /*14*/
+			font-weight: 500;
+			background-color: slateblue;
+			color: snow;
+			border-radius: 2px 10px 2px 10px;
+			border: none !important;
+		}
+		marquee {
+			display: block;
+			position: absolute;
+			margin-top: -18px;
+			padding: 0px;
+			font-size: 12px; /*14*/
+			font-weight: 400;
+			color: snow;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.gabung {
+			position: fixed;
+			z-index: 999;
+			left: 2%;
+			bottom: 2%;
+			padding: 2px 8px;
+			font-size: 14px; /*16*/
+			font-weight: 400;
+			color: snow;
+			background-color: rgba(30, 144, 255, 0.8);
+			border: 0.8px solid #fff;
+			border-radius: 12px;
+			opacity: 0.8;
+			transition: ease 2s;
+			-webkit-transition: ease 2s;
+		}
+		.btn, button {
+			font-size: 16px !important;
+			font-weight: 500 !important;
+			border: 1.2px solid #333;
+			transition: ease 0.8s;
+			-webkit-transition: ease 0.8s;
+		}
+		/**/
+		div.tentang {
+			display: block;
+			position: relative;
+			margin: 0px;
+			padding: 6px 6px;
+			background: inherit;
+			/*border: 1px solid #656565;
+			border-radius: 10px 10px 2px 2px;
+			box-shadow: 0px 0px 8px 0px #555;*/
+		}
+		.tentang-title,
+		.tentang-text {
+			margin: 10px 0px;
+			padding: 0px;
+			font-size: 18px; /*20*/
+			font-weight: 600;
+			color: snow;
+		}
+		.tentang-text {
+			font-size: 14px; /*16*/
+			font-weight: 500;
+			text-decoration: none;
+		}
+		.tentang-title i.bi,
+		.tentang-text i.bi {
+			margin: 0px 6px 0px 0px;
+			padding: 0px;
+		}
+		i.bi {
+			vertical-align: baseline;
+		}
+		a:focus, a:hover {
+			text-decoration: none;
+		}
+		.text-footer {
+			font-size: 14px; /*16*/
+			color: snow;
+		}
+		/**/
+		a.bayar {
+			text-align: center;
+			font-size: 14px; /*16*/
+			font-weight: 500;
+			color: #444;
+			text-decoration: none;
+		}
+		.bayar-box {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.7s ease;
+			-webkit-transition: max-height 0.7s ease;
+		}
+		.bayar-box.show {
+			max-height: 500px;
+			margin: 0px;
+			padding: 0px 4px 4px 4px;
+			border: 1px solid gray;
+			border-radius: 4px;
+		}
+		#arrowIconsatu, #arrowIcondua, #arrowIcontiga,
+		#arrowIconempat, #arrowIconlima, #arrowIconenam {
+			display: inline-block;
+			transition: transform 0.7s ease;
+			-webkit-transition: transform 0.7s ease;
+		}
+		#arrowIconsatu.rotate, #arrowIcondua.rotate, #arrowIcontiga.rotate,
+		#arrowIconempat.rotate, #arrowIconlima.rotate, #arrowIconenam.rotate {
+			transform: rotate(180deg);
+			-webkit-transform: rotate(180deg);
+		}
+		.bayar-text {
+			margin: 0px;
+			padding: 0px;
+			font-size: 14px; /*16*/
+			font-weight: 400;
+			color: #444;
+		}
+		.label {
+			text-align: center;
+			font-size: 14px; /*16*/
+			font-weight: 400;
+			color: snow;
+			margin: 0px;
+			padding: 4px 0px;
+			background-color: teal;
+			border: 1px solid steelblue;
+			border-radius: 0px 0px 12px 12px;
+		}
+		.bayar-text bdo {
+			color: snow;
+			padding: 0px 6px;
+			background-color: teal;
+			border-radius: 8px;
+		}
+		input {
+			width: 160px;
+			outline: none;
+			margin: 4px 0px;
+			padding: 0px 8px;
+			font-size: 14px; /*16*/
+			font-weight: 400;
+			color: snow;
+			background-color: steelblue;
+			border: 0.8px solid gray;
+			border-radius: 12px 2px;
+		}
+		/**/
+		.bd-placeholder-img {
+			font-size: 1.125rem;
+			text-anchor: middle;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+		}
+		@media (min-width: 768px) {
+			.bd-placeholder-img-lg {
+				font-size: 3.5rem;
+			}
+		}
+		.card-img-top {
+			width: 100%;
+			height: 250px;
+			object-fit: cover;
+			border: none;
+			border-radius: 10px 10px 0 0;
+		}
+		.img-slid-custom {
+			background: none;
+			padding: 0px;
+		}
+		.waktu {
+			top: 66px;
+			right: -132px;
+			position: fixed;
+			z-index: 50000;
+			background: transparent;
+			border: none;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<audio src="stockid_suara/screener.mp3" type="audio/mp3" id="screenervoice"></audio>
+		<audio src="stockid_suara/1bulan.mp3" type="audio/mp3" id="1bulanvoice"></audio>
+		<audio src="stockid_suara/2bulan.mp3" type="audio/mp3" id="2bulanvoice"></audio>
+		<audio src="stockid_suara/3bulan.mp3" type="audio/mp3" id="3bulanvoice"></audio>
+		<audio src="stockid_suara/6bulan.mp3" type="audio/mp3" id="6bulanvoice"></audio>
+		<audio src="stockid_suara/1tahun.mp3" type="audio/mp3" id="1tahunvoice"></audio>
+		<audio src="stockid_suara/free.mp3" type="audio/mp3" id="freevoice"></audio>
+		<audio src="stockid_suara/jokowi.mp3" type="audio/mp3" id="jokowivoice"></audio>
+		<audio src="stockid_suara/bayar.mp3" type="audio/mp3" id="bayarvoice"></audio>
+		<audio src="stockid_suara/yeay.mp3" type="audio/mp3" id="yeayvoice"></audio>
+		<audio src="stockid_suara/stockid.mp3" type="audio/mp3" id="stockidvoice"></audio>
+		<audio src="stockid_suara/yapping2.mp3" type="audio/mp3" id="yapping2"></audio>
+		<audio src="stockid_suara/" type="audio/mp3" id="musik"></audio>
+		<audio src="stockid_suara/photo.mp3" type="audio/mp3" id="photovoice"></audio>
+		<header>
+			<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top">
+				<a style="border: none" class="navbar-brand font-weight-bold" href="#"><img src="stockid_gambar/header.jpg" style="width: 38px; height: 38px; margin-right: 6px; object-fit: cover; vertical-align: middle; border-radius: 50%"> Stock's ID <i class="bi bi-graph-up-arrow"></i></a>
+				<button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+				</div>
+			</nav>
+		</header>
+		
+		<main role="main" class="latar-utama hitam-bg" onclick="musik()">
+			<div id="myCarousel" class="carousel slide carousel-fade" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+				
+				<div class="carousel-inner">
+					<div class="carousel-item active" style="background-color: inherit">
+						<img class="d-block w-100 img" src="stockid_gambar/slide1.jpg" style="object-fit: cover; margin-top: 16px">
+						<div class="container">
+							<div class="carousel-caption text-start">
+								<h1 class="header">Selamat Datang</h1>
+								<p class="header">Belajar Saham Dari Nol Sampai Bisa, Di Bimbing Dengan 2 Mentor Berpengalaman</p>
+								<!--<p><a class="btn btn-md btn-primary rounded-pill" href="https://api.whatsapp.com/send?phone=6289529305947&text=Aku+Ingin+Gabung+Grup+Saham+VIP" role="button"><i class="bi bi-box-arrow-in-right" style="font-size: 1rem"></i> Gabung, yuk!</a></p>-->
+							</div>
+						</div>
+					</div>
+					
+					<div class="carousel-item" style="background-color: inherit">
+						<img class="d-block w-100 img" src="stockid_gambar/slide2.jpg" style="object-fit: cover; margin-top: 16px">
+						<div class="container">
+							<div class="carousel-caption">
+								<h1 class="header">Pembelajaran</h1>
+								<p class="header">Belajar Dasar Saham, Analisa Fundamental, Analisa Teknikal, Bandarmology dan masih banyak lagi</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="carousel-item" style="background-color: inherit">
+						<img class="d-block w-100 img" src="stockid_gambar/slide3.jpg" style="object-fit: cover; margin-top: 16px">
+						<div class="container text-end">
+							<div class="carousel-caption">
+								<h1 class="header">Pasti Murah</h1>
+								<p class="header">Kami Berani Jamin Harga Kelas Kami Dapat Bersaing Dengan Kompetitif</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<a style="border: none" onclick="klik()" class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				
+				<a style="border: none" onclick="klik()" class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			
+			<!--
+			<div class="container marketing">
+				<div class="row">
+					<div class="col-lg-4">
+						<img class="box-shadow" src="top1.jpg" style="width: 120px; height: 120px; margin-bottom: 10px; object-fit: cover; border: 1px solid #BBB; border-radius: 50%">
+						<h1 class="hitam">Tentang</h1>
+						<p id="typing_01" class="hitam"><i class="bi bi-chat-dots" style="font-size: 1rem"></i> </p>
+						<p><button class="btn btn-sm rounded-pill btn-primary box-shadow hitam-btn" onclick="writer_01();yappingsatu()">Selengkapnya <i class="bi bi-terminal" style="font-size: 1rem"></i></button></p>
+					</div>
+					<script>
+						var satu = 0;
+						var txt01 = "Dengan dibuatnya kelas berbayar ini ditujukan untuk membantu teman-teman belajar saham termasuk menganalisa saham, membaca market, membaca pergerakan bandar atau asing, memilih saham yang bagus dan memberikan sinyal atau watchlist saham yang berpontensi naik, kadang ada juga info A1"; /* The text */
+						var speed1 = 55;
+						function writer_01() {
+							if (satu < txt01.length) {
+								document.getElementById("typing_01").innerHTML += txt01.charAt(satu);
+								satu++;
+								setTimeout(writer_01, speed1);
+							}
+						}
+					</script>
+					
+					<hr class="featurette-divider">
+					
+					<div class="col-lg-4">
+						<img class="box-shadow" src="top2.jpg" style="width: 120px; height: 120px; margin-bottom: 10px; object-fit: cover; border: 1px solid #BBB; border-radius: 50%">
+						<h1 class="hitam">Harga Terbaik</h1>
+						<p id="typing_02" class="hitam"><i class="bi bi-chat-dots" style="font-size: 1rem"></i> </p>
+						<p><button class="btn btn-sm rounded-pill btn-primary box-shadow hitam-btn" onclick="writer_02();yappingdua()">Selengkapnya <i class="bi bi-terminal" style="font-size: 1rem"></i></button></p>
+					</div>
+					<script>
+						var dua = 0;
+						var txt02 = 'Harga kelas yang kami tawarkan sangat worth it untuk dibeli, terjangkau dan dapat bersaing, jaminan balik modal dalam 7 hari kerja (tergantung modalnya)'; /* The text */
+						var speed2 = 60;
+						function writer_02() {
+							if (dua < txt02.length) {
+								document.getElementById("typing_02").innerHTML += txt02.charAt(dua);
+								dua++;
+								setTimeout(writer_02, speed2);
+							}
+						}
+					</script>
+				</div>
+			</div>
+			-->
+			
+			<div class="container">
+				<div class="tentang col-md-8">
+						<p class="tentang-title text-center text-hitam"><i class="bi bi-question-circle"></i> Apa itu Stock ID VIP?</p>
+						<p class="tentang-text text-hitam">Stock ID VIP dibentuk pada September 2025, ditujukan untuk membantu teman-teman Belajar Saham dan memberikan Watchlist terbaik yang sudah kami analisa.</p>
+						<p class="tentang-text text-hitam">Kami memastikan harga kelas kami sangat kompetitif dan dapat bersaing, diharapkan semua teman dapat profit dengan konsisten.</p>
+						<br>
+						<span onclick="yapping2voice()">
+						<p class="tentang-title text-center text-hitam"><i class="bi bi-cup-hot-fill"></i> Benefit apa saja yang didapat?</p>
+						<p class="tentang-text text-hitam">Di Stock ID VIP kami tidak hanya memberikan Watchlist, tapi juga memberikan Pengertian dan Pembelajaran, seperti:</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-search"></i> Menganalisa Saham</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-pc-display-horizontal"></i> Membaca Market</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-columns"></i> Membaca Broker Summary</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-activity"></i> Membaca Pergerakan Bandar atau Asing</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-bar-chart-line-fill"></i> Membaca Data Perusahaan (Fundamental)</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-broadcast-pin"></i> Saran (Entry Safe, Support, Take Profit)</p>
+						<p class="tentang-text text-hitam underline"><i class="bi bi-graph-up-arrow"></i> Watchlist Gacor Tiap Hari & Info A1</p>
+						</span>
+					</div>
+			</div>
+			
+			<br>
+			
+			<div class="container">
+				<div class="tentang col-md-8">
+					<p class="tentang-title text-center text-hitam">Total Member</p>
+					<p class="tentang-text text-center text-hitam">94 Jiwa</p>
+					<br>
+					<p class="tentang-title text-center text-hitam">Total Member Aktif</p>
+					<p class="tentang-text text-center text-hitam">66 Jiwa</p>
+					<br>
+					<p class="tentang-title text-center text-hitam">Grup Berjalan Lamanya</p>
+					<p class="tentang-text text-center text-hitam">
+						<span id="umur">
+							<span class="bulan"></span> Bulan
+							<br>
+							(<span class="hari"></span> hari, <span class="jam"></span> jam, <span class="mnt"></span> mnt, <span class="dtk"></span> dtk)
+						</span>
+					</p>
+				</div>
+			</div>
+			
+			<hr class="featurette-divider">
+			
+			<div class="container">
+				<div class="row">
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/screener.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 2 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>30%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket Screener</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>100,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 70,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#screener-modal" onclick="screenervoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/1month.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 66 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>51%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Bulan</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>200,000</del> <!--<del>129.000</del>--></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 99,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas1-modal" onclick="satubulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/2month.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 13 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>57%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 2 Bulan</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>400,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 170,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas2-modal" onclick="duabulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/3month.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 13 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>57%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 3 Bulan</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>600,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 260,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas3-modal" onclick="tigabulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/6month.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 1 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>50%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 6 Bulan</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>1.200,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 600,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas4-modal" onclick="enambulanvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/oneyear.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">Sudah dibeli 1 orang</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>58%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Paket 1 Tahun</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>2.400,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 1.000,000</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#kelas5-modal" onclick="satutahunvoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+					
+					<div class="card mb-4 div-hitam" style="display: block; margin: 0 auto; width: 16rem; border-radius: 10px 10px">
+						<img src="stockid_gambar/free.jpg" class="card-img-top">
+						<marquee direction="left" width="100%" scrollamount="5">550 orang telah bergabung</marquee>
+						<div class="card-body div-hitam"> <bdo class="disc"><i class="bi bi-dash-lg"></i>100%</bdo>
+							<h4 class="card-title text-biru"><i class="bi bi-stars"></i>Stock ID Free</h4>
+							<p class="card-text text-hitam">Harga Awal: Rp. <del>10.855,000</del></p>
+							<p class="card-text text-hitam">Harga Disc: <bdo>Rp. 0</bdo></p>
+							<button type="button" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" data-toggle="modal" data-target="#free-modal" onclick="freevoice()"><i class="bi bi-currency-exchange"></i> Beli</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Modal -->
+			
+			<div id="screener-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Screener Beli Sore Jual Pagi / Swing</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli Screener BSJP / Swing</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Screener Rp. 70,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar1')">Lihat Cara Bayar <i id="arrowIconsatu" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxsatu" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 70,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli Paket Screener dan sudah membayar sebesar Rp. 70,000, mohon cek pembayaran masuk."><button type="button" onclick="yeayvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="kelas1-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Paket 1 Bulan</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 30 hari.</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 99,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar2')">Lihat Cara Bayar <i id="arrowIcondua" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxdua" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 99,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Bulan dan sudah membayar sebesar Rp. 99,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="kelas2-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Paket 2 Bulan</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 60 hari.</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 170,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar3')">Lihat Cara Bayar <i id="arrowIcontiga" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxtiga" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 170,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 2 Bulan dan sudah membayar sebesar Rp. 170,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="kelas3-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Paket 3 Bulan</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 90 hari.</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 260,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar4')">Lihat Cara Bayar <i id="arrowIconempat" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxempat" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 260,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 3 Bulan dan sudah membayar sebesar Rp. 260,000, mohon cek pembayaran masuk."><button type="button" onclick="bayarvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="kelas4-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Paket 6 Bulan</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 180 hari.</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 600,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar5')">Lihat Cara Bayar <i id="arrowIconlima" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxlima" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 600,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 6 Bulan dan sudah membayar sebesar Rp. 600,000, mohon cek pembayaran masuk."><button type="button" onclick="jokowivoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="kelas5-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Paket 1 Tahun</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan membeli kelas selama 365 hari.</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin membeli kelas ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Kelas Rp. 1.000,000</p>
+							<a class="bayar text-center" onclick="bayartoggle('bayar6')">Lihat Cara Bayar <i id="arrowIconenam" class="bi bi-chevron-bar-down"></i></a>
+							<div id="bayarboxenam" class="bayar-box">
+								<p class="bayar-text label">Siapkan Dana Sebesar Rp. 1.000,000</p>
+								<p class="bayar-text">Transfer ke Nomor Rekening atau E-Wallet berikut:</p>
+								<p class="bayar-text">Dana: <input type="text" value="089529305947" id="dana" disabled> <a onclick="aksi('danacopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Gopay: <input type="text" value="089529305947" id="gopay" disabled> <a onclick="aksi('gopaycopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Bank Jago: <input type="text" value="101650720245" id="jago" disabled> <a onclick="aksi('jagocopy')"> <i class="bi bi-copy"></i></a></p>
+								<p class="bayar-text">Jika sudah membayar, Screen Shoot dan kirimkan bukti bayar di bawah ini</p>
+							</div>
+							<br>
+							<a href="https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin bergabung kelas 1 Tahun dan sudah membayar sebesar Rp. 1.000,000, mohon cek pembayaran masuk."><button type="button" onclick="jokowivoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Saya Sudah Bayar</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div id="free-modal" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+						<div class="modal-header div-hitam">
+							<h4 class="modal-title text-biru">Stock ID Free</h4>
+						</div>
+						<div class="modal-body div-hitam">
+							<p class="modal-text text-hitam"><i class="bi bi-calendar-month-fill" style="font-size: 1rem"></i> Kamu akan bergabung ke Stock ID</p>
+							<p class="modal-text text-hitam"><i class="bi bi-question-circle" style="font-size: 1rem"></i> Apakah kamu sudah yakin ingin bergabung ke Grup ini?</p>
+							<p class="modal-text text-hitam text-center"><i class="bi bi-person-circle" style="font-size: 1rem"></i> Harga Grup Rp. 0 (Gratis)</p>
+							<br>
+							<a href="https://chat.whatsapp.com/BpMVt0wI3v78aBYZWMau9p"><button type="button" onclick="stockidvoice()" class="btn btn-sm btn-block rounded-pill btn-info hitam-btn" role="button" aria-pressed="true"><i class="bi bi-wallet2" style="font-size: 1rem"></i>&nbsp; Gabung</button></a>
+						</div>
+						<div class="modal-footer div-hitam">
+							<button type="button" class="btn btn-sm btn-info hitam-btn" data-dismiss="modal"><i class="bi bi-x-circle"></i> Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<hr class="featurette-divider">
+			
+			<div class="container-gain" onclick="photovoice()">
+				<h4 class="gain">Realized Gain Stock ID's</h4>
+				<div class="gallery-scroll-gain" id="gallery"></div>
+			</div>
+			
+			<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-hidden="true">
+				<div class="modal-gain" role="document">
+					<div class="modal-media" onclick="photovoice()">
+						<img id="modalImage" src="" alt="">
+					</div>
+					
+					<div class="modal-footer-gain">
+						<div class="meta" id="modalCaption">&nbsp;</div>
+						<div class="controls">
+							<button class="btn-tutup ghost" id="prevBtn" title="Sebelumnya">‹</button>
+							<button class="btn-tutup ghost" id="nextBtn" title="Selanjutnya">›</button>
+							<button class="btn-tutup" id="closeBtn" title="Tutup (Esc)">Tutup</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<hr class="featurette-divider">
+			
+			<div class="card mb-4 div-hitam" style="display: block; position: absolute; left: 2%; width: 47%; margin: 0 auto; border-radius: 10px 10px">
+				<img src="stockid_gambar/admin1.jpg" class="card-img-top" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0; border: none">
+				<div class="card-body div-hitam" style="padding: 8px 8px !important; border-radius: 0 0 10px 10px">
+					<img src="stockid_gambar/porto1.jpg" class="card-img-top" style="width: 100%; height: auto; object-fit: cover; border: none">
+					<h4 class="card-title hitam">Har</h4>
+					<p class="card-text hitam">Mentor of Stock's ID</p>
+					<p class="card-text hitam">Equity: 80M+</p>
+					<p class="card-text hitam">Type: Mid-Long Term</p>
+					<a type="button" href="https://wa.me/6289529305947" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
+					<a type="button" href="sms:089529305947" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; SMS</a>
+				</div>
+			</div>
+			
+			<div class="card mb-4 div-hitam" style="display: block; position: absolute; right: 2%; width: 47%; margin: 0 auto; border-radius: 10px 10px">
+				<img src="stockid_gambar/admin2.jpg" class="card-img-top" style="width: 100%; height: 250px; object-fit: cover; border-radius: 10px 10px 0 0; border: none">
+				<div class="card-body div-hitam" style="padding: 8px 8px !important; border-radius: 0 0 10px 10px">
+					<img src="stockid_gambar/porto2.jpg" class="card-img-top" style="width: 100%; height: auto; object-fit: cover; border: none">
+					<h4 class="card-title hitam">Irfan</h4>
+					<p class="card-text hitam">Mentor of Stock's ID</p>
+					<p class="card-text hitam">Equity: 230M+</p>
+					<p class="card-text hitam">Type: Swing, Long Term</p>
+					<a type="button" href="https://wa.me/6281216752945" class="btn btn-sm btn-block rounded-pill btn-success hitam-btn"><i class="bi bi-whatsapp" style="font-size: 1rem"></i>&nbsp; Whatsapp</a>
+					<a type="button" href="sms:6281216752945" class="btn btn-sm btn-block rounded-pill btn-primary hitam-btn"><i class="bi bi-envelope" style="font-size: 1rem"></i>&nbsp; SMS</a>
+				</div>
+			</div>
+			
+			<br><br><br><rb><br><br><br><rb><br><br><rb><br><br><rb><br><rb><br><br><rb><br><br><rb><br><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br><rb><br><br>
+			
+			<footer class="container">
+				<p class="text-footer float-right"><a href="#top">Kembali Ke Atas</a></p>
+				<p class="text-footer hitam">&copy; 2025 Stock's ID, Inc.<br>&middot; Har &middot; GitHub (Servers, Domain) &middot; Bootstrap Package (Theme, Icon, Features) &middot; Free Pik (Images) &middot; ChatGPT (For Helping) &middot; TypeCast.ai (Voice) &middot; W3School &middot; Google Font &middot;</p>
+			</footer>
+			
+			<p class="gabung" id="quotation"><i class="bi bi-box-arrow-in-right"></i> Stock ID</p>
+			
+			<!--
+			<button class="btn btn-toggle btn-sm rounded-pill btn-primary hitam-btn" style="bottom: 80px; left: 10px; position: fixed; z-index: 99999">Tema</button>
+			<script type="text/javascript">
+				const btn = document.querySelector(".btn-toggle");
+				btn.addEventListener("click", function () {
+					document.body.classList.toggle("dark-theme");
+				});
+			</script>
+			-->
+			<script>
+			function aksi(type) {
+				if (type === 'gopaycopy') {
+					var copyText = document.getElementById("gopay");
+				}
+				if (type === 'danacopy') {
+					var copyText = document.getElementById("dana");
+				}
+				if (type === 'jagocopy') {
+					var copyText = document.getElementById("jago");
+				}
+				copyText.select();
+				copyText.setSelectionRange(0, 99999);
+				navigator.clipboard.writeText(copyText.value);
+				alert("Berhasil di salin: " + copyText.value);
+			}
+			</script>
+			
+			<script>
+			function bayartoggle(type) {
+				if (type === 'bayar1') {
+					var box = document.getElementById("bayarboxsatu");
+					var icon = document.getElementById("arrowIconsatu");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar2') {
+					var box = document.getElementById("bayarboxdua");
+					var icon = document.getElementById("arrowIcondua");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar3') {
+					var box = document.getElementById("bayarboxtiga");
+					var icon = document.getElementById("arrowIcontiga");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar4') {
+					var box = document.getElementById("bayarboxempat");
+					var icon = document.getElementById("arrowIconempat");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar5') {
+					var box = document.getElementById("bayarboxlima");
+					var icon = document.getElementById("arrowIconlima");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+				if (type === 'bayar6') {
+					var box = document.getElementById("bayarboxenam");
+					var icon = document.getElementById("arrowIconenam");
+					box.classList.toggle("show");
+					icon.classList.toggle("rotate");
+				}
+			}
+			</script>
+		
+			<script type="text/javascript">
+			function musik() {
+				var audio = document.getElementById("musik");
+				audio.play();
+			}
+			function yapping2voice() {
+				var audio = document.getElementById("yapping2");
+				audio.play();
+			}
+			function screenervoice() {
+				var audio = document.getElementById("screenervoice");
+				audio.play();
+			}
+			function freevoice() {
+				var audio = document.getElementById("freevoice");
+				audio.play();
+			}
+			function satubulanvoice() {
+				var audio = document.getElementById("1bulanvoice");
+				audio.play();
+			}
+			function duabulanvoice() {
+				var audio = document.getElementById("2bulanvoice");
+				audio.play();
+			}
+			function tigabulanvoice() {
+				var audio = document.getElementById("3bulanvoice");
+				audio.play();
+			}
+			function enambulanvoice() {
+				var audio = document.getElementById("6bulanvoice");
+				audio.play();
+			}
+			function satutahunvoice() {
+				var audio = document.getElementById("1tahunvoice");
+				audio.play();
+			}
+			function bayarvoice() {
+				var audio = document.getElementById("bayarvoice");
+				audio.play();
+			}
+			function jokowivoice() {
+				var audio = document.getElementById("jokowivoice");
+				audio.play();
+			}
+			function yeayvoice() {
+				var audio = document.getElementById("yeayvoice");
+				audio.play();
+			}
+			function stockidvoice() {
+				var audio = document.getElementById("stockidvoice");
+				audio.play();
+			}
+			function photovoice() {
+				var audio = document.getElementById("photovoice");
+				audio.play();
+			}
+			function setahunbayar() {
+				var audio = document.getElementById("setahunbayars");
+				audio.play();
+			}
+			</script>
+			
+			<!--<script type="text/javascript">
+			function emoji() {
+				var a;
+				a = document.getElementById("emoji");
+				a.innerHTML = "&#xf08a;";
+				setTimeout(function () {
+					a.innerHTML = "&#xf006;"
+				}, 2000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf118;";
+				}, 4000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf224;";
+				}, 6000);
+				setTimeout(function () {
+					a.innerHTML = "&#xf087;";
+				}, 8000);
+			}
+			emoji();
+			setInterval(emoji, 7000);
+			</script>-->
+			
+			<!-- <script>
+			function satubulan() {
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 30 hari seharga Rp. 99,000, mohon kirimkan alamat pembayaran.");
+			}
+			function duabulan() {
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 60 hari seharga Rp. 170,000, mohon kirimkan alamat pembayaran.");
+			}
+			function tigabulan() {
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 90 hari seharga Rp. 260,000, mohon kirimkan alamat pembayaran.");
+			}
+			function enambulan() {
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 180 hari seharga Rp. 600,000, mohon kirimkan alamat pembayaran.");
+			}
+			function setahun() {
+				window.open("https://api.whatsapp.com/send?phone=6289529305947&text=Saya ingin membeli kelas 365 hari seharga Rp. 1.000,000, mohon kirimkan alamat pembayaran.");
+			}
+			</script>-->
+			
+			<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+			
+			<script type="text/javascript">
+			var quotes = [
+				{"quote": "Abraham Keluar"},
+				{"quote": "Abdul Bergabung"},
+				{"quote": "Adi Keluar"},
+				{"quote": "Adit Bergabung"},
+				{"quote": "Aka Bergabung"},
+				{"quote": "Alvi Bergabung"},
+				{"quote": "Afif Keluar"},
+				{"quote": "Ahlis Keluar"},
+				{"quote": "Anggoro Bergabung"},
+				{"quote": "Ando Keluar"},
+				{"quote": "Anggit Bergabung"},
+				{"quote": "Annisa Keluar"},
+				{"quote": "Alive Keluar"},
+				{"quote": "Ardha Bergabung"},
+				{"quote": "Ardika Bergabung"},
+				{"quote": "Arif Bergabung"},
+				{"quote": "Atok Bergabung"},
+				{"quote": "Azka Keluar"},
+				{"quote": "Bayu Bergabung"},
+				{"quote": "Candra Bergabung"},
+				{"quote": "Danny Bergabung"},
+				{"quote": "Dandy Keluar"},
+				{"quote": "Dani Keluar"},
+				{"quote": "Dedi Keluar"},
+				{"quote": "Devan Bergabung"},
+				{"quote": "Dimas Keluar"},
+				{"quote": "Dio Keluar"},
+				{"quote": "Dhilla Bergabung"},
+				{"quote": "Dwiky Bergabung"},
+				{"quote": "Evan Bergabung"},
+				{"quote": "Faisal Bergabung"},
+				{"quote": "Farid Bergabung"},
+				{"quote": "Fahmi Bergabung"},
+				{"quote": "Farieq Bergabung"},
+				{"quote": "Fauziah Bergabung"},
+				{"quote": "Fajar Keluar"},
+				{"quote": "Fathan Keluar"},
+				{"quote": "Gilang Keluar"},
+				{"quote": "Hendra Keluar"},
+				{"quote": "Ikhwan Bergabung"},
+				{"quote": "Jordan Keluar"},
+				{"quote": "Juno Bergabung"},
+				{"quote": "Lisbeth Keluar"},
+				{"quote": "Made Bergabung"},
+				{"quote": "Miko Keluar"},
+				{"quote": "Muazin Bergabung"},
+				{"quote": "Natan Bergabung"},
+				{"quote": "Nanang Bergabung"},
+				{"quote": "Neko Bergabung"},
+				{"quote": "Nijar Keluar"},
+				{"quote": "Niko Keluar"},
+				{"quote": "Nofal Keluar"},
+				{"quote": "Noval Bergabung"},
+				{"quote": "Panji Keluar"},
+				{"quote": "Purna Keluar"},
+				{"quote": "Putri Bergabung"},
+				{"quote": "Rachmad Bergabung"},
+				{"quote": "Radit Keluar"},
+				{"quote": "Rama Bergabung"},
+				{"quote": "Ray Bergabung"},
+				{"quote": "Rayhan Bergabung"},
+				{"quote": "Rey Keluar"},
+				{"quote": "Riani Bergabung"},
+				{"quote": "Ridho Bergabung"},
+				{"quote": "Roid Bergabung"},
+				{"quote": "Rosita Keluar"},
+				{"quote": "Salim Bergabung"},
+				{"quote": "Sandi Bergabung"},
+				{"quote": "Saputra Bergabung"},
+				{"quote": "Sefian Bergabung"},
+				{"quote": "Seii Bergabung"},
+				{"quote": "Siska Bergabung"},
+				{"quote": "Sodik Bergabung"},
+				{"quote": "Tia Keluar"},
+				{"quote": "Tama Bergabung"},
+				{"quote": "Tito Bergabung"},
+				{"quote": "Tomin Bergabung"},
+				{"quote": "Tomy Bergabung"},
+				{"quote": "Vani Bergabung"},
+				{"quote": "Viani Bergabung"},
+				{"quote": "Widi Bergabung"},
+				{"quote": "Willy Bergabung"},
+				{"quote": "Winsen Keluar"},
+				{"quote": "Yanto Bergabung"},
+				{"quote": "Yudha Keluar"},
+				{"quote": "Yoga Bergabung"},
+				{"quote": "Yogi Bergabung"},
+				{"quote": "Zidan Bergabung"},
+			]
+			function randomQuote() {
+				var random = quotes[Math.floor(Math.random() * quotes.length)];
+				quotation.innerText = `${random.quote}`;
+				source.innerText = random.source;
+			}
+			setInterval(randomQuote, 4000);
+			</script>
+			
+			<script src="stockid_script/bootstrap.bundle.min.js"></script>
+			<script src="stockid_script/gallery.js"></script>
+			<script src="stockid_script/waktu.js"></script>
+		</main>
+	</body>
+</html>

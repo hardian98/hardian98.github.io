@@ -1,0 +1,3461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html PUBLIC '-//WAPFORUM//DTD XHTML Mobile 1.0//EN' 'http://www.wapforum.org/DTD/xhtml-mobile10.dtd'>
+	<head>
+		<title>Masa Aktif Member</title>
+		<meta charset="UTF-8">
+		<meta name="author" content="Hardiansyah">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-scale=1.0, maximal-scale=1">
+		<!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+		<meta property="og:title" content="Pantau Kapan Kamu Di Eksekusi">
+		<meta property="og:description" content="Cek Sebelum Ajal Menjemput">
+		<meta property="og:image" content="stockid_gambar/thumb.jpg">
+		<meta property="og:url" content="https://hardian98.github.io/exp">
+		<meta property="og:type" content="website">
+		<style type="text/css">
+		@import url(https://fonts.googleapis.com/css?family=Fredoka&display=swap);
+		html {
+			scroll-behavior: smooth;
+			-ms-scroll-behavior: smooth;
+			-webkit-scroll-behavior: smooth;
+		}
+		body {
+			font-family: 'Fredoka', sans-serif;
+			margin: 6px 6px;
+			padding: 0px;
+			background:
+			linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+			url("stockid_gambar/wall.jpg") no-repeat center center fixed;
+			background-size: cover;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		div.member {
+			display: block;
+			margin: 10px 5px 0 5px;
+			padding: 6px 6px;
+			background: whitesmoke;
+			background: rgba(0,0,0,0.7);
+			border: 1px solid #9EDDFF;
+			border-radius: 15px 15px;
+			/*box-shadow: 0px 0px 3px 1px #777;
+			-webkit-box-shadow: 0px 0px 3px 1px #777;*/
+		}
+		h4 {
+			display: block;
+			position: fixed;
+			text-align: center;
+			align-items: center;
+			margin: 0px auto;
+			padding: 4px;
+			font-size: 16px;
+			font-weight: 500;
+			color: dodgerblue;
+			background-color: #333;
+			border-radius: 8px;
+		}
+		p, p.member, p.kelas {
+			font-size: 14px;
+			font-weight: 400;
+			color: whitesmoke;
+			margin: 0px;
+		}
+		p.tambah {
+			position: absolute;
+			right: 0;
+			margin-right: 18px;
+		}
+		span.expired {
+			color: #EE6055;
+		}
+		p.satu {
+			color: #5AA9E6;
+		}
+		p.dua {
+			color: #84DCC6;
+		}
+		p.tiga {
+			color: #FF9770;
+		}
+		p.enam {
+			color: #FFE45E;
+		}
+		p.duaBelas {
+			color: #AF99FF;
+		}
+		p.unli {
+			color: #E574BC;
+		}
+		</style>
+	</head>
+	
+	<body>
+		<h4>Masa Aktif Member Stock ID VIP</h4>
+		<br><br>
+		<!--<p>Total Member Aktif: 45 Jiwa</p>
+		<p>Member 3 Bulan: 8 Jiwa</p>
+		<p>Member 2 Bulan: 5 Jiwa</p>
+		<p>Member 1 Bulan: 32 Jiwa</p>
+		<p>Member Expired: 29 Jiwa</p>-->
+		
+		<div id="hasil"></div>
+			
+			<div class="member">
+				<p class="member">Nama: Hardi</p>
+				<p class="member" style="display: none">Nomor: 0</p>
+				<p class="member unli">Mentor & CEO Stock ID</p>
+				<p class="member">Masa Aktif: <span id="hardiwaktu"></span> <span id="hardibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Irfan</p>
+				<p class="member" style="display: none">Nomor: 0</p>
+				<p class="member unli">Mentor & CEO Stock ID</p>
+				<p class="member">Masa Aktif: <span id="irfanwaktu"></span> <span id="irfanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Tahun</p>
+				<p class="member">Nama: Mas. Dimas</p>
+				<p class="member" style="display: none">Nomor: 082288133212</p>
+				<p class="member duaBelas aktif">Beli Kelas: 1 Bulan + 1 Tahun</p>
+				<p class="member">Masa Aktif: <span id="dimaswaktu"></span> <span id="dimasbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Vani</p>
+				<p class="member" style="display: none">Nomor: 089662208826</p>
+				<p class="member enam aktif">Beli Kelas: 6 Bulan</p>
+				<p class="member">Masa Aktif: <span id="vaniwaktu"></span> <span id="vanibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ananda</p>
+				<p class="member" style="display: none">Nomor: 082256863256</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="anandawaktu"></span> <span id="anandabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+3 Bulan</p>
+				<p class="member">Nama: Mas. Arif</p>
+				<p class="member" style="display: none">Nomor: 085265337779</p>
+				<p class="member tiga aktif">Beli Kelas: 1 Bulan + 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="arifwaktu"></span> <span id="arifbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Anggoro</p>
+				<p class="member" style="display: none">Nomor: 089525567420</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="anggorowaktu"></span> <span id="anggorobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Puspita</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="puspitawaktu"></span> <span id="puspitabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Fauziah</p>
+				<p class="member" style="display: none">Nomor: 085753648079</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="fauziahwaktu"></span> <span id="fauziahbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+3 Bulan</p>
+				<p class="member">Nama: Mas. Dedi</p>
+				<p class="member" style="display: none">Nomor: 085951568082</p>
+				<p class="member tiga aktif">Beli Kelas: 1 Bulan + 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dediwaktu"></span> <span id="dedibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 & 2 Bulan</p>
+				<p class="member">Nama: Mas. Dwiky</p>
+				<p class="member" style="display: none">Nomor: 08116383088</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dwikywaktu"></span> <span id="dwikybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+2 Bulan</p>
+				<p class="member">Nama: Mas. Faisal</p>
+				<p class="member" style="display: none">Nomor: 085727473240</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="faisalwaktu"></span> <span id="faisalbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+2 Bulan</p>
+				<p class="member">Nama: Mas. Made</p>
+				<p class="member" style="display: none">Nomor: 081353043869</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="madewaktu"></span> <span id="madebulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Kayla</p>
+				<p class="member" style="display: none">Nomor: 081357764067</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="kaylawaktu"></span> <span id="kaylabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Danny</p>
+				<p class="member" style="display: none">Nomor: 081932677981</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dannywaktu"></span> <span id="dannybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Zidan</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="zidanwaktu"></span> <span id="zidanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Viani</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="vianiwaktu"></span> <span id="vianibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Ridho</p>
+				<p class="member" style="display: none">Nomor: 085839352252</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ridhowaktu"></span> <span id="ridhobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Tito</p>
+				<p class="member" style="display: none">Nomor: 081270370727</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="titowaktu"></span> <span id="titobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Alvi</p>
+				<p class="member" style="display: none">Nomor: 082112373026</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="alviwaktu"></span> <span id="alvibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Rachmad</p>
+				<p class="member" style="display: none">Nomor: 088989669913</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="rachmadwaktu"></span> <span id="rachmadbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Adit</p>
+				<p class="member" style="display: none">Nomor: 085773102128</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="aditwaktu"></span> <span id="aditbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ikhwan</p>
+				<p class="member" style="display: none">Nomor: 08813986613</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ikhwanwaktu"></span> <span id="ikhwanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Evan</p>
+				<p class="member" style="display: none">Nomor: 085649261450</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="evanwaktu"></span> <span id="evanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mba. Dhila</p>
+				<p class="member" style="display: none">Nomor: 089528936511</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dhilawaktu"></span> <span id="dhilabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Suba</p>
+				<p class="member" style="display: none">Nomor: 085851202129</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="subawaktu"></span> <span id="subabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Kevin</p>
+				<p class="member" style="display: none">Nomor: 081288374247</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="kevinwaktu"></span> <span id="kevinbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Farhan</p>
+				<p class="member" style="display: none">Nomor: 088221513462</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="farhanwaktu"></span> <span id="farhanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ramadhan</p>
+				<p class="member" style="display: none">Nomor: 085717458562</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ramadhanwaktu"></span> <span id="ramadhanbulan"></span></p>
+			</div>
+
+			<div class="member">
+				<p class="member">Nama: Mas. Rama</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ramawaktu"></span> <span id="ramabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Fahmi</p>
+				<p class="member" style="display: none">Nomor: 085725250834</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="fahmiwaktu"></span> <span id="fahmibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Farid</p>
+				<p class="member" style="display: none">Nomor: 082216890335</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="faridwaktu"></span> <span id="faridbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Tomin</p>
+				<p class="member" style="display: none">Nomor: 082241230030</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="tominwaktu"></span> <span id="tominbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Juno</p>
+				<p class="member" style="display: none">Nomor: 081388971102</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="junowaktu"></span> <span id="junobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Yogi</p>
+				<p class="member" style="display: none">Nomor: 081388943988</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="yogiwaktu"></span> <span id="yogibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ray</p>
+				<p class="member" style="display: none">Nomor: 08994666668</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="raywaktu"></span> <span id="raybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Nanang</p>
+				<p class="member" style="display: none">Nomor: 0895335867519</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="nanangwaktu"></span> <span id="nanangbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Candra</p>
+				<p class="member" style="display: none">Nomor: 085878590179</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="candrawaktu"></span> <span id="candrabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Salim</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="salimwaktu"></span> <span id="salimbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Sandi</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="sandiwaktu"></span> <span id="sandibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Rayhan</p>
+				<p class="member" style="display: none">Nomor: 082146281427</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="rayhanwaktu"></span> <span id="rayhanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Yoga</p>
+				<p class="member" style="display: none">Nomor: 082382795953</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="yogawaktu"></span> <span id="yogabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+2 Bulan</p>
+				<p class="member">Nama: Mba. Putri</p>
+				<p class="member" style="display: none">Nomor: 081554559971</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="putriwaktu"></span> <span id="putribulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mba. Siska</p>
+				<p class="member" style="display: none">Nomor: 087759946405</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="siskawaktu"></span> <span id="siskabulan"></span></p>
+			</div>
+
+			<div class="member">
+				<p class="member">Nama: Mas. Ardika</p>
+				<p class="member" style="display: none">Nomor: 082170239819</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ardikawaktu"></span> <span id="ardikabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Sefian</p>
+				<p class="member" style="display: none">Nomor: 085876926793</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="sefianwaktu"></span> <span id="sefianbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Widi</p>
+				<p class="member" style="display: none">Nomor: 083191133606</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="widiwaktu"></span> <span id="widibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Tama</p>
+				<p class="member" style="display: none">Nomor: 083823750527</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="tamawaktu"></span> <span id="tamabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Natan</p>
+				<p class="member" style="display: none">Nomor: 085380369595</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="natanwaktu"></span> <span id="natanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Anggit</p>
+				<p class="member" style="display: none">Nomor: 081542766503</p>
+				<p class="member dua aktif">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="anggitwaktu"></span> <span id="anggitbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+2 Bulan</p>
+				<p class="member">Nama: Mas. Tomy</p>
+				<p class="member" style="display: none">Nomor: 089609809039</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="tomywaktu"></span> <span id="tomybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Aka</p>
+				<p class="member" style="display: none">Nomor: 085959776370</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="akawaktu"></span> <span id="akabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Devan</p>
+				<p class="member" style="display: none">Nomor: 085800322160</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="devanwaktu"></span> <span id="devanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Saputra</p>
+				<p class="member" style="display: none">Nomor: 0895320471571</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="saputrawaktu"></span> <span id="saputrabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Atok</p>
+				<p class="member" style="display: none">Nomor: 081222455926</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="atokwaktu"></span> <span id="atokbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Noval</p>
+				<p class="member" style="display: none">Nomor: 085714184573</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="novalwaktu"></span> <span id="novalbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+2 Bulan</p>
+				<p class="member">Nama: Mas. Neko</p>
+				<p class="member" style="display: none">Nomor: 082286867964</p>
+				<p class="member dua aktif">Beli Kelas: 1 Bulan + 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="nekowaktu"></span> <span id="nekobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Pak. Yanto</p>
+				<p class="member" style="display: none">Nomor: 082374750189</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="yantowaktu"></span> <span id="yantobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ardha</p>
+				<p class="member" style="display: none">Nomor: 081542779853</p>
+				<p class="member tiga aktif">Beli Kelas: 3 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ardhawaktu"></span> <span id="ardhabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Abdul</p>
+				<p class="member" style="display: none">Nomor: 085704755602</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="abdulwaktu"></span> <span id="abdulbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Riani</p>
+				<p class="member" style="display: none">Nomor: 082288593696</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="rianiwaktu"></span> <span id="rianibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Muazin</p>
+				<p class="member" style="display: none">Nomor: 081391334236</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="muazinwaktu"></span> <span id="muazinbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Bayu</p>
+				<p class="member" style="display: none">Nomor: 082145928235</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="bayuwaktu"></span> <span id="bayubulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Willy</p>
+				<p class="member" style="display: none">Nomor: 088747941100</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="willywaktu"></span> <span id="willybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Farieq</p>
+				<p class="member" style="display: none">Nomor: 083813693914</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="farieqwaktu"></span> <span id="farieqbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Sodik</p>
+				<p class="member" style="display: none">Nomor: 085156271181</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="sodikwaktu"></span> <span id="sodikbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Seii</p>
+				<p class="member" style="display: none">Nomor: 089516172663</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="seiiwaktu"></span> <span id="seiibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Roid</p>
+				<p class="member" style="display: none">Nomor: 087819304040</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="roidwaktu"></span> <span id="roidbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Tia</p>
+				<p class="member" style="display: none">Nomor: 081360698004</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="tiawaktu"></span> <span id="tiabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Dani</p>
+				<p class="member" style="display: none">Nomor: 081939198806</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="daniwaktu"></span> <span id="danibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Panji</p>
+				<p class="member" style="display: none">Nomor: 081383928774</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="panjiwaktu"></span> <span id="panjibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Annisa</p>
+				<p class="member" style="display: none">Nomor: 083829116408</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="annisawaktu"></span> <span id="annisabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Dio</p>
+				<p class="member" style="display: none">Nomor: 087872855134</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="diowaktu"></span> <span id="diobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mba. Rosita</p>
+				<p class="member" style="display: none">Nomor: 085746010654</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="rositawaktu"></span> <span id="rositabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ahlis</p>
+				<p class="member" style="display: none">Nomor: 082374750189</p>
+				<p class="member dua expired">Beli Kelas: 2 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ahliswaktu"></span> <span id="ahlisbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Purna</p>
+				<p class="member" style="display: none">Nomor: 089627939527</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="purnawaktu"></span> <span id="purnabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Jordan</p>
+				<p class="member" style="display: none">Nomor: 085361158771</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="jordanwaktu"></span> <span id="jordanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Rey</p>
+				<p class="member" style="display: none">Nomor: 087760777890</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="reywaktu"></span> <span id="reybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Abraham</p>
+				<p class="member" style="display: none">Nomor: 087725999740</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="abrahamwaktu"></span> <span id="abrahambulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Miko</p>
+				<p class="member" style="display: none">Nomor: 08989735180</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="mikowaktu"></span> <span id="mikobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Niko</p>
+				<p class="member" style="display: none">Nomor: 085659115395</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="nikowaktu"></span> <span id="nikobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Fajar</p>
+				<p class="member" style="display: none">Nomor: 088980615045</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="fajarwaktu"></span> <span id="fajarbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Winsen</p>
+				<p class="member" style="display: none">Nomor: 082374750189</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="winsenwaktu"></span> <span id="winsenbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Nofal</p>
+				<p class="member" style="display: none">Nomor: 0895340339030</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="nofalwaktu"></span> <span id="nofalbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Dandy</p>
+				<p class="member" style="display: none">Nomor: 081257215624</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dandywaktu"></span> <span id="dandybulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ando</p>
+				<p class="member" style="display: none">Nomor: 082353546274</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="andowaktu"></span> <span id="andobulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Adi</p>
+				<p class="member" style="display: none">Nomor: 081802037746</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="adiwaktu"></span> <span id="adibulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Lisbeth</p>
+				<p class="member" style="display: none">Nomor: 085211556086</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="lisbethwaktu"></span> <span id="lisbethbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Yudha</p>
+				<p class="member" style="display: none">Nomor: 081809326902</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="yudhawaktu"></span> <span id="yudhabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Fathan</p>
+				<p class="member" style="display: none">Nomor: 087763704096</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="fathanwaktu"></span> <span id="fathanbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Nijar</p>
+				<p class="member" style="display: none">Nomor: 082299282454</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="nijarwaktu"></span> <span id="nijarbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Radit</p>
+				<p class="member" style="display: none">Nomor: 0895324937129</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="raditwaktu"></span> <span id="raditbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Azka</p>
+				<p class="member" style="display: none">Nomor: 085691639152</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="azkawaktu"></span> <span id="azkabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Gilang</p>
+				<p class="member" style="display: none">Nomor: 083131965957</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="gilangwaktu"></span> <span id="gilangbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Hendra</p>
+				<p class="member" style="display: none">Nomor: 089504229094</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="hendrawaktu"></span> <span id="hendrabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Alive</p>
+				<p class="member" style="display: none">Nomor: 081514719617</p>
+				<p class="member satu expired">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="alivewaktu"></span> <span id="alivebulan"></span></p>
+			</div>
+		
+		<script type="text/javascript">
+		var targetkayla = new Date("7 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var kaylatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetkayla - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("kaylawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("kaylabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(kaylatarget);
+				document.getElementById("kaylawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("kaylabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetramadhan = new Date("7 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ramadhantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetramadhan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ramadhanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ramadhanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ramadhantarget);
+				document.getElementById("ramadhanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ramadhanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfarhan = new Date("7 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var farhantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfarhan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("farhanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("farhanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(farhantarget);
+				document.getElementById("farhanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("farhanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetananda = new Date("7 Apr, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var anandatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetananda - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("anandawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("anandabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(anandatarget);
+				document.getElementById("anandawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("anandabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetvani = new Date("5 Jul, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var vanitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetvani - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("vaniwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("vanibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(vanitarget);
+				document.getElementById("vaniwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("vanibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetkevin = new Date("8 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var kevintarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetkevin - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("kevinwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("kevinbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(kevintarget);
+				document.getElementById("kevinwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("kevinbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsuba = new Date("9 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var subatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsuba - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("subawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("subabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(subatarget);
+				document.getElementById("subawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("subabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetanggoro = new Date("5 Apr, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var anggorotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetanggoro - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("anggorowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("anggorobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(anggorotarget);
+				document.getElementById("anggorowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("anggorobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdanny = new Date("5 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dannytarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdanny - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dannywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dannybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(dannytarget);
+				document.getElementById("dannywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dannybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetyogi = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var yogitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetyogi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("yogiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("yogibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(yogitarget);
+				document.getElementById("yogiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("yogibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targettomin = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var tomintarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targettomin - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("tominwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("tominbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(tomintarget);
+				document.getElementById("tominwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("tominbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetjuno = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var junotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetjuno - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("junowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("junobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(junotarget);
+				document.getElementById("junowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("junobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetpuspita = new Date("5 Apr, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var puspitatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetpuspita - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("puspitawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("puspitabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(puspitatarget);
+				document.getElementById("puspitawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("puspitabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetviani = new Date("5 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var vianitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetviani - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("vianiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("vianibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(vianitarget);
+				document.getElementById("vianiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("vianibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetzidan = new Date("5 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var zidantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetzidan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("zidanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("zidanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(zidantarget);
+				document.getElementById("zidanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("zidanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrayhan = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var rayhantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrayhan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("rayhanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("rayhanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(rayhantarget);
+				document.getElementById("rayhanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("rayhanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsandi = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var sanditarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsandi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("sandiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("sandibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(sanditarget);
+				document.getElementById("sandiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("sandibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsalim = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var salimtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsalim - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("salimwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("salimbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(salimtarget);
+				document.getElementById("salimwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("salimbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetcandra = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var candratarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetcandra - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("candrawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("candrabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(candratarget);
+				document.getElementById("candrawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("candrabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetray = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var raytarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetray - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("raywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("raybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(raytarget);
+				document.getElementById("raywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("raybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetalvi = new Date("23 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var alvitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetalvi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("alviwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("alvibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(alvitarget);
+				document.getElementById("alviwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("alvibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetaka = new Date("26 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var akatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetaka - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("akawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("akabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(akatarget);
+				document.getElementById("akawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("akabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfarid = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var faridtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfarid - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("faridwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("faridbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(faridtarget);
+				document.getElementById("faridwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("faridbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetevan = new Date("11 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var evantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetevan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("evanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("evanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(evantarget);
+				document.getElementById("evanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("evanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdevan = new Date("26 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var devantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdevan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("devanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("devanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(devantarget);
+				document.getElementById("devanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("devanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targettama = new Date("27 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var tamatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targettama - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("tamawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("tamabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(tamatarget);
+				document.getElementById("tamawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("tamabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetwidi = new Date("29 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var widitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetwidi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("widiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("widibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(widitarget);
+				document.getElementById("widiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("widibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsaputra = new Date("25 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var saputratarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsaputra - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("saputrawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("saputrabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(saputratarget);
+				document.getElementById("saputrawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("saputrabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetnatan = new Date("27 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var natantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetnatan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("natanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("natanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(natantarget);
+				document.getElementById("natanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("natanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetnoval = new Date("25 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var novaltarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetnoval - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("novalwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("novalbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(novaltarget);
+				document.getElementById("novalwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("novalbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetatok = new Date("25 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var atoktarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetatok - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("atokwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("atokbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(atoktarget);
+				document.getElementById("atokwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("atokbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfauziah = new Date("31 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var fauziahtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfauziah - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("fauziahwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("fauziahbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(fauziahtarget);
+				document.getElementById("fauziahwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("fauziahbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetabdul = new Date("21 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var abdultarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetabdul - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("abdulwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("abdulbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(abdultarget);
+				document.getElementById("abdulwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("abdulbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetbayu = new Date("16 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var bayutarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetbayu - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("bayuwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("bayubulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(bayutarget);
+				document.getElementById("bayuwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("bayubulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetmuazin = new Date("16 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var muazintarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetmuazin - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("muazinwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("muazinbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(muazintarget);
+				document.getElementById("muazinwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("muazinbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrachmad = new Date("17 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var rachmadtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrachmad - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("rachmadwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("rachmadbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(rachmadtarget);
+				document.getElementById("rachmadwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("rachmadbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetriani = new Date("16 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var rianitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetriani - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("rianiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("rianibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(rianitarget);
+				document.getElementById("rianiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("rianibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetwilly = new Date("16 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var willytarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetwilly - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("willywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("willybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(willytarget);
+				document.getElementById("willywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("willybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdhila = new Date("10 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dhilatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdhila - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dhilawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dhilabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(dhilatarget);
+				document.getElementById("dhilawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dhilabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetmade = new Date("20 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var madetarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetmade - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("madewaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("madebulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(madetarget);
+				document.getElementById("madewaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("madebulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetridho = new Date("28 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ridhotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetridho - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ridhowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ridhobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ridhotarget);
+				document.getElementById("ridhowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ridhobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsodik = new Date("09 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var sodiktarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsodik - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("sodikwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("sodikbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(sodiktarget);
+				document.getElementById("sodikwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("sodikbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetseii = new Date("09 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var seiiarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetseii - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("seiiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("seiibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(seiiarget);
+				document.getElementById("seiiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("seiibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetroid = new Date("09 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var roidtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetroid - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("roidwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("roidbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(roidtarget);
+				document.getElementById("roidwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("roidbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetarif = new Date("11 Apr, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ariftarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetarif - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("arifwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("arifbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ariftarget);
+				document.getElementById("arifwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("arifbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targettia = new Date("24 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var tiatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targettia - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("tiawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("tiabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(tiatarget);
+				document.getElementById("tiawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("tiabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdedi = new Date("25 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var deditarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdedi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dediwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dedibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(deditarget);
+				document.getElementById("dediwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dedibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdimas = new Date("7 Jan, 2027 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dimastarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdimas - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dimaswaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dimasbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(dimastarget);
+				document.getElementById("dimaswaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dimasbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdio = new Date("14 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var diotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdio - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("diowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("diobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(diotarget);
+				document.getElementById("diowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("diobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrosita = new Date("14 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var rositatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrosita - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("rositawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("rositabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(rositatarget);
+				document.getElementById("rositawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("rositabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetanggit = new Date("27 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var anggittarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetanggit - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("anggitwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("anggitbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(anggittarget);
+				document.getElementById("anggitwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("anggitbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfaisal = new Date("22 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var faisaltarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfaisal - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("faisalwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("faisalbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(faisaltarget);
+				document.getElementById("faisalwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("faisalbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetannisa = new Date("15 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var annisatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetannisa - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("annisawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("annisabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(annisatarget);
+				document.getElementById("annisawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("annisabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsiska = new Date("03 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var siskatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsiska - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("siskawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("siskabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(siskatarget);
+				document.getElementById("siskawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("siskabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfahmi = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var fahmitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfahmi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("fahmiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("fahmibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(fahmitarget);
+				document.getElementById("fahmiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("fahmibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetadit = new Date("16 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var adittarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetadit - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("aditwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("aditbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(adittarget);
+				document.getElementById("aditwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("aditbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrama = new Date("07 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ramatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrama - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ramawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ramabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ramatarget);
+				document.getElementById("ramawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ramabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetikhwan = new Date("13 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ikhwantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetikhwan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ikhwanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ikhwanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ikhwantarget);
+				document.getElementById("ikhwanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ikhwanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetjordan = new Date("08 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var jordantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetjordan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("jordanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("jordanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(jordantarget);
+				document.getElementById("jordanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("jordanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetsefian = new Date("30 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var sefiantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetsefian - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("sefianwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("sefianbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(sefiantarget);
+				document.getElementById("sefianwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("sefianbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetmiko = new Date("29 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var mikotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetmiko - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("mikowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("mikobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(mikotarget);
+				document.getElementById("mikowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("mikobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetabraham = new Date("31 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var abrahamtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetabraham - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("abrahamwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("abrahambulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(abrahamtarget);
+				document.getElementById("abrahamwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("abrahambulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetrey = new Date("04 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var reytarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetrey - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("reywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("reybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(reytarget);
+				document.getElementById("reywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("reybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfajar = new Date("23 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var fajartarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfajar - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("fajarwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("fajarbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(fajartarget);
+				document.getElementById("fajarwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("fajarbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetpurna = new Date("10 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var purnatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetpurna - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("purnawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("purnabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(purnatarget);
+				document.getElementById("purnawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("purnabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdani = new Date("24 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var danitarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdani - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("daniwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("danibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(danitarget);
+				document.getElementById("daniwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("danibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targettito = new Date("25 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var titotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targettito - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("titowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("titobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(titotarget);
+				document.getElementById("titowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("titobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targeyoga = new Date("03 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var yogatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targeyoga - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("yogawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("yogabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(yogatarget);
+				document.getElementById("yogawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("yogabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetando = new Date("20 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var andotarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetando - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("andowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("andobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(andotarget);
+				document.getElementById("andowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("andobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetnofal = new Date("21 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var nofaltarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetnofal - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("nofalwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("nofalbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(nofaltarget);
+				document.getElementById("nofalwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("nofalbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetardika = new Date("30 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var ardikatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetardika - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ardikawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ardikabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(ardikatarget);
+				document.getElementById("ardikawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ardikabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetadi = new Date("20 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var aditarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetadi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("adiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("adibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(aditarget);
+				document.getElementById("adiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("adibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetlisbeth = new Date("20 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var lisbethtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetlisbeth - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("lisbethwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("lisbethbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(lisbethtarget);
+				document.getElementById("lisbethwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("lisbethbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetputri = new Date("03 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var putritarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetputri - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("putriwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("putribulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(putritarget);
+				document.getElementById("putriwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("putribulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetdwiky = new Date("23 Mar, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var dwikytarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetdwiky - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dwikywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dwikybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(dwikytarget);
+				document.getElementById("dwikywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dwikybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetfarieq = new Date("12 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var farieqtarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetfarieq - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("farieqwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("farieqbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(farieqtarget);
+				document.getElementById("farieqwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("farieqbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var nikotarget = new Date("28 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetniko = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = nikotarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("nikowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("nikobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetniko);
+				document.getElementById("nikowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("nikobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var panjitarget = new Date("15 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetpanji = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = panjitarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("panjiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("panjibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetpanji);
+				document.getElementById("panjiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("panjibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var alivetarget = new Date("5 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetalive = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = alivetarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("alivewaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("alivebulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetalive);
+				document.getElementById("alivewaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("alivebulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var ardhatarget = new Date("21 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetardha = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = ardhatarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ardhawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ardhabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetardha);
+				document.getElementById("ardhawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ardhabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var hendratarget = new Date("6 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targethendra = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = hendratarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("hendrawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("hendrabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targethendra);
+				document.getElementById("hendrawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("hendrabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var azkatarget = new Date("8 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetazka = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = azkatarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("azkawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("azkabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetazka);
+				document.getElementById("azkawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("azkabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var dandytarget = new Date("20 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetdandy = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = dandytarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("dandywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("dandybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetdandy);
+				document.getElementById("dandywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("dandybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var gilangtarget = new Date("7 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetgilang = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = gilangtarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("gilangwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("gilangbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetgilang);
+				document.getElementById("gilangwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("gilangbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var fathantarget = new Date("9 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetfathan = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = fathantarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("fathanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("fathanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetfathan);
+				document.getElementById("fathanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("fathanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var nanangtarget = new Date("5 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetnanang = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = nanangtarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("nanangwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("nanangbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetnanang);
+				document.getElementById("nanangwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("nanangbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var nijartarget = new Date("9 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetnijar = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = nijartarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("nijarwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("nijarbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetnijar);
+				document.getElementById("nijarwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("nijarbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var radittarget = new Date("8 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetradit = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = radittarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("raditwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("raditbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetradit);
+				document.getElementById("raditwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("raditbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var winsentarget = new Date("21 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetwinsen = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = winsentarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("winsenwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("winsenbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetwinsen);
+				document.getElementById("winsenwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("winsenbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var tomytarget = new Date("27 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targettomy = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = tomytarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("tomywaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("tomybulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targettomy);
+				document.getElementById("tomywaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("tomybulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var yantotarget = new Date("21 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetyanto = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = yantotarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("yantowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("yantobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetyanto);
+				document.getElementById("yantowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("yantobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var ahlistarget = new Date("11 Dec, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetahlis = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = ahlistarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ahliswaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ahlisbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetahlis);
+				document.getElementById("ahliswaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ahlisbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var nekotarget = new Date("25 Jan, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetneko = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = nekotarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("nekowaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("nekobulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetneko);
+				document.getElementById("nekowaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("nekobulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var yudhatarget = new Date("13 Nov, 2025 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var targetyudha = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = yudhatarget - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("yudhawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("yudhabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(targetyudha);
+				document.getElementById("yudhawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("yudhabulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetirfan = new Date("1 Dec, 2200 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var irfantarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetirfan - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("irfanwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("irfanbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(irfantarget);
+				document.getElementById("irfanwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("irfanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targethardi = new Date("1 Dec, 2200 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var harditarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targethardi - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("hardiwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("hardibulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(harditarget);
+				document.getElementById("hardiwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("hardibulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script>
+		const classToMonth = {
+			satu: 1,
+			dua: 2,
+			tiga: 3,
+			empat: 4,
+			lima: 5,
+			enam: 6,
+			tujuh: 7,
+			delapan: 8,
+			sembilan: 9,
+			sepuluh: 10,
+			sebelas: 11,
+			duaBelas: 12
+		};
+		
+		const elements = document.querySelectorAll('[class]');
+		const memberPerBulan = {};
+		let expiredCount = 0;
+		let aktifCount = 0;
+		
+		elements.forEach(el => {
+			const classes = el.classList;
+			const isExpired = classes.contains('expired');
+			const isAktif = classes.contains('aktif');
+			if (isExpired) {
+				expiredCount++;
+			}
+			if (!isExpired) {
+				classes.forEach(cls => {
+					if (classToMonth[cls]) {
+						const bulan = classToMonth[cls];
+						memberPerBulan[bulan] = (memberPerBulan[bulan] || 0) + 1;
+					}
+				});
+			}
+			if (isAktif && !isExpired) {
+				aktifCount++;
+			}
+		});
+		
+		const hasil = document.getElementById('hasil');
+		hasil.innerHTML += `<p>Member Aktif: ${aktifCount} Jiwa</p>`;
+		hasil.innerHTML += `<p>Member Expired: ${expiredCount} Jiwa</p>`;
+
+		Object.keys(memberPerBulan) .sort((a, b) => a - b) .forEach(bulan => {
+			const p = document.createElement('p');
+			p.textContent = `Member ${bulan} Bulan: ${memberPerBulan[bulan]} Jiwa`;
+			hasil.appendChild(p);
+		});
+		</script>
+		
+		
+	
+	<!-- TGL & JAM -->
+	<script type="text/javascript">
+	var months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+	var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum&#39;at", "Sabtu"];
+	var date = new Date();
+	var day = date.getDate();
+	var month = date.getMonth();
+	var thisDay = date.getDay(),
+	thisDay = days[thisDay];
+	var yy = date.getYear();
+	var year = (yy < 1000) ? yy + 1900 : yy;
+	document.getElementById("tanggal").innerHTML = thisDay + ", " + day + " " + months[month] + " " + year;
+	</script>
+	
+	</body>
+</html>
