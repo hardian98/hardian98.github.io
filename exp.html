@@ -255,6 +255,22 @@
 			
 			<div class="member">
 				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Roid</p>
+				<p class="member" style="display: none">Nomor: 087819304040</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="roidwaktu"></span> <span id="roidbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mas. Muazin</p>
+				<p class="member" style="display: none">Nomor: 081391334236</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="muazinwaktu"></span> <span id="muazinbulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
 				<p class="member">Nama: Mas. Rachmad</p>
 				<p class="member" style="display: none">Nomor: 088989669913</p>
 				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
@@ -283,14 +299,6 @@
 			</div>
 			
 			<div class="member">
-				<p class="tambah">+1 Bulan</p>
-				<p class="member">Nama: Mba. Dhila</p>
-				<p class="member" style="display: none">Nomor: 089528936511</p>
-				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="dhilawaktu"></span> <span id="dhilabulan"></span></p>
-			</div>
-			
-			<div class="member">
 				<p class="member">Nama: Mas. Juan</p>
 				<p class="member" style="display: none">Nomor: 0</p>
 				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
@@ -298,10 +306,32 @@
 			</div>
 			
 			<div class="member">
+				<p class="member">Nama: Mba. Caca</p>
+				<p class="member" style="display: none">Nomor: 0</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="cacawaktu"></span> <span id="cacabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="member">Nama: Mas. Ulil</p>
+				<p class="member" style="display: none">Nomor: 0</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="ulilwaktu"></span> <span id="ulilbulan"></span></p>
+			</div>
+			
+			<div class="member">
 				<p class="member">Nama: Mba. Febrina</p>
 				<p class="member" style="display: none">Nomor: 0</p>
 				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="febrinawaktu"></span> <span id="febrinabulan"></span></p>
+			</div>
+			
+			<div class="member">
+				<p class="tambah">+1 Bulan</p>
+				<p class="member">Nama: Mba. Dhila</p>
+				<p class="member" style="display: none">Nomor: 089528936511</p>
+				<p class="member satu aktif">Beli Kelas: 1 Bulan + 1 Bulan</p>
+				<p class="member">Masa Aktif: <span id="dhilawaktu"></span> <span id="dhilabulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -564,13 +594,6 @@
 			</div>
 			
 			<div class="member">
-				<p class="member">Nama: Mas. Muazin</p>
-				<p class="member" style="display: none">Nomor: 081391334236</p>
-				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="muazinwaktu"></span> <span id="muazinbulan"></span></p>
-			</div>
-			
-			<div class="member">
 				<p class="member">Nama: Mas. Bayu</p>
 				<p class="member" style="display: none">Nomor: 082145928235</p>
 				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
@@ -603,13 +626,6 @@
 				<p class="member" style="display: none">Nomor: 089516172663</p>
 				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
 				<p class="member">Masa Aktif: <span id="seiiwaktu"></span> <span id="seiibulan"></span></p>
-			</div>
-			
-			<div class="member">
-				<p class="member">Nama: Mas. Roid</p>
-				<p class="member" style="display: none">Nomor: 087819304040</p>
-				<p class="member satu aktif">Beli Kelas: 1 Bulan</p>
-				<p class="member">Masa Aktif: <span id="roidwaktu"></span> <span id="roidbulan"></span></p>
 			</div>
 			
 			<div class="member">
@@ -812,7 +828,34 @@
 			</div>
 		
 		<script type="text/javascript">
-		var targetjuan = new Date("10 Feb, 2026 00:00:00").getTime();
+		var targetulil = new Date("11 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var uliltarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetulil - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("ulilwaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("ulilbulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(uliltarget);
+				document.getElementById("ulilwaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("ulilbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetjuan = new Date("11 Feb, 2026 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var juantarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
@@ -834,6 +877,33 @@
 				clearInterval(juantarget);
 				document.getElementById("juanwaktu").innerHTML = "<span class='expired'>Expired</span>";
 				document.getElementById("juanbulan").innerHTML = "";
+			}
+		}, 1000);
+		</script>
+		
+		<script type="text/javascript">
+		var targetcaca = new Date("11 Feb, 2026 00:00:00").getTime();
+		// Perbarui hitungan mundur setiap 1 detik
+		var cacatarget = setInterval(function() {
+			// Dapatkan tanggal dan waktu hari ini
+			var nTarget = new Date().getTime();
+			// Temukan jarak antara sekarang dan tanggal hitung mundur
+			var distance = targetcaca - nTarget;
+			// Kalkulasi waktu untuk tahun, bulan, hari, jam, menit dan detik
+			var years = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31 * 12));
+			var months = Math.floor(distance /  (1000 * 60 * 60 * 24 * 31));
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+			var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+			// Menampilkan Hasil di Element
+			document.getElementById("cacawaktu").innerHTML = days + "Hari, " + hours + "Jam, " + minutes + "Menit";
+			document.getElementById("cacabulan").innerHTML = "(" + months + " Bulan lagi)";
+			// Jika hitungan mundur selesai, tuliskan sesuatu dalam Teks
+			if (distance < 0) {
+				clearInterval(cacatarget);
+				document.getElementById("cacawaktu").innerHTML = "<span class='expired'>Expired</span>";
+				document.getElementById("cacabulan").innerHTML = "";
 			}
 		}, 1000);
 		</script>
@@ -1784,7 +1854,7 @@
 		</script>
 		
 		<script type="text/javascript">
-		var targetmuazin = new Date("16 Jan, 2026 00:00:00").getTime();
+		var targetmuazin = new Date("18 Feb, 2026 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var muazintarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
@@ -2027,7 +2097,7 @@
 		</script>
 		
 		<script type="text/javascript">
-		var targetroid = new Date("09 Jan, 2026 00:00:00").getTime();
+		var targetroid = new Date("19 Feb, 2026 00:00:00").getTime();
 		// Perbarui hitungan mundur setiap 1 detik
 		var roidtarget = setInterval(function() {
 			// Dapatkan tanggal dan waktu hari ini
